@@ -1,72 +1,120 @@
-# GuesteaFrontend
+# GuestME Frontend
 
-# Getting Started with Create React App
+This is the frontend built using React for GuestME Web app. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Development Environment
 
-In the project directory, you can run:
+Details about how to configure the development environment.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Extension Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Please ensure the following extensions are installed:
 
-### `npm test`
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) (optional)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### VSCode Settings
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Please open the settings.json file in your VSCode. You can do so by:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Press `Ctrl+Shift+p`
+2. Enter `settings.json`
+3. Select: `Preferences: Open Settings (JSON)`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Then copy and paste the following into the file and save:
 
-### `npm run eject`
+```
+// <-- EDITOR --> //
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.addMissingImports": true,
+    "source.organizeImports": true,
+    "source.autoFixOnSave": true
+  },
+  "editor.suggestSelection": "first",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.trimTrailingWhitespace": true,
+  // <-- ESLINT --> //
+  "eslint.quiet": false,
+  "eslint.format.enable": true,
+  // <-- LANGUAGE-SPECIFIC SETTINGS --> //
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "javascript.preferences.quoteStyle": "single",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Warning!** you must install the extensions first otherwise VSCode may complain that some of the settings do not exist.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Env File
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+_More Options will be added later_
 
-## Learn More
+| Key    | Value                                                                                                                |
+| ------ | -------------------------------------------------------------------------------------------------------------------- |
+| MODE   | development                                                                                                          |
+| DOMAIN | localhost ([guestme.netlify.com](https://guestme.netlify.com) in production, if not specified defaults to localhost) |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Scripts
 
-### Code Splitting
+The following is a summary of the scripts (more will be added later):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Script | Command       | Description                         |
+| ------ | ------------- | ----------------------------------- |
+| test   | npm run test  | Not currently implemented.          |
+| dev    | npm run start | Starts the development environment. |
+| build  | npm run build | Builds the application.             |
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Running The Project
 
-### Making a Progressive Web App
+Ensure you first run `npm install`. Then there are two methods to run the app:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Development**
 
-### Advanced Configuration
+1. Ensure your machine is connected to the Internet for API server access. Alternatively you can also run the backend server on localhost.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. `npm run start` will start the application in development mode. The application should hot reload after saving changes to a file
 
-### Deployment
+**Production**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. `npm run build` to build the application
 
-### `npm run build` fails to minify
+Please work off of the `dev` branch. Changes on `main` branch are ready for live deployment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+### Testing
+
+When running the start script, it should automatically open the app in default web browser(**Chrome Recommended**)
+
+---
