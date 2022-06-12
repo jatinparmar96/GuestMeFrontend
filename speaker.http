@@ -1,0 +1,12 @@
+###
+GET http://localhost:8080/speakers
+
+
+###
+GET http://localhost:8080/
+
+###
+POST http://localhost:8080/speakers/signup
+
+###
+POST http://localhost:8080/speakers/login
