@@ -1,4 +1,4 @@
-import { SubmitButtonContainer } from "./SubmitButton.styles";
+import { SubmitButtonContainer } from './SubmitButton.styles';
 
 /**
  * @type {React.FC<import('./SubmitButtonTypes').SubmitButtonProps>}

@@ -1,4 +1,4 @@
-import { OrganizationLoginForm } from "../../Components/OrganizationLoginForm/OrganizationLoginForm";
+import { OrganizationLoginForm } from '../../Components/OrganizationLoginForm/OrganizationLoginForm';
 
 export const LoginPopup = (props) => {
   return (

@@ -1,5 +1,5 @@
-import styles from "./Header.module.scss";
-import { AuthNavigation } from "../../Components/AuthNavigation/AuthNavigation";
+import styles from './Header.module.scss';
+import { AuthNavigation } from '../../Components/AuthNavigation/AuthNavigation';
 
 export const Header = () => {
   return (

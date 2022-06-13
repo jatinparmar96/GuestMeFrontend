@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom";
-import { LoginPopup } from "../../Containers/LoginPopup/LoginPopup";
+import { useParams } from 'react-router-dom';
+import { LoginPopup } from '../../Containers/LoginPopup/LoginPopup';
 
 export const SpeakerProfile = (props) => {
   let { speakerId } = useParams();
 
   if (!speakerId === undefined) {
-    speakerId = "";
+    speakerId = '';
   }
 
   const container = <LoginPopup></LoginPopup>;

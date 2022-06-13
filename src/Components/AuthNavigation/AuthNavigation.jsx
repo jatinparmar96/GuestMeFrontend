@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styles from "./AuthNavigation.module.scss";
+import { Link } from 'react-router-dom';
+import styles from './AuthNavigation.module.scss';
 
 export const AuthNavigation = () => {
   return (
