@@ -1,12 +1,25 @@
-###
-GET http://localhost:8080/speakers
 
-
-###
-GET http://localhost:8080/
+GET  http://localhost:8080/
 
 ###
-POST http://localhost:8080/speakers/signup
+
+POST http://localhost:8080/speakers/register
+content-type: application/json
+
+{
+  "email": "randomuser 4",
+  "password":"secret",
+  "confirmPassword":"secret"
+}
 
 ###
-POST http://localhost:8080/speakers/login
+POST  http://localhost:8080/speakers/login
+content-type: application/json
+
+{
+  "email": "mail@gmail.com",
+  "password":"123456"
+}
+
+###
+GET http://localhost:8080/speakers/
