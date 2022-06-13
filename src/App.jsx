@@ -4,6 +4,7 @@ import { Footer } from "./Containers/Footer/Footer";
 import { Header } from "./Containers/Header/Header";
 
 import { Register } from "./Pages/Register/Register";
+import { Login } from "./Pages/Login/Login";
 
 import styles from "./App.module.scss";
 import { SpeakerProfile } from "./Pages/SpeakerProfile/SpeakerProfile";
@@ -16,11 +17,12 @@ const App = () => {
       <main className={styles.main}>
         <Routes>
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route
             path="/speaker-profile:speakerId"
             element={<SpeakerProfile />}
           />
-          <Route path="/" element={<Register />} />
+          <Route path="/" />
         </Routes>
       </main>
       <Footer></Footer>

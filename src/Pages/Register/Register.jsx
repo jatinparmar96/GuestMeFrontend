@@ -16,11 +16,16 @@ export const Register = (props) => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    console.log("data: ", data);
     try {
       const token = (
         await (
           await fetch(`${API_URL.SPEAKER_REGISTER}`, {
             method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
           })
         ).json()
       ).token;
@@ -40,7 +45,7 @@ export const Register = (props) => {
         Please fill out the form below, and click on 'Submit' button to Register
         with GUESTme.
       </p>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <div className={styles.form}>
         <div className={styles.inputField}>
           <label>Email</label>
           <input type="text" {...register("email", { required: true })} />
@@ -73,13 +78,13 @@ export const Register = (props) => {
           <label>Confirm Password</label>
           <input
             type="password"
-            {...register("confirm-password", { required: true })}
+            {...register("confirmPassword", { required: true })}
           />{" "}
         </div>
         <div className={styles.submitBUttonContainer}>
           <SubmitButton text="Submit" onClick={handleSubmit(onSubmit)} />
         </div>
-      </form>
+      </div>
     </div>
   );
 };
