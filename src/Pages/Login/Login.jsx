@@ -1,9 +1,9 @@
-import { OrganizationLoginForm } from "../../Components/OrganizationLoginForm/OrganizationLoginForm";
-import { SpeakerLoginForm } from "../../Components/SpeakerLoginForm/SpeakerLoginForm";
+import { OrganizationLoginForm } from '../../Components/OrganizationLoginForm/OrganizationLoginForm';
+import { SpeakerLoginForm } from '../../Components/SpeakerLoginForm/SpeakerLoginForm';
 
 export const Login = (props) => {
   const container =
-    props.type !== "organization" ? (
+    props.type !== 'organization' ? (
       <SpeakerLoginForm></SpeakerLoginForm>
     ) : (
       <OrganizationLoginForm></OrganizationLoginForm>
