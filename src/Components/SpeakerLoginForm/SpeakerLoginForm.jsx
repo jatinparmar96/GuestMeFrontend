@@ -1,18 +1,14 @@
 //@ts-check
 import { useForm } from 'react-hook-form';
 import { useRecoilState } from 'recoil';
+import { loginSpeaker } from '../../Api/Speaker.service';
 import { SubmitButton } from '../../Components/SubmitButton/SubmitButton';
 import { AuthError } from '../../Errors/AuthError';
 import tokenAtom from '../../Recoil/Authentication/index';
 
-import { API_URL } from '../../Utils/Constants';
-import {
-  getSpeakerInformationFromLocalStorage,
-  setSpeakerInformation,
-} from '../../Utils/Utils';
 
 export const SpeakerLoginForm = (props) => {
-  const [token, setToken] = useRecoilState(tokenAtom);
+  const [, setToken] = useRecoilState(tokenAtom);
 
   const {
     register,
@@ -21,30 +17,16 @@ export const SpeakerLoginForm = (props) => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    try {
-      const res = await fetch(`${API_URL.SPEAKER_LOGIN}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      if (res.ok === false) {
-        const error = await res.json();
-        throw new AuthError(error.message);
-      }
-      const responseToken = (await res.json()).token;
 
-      if (responseToken === undefined) {
+    try {
+      const response = await loginSpeaker(data)
+      if (response.error) throw new AuthError(response.error)
+
+      if (response.data === undefined) {
         throw new AuthError('Auth failed, token is undefined');
       }
-      setToken(responseToken);
-      const result = setSpeakerInformation(responseToken);
-      if (result) {
-        console.log('storage: ', getSpeakerInformationFromLocalStorage());
-        console.log('Login success, your token has been saved as:');
-        console.log(token);
-      }
+      setToken(response.data.token);
+
     } catch (error) {
       console.error(error);
     }

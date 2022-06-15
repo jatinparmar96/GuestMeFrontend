@@ -9,7 +9,7 @@ import { AuthError } from '../../Errors/AuthError';
 import { API_URL } from '../../Utils/Constants';
 import {
   getSpeakerInformationFromLocalStorage,
-  setSpeakerInformation,
+  setSpeakerInformation
 } from '../../Utils/Utils';
 import styles from './Register.module.scss';
 
@@ -22,6 +22,10 @@ export const Register = (props) => {
     // formState: { errors },
   } = useForm();
 
+  /**
+   * TODO: Refactor Using service api
+   * @param {*} data
+   */
   const onSubmit = async (data) => {
     console.log('data: ', data);
     try {
