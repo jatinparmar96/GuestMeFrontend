@@ -36,3 +36,26 @@ export const loginSpeaker = async (loginData) => {
     return { error };
   }
 };
+
+/**
+ *
+ * @param {import('./ApiType').RegisterSpeakerData} registerData
+ * @returns {import('./ApiType').RegisterSpeakerResponse}
+ */
+export const registerSpeaker = async (registerData) => {
+  try {
+    const { data, status } = await post(
+      SPEAKER_ENDPOINT.register,
+      registerData
+    );
+    const result = setSpeakerInformation(data.token);
+    if (result) {
+      console.log('storage: ', getSpeakerInformationFromLocalStorage());
+      console.log('Login success, your token has been saved as:');
+      console.log(data.token);
+    }
+    return { data, status };
+  } catch (error) {
+    return { error };
+  }
+};

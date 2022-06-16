@@ -6,7 +6,6 @@ import { SubmitButton } from '../../Components/SubmitButton/SubmitButton';
 import { AuthError } from '../../Errors/AuthError';
 import tokenAtom from '../../Recoil/Authentication/index';
 
-
 export const SpeakerLoginForm = (props) => {
   const [, setToken] = useRecoilState(tokenAtom);
 
@@ -17,16 +16,16 @@ export const SpeakerLoginForm = (props) => {
   } = useForm();
 
   const onSubmit = async (data) => {
-
     try {
-      const response = await loginSpeaker(data)
-      if (response.error) throw new AuthError(response.error)
+      const response = await loginSpeaker(data);
+      if (response.error) {
+        throw new AuthError(response.error);
+      }
 
       if (response.data === undefined) {
         throw new AuthError('Auth failed, token is undefined');
       }
       setToken(response.data.token);
-
     } catch (error) {
       console.error(error);
     }
