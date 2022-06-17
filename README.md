@@ -76,12 +76,19 @@ Then copy and paste the following into the file and save:
 
 _More Options will be added later_
 
-| Key    | Value                                                                                                                |
-| ------ | -------------------------------------------------------------------------------------------------------------------- |
-| MODE   | development                                                                                                          |
-| DOMAIN | localhost ([guestme.netlify.com](https://guestme.netlify.com) in production, if not specified defaults to localhost) |
+Default values are shown inside brackets()
 
----
+| Key                      | Value                                                 |
+| ------------------------ | ----------------------------------------------------- |
+| REACT_APP_MODE           | (DEVELOPMENT) \| PRODUCTION                           |
+| REACT_APP_ENDPOINT       | Production Server Endpoint (guestmeapp.herokuapp.com) |
+| REACT_APP_PROTOCOL       | Production Server Protocol [http \| (https)]          |
+| REACT_APP_LOCAL_ENDPOINT | Local Server Endpoint (localhost:8080)                |
+| REACT_APP_LOCAL_PROTOCOL | Local Server Protocol [(http) \| https]               |
+
+## Note
+
+The app mode decides which server the react app will try to connect for backend. If the value for `REACT_APP_MODE` is `DEVELOPMENT` it will look for local backend server running at port `8080`. If you want to connect to `heroku` server use `REACT_APP_MODE` as `PRODUCTION`
 
 ### Scripts
 

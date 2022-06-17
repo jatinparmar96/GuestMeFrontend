@@ -6,15 +6,13 @@ import tokenAtom from '../../Recoil/Authentication/index';
 
 import { SubmitButton } from '../../Components/SubmitButton/SubmitButton';
 import { AuthError } from '../../Errors/AuthError';
-import { API_URL } from '../../Utils/Constants';
-import {
-  getSpeakerInformationFromLocalStorage,
-  setSpeakerInformation,
-} from '../../Utils/Utils';
+
+import { registerSpeaker } from '../../Api/Speaker.service';
+
 import styles from './Register.module.scss';
 
 export const Register = (props) => {
-  const [token, setToken] = useRecoilState(tokenAtom);
+  const [, setToken] = useRecoilState(tokenAtom);
 
   const {
     register,
@@ -22,35 +20,20 @@ export const Register = (props) => {
     // formState: { errors },
   } = useForm();
 
+  /**
+   * @param {*} data
+   */
   const onSubmit = async (data) => {
-    console.log('data: ', data);
     try {
-      const res = await fetch(`${API_URL.SPEAKER_REGISTER}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (res.ok === false) {
-        const error = await res.json();
-        throw new AuthError(error.message);
+      const response = await registerSpeaker(data);
+      if (response.error) {
+        throw new AuthError(response.error);
       }
 
-      const responseToken = (await res.json()).token;
-
-      if (responseToken === undefined) {
+      if (response.data === undefined) {
         throw new AuthError('Auth failed, token is undefined');
       }
-
-      setToken(responseToken);
-      const result = setSpeakerInformation(responseToken);
-      if (result) {
-        console.log('storage: ', getSpeakerInformationFromLocalStorage());
-        console.log('Register success, your token has been saved as:');
-        console.log(token);
-      }
+      setToken({ name: 'token', value: response.data.token });
     } catch (error) {
       console.error(error);
     }
