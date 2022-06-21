@@ -5,6 +5,7 @@ import { Header } from './Containers/Header/Header';
 
 import { Register } from './Pages/Register/Register';
 import { Login } from './Pages/Login/Login';
+import { FindASpeaker } from './Pages/FindASpeaker/FindASpeaker';
 
 import styles from './App.module.scss';
 import { SpeakerProfile } from './Pages/SpeakerProfile/SpeakerProfile';
@@ -18,6 +19,7 @@ const App = () => {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/find-a-speaker" element={<FindASpeaker />} />
           <Route
             path="/speaker-profile:speakerId"
             element={<SpeakerProfile />}

@@ -1,0 +1,8 @@
+.speakersHeading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .paging {
+    align-self: flex-end;
+  }
+}
