@@ -3,11 +3,12 @@ import { Route, Routes } from 'react-router-dom';
 import { Footer } from './Containers/Footer/Footer';
 import { Header } from './Containers/Header/Header';
 
-import { Register } from './Pages/Register/Register';
-import { Login } from './Pages/Login/Login';
 import { FindASpeaker } from './Pages/FindASpeaker/FindASpeaker';
+import { Login } from './Pages/Login/Login';
+import { Register } from './Pages/Register/Register';
 
 import styles from './App.module.scss';
+import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
 import { SpeakerProfile } from './Pages/SpeakerProfile/SpeakerProfile';
 
 /**@type {React.FC<any>} */
@@ -25,6 +26,7 @@ const App = () => {
             element={<SpeakerProfile />}
           />
           <Route path="/" />
+          <Route path="/update/profile" element = {<SpeakerUpdateProfile />} />
         </Routes>
       </main>
       <Footer></Footer>
