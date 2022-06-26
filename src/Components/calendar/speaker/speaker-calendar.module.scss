@@ -1,10 +1,13 @@
 .example {
   background-color: teal;
+  color: white;
   &:hover,
   &:focus {
     background-color: lighten(teal, 50) !important;
+    color: black;
   }
   &:focus:not(:hover) {
     background-color: teal !important;
+    color: white;
   }
 }

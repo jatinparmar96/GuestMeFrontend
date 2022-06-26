@@ -10,6 +10,11 @@ const compareDatesFn = (date1, date2) =>
 const SpeakerCalendar = (props) => {
   const [dates, setDates] = useState(props.value || []);
 
+  /**
+   * TODO:
+   * Don't allow to select past dates
+   * Allow Recurring function (optional)
+   */
   const handleCalenderDateChange = (e) => {
     const index = dates.findIndex((item) => compareDatesFn(item, new Date(e)));
 
@@ -37,14 +42,14 @@ const SpeakerCalendar = (props) => {
   };
 
   // Pass value prop only if valid value exists
-  if (dates && dates.length) {
-    CalenderProps.value = dates;
-  }
+  // if (dates && dates.length) {
+  //   CalenderProps.value = dates;
+  // }
 
   return (
     <>
       <input type="text" className="custom-input"></input>
-      <Calendar {...CalenderProps} />
+      <Calendar {...CalenderProps} selectRange={false} />
     </>
   );
 };
