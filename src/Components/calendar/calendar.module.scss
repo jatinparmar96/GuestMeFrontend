@@ -1,6 +1,7 @@
+//TODO: Find a better way rather than using !important
 .example {
-  background-color: teal;
-  color: white;
+  background-color: teal !important;
+  color: white !important;
   &:hover,
   &:focus {
     background-color: lighten(teal, 50) !important;
