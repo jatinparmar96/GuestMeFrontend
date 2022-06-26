@@ -4,7 +4,9 @@ import { OrganizationLoginForm } from '../../Components/OrganizationLoginForm/Or
 import { SpeakerLoginForm } from '../../Components/SpeakerLoginForm/SpeakerLoginForm';
 import { addDays } from '../../Utils/Utils';
 
+// !Remove after test
 const today = new Date();
+
 export const Login = (props) => {
   const container =
     props.type !== 'organization' ? (
