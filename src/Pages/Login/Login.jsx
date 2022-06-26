@@ -1,3 +1,4 @@
+import SpeakerCalendar from '../../Components/calendar/speaker/speaker-calendar';
 import { OrganizationLoginForm } from '../../Components/OrganizationLoginForm/OrganizationLoginForm';
 import { SpeakerLoginForm } from '../../Components/SpeakerLoginForm/SpeakerLoginForm';
 
@@ -9,5 +10,10 @@ export const Login = (props) => {
       <OrganizationLoginForm></OrganizationLoginForm>
     );
 
-  return <div>{container}</div>;
+  return (
+    <div>
+      {container}
+      <SpeakerCalendar />
+    </div>
+  );
 };
