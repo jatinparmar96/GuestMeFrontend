@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import Calendar from 'react-calendar';
 import { compareDatesFn } from '../../../Utils/Utils';
-import style from '../calendar.module.scss';
+import '../calendar.scss';
 
 const OrganizationCalendar = (props) => {
   const [dates] = useState(props.value || []);
-
   const handleCalenderDateChange = (e) => {
     // Open Booking Modal
     if (props.onSelect) {
@@ -18,7 +17,7 @@ const OrganizationCalendar = (props) => {
     return view === 'month' &&
       dates &&
       dates.some((item) => compareDatesFn(item, date))
-      ? style.example
+      ? 'highlight'
       : '';
   };
 
@@ -27,7 +26,9 @@ const OrganizationCalendar = (props) => {
     onChange: handleCalenderDateChange,
     tileClassName: assignTileClass,
   };
-  return <Calendar {...calendarProps}></Calendar>;
+  return (
+    <Calendar className="organization-calendar" {...calendarProps}></Calendar>
+  );
 };
 
 export default OrganizationCalendar;

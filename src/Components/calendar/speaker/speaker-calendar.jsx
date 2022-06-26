@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { compareDatesFn } from '../../../Utils/Utils';
-import style from '../calendar.module.scss';
+import '../calendar.scss';
 
 const SpeakerCalendar = (props) => {
   const [dates, setDates] = useState(props.value || []);
@@ -28,7 +28,7 @@ const SpeakerCalendar = (props) => {
     return view === 'month' &&
       dates &&
       dates.some((item) => compareDatesFn(item, date))
-      ? style.example
+      ? 'highlight'
       : '';
   };
 
@@ -45,7 +45,11 @@ const SpeakerCalendar = (props) => {
 
   return (
     <>
-      <Calendar {...CalenderProps} />
+      <Calendar
+        locale="en-US"
+        className="speaker-calendar"
+        {...CalenderProps}
+      />
     </>
   );
 };
