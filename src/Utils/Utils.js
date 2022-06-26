@@ -37,3 +37,23 @@ const decodePayloadFromToken = (token) => {
     return null;
   }
 };
+
+/**
+ * ?Maybe Find a better way in the future
+ * @param {*} date1
+ * @param {*} date2
+ * @returns
+ */
+export const compareDatesFn = (date1, date2) =>
+  date1.setHours(0, 0, 0, 0) === date2.setHours(0, 0, 0, 0);
+
+/**
+ * Helper class to add days to date
+ * @param {Date} date
+ * @param {number} days
+ */
+export const addDays = (date, days) => {
+  const newDate = new Date(date);
+  newDate.setDate(newDate.getDate() + days);
+  return newDate;
+};

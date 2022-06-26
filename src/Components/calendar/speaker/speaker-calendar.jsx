@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import style from './speaker-calendar.module.scss';
-
-// Maybe Find a better way in the future
-const compareDatesFn = (date1, date2) =>
-  date1.setHours(0, 0, 0, 0) === date2.setHours(0, 0, 0, 0);
+import { compareDatesFn } from '../../../Utils/Utils';
+import style from '../calendar.module.scss';
 
 const SpeakerCalendar = (props) => {
   const [dates, setDates] = useState(props.value || []);
@@ -48,8 +45,7 @@ const SpeakerCalendar = (props) => {
 
   return (
     <>
-      <input type="text" className="custom-input"></input>
-      <Calendar {...CalenderProps} selectRange={false} />
+      <Calendar {...CalenderProps} />
     </>
   );
 };
