@@ -3,12 +3,13 @@ import { Route, Routes } from 'react-router-dom';
 import { Footer } from './Containers/Footer/Footer';
 import { Header } from './Containers/Header/Header';
 
-import { Register } from './Pages/Register/Register';
-import { Login } from './Pages/Login/Login';
 import { FindASpeaker } from './Pages/FindASpeaker/FindASpeaker';
+import { Login } from './Pages/Login/Login';
+import { Register } from './Pages/Register/Register';
 
 import styles from './App.module.scss';
 import { SpeakerProfile } from './Pages/SpeakerProfile/SpeakerProfile';
+import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 
 /**@type {React.FC<any>} */
 const App = () => {
@@ -23,6 +24,10 @@ const App = () => {
           <Route
             path="/speaker-profile:speakerId"
             element={<SpeakerProfile />}
+          />
+          <Route
+            path="/speakers/:id"
+            element={<ViewSpeaker />}
           />
           <Route path="/" />
         </Routes>
