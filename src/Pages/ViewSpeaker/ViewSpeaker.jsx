@@ -3,6 +3,8 @@ import { getSpeaker } from '../../Api/Speaker.service';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformation/SpeakerPrimaryInformation';
 import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryContainer/Speaker_SecondaryContainer';
+import SpeakerTertiaryInformation from '../../Containers/Speaker_TertiaryContainer/Speaker_TertiaryContainer';
+
 const ViewSpeaker = props => {
 
   const [ selectedSpeaker, setSelectedSpeaker ] = useState("62af5fb317f8d0a3e1fb7d5f");
@@ -30,6 +32,9 @@ const ViewSpeaker = props => {
         </div>
         <div>
           <SpeakerSecondaryInformation speaker={speakerData} />
+        </div>
+        <div>
+          <SpeakerTertiaryInformation speaker={speakerData} />
         </div>
       </>
         : null}
