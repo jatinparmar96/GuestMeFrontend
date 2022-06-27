@@ -1,32 +1,53 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { useState } from 'react';
-
+import { CheckBoxItem } from '../CheckBoxItem/CheckBoxItem';
 import style from './RangeSlider.module.scss';
 
 const minDistance = 0;
 
-export const RangeSlider = () => {
+export const RangeSlider = (props) => {
+  const { setPrice } = props;
   const [value, setValue] = useState([0, 500]);
+  const [checkedFree, setCheckedFree] = useState(false);
 
-  const handleChange1 = (event, newValue, activeThumb) => {
+  const handleChange = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
       return;
     }
 
-    if (activeThumb === 0) {
-      setValue([Math.min(newValue[0], value[1] - minDistance), value[1]]);
-    } else {
-      setValue([value[0], Math.max(newValue[1], value[0] + minDistance)]);
+    let newValues =
+      activeThumb === 0
+        ? [Math.min(newValue[0], value[1] - minDistance), value[1]]
+        : [value[0], Math.max(newValue[1], value[0] + minDistance)];
+
+    setAllPriceStates(newValues);
+    setCheckedFree(newValues[0] === 0 && newValues[1] === 0);
+  };
+
+  const setAllPriceStates = (newValues) => {
+    setValue(newValues);
+    setPrice(newValues);
+  };
+
+  const handleClickFree = ({ target: { checked } }) => {
+    if (checked) {
+      setAllPriceStates([0, 0]);
+      setCheckedFree(true);
     }
   };
 
   return (
     <Box sx={{ width: '100%' }}>
+      <CheckBoxItem
+        label="Free"
+        onClick={handleClickFree}
+        checked={checkedFree}
+      />
       <Slider
         getAriaLabel={() => 'Minimum distance'}
         value={value}
-        onChange={handleChange1}
+        onChange={handleChange}
         valueLabelDisplay="auto"
         getAriaValueText={(value) => `${value}`}
         disableSwap
