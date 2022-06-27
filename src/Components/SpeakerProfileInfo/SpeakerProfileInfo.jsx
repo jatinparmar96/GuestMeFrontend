@@ -11,7 +11,7 @@ const SpeakerInfo = (props) => {
         <div>
           <section className='profileMainInfo'>
             <figure>
-               <img src={props.speaker.profilePicture} alt={`${props.speaker.fullName} Profile Picture` } />
+               <img src={props.speaker.profilePicture} alt={`${props.speaker.fullName}` } />
             </figure>
             <p className='reviewsQuantity'>{props.speaker.reviewsQuantity} Reviews</p>
             {/* TODO: Add star */}

@@ -1,6 +1,7 @@
 import SpeakerAvailability from '../../Components/SpeakersAvailability/SpeakerAvailability';
 import SpeakerVideo from '../../Components/SpeakersVideo/SpeakerVideo';
 import { RequestButtonWide } from '../../Components/SubmitButton/SubmitButton';
+
 const SpeakerTertiaryInformation = props => {
 
 

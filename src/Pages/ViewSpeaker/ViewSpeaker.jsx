@@ -5,9 +5,10 @@ import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformati
 import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryContainer/Speaker_SecondaryContainer';
 import SpeakerTertiaryInformation from '../../Containers/Speaker_TertiaryContainer/Speaker_TertiaryContainer';
 
-const ViewSpeaker = props => {
+const ViewSpeaker = (props) => {
 
-  const [ selectedSpeaker, setSelectedSpeaker ] = useState("62af5fb317f8d0a3e1fb7d5f");
+  // const [ selectedSpeaker, setSelectedSpeaker ] = useState("62af5fb317f8d0a3e1fb7d5f");
+  const selectedSpeaker = "62af5fb317f8d0a3e1fb7d5f";
   const [ speakerData, setSpeakerData ] = useState({});
   useEffect(() => {
     getSpeaker(selectedSpeaker)
