@@ -1,15 +1,19 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CheckBoxItem } from '../CheckBoxItem/CheckBoxItem';
 import style from './RangeSlider.module.scss';
 
 const minDistance = 0;
 
 export const RangeSlider = (props) => {
-  const { setPrice } = props;
-  const [value, setValue] = useState([0, 500]);
+  const { setPrice, priceMax } = props;
+  const [value, setValue] = useState([0, priceMax]);
   const [checkedFree, setCheckedFree] = useState(false);
+
+  useEffect(() => {
+    setAllPriceStates([0, priceMax]);
+  }, [priceMax]);
 
   const handleChange = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -51,6 +55,9 @@ export const RangeSlider = (props) => {
         valueLabelDisplay="auto"
         getAriaValueText={(value) => `${value}`}
         disableSwap
+        min={0}
+        max={priceMax}
+        defaultValue={[0, priceMax]}
       />
       <div className={style.displayValueContainer}>
         <span>${value[0]}</span>

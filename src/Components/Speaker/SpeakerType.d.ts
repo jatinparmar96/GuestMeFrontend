@@ -1,9 +1,20 @@
-export type Speaker = {
+// export type Speaker = {
+//   id: string;
+//   tagline?: string;
+//   profilePicture: string;
+//   expertise: string[];
+//   reviewCount: number;
+//   fullName: string;
+// };
+
+export type SpeakerResponse = {
   id: string;
-  userName: string;
-  userLastname: string;
-  title?: string;
+  fullName: string;
+  tagline: string;
   profilePicture: string;
-  expertise: string[];
-  reviewCount: number;
+  conditions: {
+    interests: string[];
+  };
+
+  reviewsQuantity: number;
 };
