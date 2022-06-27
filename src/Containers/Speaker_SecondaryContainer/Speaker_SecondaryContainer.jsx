@@ -19,11 +19,13 @@ const SpeakerSecondaryInformation = props => {
             text="Save"
             // onClick={}
           />
+        </div>
+        <div className='RequestButtonContainer'>
           <RequestButton
             text="Request"
             // onClick={}
           />
-      </div>
+        </div>
       </div>
     </>
   );

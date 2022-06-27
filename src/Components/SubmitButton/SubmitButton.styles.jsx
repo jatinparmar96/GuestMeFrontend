@@ -18,6 +18,18 @@ export const RequestButtonContainer = styled.button`
   box-sizing: border-box;
 `;
 
+export const RequestButtonContainerWide = styled.button`
+  background-color: #35AFAC;
+  color: #FFFFFF;
+  text-align: center;
+  letter-spacing: 0.05em;
+  width: 402px;
+  height: 50px;
+  border-radius: 4px;
+  border: 2px solid #35AFAC;
+  box-sizing: border-box;
+`;
+
 export const SaveButtonContainer = styled.button`
   background-color: white;
   color: black;

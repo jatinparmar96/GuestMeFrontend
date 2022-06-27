@@ -1,4 +1,4 @@
-import { RequestButtonContainer, SaveButtonContainer, SubmitButtonContainer } from './SubmitButton.styles';
+import { RequestButtonContainer, RequestButtonContainerWide, SaveButtonContainer, SubmitButtonContainer } from './SubmitButton.styles';
 
 /**
  * @type {React.FC<import('./SubmitButtonTypes').SubmitButtonProps>}
@@ -19,4 +19,10 @@ export const RequestButton= (props) => (
   <RequestButtonContainer onClick={props.onClick}>
     {props.text}
   </RequestButtonContainer>
+);
+
+export const RequestButtonWide= (props) => (
+  <RequestButtonContainerWide onClick={props.onClick}>
+    {props.text}
+  </RequestButtonContainerWide>
 );
