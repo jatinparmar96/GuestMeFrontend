@@ -13,6 +13,7 @@ export const RangeSlider = (props) => {
 
   useEffect(() => {
     setAllPriceStates([0, priceMax]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [priceMax]);
 
   const handleChange = (event, newValue, activeThumb) => {
