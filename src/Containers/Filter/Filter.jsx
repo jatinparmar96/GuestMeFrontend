@@ -1,6 +1,9 @@
 import React from 'react';
 
-import CheckBoxItem from '../../Components/CheckBoxItem/CheckBoxItem';
+import { Accordion } from '../../Components/Accordion/Accordion';
+
+import { CheckBoxItem } from '../../Components/CheckBoxItem/CheckBoxItem';
+import { RangeSlider } from '../../Components/RangeSlider/RangeSlider';
 
 import style from './Filter.module.scss';
 
@@ -8,52 +11,45 @@ import style from './Filter.module.scss';
 export const Filter = (props) => {
   return (
     <form className={style.form}>
-      <fieldset className={style.fieldset}>
-        <legend>Area of expertise</legend>
-        <CheckBoxItem label="finance" />
-        <CheckBoxItem label="Law" />
-        <CheckBoxItem label="Arts" />
-        <CheckBoxItem label="Science" />
-        <CheckBoxItem
-          label="Health & Well-being"
-          propName="HealthAndWellbeing"
-        />
-      </fieldset>
-      <fieldset className={style.fieldset}>
-        <legend>Price per hour</legend>
-        <CheckBoxItem label="Free" />
-        <div className={style.slider}>
-          <input
-            type="range"
-            name="pricePerHour"
-            id="pricePerHour"
-            min="0"
-            max="500"
+      <Accordion label="Area of expertise">
+        <fieldset className={style.fieldset}>
+          <CheckBoxItem label="finance" />
+          <CheckBoxItem label="Law" />
+          <CheckBoxItem label="Arts" />
+          <CheckBoxItem label="Science" />
+          <CheckBoxItem
+            label="Health & Well-being"
+            propName="HealthAndWellbeing"
           />
-          <input
-            type="range"
-            name="pricePerHour"
-            id="pricePerHour"
-            min="0"
-            max="500"
-          />
-        </div>
-      </fieldset>
-      <fieldset className={style.fieldset}>
-        <legend>Delivery Method</legend>
-        <CheckBoxItem label="online" />
-        <CheckBoxItem label="in-person" />
-      </fieldset>
-      <fieldset className={style.fieldset}>
-        <legend>Language</legend>
-        <CheckBoxItem label="English" />
-        <CheckBoxItem label="Spanish" />
-      </fieldset>
-      <fieldset className={style.fieldset}>
-        <legend>Location</legend>
-        <CheckBoxItem label="Vancouver" />
-        <CheckBoxItem label="Burnaby" />
-      </fieldset>
+        </fieldset>
+      </Accordion>
+      <Accordion label="Price per hour">
+        <fieldset className={style.fieldset}>
+          <CheckBoxItem label="Free" />
+          <div className={style.slider}>
+            <RangeSlider />
+          </div>
+        </fieldset>
+      </Accordion>
+      <Accordion label="Delivery Method">
+        <fieldset className={style.fieldset}>
+          <CheckBoxItem label="online" />
+          <CheckBoxItem label="in-person" />
+        </fieldset>
+      </Accordion>
+      <Accordion label="Language">
+        <fieldset className={style.fieldset}>
+          <CheckBoxItem label="English" />
+          <CheckBoxItem label="Spanish" />
+        </fieldset>
+      </Accordion>
+      <Accordion label="Location">
+        <fieldset className={style.fieldset}>
+          <CheckBoxItem label="Vancouver" />
+          <CheckBoxItem label="Burnaby" />
+        </fieldset>
+      </Accordion>
     </form>
   );
 };
+

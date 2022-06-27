@@ -4,8 +4,8 @@ import style from './SpeakerList.module.scss';
 export const SpeakerList = ({ speakers }) => {
   const content =
     speakers !== undefined
-      ? speakers.map((speaker) => (
-          <Speaker speaker={speaker} key={speaker.id} />
+      ? speakers.map((speaker, index) => (
+          <Speaker speaker={speaker} key={index} />
         ))
       : null;
 
