@@ -27,7 +27,11 @@ const OrganizationCalendar = (props) => {
     tileClassName: assignTileClass,
   };
   return (
-    <Calendar className="organization-calendar" {...calendarProps}></Calendar>
+    <Calendar
+      locale="en-US"
+      className="organization-calendar"
+      {...calendarProps}
+    ></Calendar>
   );
 };
 
