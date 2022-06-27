@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getSpeaker } from '../../Api/Speaker.service';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformation/SpeakerPrimaryInformation';
-
+import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryContainer/Speaker_SecondaryContainer';
 const ViewSpeaker = props => {
 
   const [ selectedSpeaker, setSelectedSpeaker ] = useState("62af5fb317f8d0a3e1fb7d5f");
@@ -19,11 +19,20 @@ const ViewSpeaker = props => {
 
   return (
     <>
-      <div>
-        <PageHeading text="Find a speaker" />
-        <div>Home {'>'} Find a speaker {'>'} {speakerData.fullName }</div>
-        <SpeakerPrimaryInformation speaker={speakerData} />
-      </div>
+      {speakerData ?
+      <>
+        <div>
+          <PageHeading text="Find a speaker" />
+          <div>Home {'>'} Find a speaker {'>'} {speakerData.fullName }</div>
+        </div>
+        <div>
+          <SpeakerPrimaryInformation speaker={speakerData} />
+        </div>
+        <div>
+          <SpeakerSecondaryInformation speaker={speakerData} />
+        </div>
+      </>
+        : null}
     </>
   );
 }

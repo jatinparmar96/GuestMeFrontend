@@ -43,7 +43,7 @@ const SpeakerInfo = (props) => {
             </div>
             <div>
               <h4>Location</h4>
-              <p>{props.location}</p>
+              <p>{props.speaker.location}</p>
             </div>
 
 
