@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import style from './CheckBoxItem.module.scss';
 
 /**@type {React.FC<{label: string, propName?: string, onClick?: Function}>} */
@@ -6,9 +6,15 @@ export const CheckBoxItem = ({
   name,
   label,
   propName = label,
-  onClick,
+  onChange,
   checked,
 }) => {
+  const checkboxRef = useRef();
+
+  useEffect(() => {
+    checkboxRef.current.checked = checked;
+  }, [checked]);
+
   return (
     <div className={style.row}>
       <input
@@ -16,8 +22,8 @@ export const CheckBoxItem = ({
         name={name}
         value={propName}
         id={propName}
-        onClick={onClick ? (event) => onClick(event) : null}
-        checked={checked}
+        onChange={onChange ? (event) => onChange(event) : null}
+        ref={checkboxRef}
       />
       <label htmlFor={propName}>{label}</label>
     </div>

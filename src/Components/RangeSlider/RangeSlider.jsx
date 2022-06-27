@@ -41,7 +41,7 @@ export const RangeSlider = (props) => {
     <Box sx={{ width: '100%' }}>
       <CheckBoxItem
         label="Free"
-        onClick={handleClickFree}
+        onChange={handleClickFree}
         checked={checkedFree}
       />
       <Slider
