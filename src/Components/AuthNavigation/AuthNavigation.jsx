@@ -13,6 +13,11 @@ export const AuthNavigation = () => {
       <Link to="/find-a-speaker" className={styles.link}>
         Find a Speaker
       </Link>
+
+      {/* TODO: Remove this link  */}
+      <Link to="/speakers/update/profile" className={styles.link}>
+        Update Profile
+      </Link>
     </div>
   );
 };
