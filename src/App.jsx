@@ -10,6 +10,8 @@ import { Register } from './Pages/Register/Register';
 import styles from './App.module.scss';
 import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
+// Required for calendar
+import 'react-calendar/dist/Calendar.css';
 
 /**@type {React.FC<any>} */
 const App = () => {
