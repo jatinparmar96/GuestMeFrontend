@@ -16,8 +16,7 @@ const SpeakerInfo = (props) => {
             <p className='reviewsQuantity'>{props.speaker.reviewsQuantity} Reviews</p>
             {/* TODO: Add star */}
             <h3>{props.speaker.fullName}</h3>
-            <p className='tagline'></p>
-            {/* TODO: Add tagline to Schema and update*/}
+            <p className='tagline'>{ props.speaker.tagline}</p>
             <div>
               <h4>Areas of expertise</h4>
               <p>{props.speaker.conditions.areas.join(", ")}</p>

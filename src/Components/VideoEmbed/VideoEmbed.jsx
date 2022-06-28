@@ -4,7 +4,7 @@ const VideoEmbed = (props) => {
     return url.split("v=")[1].substring(0,11)
   }
 
-  const videoID = getVideoID(props.video[ 0 ]);
+  const videoID = getVideoID(props.video);
 
   return (
 

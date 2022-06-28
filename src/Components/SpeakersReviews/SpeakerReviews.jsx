@@ -1,4 +1,4 @@
-import ShowMore from '../ReadMore/ReadMore';
+import ShowMore from '../ShowMore/ShowMore';
 
 const SpeakerReviews = (props) => {
 
@@ -13,6 +13,7 @@ const SpeakerReviews = (props) => {
                   <p>{new Date(review.createdAt).toLocaleDateString('en-us', { year: "numeric", month: "long", day: "numeric" })}</p>
                   <div className='reviewContainer'>
                     <h5>{review.organization.name}</h5>
+                    {/* {TODO: update length} */}
                     <p>{review.comment.length > 5 ?
                       <>
                       { review.comment.substring(0, 5) }

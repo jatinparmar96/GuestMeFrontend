@@ -5,7 +5,7 @@ const SpeakerCertifications = (props) => {
         <div>
           <section className='profileCertifications'>
             <h4>Certifications</h4>
-            <p>{props.speaker.conditions.certifications.join(", ")}</p>
+            <p>{props.speaker.certifications.join(", ")}</p>
           </section>
         </div>
         </>

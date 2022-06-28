@@ -5,7 +5,7 @@ const SpeakerSkills = (props) => {
         <div>
           <section className='profileSkills'>
             <h4>Skills</h4>
-            {props.speaker.conditions.interests
+            {props.speaker.skills
               .map((skill, index) =>
                 <span key={index}>{skill}</span>
             )}

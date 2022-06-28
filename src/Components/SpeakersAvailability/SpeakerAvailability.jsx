@@ -7,6 +7,7 @@ const SpeakerAvailability= (props) => {
     <>
       <div className='calendarContainer'>
         <h4>Availability</h4>
+        {/* {TODO: Add Calendar} */}
         <p>Calendar here</p>
 
       </div>

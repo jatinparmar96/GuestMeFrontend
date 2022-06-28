@@ -5,7 +5,7 @@ const SpeakerAboutMe = (props) => {
         <div>
           <section className='profileAboutMe'>
             <h4>About me</h4>
-            <p>{props.speaker.conditions.about}</p>
+            <p>{props.speaker.about}</p>
           </section>
 
         </div>

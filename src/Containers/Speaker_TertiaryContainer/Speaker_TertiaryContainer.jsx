@@ -8,7 +8,7 @@ const SpeakerTertiaryInformation = props => {
   return (
     <>
       <div>
-        <SpeakerVideo speaker={props.speaker} />
+        <SpeakerVideo video={props.speaker.videos} />
         <SpeakerAvailability />
         <div className='RequestButtonContainer'>
           <RequestButtonWide

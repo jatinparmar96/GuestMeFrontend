@@ -7,7 +7,7 @@ const SpeakerVideo = (props) => {
     <>
       <div className='videoContainer'>
         <h4>Video</h4>
-        <VideoEmbed video={ props.speaker.conditions.videos} />
+        <VideoEmbed video={ props.video} />
 
       </div>
 
