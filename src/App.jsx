@@ -8,6 +8,7 @@ import { Login } from './Pages/Login/Login';
 import { Register } from './Pages/Register/Register';
 
 import styles from './App.module.scss';
+import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
 import { SpeakerProfile } from './Pages/SpeakerProfile/SpeakerProfile';
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 
@@ -30,6 +31,7 @@ const App = () => {
             element={<ViewSpeaker />}
           />
           <Route path="/" />
+          <Route path="/speakers/update/profile" element = {<SpeakerUpdateProfile />} />
         </Routes>
       </main>
       <Footer></Footer>
