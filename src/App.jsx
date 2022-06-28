@@ -26,7 +26,7 @@ const App = () => {
             element={<SpeakerProfile />}
           />
           <Route path="/" />
-          <Route path="/update/profile" element = {<SpeakerUpdateProfile />} />
+          <Route path="/speakers/update/profile" element = {<SpeakerUpdateProfile />} />
         </Routes>
       </main>
       <Footer></Footer>
