@@ -1,0 +1,44 @@
+$speaker-highlight: #5fa1d0;
+$speaker-highlight-text: white;
+
+$organization-highlight: #f0a274;
+$organization-highlight-text: white;
+
+$weekend-color: #f28080;
+
+$speaker: (
+  'highlight': $speaker-highlight,
+  'highlight-text': $speaker-highlight-text,
+);
+
+$organization: (
+  'highlight': $organization-highlight,
+  'highlight-text': $organization-highlight-text,
+);
+
+$calendar-map: (
+  'speaker': $speaker,
+  'organization': $organization,
+);
+
+@each $type, $value in $calendar-map {
+  .#{$type}-calendar {
+    .react-calendar__month-view__days__day--weekend {
+      color: $weekend-color;
+    }
+
+    .highlight {
+      background-color: map-get($value, 'highlight');
+      color: map-get($value, 'highlight-text');
+      &:hover,
+      &:focus {
+        background-color: lighten(map-get($value, 'highlight'), 10) !important;
+        color: black;
+      }
+      &:focus:not(:hover) {
+        background-color: map-get($value, 'highlight');
+        color: map-get($value, 'highlight-text');
+      }
+    }
+  }
+}
