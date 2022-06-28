@@ -10,6 +10,7 @@ import { Register } from './Pages/Register/Register';
 import styles from './App.module.scss';
 import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
 import { SpeakerProfile } from './Pages/SpeakerProfile/SpeakerProfile';
+import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 
 /**@type {React.FC<any>} */
 const App = () => {
@@ -25,8 +26,12 @@ const App = () => {
             path="/speaker-profile:speakerId"
             element={<SpeakerProfile />}
           />
+          <Route
+            path="/speakers/:id"
+            element={<ViewSpeaker />}
+          />
           <Route path="/" />
-          <Route path="/update/profile" element = {<SpeakerUpdateProfile />} />
+          <Route path="/speakers/update/profile" element = {<SpeakerUpdateProfile />} />
         </Routes>
       </main>
       <Footer></Footer>
