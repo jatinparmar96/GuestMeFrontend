@@ -1,20 +1,15 @@
+import OrganizationCalendar from '../calendar/organization/organization-calendar';
 
-const SpeakerAvailability= (props) => {
-
-
+const SpeakerAvailability = (props) => {
   return (
-
     <>
-      <div className='calendarContainer'>
+      <div className="calendarContainer">
         <h4>Availability</h4>
         {/* {TODO: Add Calendar} */}
-        <p>Calendar here</p>
-
+        <OrganizationCalendar />
       </div>
-
-
-      </>
-    );
-}
+    </>
+  );
+};
 
 export default SpeakerAvailability;

@@ -10,6 +10,9 @@ export const AuthNavigation = () => {
       <Link to="/register" className={styles.link}>
         Register
       </Link>
+      <Link to="/find-a-speaker" className={styles.link}>
+        Find a Speaker
+      </Link>
     </div>
   );
 };
