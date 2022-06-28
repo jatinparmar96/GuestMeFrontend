@@ -1,32 +1,37 @@
+//@ts-check
 import style from './Speaker.module.scss';
 
+import { Link } from 'react-router-dom';
+
 export const Speaker = (props) => {
-  /**@type {import('./SpeakerType').Speaker} */
+  /**@type {import('./SpeakerType').SpeakerResponse} */
   const speaker = props.speaker;
 
   return (
     <div className={style.speakerContainer}>
       <img
         src={speaker.profilePicture}
-        alt={speaker.userName}
+        alt={speaker.fullName}
         className={style.img}
       />
       <div className={style.speakerTopRight}>
         <div className={style.speakerTop}>
-          <p className={style.review}>{speaker.reviewCount} reviews</p>
+          <p className={style.review}>{speaker.reviewsQuantity} reviews</p>
           <span>☆</span>
         </div>
-        <div>{speaker.userName + speaker.userLastname}</div>
-        <div>{speaker.title}</div>
+        <div>{speaker.fullName}</div>
+        <div>{speaker.tagline}</div>
       </div>
       <div className={style.skills}>
-        {speaker.expertise.map((expertise) => (
-          <span key={expertise} className={style.skill}>
-            {expertise}
+        {speaker.conditions.areas.map((area) => (
+          <span key={area} className={style.skill}>
+            {area}
           </span>
         ))}
       </div>
-      <button className={style.viewProfile}>View profile</button>
+      <Link to={`/speaker-profile:${speaker.id}`} className={style.viewProfile}>
+        View profile
+      </Link>
     </div>
   );
 };

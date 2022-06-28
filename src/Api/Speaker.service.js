@@ -7,12 +7,16 @@ import { get, post } from './api';
 const BASE_ENDPOINT = '/speakers';
 
 const SPEAKER_ENDPOINT = {
-  get: `${BASE_ENDPOINT}/`,
+  get: `${BASE_ENDPOINT}`,
   login: `${BASE_ENDPOINT}/login`,
   register: `${BASE_ENDPOINT}/register`,
+  getMaxPrice: `${BASE_ENDPOINT}/max-price`,
 };
-export const getSpeakers = () => {
-  return get(SPEAKER_ENDPOINT.get);
+/**
+ * @param  {string} params
+ */
+export const getSpeakers = (params) => {
+  return get(`${SPEAKER_ENDPOINT.get}${params ? `?${params}` : ''}`);
 };
 
 /**
@@ -58,4 +62,8 @@ export const registerSpeaker = async (registerData) => {
   } catch (error) {
     return { error };
   }
+};
+
+export const getMaxPrice = () => {
+  return get(`${SPEAKER_ENDPOINT.getMaxPrice}`);
 };
