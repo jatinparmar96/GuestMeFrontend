@@ -23,9 +23,9 @@ export const Speaker = (props) => {
         <div>{speaker.tagline}</div>
       </div>
       <div className={style.skills}>
-        {speaker.conditions.interests.map((interest) => (
-          <span key={interest} className={style.skill}>
-            {interest}
+        {speaker.conditions.areas.map((area) => (
+          <span key={area} className={style.skill}>
+            {area}
           </span>
         ))}
       </div>

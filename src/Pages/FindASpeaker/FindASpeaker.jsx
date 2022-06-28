@@ -33,13 +33,14 @@ export const FindASpeaker = (props) => {
     const isInPerson = deliveryMethod.includes('isInPerson');
     const [priceMin, priceMax] = price;
 
-    const query = `${areas.length > 0 ? `interests=${areas.join('_')}` : ''}${
+    const query = `${areas.length > 0 ? `&areas=${areas.join('_')}` : ''}${
       isOnline ? '&isOnline=true' : ''
     }${isInPerson ? '&isInPerson=true' : ''}${
-      languages.length > 0 ? `?language=${languages.join('_')}` : ''
+      languages.length > 0 ? `&language=${languages.join('_')}` : ''
     }${
-      locations.length > 0 ? `?areas=${locations.join('_')}` : ''
+      locations.length > 0 ? `&location=${locations.join('_')}` : ''
     }&priceMin=${priceMin}&priceMax=${priceMax}`;
+    console.log(query);
 
     const { data } = await getSpeakers(query);
     const { speakers, count } = data;
@@ -50,6 +51,7 @@ export const FindASpeaker = (props) => {
 
   useEffect(() => {
     handleChangeFilter();
+    console.log(locations);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [areas, price, deliveryMethod, languages, locations]);
 

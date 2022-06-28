@@ -13,7 +13,7 @@ export type SpeakerResponse = {
   tagline: string;
   profilePicture: string;
   conditions: {
-    interests: string[];
+    areas: string[];
   };
 
   reviewsQuantity: number;

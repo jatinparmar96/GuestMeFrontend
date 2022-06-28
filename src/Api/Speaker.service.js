@@ -7,7 +7,7 @@ import { get, post } from './api';
 const BASE_ENDPOINT = '/speakers';
 
 const SPEAKER_ENDPOINT = {
-  get: `${BASE_ENDPOINT}/`,
+  get: `${BASE_ENDPOINT}`,
   login: `${BASE_ENDPOINT}/login`,
   register: `${BASE_ENDPOINT}/register`,
   getMaxPrice: `${BASE_ENDPOINT}/max-price`,
