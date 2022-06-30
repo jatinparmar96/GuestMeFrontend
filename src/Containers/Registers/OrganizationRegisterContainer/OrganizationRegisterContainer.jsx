@@ -2,7 +2,7 @@
 import { useForm } from 'react-hook-form';
 import { useRecoilState } from 'recoil';
 import { registerOrganization } from '../../../Api/Organization.service';
-import { SubmitButton } from '../../../Components/SubmitButton/SubmitButton';
+import { SubmitButton } from '../../../Components/Buttons/Buttons';
 import { AuthError } from '../../../Errors/AuthError';
 import tokenAtom from '../../../Recoil/Authentication/index';
 import styles from '../RegisterContainer.module.scss';

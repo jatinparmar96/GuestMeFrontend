@@ -1,6 +1,13 @@
+//@ts-check
 import { useForm } from 'react-hook-form';
+import { useRecoilState } from 'recoil';
+import { loginOrganization } from '../../Api/Organization.service';
+import { AuthError } from '../../Errors/AuthError';
+import tokenAtom from '../../Recoil/Authentication/index';
+import { SubmitButton } from '../Buttons/Buttons';
 
 export const OrganizationLoginForm = (props) => {
+  const [, setToken] = useRecoilState(tokenAtom);
   const {
     register,
     handleSubmit,
@@ -8,11 +15,20 @@ export const OrganizationLoginForm = (props) => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log('data: ', data);
+    try {
+      const response = await loginOrganization(data);
+      if (response.error) {
+        throw new AuthError(response.error);
+      }
 
-    //@TODO: fetch Register API
+      if (response.data === undefined) {
+        throw new AuthError('Auth failed, token is undefined');
+      }
+      setToken(response.data.token);
+    } catch (error) {
+      console.error(error);
+    }
   };
-
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -22,7 +38,7 @@ export const OrganizationLoginForm = (props) => {
         <label>Password:</label>
         <input type="password" {...register('password', { required: true })} />
         {errors.password?.type === 'required' && 'Password is required'}
-        <input type="submit" value="Submit" />
+        <SubmitButton text="Log in" />
       </form>
     </>
   );
