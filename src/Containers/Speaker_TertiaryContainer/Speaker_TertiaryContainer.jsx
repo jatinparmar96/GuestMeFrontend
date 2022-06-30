@@ -1,16 +1,14 @@
+import { RequestButtonWide } from '../../Components/Buttons/Buttons';
 import SpeakerAvailability from '../../Components/SpeakersAvailability/SpeakerAvailability';
 import SpeakerVideo from '../../Components/SpeakersVideo/SpeakerVideo';
-import { RequestButtonWide } from '../../Components/SubmitButton/SubmitButton';
 
-const SpeakerTertiaryInformation = props => {
-
-
+const SpeakerTertiaryInformation = (props) => {
   return (
     <>
       <div>
         <SpeakerVideo video={props.speaker.videos} />
         <SpeakerAvailability />
-        <div className='RequestButtonContainer'>
+        <div className="RequestButtonContainer">
           <RequestButtonWide
             text="Request"
             // onClick={}
@@ -19,6 +17,6 @@ const SpeakerTertiaryInformation = props => {
       </div>
     </>
   );
-}
+};
 
 export default SpeakerTertiaryInformation;
