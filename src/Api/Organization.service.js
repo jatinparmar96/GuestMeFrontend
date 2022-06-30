@@ -4,34 +4,30 @@ import {
 } from '../Utils/Utils';
 import { get, post } from './api';
 
-const BASE_ENDPOINT = '/speakers';
+const BASE_ENDPOINT = '/organizations';
 
-const SPEAKER_ENDPOINT = {
+const ORGANIZATION_ENDPOINT = {
   get: `${BASE_ENDPOINT}`,
   login: `${BASE_ENDPOINT}/login`,
   register: `${BASE_ENDPOINT}/register`,
-  getMaxPrice: `${BASE_ENDPOINT}/max-price`,
-};
-/**
- * @param  {string} params
- */
-export const getSpeakers = (params) => {
-  return get(`${SPEAKER_ENDPOINT.get}${params ? `?${params}` : ''}`);
 };
 
 /**
  * @param  {string} id
  */
-export const getSpeaker = (id) => {
-  return get(SPEAKER_ENDPOINT.get + `/${id}`);
+export const getOrganization = (id) => {
+  return get(ORGANIZATION_ENDPOINT.get + `/${id}`);
 };
 
-export const loginSpeaker = async (loginData) => {
+export const loginOrganization = async (loginData) => {
   try {
-    const { data, status } = await post(SPEAKER_ENDPOINT.login, loginData);
-    const result = setAuthInformation(data.token, 'speaker');
+    const { data, status } = await post(ORGANIZATION_ENDPOINT.login, loginData);
+    const result = setAuthInformation(data.token, 'organization');
     if (result) {
-      console.log('storage: ', getAuthInformationFromLocalStorage('speaker'));
+      console.log(
+        'storage: ',
+        getAuthInformationFromLocalStorage('organization')
+      );
       console.log('Login success, your token has been saved as:');
       console.log(data.token);
     }
@@ -43,13 +39,13 @@ export const loginSpeaker = async (loginData) => {
 
 /**
  *
- * @param {import('./ApiType').RegisterSpeakerData} registerData
- * @returns {import('./ApiType').RegisterSpeakerResponse}
+ * @param {import('./ApiType').RegisterOrganizationData} registerData
+ * @returns {import('./ApiType').RegisterOrganizationResponse}
  */
-export const registerSpeaker = async (registerData) => {
+export const registerOrganization = async (registerData) => {
   try {
     const { data, status } = await post(
-      SPEAKER_ENDPOINT.register,
+      ORGANIZATION_ENDPOINT.register,
       registerData
     );
     const result = setAuthInformation(data.token, 'speaker');
@@ -65,5 +61,5 @@ export const registerSpeaker = async (registerData) => {
 };
 
 export const getMaxPrice = () => {
-  return get(`${SPEAKER_ENDPOINT.getMaxPrice}`);
+  return get(`${ORGANIZATION_ENDPOINT.getMaxPrice}`);
 };
