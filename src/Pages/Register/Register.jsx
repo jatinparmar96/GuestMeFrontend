@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useRecoilState } from 'recoil';
 import tokenAtom from '../../Recoil/Authentication/index';
 
-import { SubmitButton } from '../../Components/SubmitButton/SubmitButton';
+import { SubmitButton } from '../../Components/Buttons/Buttons';
 import { AuthError } from '../../Errors/AuthError';
 
 import { registerSpeaker } from '../../Api/Speaker.service';
