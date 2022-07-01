@@ -8,8 +8,8 @@ import { Login } from './Pages/Login/Login';
 import { Register } from './Pages/Register/Register';
 
 import styles from './App.module.scss';
+import RequireAuth from './auth/RequireAuth';
 import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
-import { SpeakerProfile } from './Pages/SpeakerProfile/SpeakerProfile';
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 
 /**@type {React.FC<any>} */
@@ -22,16 +22,17 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/find-a-speaker" element={<FindASpeaker />} />
-          <Route
-            path="/speaker-profile:speakerId"
-            element={<SpeakerProfile />}
-          />
-          <Route
-            path="/speakers/:id"
-            element={<ViewSpeaker />}
-          />
+
+          <Route path="/speakers/:id" element={<ViewSpeaker />} />
           <Route path="/" />
-          <Route path="/speakers/update/profile" element = {<SpeakerUpdateProfile />} />
+          <Route
+            path="/speakers/update/profile"
+            element={
+              <RequireAuth type="speaker">
+                <SpeakerUpdateProfile />
+              </RequireAuth>
+            }
+          />
         </Routes>
       </main>
       <Footer></Footer>
