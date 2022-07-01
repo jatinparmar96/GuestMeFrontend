@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import OrganizationCalendar from '../../Components/calendar/organization/organization-calendar';
 import SpeakerCalendar from '../../Components/calendar/speaker/speaker-calendar';
 import { OrganizationLoginForm } from '../../Components/OrganizationLoginForm/OrganizationLoginForm';
@@ -12,7 +11,6 @@ const today = new Date();
 export const Login = (props) => {
   /**@type {[boolean, React.Dispatch<boolean>]} */
   const [isSpeaker, setIsSpeaker] = useState(props.type !== 'organization');
-  let location = useLocation();
 
   // let from = location.state?.from?.pathname || '/';
   // console.log(from);
