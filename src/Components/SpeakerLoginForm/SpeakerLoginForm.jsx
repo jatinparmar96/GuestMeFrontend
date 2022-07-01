@@ -1,5 +1,6 @@
 //@ts-check
 import { useForm } from 'react-hook-form';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { loginSpeaker } from '../../Api/Speaker.service';
 import { AuthError } from '../../Errors/AuthError';
@@ -8,6 +9,12 @@ import { SubmitButton } from '../Buttons/Buttons';
 
 export const SpeakerLoginForm = (props) => {
   const [, setToken] = useRecoilState(tokenAtom);
+
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  // @ts-ignore
+  let from = location.state?.from?.pathname || '/';
 
   const {
     register,
@@ -26,6 +33,7 @@ export const SpeakerLoginForm = (props) => {
         throw new AuthError('Auth failed, token is undefined');
       }
       setToken(response.data.token);
+      navigate(from, { replace: true });
     } catch (error) {
       console.error(error);
     }
