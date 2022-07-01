@@ -59,7 +59,3 @@ export const registerOrganization = async (registerData) => {
     return { error };
   }
 };
-
-export const getMaxPrice = () => {
-  return get(`${ORGANIZATION_ENDPOINT.getMaxPrice}`);
-};
