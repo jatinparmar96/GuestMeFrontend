@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { getSpeaker } from '../../Api/Speaker.service';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformation/SpeakerPrimaryInformation';
@@ -6,58 +7,51 @@ import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryConta
 import SpeakerTertiaryInformation from '../../Containers/Speaker_TertiaryContainer/Speaker_TertiaryContainer';
 
 const ViewSpeaker = (props) => {
-
   // const [ selectedSpeaker, setSelectedSpeaker ] = useState("");
   //TODO: Change this fixedID
-  const selectedSpeaker = "62ba919a08bf555e1d151d72";
-  const [loadingState, setLoadingState] = useState(false);
-  const [ speakerData, setSpeakerData ] = useState();
-
-
-    useEffect(function loading(){
-
-      setLoadingState(false);
-
-    }, [speakerData])
+  // const selectedSpeaker = '62ba919a08bf555e1d151d72';
+  const [loadingState, setLoadingState] = useState(true);
+  const [speakerData, setSpeakerData] = useState();
+  const { id } = useParams();
 
   // TODO: Add dependency
   useEffect(() => {
-
     setLoadingState(true);
-    getSpeaker(selectedSpeaker)
-      .then(response => {
+    getSpeaker(id)
+      .then((response) => {
         if (response) {
           setSpeakerData(response.data);
+          setLoadingState(false);
         }
       })
-    .catch(error=>console.log(error))
-  }, [])
-
+      .catch((error) => console.log(error));
+  }, [id]);
 
   return (
     <>
-      {loadingState ? (<p>Loading... </p>)
-      : (
-          <>
+      {loadingState ? (
+        <p>Loading... </p>
+      ) : (
+        <>
+          <div>
+            <PageHeading text="Find a speaker" />
             <div>
-              <PageHeading text="Find a speaker" />
-              <div>Home {'>'} Find a speaker {'>'} {speakerData.fullName }</div>
+              Home {'>'} Find a speaker {'>'} {speakerData.fullName}
             </div>
-            <div>
-              <SpeakerPrimaryInformation speaker={speakerData} />
-            </div>
-            <div>
-              <SpeakerSecondaryInformation speaker={speakerData} />
-            </div>
-            <div>
-              <SpeakerTertiaryInformation speaker={speakerData} />
-            </div>
-          </>
-        )
-
-         }
+          </div>
+          <div>
+            <SpeakerPrimaryInformation speaker={speakerData} />
+          </div>
+          <div>
+            <SpeakerSecondaryInformation speaker={speakerData} />
+          </div>
+          <div>
+            <SpeakerTertiaryInformation speaker={speakerData} />
+          </div>
+        </>
+      )}
     </>
   );
-}
+};
 
 export default ViewSpeaker;

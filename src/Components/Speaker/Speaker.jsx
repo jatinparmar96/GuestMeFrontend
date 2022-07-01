@@ -29,7 +29,7 @@ export const Speaker = (props) => {
           </span>
         ))}
       </div>
-      <Link to={`/speaker-profile:${speaker.id}`} className={style.viewProfile}>
+      <Link to={`/speakers/${speaker.id}`} className={style.viewProfile}>
         View profile
       </Link>
     </div>
