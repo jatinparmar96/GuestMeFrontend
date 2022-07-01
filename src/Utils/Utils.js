@@ -1,12 +1,13 @@
 /**
  * @param {string} token
+ * @param {'speaker' | 'organization'} userType
  * @returns {boolean}
  */
-export const setSpeakerInformation = (token) => {
+export const setAuthInformation = (token, userType) => {
   try {
     const speaker = decodePayloadFromToken(token);
     localStorage.setItem('token', token);
-    localStorage.setItem('speaker', JSON.stringify(speaker));
+    localStorage.setItem(userType, JSON.stringify(speaker));
   } catch (error) {
     console.log(error);
     return false;
@@ -15,11 +16,11 @@ export const setSpeakerInformation = (token) => {
 };
 
 /**
- *
+ * @param {'speaker' | 'organization'} userType
  * @returns {Object}
  */
-export const getSpeakerInformationFromLocalStorage = () => {
-  return JSON.parse(localStorage.getItem('speaker'));
+export const getAuthInformationFromLocalStorage = (userType) => {
+  return JSON.parse(localStorage.getItem(userType));
 };
 
 /**
