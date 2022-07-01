@@ -1,20 +1,19 @@
+import { addDays } from '../../Utils/Utils';
+import OrganizationCalendar from '../calendar/organization/organization-calendar';
 
-const SpeakerAvailability= (props) => {
-
-
+const SpeakerAvailability = (props) => {
+  const today = new Date();
   return (
-
     <>
-      <div className='calendarContainer'>
+      <div className="calendarContainer">
         <h4>Availability</h4>
-        {/* {TODO: Add Calendar} */}
-        <p>Calendar here</p>
 
+        <OrganizationCalendar
+          value={[today, addDays(today, 3), addDays(today, 5)]}
+        />
       </div>
-
-
-      </>
-    );
-}
+    </>
+  );
+};
 
 export default SpeakerAvailability;

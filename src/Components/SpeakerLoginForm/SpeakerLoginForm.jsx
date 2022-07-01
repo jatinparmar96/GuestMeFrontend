@@ -2,9 +2,9 @@
 import { useForm } from 'react-hook-form';
 import { useRecoilState } from 'recoil';
 import { loginSpeaker } from '../../Api/Speaker.service';
-import { SubmitButton } from '../../Components/Buttons/Buttons';
 import { AuthError } from '../../Errors/AuthError';
 import tokenAtom from '../../Recoil/Authentication/index';
+import { SubmitButton } from '../Buttons/Buttons';
 
 export const SpeakerLoginForm = (props) => {
   const [, setToken] = useRecoilState(tokenAtom);
@@ -39,7 +39,6 @@ export const SpeakerLoginForm = (props) => {
         <label>Password:</label>
         <input type="password" {...register('password', { required: true })} />
         {errors.password?.type === 'required' && 'Password is required'}
-        <input type="submit" value="S" />
       </div>
       <div className="submitButtonContainer">
         <SubmitButton

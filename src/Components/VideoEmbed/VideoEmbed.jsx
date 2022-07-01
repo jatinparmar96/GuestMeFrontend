@@ -1,15 +1,13 @@
-
 const VideoEmbed = (props) => {
   const getVideoID = (url) => {
-    return url.split("v=")[1].substring(0,11)
-  }
+    return url.split('v=')[1]?.substring(0, 11);
+  };
 
   const videoID = getVideoID(props.video);
 
   return (
-
     <>
-      <div className='video'>
+      <div className="video">
         <iframe
           width="402"
           height="226"
@@ -21,13 +19,11 @@ const VideoEmbed = (props) => {
                  encrypted-media;
                  gyroscope;
                  picture-in-picture"
-          allowfullscreen>
-        </iframe>
+          allowfullscreen
+        ></iframe>
       </div>
-
-
-      </>
-    );
-}
+    </>
+  );
+};
 
 export default VideoEmbed;

@@ -11,6 +11,8 @@ import styles from './App.module.scss';
 import RequireAuth from './auth/RequireAuth';
 import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
+// Required for calendar
+import 'react-calendar/dist/Calendar.css';
 
 /**@type {React.FC<any>} */
 const App = () => {
@@ -22,7 +24,6 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/find-a-speaker" element={<FindASpeaker />} />
-
           <Route path="/speakers/:id" element={<ViewSpeaker />} />
           <Route path="/" />
           <Route
