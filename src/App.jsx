@@ -12,6 +12,7 @@ import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdat
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 // Required for calendar
 import 'react-calendar/dist/Calendar.css';
+import LandingPage from './Pages/landing/LandingPage';
 
 /**@type {React.FC<any>} */
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/find-a-speaker" element={<FindASpeaker />} />
           <Route path="/speakers/:id" element={<ViewSpeaker />} />
-          <Route path="/" />
+          <Route path="/" element={<LandingPage />} />
           <Route
             path="/speakers/update/profile"
             element={<SpeakerUpdateProfile />}
