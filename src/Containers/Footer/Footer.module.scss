@@ -1,28 +1,9 @@
-// .footer {
-//   width: 100%;
-//   background-color: grey;
-//   display: grid;
-//   grid-template-columns: 1fr;
-//   justify-items: center;
-//   align-items: center;
-// }
 
-@media screen and (min-width: 768px) {
-  .footer {
-
-    height: 7.69rem;
-    height: 17.63rem;
-
-    stroke-weight: 0.63rem;
-
-  }
-}
 
 .footer{
     width: 100%;
     background-color: #3A3F3F;
     border-radius: 3.56rem 0 0 0;
-    stroke-weight: 0.06rem;
     height: 7.69rem;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -71,4 +52,11 @@
   letter-spacing: 0.05em;
   grid-row: 3;
   grid-column: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    height: 17.63rem;
+
+  }
 }
