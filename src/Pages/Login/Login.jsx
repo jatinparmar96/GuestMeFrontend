@@ -12,6 +12,8 @@ export const Login = (props) => {
   /**@type {[boolean, React.Dispatch<boolean>]} */
   const [isSpeaker, setIsSpeaker] = useState(props.type !== 'organization');
 
+  // let from = location.state?.from?.pathname || '/';
+  // console.log(from);
   const container = isSpeaker ? (
     <SpeakerLoginForm />
   ) : (

@@ -44,7 +44,7 @@ export const OrganizationRegisterContainer = () => {
         <div className={styles.form}>
           <div className={styles.nameFiled}>
             <div className={styles.inputField}>
-              <label>Organization name Name</label>
+              <label>Organization Name</label>
               <input
                 type="text"
                 {...register('organizationName', { required: true })}
