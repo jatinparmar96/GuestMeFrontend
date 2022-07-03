@@ -1,13 +1,13 @@
 /**
  * @param {string} token
+ * @param {object} userData
  * @param {'speaker' | 'organization'} userType
  * @returns {boolean}
  */
-export const setAuthInformation = (token, userType) => {
+export const setAuthInformation = (token, userData = {}, userType) => {
   try {
-    const speaker = decodePayloadFromToken(token);
     localStorage.setItem('token', token);
-    localStorage.setItem(userType, JSON.stringify(speaker));
+    localStorage.setItem(userType, JSON.stringify(userData));
   } catch (error) {
     console.log(error);
     return false;

@@ -7,7 +7,7 @@ import classes from './NavLinks.module.scss';
 //TODO: Maybe move them to a utils or routes file?
 const mainLinks = [
   {
-    path: '/',
+    path: '/find-a-speaker',
     name: 'Find a speaker',
   },
   {
@@ -36,8 +36,10 @@ const authLinks = [
 
 const NavLinks = (props) => {
   const [user, setUser] = useRecoilState(tokenAtom);
+  console.log(user);
+  //Logout the user
   const handleLogout = () => {
-    setUser({ name: '', token: '' });
+    setUser({ name: '', value: '' });
     removeAuthInformation();
   };
   return (
@@ -47,7 +49,7 @@ const NavLinks = (props) => {
           {link.name}
         </Link>
       ))}
-      {!user.token ? (
+      {!user.value ? (
         authLinks.map((link, index) => (
           <Link key={index} className={classes.link} to={link.path}>
             {link.name}

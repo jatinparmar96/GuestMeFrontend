@@ -25,7 +25,7 @@ const App = () => {
     const organization = localStorage.getItem('organization');
     const token = localStorage.getItem('token');
     const user = speaker || organization;
-    setUser({ name: user, token });
+    setUser({ name: user, value: token });
   }, []);
   return (
     <div className={`${styles.wrapper} App`}>

@@ -29,7 +29,7 @@ export const getSpeaker = (id) => {
 export const loginSpeaker = async (loginData) => {
   try {
     const { data, status } = await post(SPEAKER_ENDPOINT.login, loginData);
-    const result = setAuthInformation(data.token, 'speaker');
+    const result = setAuthInformation(data.token, data.user, 'speaker');
     if (result) {
       console.log('storage: ', getAuthInformationFromLocalStorage('speaker'));
       console.log('Login success, your token has been saved as:');

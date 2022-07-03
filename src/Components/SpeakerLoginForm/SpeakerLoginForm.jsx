@@ -25,7 +25,7 @@ export const SpeakerLoginForm = (props) => {
       if (response.data === undefined) {
         throw new AuthError('Auth failed, token is undefined');
       }
-      setToken(response.data.token);
+      setToken({ name: response.data.user, value: response.data.token });
     } catch (error) {
       console.error(error);
     }
