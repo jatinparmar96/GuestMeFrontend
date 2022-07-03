@@ -22,7 +22,7 @@ export const getOrganization = (id) => {
 export const loginOrganization = async (loginData) => {
   try {
     const { data, status } = await post(ORGANIZATION_ENDPOINT.login, loginData);
-    const result = setAuthInformation(data.token, 'organization');
+    const result = setAuthInformation(data.token, data.user, 'organization');
     if (result) {
       console.log(
         'storage: ',
