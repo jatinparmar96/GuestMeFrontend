@@ -15,6 +15,12 @@ export const setAuthInformation = (token, userType) => {
   return true;
 };
 
+export const removeAuthInformation = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('speaker');
+  localStorage.removeItem('organization');
+};
+
 /**
  * @param {'speaker' | 'organization'} userType
  * @returns {Object}

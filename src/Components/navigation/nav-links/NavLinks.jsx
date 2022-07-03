@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import tokenAtom from '../../../Recoil/Authentication/atom';
+import { removeAuthInformation } from '../../../Utils/Utils';
 import classes from './NavLinks.module.scss';
 
 //TODO: Maybe move them to a utils or routes file?
@@ -34,8 +35,11 @@ const authLinks = [
 ];
 
 const NavLinks = (props) => {
-  const [user] = useRecoilState(tokenAtom);
-  console.log(user);
+  const [user, setUser] = useRecoilState(tokenAtom);
+  const handleLogout = () => {
+    setUser({ name: '', token: '' });
+    removeAuthInformation();
+  };
   return (
     <ul className={props.className}>
       {mainLinks.map((link, index) => (
@@ -43,14 +47,14 @@ const NavLinks = (props) => {
           {link.name}
         </Link>
       ))}
-      {!user.value ? (
+      {!user.token ? (
         authLinks.map((link, index) => (
           <Link key={index} className={classes.link} to={link.path}>
             {link.name}
           </Link>
         ))
       ) : (
-        <Link className={classes.link} to="/logout">
+        <Link className={classes.link} to="/" onClick={handleLogout}>
           Logout
         </Link>
       )}
