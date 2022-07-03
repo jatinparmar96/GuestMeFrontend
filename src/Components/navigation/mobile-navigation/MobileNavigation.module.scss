@@ -1,7 +1,26 @@
+@use '../../../common/variables' as *;
+
 .navigation {
   display: flex;
+  flex-direction: column;
 }
-
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 1rem;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $white;
+  opacity: 0.95;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 @media screen and (min-width: 768px) {
   .navigation {
     display: none;

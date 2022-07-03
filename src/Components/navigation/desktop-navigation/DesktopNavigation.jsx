@@ -4,7 +4,7 @@ import classes from './DesktopNavigation.module.scss';
 const DesktopNavigation = () => {
   return (
     <nav className={classes.navigation}>
-      <NavLinks />
+      <NavLinks className={classes.navLinks} />
     </nav>
   );
 };

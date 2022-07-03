@@ -1,6 +1,6 @@
-const NavLinks = () => {
+const NavLinks = (props) => {
   return (
-    <ul>
+    <ul className={props.className}>
       <li>Find a speaker</li>
       <li>How it works</li>
       <li>About</li>
