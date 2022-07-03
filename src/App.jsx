@@ -19,14 +19,14 @@ import tokenAtom from './Recoil/Authentication/atom';
 
 /**@type {React.FC<any>} */
 const App = () => {
-  const [user, setUser] = useRecoilState(tokenAtom);
+  const [, setUser] = useRecoilState(tokenAtom);
   useEffect(() => {
     const speaker = localStorage.getItem('speaker');
     const organization = localStorage.getItem('organization');
     const token = localStorage.getItem('token');
     const user = speaker || organization;
     setUser({ name: user, value: token });
-  }, []);
+  }, [setUser]);
   return (
     <div className={`${styles.wrapper} App`}>
       <Header></Header>

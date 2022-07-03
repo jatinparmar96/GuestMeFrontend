@@ -33,6 +33,7 @@ export const getAuthInformationFromLocalStorage = (userType) => {
  * @param {string} token
  * @returns {Object}
  */
+// eslint-disable-next-line no-unused-vars
 const decodePayloadFromToken = (token) => {
   try {
     const result = JSON.parse(
