@@ -8,6 +8,7 @@ import { Login } from './Pages/Login/Login';
 import { Register } from './Pages/Register/Register';
 
 import styles from './App.module.scss';
+import RequireAuth from './auth/RequireAuth';
 import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 // Required for calendar
@@ -27,7 +28,11 @@ const App = () => {
           <Route path="/" />
           <Route
             path="/speakers/update/profile"
-            element={<SpeakerUpdateProfile />}
+            element={
+              <RequireAuth type="speaker">
+                <SpeakerUpdateProfile />
+              </RequireAuth>
+            }
           />
         </Routes>
       </main>
