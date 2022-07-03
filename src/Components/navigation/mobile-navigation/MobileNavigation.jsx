@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/close-icon.svg';
 import { ReactComponent as HamburgerIcon } from '../../../assets/icons/hamburger-icon.svg';
 import NavLinks from '../nav-links/NavLinks';
@@ -6,6 +7,13 @@ import classes from './MobileNavigation.module.scss';
 
 const MobileNavigation = () => {
   const [open, setOpen] = useState(false);
+
+  const location = useLocation();
+
+  // Close the menu when the user navigates to a new page
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
 
   return (
     <nav className={classes.navigation}>
