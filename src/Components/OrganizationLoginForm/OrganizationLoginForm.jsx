@@ -1,11 +1,11 @@
 //@ts-check
 import { useForm } from 'react-hook-form';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { loginOrganization } from '../../Api/Organization.service';
 import { AuthError } from '../../Errors/AuthError';
 import tokenAtom from '../../Recoil/Authentication/index';
-import { SubmitButton } from '../Buttons/Buttons';
+import { LoginForm } from '../LoginForm/LoginForm';
 
 export const OrganizationLoginForm = (props) => {
   const [, setToken] = useRecoilState(tokenAtom);
@@ -38,16 +38,26 @@ export const OrganizationLoginForm = (props) => {
     }
   };
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>Email:</label>
-        <input type="text" {...register('email', { required: true })} />
-        {errors.email?.type === 'required' && 'Email is required'}
-        <label>Password:</label>
-        <input type="password" {...register('password', { required: true })} />
-        {errors.password?.type === 'required' && 'Password is required'}
-        <SubmitButton text="Log in" />
-      </form>
-    </>
+    <div>
+      <main>
+        <h2>Log in form for an organization</h2>
+        <p>Please enter your email and password.</p>
+        <LoginForm
+          handleSubmit={handleSubmit}
+          onSubmit={onSubmit}
+          register={register}
+          errors={errors}
+        />
+        <p>
+          <span>
+            Don't have an account?
+            <Link to="/register">Register as an organization</Link>
+          </span>
+        </p>
+      </main>
+      <aside>
+        <img src="https://picsum.photos/id/1/200/300" alt="login" />
+      </aside>
+    </div>
   );
 };

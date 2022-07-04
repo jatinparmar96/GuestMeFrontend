@@ -1,4 +1,5 @@
 //@ts-check
+import { Link } from 'react-router-dom';
 import { SubmitButton } from '../Buttons/Buttons';
 
 /**@type {React.FC<import('./LoginFormType').LoginFormProps>} */
@@ -23,7 +24,7 @@ export const LoginForm = (props) => {
           text="Log In"
           onClick={handleSubmit(onSubmit)}
         ></SubmitButton>
-        <p>Forgot password</p>
+        <Link to="forgot">Forgot password</Link>
       </div>
     </>
   );
