@@ -1,12 +1,7 @@
-// import { useState } from 'react';
-import OrganizationCalendar from '../../Components/calendar/organization/organization-calendar';
 import RequestForm from '../../Components/RequestForm/RequestForm';
-import { addDays } from '../../Utils/Utils';
 import style from './BookRequest.module.scss';
 
 const BookRequest = (props) => {
-  // const [date, setDate] = useState('');
-  const today = new Date();
   return (
     <>
       <div className="calendarContainer">
@@ -19,9 +14,6 @@ const BookRequest = (props) => {
           <span>Booked by you</span>
         </div>
 
-        <OrganizationCalendar
-          value={[today, addDays(today, 3), addDays(today, 5)]}
-        />
         <RequestForm speaker={props.speaker} />
       </div>
     </>

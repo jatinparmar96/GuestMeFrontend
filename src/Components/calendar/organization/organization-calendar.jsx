@@ -7,8 +7,9 @@ const OrganizationCalendar = (props) => {
   const [dates] = useState(props.value || []);
   const handleCalenderDateChange = (e) => {
     // Open Booking Modal
-    if (props.onSelect) {
-      props.onSelect(e);
+    if (props.onChange) {
+      props.onChange(e);
+      console.log(e);
     } else {
       console.log(e);
     }
