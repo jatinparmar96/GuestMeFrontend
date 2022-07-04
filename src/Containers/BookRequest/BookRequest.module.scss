@@ -1,0 +1,28 @@
+.reference {
+
+    display: flex;
+    flex-direction: row;
+
+  div {
+
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.10rem;
+  }
+
+}
+
+.available{
+
+  background-color: #F0A274;
+}
+
+.notAvailable{
+
+  background-color: #B7BFBF;
+}
+
+.bookedByYou{
+
+  background-color: #35AFAC;
+}

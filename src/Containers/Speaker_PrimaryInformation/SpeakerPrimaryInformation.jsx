@@ -1,7 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import { RequestButton, SaveButton } from '../../Components/Buttons/Buttons';
 import SpeakerInfo from '../../Components/SpeakerProfileInfo/SpeakerProfileInfo';
 
+
 const SpeakerPrimaryInformation = (props) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div>
@@ -13,7 +17,7 @@ const SpeakerPrimaryInformation = (props) => {
           />
           <RequestButton
             text="Request"
-            // onClick={}
+            onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
           />
         </div>
       </div>
