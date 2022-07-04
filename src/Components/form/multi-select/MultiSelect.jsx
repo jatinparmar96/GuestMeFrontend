@@ -9,7 +9,7 @@ const MultiSelect = (props) => {
   };
 
   useEffect(() => {
-    setOptions(props.value);
+    setOptions(props.value || []);
   }, [props.value]);
 
   return (
