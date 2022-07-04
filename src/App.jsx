@@ -15,6 +15,7 @@ import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 import { useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { useRecoilState } from 'recoil';
+import SpeakerBookingList from './Components/SpeakerBookingList/SpeakerBookingList';
 import LandingPage from './Pages/landing/LandingPage';
 import tokenAtom from './Recoil/Authentication/atom';
 
@@ -43,6 +44,14 @@ const App = () => {
             element={
               <RequireAuth type="speaker">
                 <SpeakerUpdateProfile />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/speakers/bookings/:id"
+            element={
+              <RequireAuth type="speaker">
+                <SpeakerBookingList />
               </RequireAuth>
             }
           />
