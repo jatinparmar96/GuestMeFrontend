@@ -11,3 +11,8 @@
 .main {
   flex: 1 0 50%;
 }
+
+p{
+  margin-block-start: unset;
+  margin-block-end: unset;
+}
