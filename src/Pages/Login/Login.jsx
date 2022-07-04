@@ -1,12 +1,9 @@
 import { useState } from 'react';
-import OrganizationCalendar from '../../Components/calendar/organization/organization-calendar';
-import SpeakerCalendar from '../../Components/calendar/speaker/speaker-calendar';
 import { OrganizationLoginForm } from '../../Components/OrganizationLoginForm/OrganizationLoginForm';
 import { SpeakerLoginForm } from '../../Components/SpeakerLoginForm/SpeakerLoginForm';
-import { addDays } from '../../Utils/Utils';
 
 // !Remove after test
-const today = new Date();
+// const today = new Date();
 
 export const Login = (props) => {
   /**@type {[boolean, React.Dispatch<boolean>]} */
@@ -42,11 +39,10 @@ export const Login = (props) => {
         <label htmlFor="role-organization">Organization</label>
       </div>
       {container}
-      <SpeakerCalendar />
-
+      {/* <SpeakerCalendar />
       <OrganizationCalendar
         value={[today, addDays(today, 3), addDays(today, 5)]}
-      />
+      /> */}
     </div>
   );
 };
