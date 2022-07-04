@@ -34,6 +34,8 @@ const authLinks = [
   },
 ];
 
+const loggedInLinks = [{ path: '/speakers/update/profile', name: 'My Page' }];
+
 const NavLinks = (props) => {
   const [user, setUser] = useRecoilState(tokenAtom);
   console.log(user);
@@ -56,9 +58,16 @@ const NavLinks = (props) => {
           </Link>
         ))
       ) : (
-        <Link className={classes.link} to="/" onClick={handleLogout}>
-          Logout
-        </Link>
+        <>
+          {loggedInLinks.map((link, index) => (
+            <Link key={index} className={classes.link} to={link.path}>
+              {link.name}
+            </Link>
+          ))}
+          <Link className={classes.link} to="/" onClick={handleLogout}>
+            Logout
+          </Link>
+        </>
       )}
     </ul>
   );

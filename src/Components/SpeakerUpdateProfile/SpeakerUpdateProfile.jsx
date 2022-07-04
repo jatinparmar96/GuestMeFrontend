@@ -10,6 +10,14 @@ const SpeakerUpdateProfile = () => {
     defaultValues: {},
   });
 
+  const processImage = (imageFile) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(imageFile);
+    reader.onloadend = (event) => {
+      reset({ profilePicture: reader.result });
+    };
+  };
+
   useEffect(() => {
     const fetchSpeakerDetails = async () => {
       const speaker = JSON.parse(localStorage.getItem('speaker'));
@@ -28,13 +36,18 @@ const SpeakerUpdateProfile = () => {
     <>
       <form
         onSubmit={handleSubmit((data) => {
-          console.log(data);
           post('/speakers/update/profile', data).then((res) => {});
         })}
       >
         <div className={style.topGrid}>
           <div className={style.topLeft}>
-            <input type="file" name="profilePicture" />
+            <input
+              type="file"
+              name="profilePicture"
+              onChange={(e) => {
+                processImage(e.target.files[0]);
+              }}
+            />
             <img src={getValues('profilePicture')} alt="Profile" />
           </div>
           <div className={style.topRight}>
