@@ -22,3 +22,31 @@ code {
 html {
   line-height: unset;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  font-size: 16px;
+}
+
+@media (min-width:768px) {
+  html {
+    font-size: 17px;
+  }
+
+}
+
+@media (min-width:1024px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+@media (min-width:1280px) {
+  html {
+    font-size: 20px;
+  }
+}

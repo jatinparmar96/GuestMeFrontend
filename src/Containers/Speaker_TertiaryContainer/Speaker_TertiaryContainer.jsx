@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import { RequestButtonWide } from '../../Components/Buttons/Buttons';
 import SpeakerAvailability from '../../Components/SpeakersAvailability/SpeakerAvailability';
 import SpeakerVideo from '../../Components/SpeakersVideo/SpeakerVideo';
 
 const SpeakerTertiaryInformation = (props) => {
+  const navigate = useNavigate();
   return (
     <>
       <div>
@@ -11,7 +13,7 @@ const SpeakerTertiaryInformation = (props) => {
         <div className="RequestButtonContainer">
           <RequestButtonWide
             text="Request"
-            // onClick={}
+            onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
           />
         </div>
       </div>
