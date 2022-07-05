@@ -111,10 +111,7 @@ const SpeakerBookingList = (props) => {
 
           </div>
 
-        <div className={style.callToActionColumn}>
-          <button>Cancel/Delete</button>
 
-        </div>
 
         </div>
           </li>
