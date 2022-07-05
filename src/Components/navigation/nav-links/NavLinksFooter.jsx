@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import tokenAtom from '../../../Recoil/Authentication/atom';
 import { removeAuthInformation } from '../../../Utils/Utils';
-import classes from './NavLinks.module.scss';
+import classes from './NavLinksFooter.module.scss';
 
 //TODO: Maybe move them to a utils or routes file?
 const mainLinks = [
@@ -34,43 +34,40 @@ const authLinks = [
   },
 ];
 
-const loggedInLinks = [{ path: '/speakers/update/profile', name: 'My Page' }];
-
-const NavLinks = (props) => {
+const NavLinksFooter = (props) => {
   const [user, setUser] = useRecoilState(tokenAtom);
-  // console.log(user);
+  console.log(user);
   //Logout the user
   const handleLogout = () => {
     setUser({ name: '', value: '' });
     removeAuthInformation();
   };
   return (
-    <ul className={props.className}>
-      {mainLinks.map((link, index) => (
-        <Link className={classes.link} key={index} to={link.path}>
-          {link.name}
-        </Link>
-      ))}
-      {!user.value ? (
-        authLinks.map((link, index) => (
-          <Link key={index} className={classes.link} to={link.path}>
+    <>
+      <ul className={props.className}>
+        {mainLinks.map((link, index) => (
+          <Link className={classes.link} key={index} to={link.path}>
             {link.name}
           </Link>
-        ))
-      ) : (
-        <>
-          {loggedInLinks.map((link, index) => (
+        ))}
+      </ul>
+
+      <ul className={props.className}>
+
+        {!user.value ? (
+          authLinks.map((link, index) => (
             <Link key={index} className={classes.link} to={link.path}>
               {link.name}
             </Link>
-          ))}
+          ))
+        ) : (
           <Link className={classes.link} to="/" onClick={handleLogout}>
             Logout
           </Link>
-        </>
       )}
-    </ul>
+      </ul>
+      </>
   );
 };
 
-export default NavLinks;
+export default NavLinksFooter;

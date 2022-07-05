@@ -10,6 +10,7 @@ import { Register } from './Pages/Register/Register';
 import styles from './App.module.scss';
 import RequireAuth from './auth/RequireAuth';
 import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
+import BookSpeaker from './Pages/BookSpeaker/BookSpeaker';
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 // Required for calendar
 import { useEffect } from 'react';
@@ -52,6 +53,15 @@ const App = () => {
             element={
               <RequireAuth type="speaker">
                 <SpeakerBooking />
+              </RequireAuth>
+            }
+          />
+
+          <Route
+            path="/speakers/:id/request"
+            element={
+              <RequireAuth type="organization">
+                <BookSpeaker />
               </RequireAuth>
             }
           />
