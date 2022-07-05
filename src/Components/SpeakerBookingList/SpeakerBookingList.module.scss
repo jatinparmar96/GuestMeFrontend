@@ -1,5 +1,9 @@
 
-p{
+body{
+  background: #F5F5F5;
+}
+
+p,a{
   text-align: center;
 }
 
@@ -14,6 +18,8 @@ p{
   display: grid;
   grid-template-columns: repeat(2,1fr);
   grid-gap: 1rem;
+  align-items: center;
+  margin: 1rem;
 }
 
 .centreColumnTopRow{
@@ -21,4 +27,15 @@ p{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+}
+
+
+li{
+  list-style-type: none;
+  background: white;
+  margin: 1rem;
+}
+
+button {
+    height: 30px;
 }

@@ -36,7 +36,7 @@ const authLinks = [
 
 const NavLinks = (props) => {
   const [user, setUser] = useRecoilState(tokenAtom);
-  console.log(user);
+  // console.log(user);
   //Logout the user
   const handleLogout = () => {
     setUser({ name: '', value: '' });

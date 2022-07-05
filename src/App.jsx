@@ -15,8 +15,8 @@ import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 import { useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { useRecoilState } from 'recoil';
-import SpeakerBookingList from './Components/SpeakerBookingList/SpeakerBookingList';
 import LandingPage from './Pages/landing/LandingPage';
+import SpeakerBooking from './Pages/SpeakerBooking/SpeakerBooking';
 import tokenAtom from './Recoil/Authentication/atom';
 
 /**@type {React.FC<any>} */
@@ -27,7 +27,7 @@ const App = () => {
     const organization = localStorage.getItem('organization');
     const token = localStorage.getItem('token');
     const user = speaker || organization;
-    setUser({ name: user, value: token });
+    setUser({ name: JSON.parse(user), value: token });
   }, [setUser]);
   return (
     <div className={`${styles.wrapper} App`}>
@@ -48,10 +48,10 @@ const App = () => {
             }
           />
           <Route
-            path="/speakers/bookings/:id"
+            path="/speakers/bookings"
             element={
               <RequireAuth type="speaker">
-                <SpeakerBookingList />
+                <SpeakerBooking />
               </RequireAuth>
             }
           />
