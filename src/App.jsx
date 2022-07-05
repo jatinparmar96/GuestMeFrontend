@@ -17,6 +17,7 @@ import { useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { useRecoilState } from 'recoil';
 import LandingPage from './Pages/landing/LandingPage';
+import SpeakerBooking from './Pages/SpeakerBooking/SpeakerBooking';
 import tokenAtom from './Recoil/Authentication/atom';
 
 /**@type {React.FC<any>} */
@@ -27,10 +28,8 @@ const App = () => {
     const organization = localStorage.getItem('organization');
     const token = localStorage.getItem('token');
     const user = speaker || organization;
-    setUser({ name: user, value: token });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+    setUser({ name: JSON.parse(user), value: token });
+  }, [setUser]);
   return (
     <div className={`${styles.wrapper} App`}>
       <Header></Header>
@@ -49,6 +48,15 @@ const App = () => {
               </RequireAuth>
             }
           />
+          <Route
+            path="/speakers/bookings"
+            element={
+              <RequireAuth type="speaker">
+                <SpeakerBooking />
+              </RequireAuth>
+            }
+          />
+
           <Route
             path="/speakers/:id/request"
             element={
