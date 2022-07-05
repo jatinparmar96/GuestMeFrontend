@@ -5,7 +5,7 @@ import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformation/SpeakerPrimaryInformation';
 import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryContainer/Speaker_SecondaryContainer';
 import SpeakerTertiaryInformation from '../../Containers/Speaker_TertiaryContainer/Speaker_TertiaryContainer';
-
+import './ViewSpeaker.module.scss';
 const ViewSpeaker = (props) => {
   // const [ selectedSpeaker, setSelectedSpeaker ] = useState("");
   //TODO: Change this fixedID
@@ -37,7 +37,8 @@ const ViewSpeaker = (props) => {
             <PageHeading text="Find a speaker" />
             <div>
               Home {'>'} Find a speaker {'>'} {speakerData.fullName}
-            </div>
+              </div>
+          <div className='viewSpeakerContainer'>
           </div>
           <div>
             <SpeakerPrimaryInformation speaker={speakerData} />
@@ -47,6 +48,7 @@ const ViewSpeaker = (props) => {
           </div>
           <div>
             <SpeakerTertiaryInformation speaker={speakerData} />
+              </div>
           </div>
         </>
       )}
