@@ -1,0 +1,26 @@
+@use '../../common/variables'as *;
+
+.PageContainer {
+  height: 100%;
+}
+
+.radioContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+
+  input[type="radio"i] {
+    display: none;
+  }
+
+  label {
+    padding: .5rem;
+  }
+
+  input:checked {
+    &+label {
+      background: $bg-auth-form;
+    }
+  }
+
+}
