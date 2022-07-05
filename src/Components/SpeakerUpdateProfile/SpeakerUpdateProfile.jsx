@@ -3,12 +3,21 @@ import { Controller, useForm } from 'react-hook-form';
 import { post } from '../../Api/api';
 import { getSpeaker } from '../../Api/Speaker.service';
 import SpeakerCalendar from '../calendar/speaker/speaker-calendar';
+import MultiSelect from '../form/multi-select/MultiSelect';
 import style from './SpeakerUpdateProfile.module.scss';
 
 const SpeakerUpdateProfile = () => {
   const { register, control, handleSubmit, getValues, reset } = useForm({
     defaultValues: {},
   });
+
+  const processImage = (imageFile) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(imageFile);
+    reader.onloadend = (event) => {
+      reset({ profilePicture: reader.result });
+    };
+  };
 
   useEffect(() => {
     const fetchSpeakerDetails = async () => {
@@ -28,13 +37,18 @@ const SpeakerUpdateProfile = () => {
     <>
       <form
         onSubmit={handleSubmit((data) => {
-          console.log(data);
           post('/speakers/update/profile', data).then((res) => {});
         })}
       >
         <div className={style.topGrid}>
           <div className={style.topLeft}>
-            <input type="file" name="profilePicture" />
+            <input
+              type="file"
+              name="profilePicture"
+              onChange={(e) => {
+                processImage(e.target.files[0]);
+              }}
+            />
             <img src={getValues('profilePicture')} alt="Profile" />
           </div>
           <div className={style.topRight}>
@@ -286,16 +300,17 @@ const SpeakerUpdateProfile = () => {
           />
           <label> Others</label>
         </fieldset>
-        <label className={`${style.boldFont} ${style.blockDisplay}`}>
-          Skills
-        </label>
-        <input
-          type="text"
+
+        <Controller
           name="skills"
-          {...register('skills', { required: 'This is a required field' })}
+          control={control}
+          render={({ field: { onChange, value } }) => {
+            return (
+              <MultiSelect label="Skills" onChange={onChange} value={value} />
+            );
+          }}
         />
 
-        <button>Add</button>
         <label className={`${style.boldFont} ${style.blockDisplay}`}>
           Certifications
         </label>
