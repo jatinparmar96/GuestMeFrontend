@@ -29,9 +29,9 @@ export const RequestButtonContainerWide = styled.button`
   color: #ffffff;
   text-align: center;
   letter-spacing: 0.05em;
-  width: 402px;
-  height: 50px;
-  border-radius: 4px;
+  width: 13.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
   border: 2px solid #35afac;
   box-sizing: border-box;
 `;

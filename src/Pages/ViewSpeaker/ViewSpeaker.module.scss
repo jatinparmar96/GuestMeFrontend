@@ -1,0 +1,33 @@
+@media screen and (min-width: 992px) {
+      .viewSpeakerContainer{
+
+            margin-left: 7.50rem;
+            margin-right: 7.50rem;
+            margin-bottom: 5rem;
+            display: grid;
+            grid-template-columns: 28.88rem auto;
+            grid-template-rows: auto auto;
+
+            .primary{
+                  grid-column: 1/3;
+                  grid-row: 1/2;
+            }
+
+
+            .secondary{
+                  grid-column: 2;
+                  grid-row: 2/3;
+            }
+
+            .tertiary{
+                  grid-column: 1;
+                  grid-row: 2/3;
+            }
+
+
+
+
+
+      }
+
+}
