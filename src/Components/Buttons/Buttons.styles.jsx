@@ -29,17 +29,10 @@ export const RequestButtonContainerWide = styled.button`
   color: #ffffff;
   text-align: center;
   letter-spacing: 0.05em;
-<<<<<<< HEAD
-  width: 402px;
-  height: 50px;
-  border-radius: 4px;
-  border: 2px solid #35afac;
-=======
   width: 13.5rem;
-  height: 2.50rem;
-  border-radius: 0.20rem;
-  border: 2px solid #35AFAC;
->>>>>>> ae87d90 ("Add booking speaker card")
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  border: 2px solid #35afac;
   box-sizing: border-box;
 `;
 
