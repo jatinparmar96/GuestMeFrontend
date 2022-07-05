@@ -8,9 +8,10 @@ const { times } = require('./Times');
 const RequestForm = (props) => {
   const online = props.speaker.conditions.isOnline;
   const person = props.speaker.conditions.isInPerson;
+  // eslint-disable-next-line no-unused-vars
   const organization = JSON.parse(localStorage.getItem('organization'));
 
-  const { control, register, watch, setValue, getValues } = useForm();
+  const { control, register, watch, getValues } = useForm();
 
   const handleSendRequest = (event) => {
     event.preventDefault();
@@ -38,7 +39,7 @@ const RequestForm = (props) => {
 
     postBooking(request);
   };
-  const today = new Date();
+  // const today = new Date();
   console.log(getValues());
 
   //TODO: Add speaker date values to the calendar
