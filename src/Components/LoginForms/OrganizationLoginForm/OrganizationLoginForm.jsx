@@ -2,10 +2,12 @@
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { loginOrganization } from '../../Api/Organization.service';
-import { AuthError } from '../../Errors/AuthError';
-import tokenAtom from '../../Recoil/Authentication/index';
+import { loginOrganization } from '../../../Api/Organization.service';
+import { AuthError } from '../../../Errors/AuthError';
+import tokenAtom from '../../../Recoil/Authentication/index';
 import { LoginForm } from '../LoginForm/LoginForm';
+
+import style from '../LoginForms.module.scss';
 
 export const OrganizationLoginForm = (props) => {
   const [, setToken] = useRecoilState(tokenAtom);
@@ -38,10 +40,12 @@ export const OrganizationLoginForm = (props) => {
     }
   };
   return (
-    <div>
-      <main>
-        <h2>Log in form for an organization</h2>
-        <p>Please enter your email and password.</p>
+    <div className={style.loginformContainer}>
+      <div className={style.formContainer}>
+        <div className={style.formHeading}>
+          <h2>Log in form for an organization</h2>
+          <p>Please enter your email and password.</p>
+        </div>
         <LoginForm
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}
@@ -51,13 +55,19 @@ export const OrganizationLoginForm = (props) => {
         <p>
           <span>
             Don't have an account?
-            <Link to="/register">Register as an organization</Link>
+            <Link to="/register" className={style.registerLink}>
+              Register as an organization
+            </Link>
           </span>
         </p>
-      </main>
-      <aside>
-        <img src="https://picsum.photos/id/1/200/300" alt="login" />
-      </aside>
+      </div>
+      <div className={style.aside}>
+        <img
+          src="https://picsum.photos/id/1/200/300"
+          alt="login"
+          className={style.img}
+        />
+      </div>
     </div>
   );
 };
