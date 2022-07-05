@@ -1,12 +1,9 @@
 import { useState } from 'react';
-import OrganizationCalendar from '../../Components/calendar/organization/organization-calendar';
-import SpeakerCalendar from '../../Components/calendar/speaker/speaker-calendar';
-import { OrganizationLoginForm } from '../../Components/OrganizationLoginForm/OrganizationLoginForm';
-import { SpeakerLoginForm } from '../../Components/SpeakerLoginForm/SpeakerLoginForm';
-import { addDays } from '../../Utils/Utils';
-
+import { OrganizationLoginForm } from '../../Components/LoginForms/OrganizationLoginForm/OrganizationLoginForm';
+import { SpeakerLoginForm } from '../../Components/LoginForms/SpeakerLoginForm/SpeakerLoginForm';
+import style from './Login.module.scss';
 // !Remove after test
-const today = new Date();
+// const today = new Date();
 
 export const Login = (props) => {
   /**@type {[boolean, React.Dispatch<boolean>]} */
@@ -21,32 +18,34 @@ export const Login = (props) => {
   );
 
   return (
-    <div>
-      <div>
-        <input
-          type="radio"
-          name="role"
-          id="role-speaker"
-          defaultChecked={isSpeaker}
-          onClick={() => setIsSpeaker(true)}
-        />
-        <label htmlFor="role-speaker">Speaker</label>
-      </div>
-      <div>
-        <input
-          type="radio"
-          name="role"
-          id="role-organization"
-          onClick={() => setIsSpeaker(false)}
-        />
-        <label htmlFor="role-organization">Organization</label>
+    <div className={style.PageContainer}>
+      <div className={style.radioContainer}>
+        <div>
+          <input
+            type="radio"
+            name="role"
+            id="role-speaker"
+            checked={isSpeaker}
+            onClick={() => setIsSpeaker(true)}
+          />
+          <label htmlFor="role-speaker">Speaker</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            name="role"
+            id="role-organization"
+            checked={!isSpeaker}
+            onClick={() => setIsSpeaker(false)}
+          />
+          <label htmlFor="role-organization">Organization</label>
+        </div>
       </div>
       {container}
-      <SpeakerCalendar />
-
+      {/* <SpeakerCalendar />
       <OrganizationCalendar
         value={[today, addDays(today, 3), addDays(today, 5)]}
-      />
+      /> */}
     </div>
   );
 };
