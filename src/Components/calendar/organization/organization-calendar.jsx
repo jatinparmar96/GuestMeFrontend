@@ -31,10 +31,19 @@ const OrganizationCalendar = (props) => {
     }
   }, [props.value]);
 
+  const tileDisabled = ({ date, view }) => {
+    return view === 'month' &&
+      dates &&
+      dates.some((item) => compareDatesFn(item, date))
+      ? false
+      : true;
+  };
+
   // Calender Props to Pass to Calendar Component
   const calendarProps = {
     onChange: handleCalenderDateChange,
     tileClassName: assignTileClass,
+    tileDisabled: tileDisabled,
   };
 
   return (
