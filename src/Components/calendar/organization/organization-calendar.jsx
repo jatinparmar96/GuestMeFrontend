@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import { compareDatesFn } from '../../../Utils/Utils';
 import '../calendar.scss';
 
 const OrganizationCalendar = (props) => {
-  const [dates] = useState(props.value || []);
+  const [dates, setDates] = useState([]);
+
   const handleCalenderDateChange = (e) => {
     // Open Booking Modal
     if (props.onChange) {
@@ -22,11 +23,20 @@ const OrganizationCalendar = (props) => {
       : '';
   };
 
+  useEffect(() => {
+    // Sanitize and transform Values
+    if (props.value?.length) {
+      const datesArr = props.value.map((item) => new Date(item));
+      setDates(datesArr || []);
+    }
+  }, [props.value]);
+
   // Calender Props to Pass to Calendar Component
   const calendarProps = {
     onChange: handleCalenderDateChange,
     tileClassName: assignTileClass,
   };
+
   return (
     <Calendar
       locale="en-US"

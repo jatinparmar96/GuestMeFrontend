@@ -9,11 +9,13 @@ const SpeakerTertiaryInformation = (props) => {
     <>
       <div>
         <SpeakerVideo video={props.speaker.videos} />
-        <SpeakerAvailability />
+        <SpeakerAvailability value={props.speaker.availability} />
         <div className="RequestButtonContainer">
           <RequestButtonWide
             text="Request"
-            onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
+            onClick={() =>
+              navigate('/speakers/' + props.speaker.id + '/request')
+            }
           />
         </div>
       </div>

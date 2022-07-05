@@ -28,7 +28,9 @@ const App = () => {
     const token = localStorage.getItem('token');
     const user = speaker || organization;
     setUser({ name: user, value: token });
-  }, [setUser]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className={`${styles.wrapper} App`}>
       <Header></Header>
