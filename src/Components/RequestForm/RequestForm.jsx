@@ -2,7 +2,6 @@ import { Controller, useForm } from 'react-hook-form';
 import { postBooking } from '../../Api/Booking.service';
 import OrganizationCalendar from '../calendar/organization/organization-calendar';
 import './RequestForm.module.scss';
-
 const { times } = require('./Times');
 
 const RequestForm = (props) => {
@@ -16,31 +15,23 @@ const RequestForm = (props) => {
   const handleSendRequest = (event) => {
     event.preventDefault();
 
-    const request = {
-      // speaker: {
-      //   id: props.speaker.id,
-      //   name: props.speaker.fullName,
-      // },
-      // organization: {
-      //   id: organization.id,
-      //   name: organization.organizationName,
-      // },
-      // bookingDateTime: {
-      //   startDateTime: startTime,
-      //   endDateTime: endTime,
-      // },
-      // location: location,
-      // topic: topic,
-      // message: message,
-      // personInCharge: personInCharge,
-      // deliveryMethod: deliveryMethod,
+    const formData = {
+      ...getValues(),
+      speaker: {
+        id: props.speaker._id,
+        name: props.speaker.fullName,
+      },
+      organization: {
+        id: organization._id,
+        name: organization.organizationName,
+      },
     };
-    console.log(request);
-
-    postBooking(request);
+    console.log(formData);
+    postBooking(formData)
+      .then((response) => alert('Booking request sent'))
+      .catch((error) => console.error(error));
   };
   // const today = new Date();
-  console.log(getValues());
 
   //TODO: Add speaker date values to the calendar
   return (
@@ -50,7 +41,12 @@ const RequestForm = (props) => {
           name="bookingDateTime.date"
           control={control}
           render={({ field: { value, onChange } }) => {
-            return <OrganizationCalendar value={value} onChange={onChange} />;
+            return (
+              <OrganizationCalendar
+                value={props.speaker.availability}
+                onChange={onChange}
+              />
+            );
           }}
         />
 
@@ -61,7 +57,9 @@ const RequestForm = (props) => {
             type="date"
             value={
               watch('bookingDateTime.date')?.toISOString().substring(0, 10) ||
-              new Date().toISOString().substring(0, 10)
+              new Date(props.speaker.availability[0])
+                .toISOString()
+                .substring(0, 10)
             }
             readOnly
           />
