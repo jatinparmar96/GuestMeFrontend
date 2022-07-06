@@ -17,7 +17,7 @@ const SpeakerReviews = (props) => {
                     <p>{review.comment.length > 5 ?
                       <>
                       { review.comment.substring(0, 5) }
-                        < ShowMore review={review.comment } />
+                        < ShowMore more={review.comment } />
                       </>
                       : review.comment}</p>
 

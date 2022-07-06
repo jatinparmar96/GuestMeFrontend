@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { getSpeaker } from '../../api/Speaker.service';
 import { PageHeading } from '../../components/pageHeading/PageHeading';
 import SpeakerPrimaryInformation from '../../containers/speaker_PrimaryInformation/SpeakerPrimaryInformation';
 import SpeakerSecondaryInformation from '../../containers/speaker_SecondaryContainer/Speaker_SecondaryContainer';
 import SpeakerTertiaryInformation from '../../containers/speaker_TertiaryContainer/Speaker_TertiaryContainer';
+import style from './ViewSpeaker.module.scss';
 
 const ViewSpeaker = (props) => {
   // const [ selectedSpeaker, setSelectedSpeaker ] = useState("");
@@ -39,14 +41,17 @@ const ViewSpeaker = (props) => {
               Home {'>'} Find a speaker {'>'} {speakerData.fullName}
             </div>
           </div>
-          <div>
-            <SpeakerPrimaryInformation speaker={speakerData} />
-          </div>
-          <div>
-            <SpeakerSecondaryInformation speaker={speakerData} />
-          </div>
-          <div>
-            <SpeakerTertiaryInformation speaker={speakerData} />
+
+          <div className={style.viewSpeakerContainer}>
+            <div className={style.primary}>
+              <SpeakerPrimaryInformation speaker={speakerData} />
+            </div>
+            <div className={style.secondary}>
+              <SpeakerSecondaryInformation speaker={speakerData} />
+            </div>
+            <div className={style.tertiary}>
+              <SpeakerTertiaryInformation speaker={speakerData} />
+            </div>
           </div>
         </>
       )}

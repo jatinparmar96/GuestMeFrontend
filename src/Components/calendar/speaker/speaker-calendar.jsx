@@ -31,7 +31,9 @@ const SpeakerCalendar = (props) => {
       ? 'highlight'
       : '';
   };
-
+  const tileDisabled = ({ date, view }) => {
+    return view === 'month' && date.getTime() <= new Date().getTime();
+  };
   useEffect(() => {
     // Sanitize and transform Values
     if (props.value?.length) {
@@ -44,6 +46,7 @@ const SpeakerCalendar = (props) => {
   const CalenderProps = {
     onChange: handleCalenderDateChange,
     tileClassName: assignTileClass,
+    tileDisabled: tileDisabled,
   };
 
   // Pass value prop only if valid value exists

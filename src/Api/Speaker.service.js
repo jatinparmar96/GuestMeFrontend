@@ -12,6 +12,7 @@ const SPEAKER_ENDPOINT = {
   register: `${BASE_ENDPOINT}/register`,
   getMaxPrice: `${BASE_ENDPOINT}/max-price`,
   getAvailability: `${BASE_ENDPOINT}/get-availability`,
+  getSpeakerBookings: `${BASE_ENDPOINT}/bookings`,
 };
 /**
  * @param  {string} params
@@ -68,6 +69,7 @@ export const registerSpeaker = async (registerData) => {
 export const getMaxPrice = () => {
   return get(`${SPEAKER_ENDPOINT.getMaxPrice}`);
 };
+
 /**
  * Get Availability Array for Speaker
  * @param  {Speaker} id
@@ -75,4 +77,8 @@ export const getMaxPrice = () => {
  */
 export const getSpeakerAvailability = (id) => {
   return get(`${SPEAKER_ENDPOINT.getMaxPrice}/${id}`);
+};
+
+export const getSpeakerBookings = (id) => {
+  return get(`${SPEAKER_ENDPOINT.getSpeakerBookings}/${id}`);
 };
