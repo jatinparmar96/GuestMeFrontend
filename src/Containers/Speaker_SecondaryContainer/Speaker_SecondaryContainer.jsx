@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import { RequestButton, SaveButton } from '../../Components/Buttons/Buttons';
-import SpeakerAboutMe from '../../Components/SpeakerAboutMe/SpeakerAboutMe';
-import SpeakerCertifications from '../../Components/SpeakersCertifications/SpeakerCertifications';
-import SpeakerSkills from '../../Components/SpeakerSkills/SpeakerSkills';
-import SpeakerReviews from '../../Components/SpeakersReviews/SpeakerReviews';
+import { RequestButton, SaveButton } from '../../components/buttons/Buttons';
+import SpeakerAboutMe from '../../components/speakerAboutMe/SpeakerAboutMe';
+import SpeakerCertifications from '../../components/speakersCertifications/SpeakerCertifications';
+import SpeakerSkills from '../../components/speakerSkills/SpeakerSkills';
+import SpeakerReviews from '../../components/speakersReviews/SpeakerReviews';
 
 const SpeakerSecondaryInformation = (props) => {
   const navigate = useNavigate();

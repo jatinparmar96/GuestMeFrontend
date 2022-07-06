@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import { getSpeakers } from '../../Api/Speaker.service';
-import { PageHeading } from '../../Components/PageHeading/PageHeading';
-import { Filter } from '../../Containers/Filter/Filter';
-import { Speakers } from '../../Containers/Speakers/Speakers';
+import { getSpeakers } from '../../api/Speaker.service';
+import { PageHeading } from '../../components/pageHeading/PageHeading';
+import { Filter } from '../../containers/filter/Filter';
+import { Speakers } from '../../containers/speakers/Speakers';
 import style from './FindASpeaker.module.scss';
 
 /**@type {React.FC<any>} */
@@ -108,5 +108,5 @@ export const FindASpeaker = (props) => {
 };
 
 /**
- * @typedef {import('../../Components/Speaker/SpeakerType').SpeakerResponse} SpeakerResponse
+ * @typedef {import('../../components/Speaker/SpeakerType').SpeakerResponse} SpeakerResponse
  */

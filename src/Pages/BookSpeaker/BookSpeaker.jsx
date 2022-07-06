@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getSpeaker } from '../../Api/Speaker.service';
-import { PageHeading } from '../../Components/PageHeading/PageHeading';
-import BookRequest from '../../Containers/BookRequest/BookRequest';
+import { getSpeaker } from '../../api/Speaker.service';
+import { PageHeading } from '../../components/pageHeading/PageHeading';
+import BookRequest from '../../containers/bookRequest/BookRequest';
 
 
 const BookSpeaker = (props) => {

@@ -1,4 +1,4 @@
-import { AuthError } from '../Errors/AuthError';
+import { AuthError } from '../errors/AuthError';
 
 export type RegisterSpeakerData = {
   userName: string;

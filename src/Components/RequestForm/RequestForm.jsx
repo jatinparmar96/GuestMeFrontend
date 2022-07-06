@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { postBooking } from '../../Api/Booking.service';
+import { postBooking } from '../../api/Booking.service';
 const { times } = require('./Times');
 
 const RequestForm = (props) => {

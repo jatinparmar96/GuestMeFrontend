@@ -1,4 +1,4 @@
-import { Speaker } from '..//Speaker/Speaker';
+import { Speaker } from '../speaker/Speaker';
 import style from './SpeakerList.module.scss';
 
 export const SpeakerList = ({ speakers }) => {

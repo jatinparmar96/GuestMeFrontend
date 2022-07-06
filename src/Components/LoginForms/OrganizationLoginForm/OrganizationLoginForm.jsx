@@ -2,10 +2,10 @@
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { loginOrganization } from '../../../Api/Organization.service';
-import { AuthError } from '../../../Errors/AuthError';
-import tokenAtom from '../../../Recoil/Authentication/index';
-import { LoginForm } from '../LoginForm/LoginForm';
+import { loginOrganization } from '../../../api/Organization.service';
+import { AuthError } from '../../../errors/AuthError';
+import tokenAtom from '../../../recoil/authentication/index';
+import { LoginForm } from '../loginForm/LoginForm';
 
 import style from '../LoginForms.module.scss';
 

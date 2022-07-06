@@ -1,10 +1,10 @@
 // @ts-check
 import { useForm } from 'react-hook-form';
 import { useRecoilState } from 'recoil';
-import { registerSpeaker } from '../../../Api/Speaker.service';
-import { SubmitButton } from '../../../Components/Buttons/Buttons';
-import { AuthError } from '../../../Errors/AuthError';
-import tokenAtom from '../../../Recoil/Authentication/index';
+import { registerSpeaker } from '../../../api/Speaker.service';
+import { SubmitButton } from '../../../components/buttons/Buttons';
+import { AuthError } from '../../../errors/AuthError';
+import tokenAtom from '../../../recoil/authentication/index';
 import styles from '../RegisterContainer.module.scss';
 
 export const SpeakerRegisterContainer = () => {

@@ -1,7 +1,7 @@
 //@ts-check
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SubmitButton } from '../../Buttons/Buttons';
+import { SubmitButton } from '../../buttons/Buttons';
 import style from './LoginForm.module.scss';
 
 /**@type {React.FC<import('./LoginFormType').LoginFormProps>} */

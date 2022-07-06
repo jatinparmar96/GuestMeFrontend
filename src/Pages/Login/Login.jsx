@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { OrganizationLoginForm } from '../../Components/LoginForms/OrganizationLoginForm/OrganizationLoginForm';
-import { SpeakerLoginForm } from '../../Components/LoginForms/SpeakerLoginForm/SpeakerLoginForm';
+import { OrganizationLoginForm } from '../../components/loginForms/organizationLoginForm/OrganizationLoginForm';
+import { SpeakerLoginForm } from '../../components/loginForms/speakerLoginForm/SpeakerLoginForm';
 import style from './Login.module.scss';
 // !Remove after test
 // const today = new Date();

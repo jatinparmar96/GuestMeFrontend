@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { post } from '../../Api/api';
-import { getSpeaker } from '../../Api/Speaker.service';
+import { post } from '../../api/api';
+import { getSpeaker } from '../../api/Speaker.service';
 import SpeakerCalendar from '../calendar/speaker/speaker-calendar';
 import MultiSelect from '../form/multi-select/MultiSelect';
 import style from './SpeakerUpdateProfile.module.scss';

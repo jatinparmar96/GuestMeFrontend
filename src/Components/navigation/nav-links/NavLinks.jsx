@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import tokenAtom from '../../../Recoil/Authentication/atom';
-import { removeAuthInformation } from '../../../Utils/Utils';
+import tokenAtom from '../../../recoil/authentication/atom';
+import { removeAuthInformation } from '../../../utils/Utils';
 import classes from './NavLinks.module.scss';
 
 //TODO: Maybe move them to a utils or routes file?

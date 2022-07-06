@@ -1,8 +1,8 @@
 // @ts-check
 import { useState } from 'react';
 
-import { OrganizationRegisterContainer } from '../../Containers/Registers/OrganizationRegisterContainer/OrganizationRegisterContainer';
-import { SpeakerRegisterContainer } from '../../Containers/Registers/SpeakerRegisterContainer/SpeakerRegisterContainer';
+import { OrganizationRegisterContainer } from '../../containers/registers/organizationRegisterContainer/OrganizationRegisterContainer';
+import { SpeakerRegisterContainer } from '../../containers/registers/speakerRegisterContainer/SpeakerRegisterContainer';
 
 import styles from './Register.module.scss';
 

@@ -1,23 +1,23 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { Footer } from './Containers/Footer/Footer';
-import { Header } from './Containers/Header/Header';
+import { Footer } from './containers/footer/Footer';
+import { Header } from './containers/header/Header';
 
-import { FindASpeaker } from './Pages/FindASpeaker/FindASpeaker';
-import { Login } from './Pages/Login/Login';
-import { Register } from './Pages/Register/Register';
+import { FindASpeaker } from './pages/findASpeaker/FindASpeaker';
+import { Login } from './pages/login/Login';
+import { Register } from './pages/register/Register';
 
 import styles from './App.module.scss';
 import RequireAuth from './auth/RequireAuth';
-import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
-import BookSpeaker from './Pages/BookSpeaker/BookSpeaker';
-import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
+import SpeakerUpdateProfile from './components/speakerUpdateProfile/SpeakerUpdateProfile';
+import BookSpeaker from './pages/bookSpeaker/BookSpeaker';
+import ViewSpeaker from './pages/viewSpeaker/ViewSpeaker';
 // Required for calendar
 import { useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { useRecoilState } from 'recoil';
-import LandingPage from './Pages/landing/LandingPage';
-import tokenAtom from './Recoil/Authentication/atom';
+import LandingPage from './pages/landing/LandingPage';
+import tokenAtom from './recoil/authentication/atom';
 
 /**@type {React.FC<any>} */
 const App = () => {

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import { RequestButtonWide } from '../../Components/Buttons/Buttons';
-import SpeakerAvailability from '../../Components/SpeakersAvailability/SpeakerAvailability';
-import SpeakerVideo from '../../Components/SpeakersVideo/SpeakerVideo';
+import { RequestButtonWide } from '../../components/buttons/Buttons';
+import SpeakerAvailability from '../../components/speakersAvailability/SpeakerAvailability';
+import SpeakerVideo from '../../components/speakersVideo/SpeakerVideo';
 
 const SpeakerTertiaryInformation = (props) => {
   const navigate = useNavigate();

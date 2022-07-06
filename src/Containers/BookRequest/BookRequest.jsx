@@ -1,7 +1,7 @@
 // import { useState } from 'react';
-import OrganizationCalendar from '../../Components/calendar/organization/organization-calendar';
-import RequestForm from '../../Components/RequestForm/RequestForm';
-import { addDays } from '../../Utils/Utils';
+import OrganizationCalendar from '../../components/calendar/organization/organization-calendar';
+import RequestForm from '../../components/requestForm/RequestForm';
+import { addDays } from '../../utils/Utils';
 import style from './BookRequest.module.scss';
 
 const BookRequest = (props) => {

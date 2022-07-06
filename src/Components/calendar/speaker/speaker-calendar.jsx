@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { compareDatesFn } from '../../../Utils/Utils';
+import { compareDatesFn } from '../../../utils/Utils';
 import '../calendar.scss';
 
 const SpeakerCalendar = (props) => {

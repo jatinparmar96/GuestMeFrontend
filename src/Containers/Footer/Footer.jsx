@@ -1,6 +1,6 @@
 import logo_mic from '../../assets/logo-mic-green.png';
 import logo from '../../assets/logo-white.png';
-import DesktopNavigation from '../../Components/navigation/desktop-navigation/DesktopNavigation';
+import DesktopNavigation from '../../components/navigation/desktop-navigation/DesktopNavigation';
 import styles from './Footer.module.scss';
 
 export const Footer = () => {

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getSpeaker } from '../../Api/Speaker.service';
-import { PageHeading } from '../../Components/PageHeading/PageHeading';
-import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformation/SpeakerPrimaryInformation';
-import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryContainer/Speaker_SecondaryContainer';
-import SpeakerTertiaryInformation from '../../Containers/Speaker_TertiaryContainer/Speaker_TertiaryContainer';
+import { getSpeaker } from '../../api/Speaker.service';
+import { PageHeading } from '../../components/pageHeading/PageHeading';
+import SpeakerPrimaryInformation from '../../containers/speaker_PrimaryInformation/SpeakerPrimaryInformation';
+import SpeakerSecondaryInformation from '../../containers/speaker_SecondaryContainer/Speaker_SecondaryContainer';
+import SpeakerTertiaryInformation from '../../containers/speaker_TertiaryContainer/Speaker_TertiaryContainer';
 
 const ViewSpeaker = (props) => {
   // const [ selectedSpeaker, setSelectedSpeaker ] = useState("");

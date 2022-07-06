@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { useEffect, useState } from 'react';
-import { CheckBoxItem } from '../CheckBoxItem/CheckBoxItem';
+import { CheckBoxItem } from '../checkBoxItem/CheckBoxItem';
 import style from './RangeSlider.module.scss';
 
 const minDistance = 0;

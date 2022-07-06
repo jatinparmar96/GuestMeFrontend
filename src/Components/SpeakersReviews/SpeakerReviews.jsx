@@ -1,4 +1,4 @@
-import ShowMore from '../ShowMore/ShowMore';
+import ShowMore from '../showMore/ShowMore';
 
 const SpeakerReviews = (props) => {
 

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { RequestButton, SaveButton } from '../../Components/Buttons/Buttons';
-import SpeakerInfo from '../../Components/SpeakerProfileInfo/SpeakerProfileInfo';
+import { RequestButton, SaveButton } from '../../components/buttons/Buttons';
+import SpeakerInfo from '../../components/speakerProfileInfo/SpeakerProfileInfo';
 
 
 const SpeakerPrimaryInformation = (props) => {

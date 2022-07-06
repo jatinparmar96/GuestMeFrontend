@@ -1,7 +1,7 @@
 import {
   getAuthInformationFromLocalStorage,
   setAuthInformation,
-} from '../Utils/Utils';
+} from '../utils/Utils';
 import { get, post } from './api';
 
 const BASE_ENDPOINT = '/organizations';

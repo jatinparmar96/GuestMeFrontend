@@ -1,6 +1,6 @@
 import logo from '../../assets/logo-colored.png';
-import DesktopNavigation from '../../Components/navigation/desktop-navigation/DesktopNavigation';
-import MobileNavigation from '../../Components/navigation/mobile-navigation/MobileNavigation';
+import DesktopNavigation from '../../components/navigation/desktop-navigation/DesktopNavigation';
+import MobileNavigation from '../../components/navigation/mobile-navigation/MobileNavigation';
 import styles from './Header.module.scss';
 export const Header = () => {
   return (

@@ -1,4 +1,4 @@
-import VideoEmbed from '../VideoEmbed/VideoEmbed';
+import VideoEmbed from '../videoEmbed/VideoEmbed';
 const SpeakerVideo = (props) => {
 
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { Accordion } from '../../Components/Accordion/Accordion';
+import { Accordion } from '../../components/accordion/Accordion';
 
-import { getMaxPrice } from '../../Api/Speaker.service';
-import { CheckBoxItem } from '../../Components/CheckBoxItem/CheckBoxItem';
-import { RangeSlider } from '../../Components/RangeSlider/RangeSlider';
+import { getMaxPrice } from '../../api/Speaker.service';
+import { CheckBoxItem } from '../../components/checkBoxItem/CheckBoxItem';
+import { RangeSlider } from '../../components/rangeSlider/RangeSlider';
 
 import style from './Filter.module.scss';
 

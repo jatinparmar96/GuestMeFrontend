@@ -1,4 +1,4 @@
-import { addDays } from '../../Utils/Utils';
+import { addDays } from '../../utils/Utils';
 import OrganizationCalendar from '../calendar/organization/organization-calendar';
 
 const SpeakerAvailability = (props) => {

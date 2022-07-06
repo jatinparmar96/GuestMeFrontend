@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SpeakerList } from '../../Components/SpeakerList/SpeakerList';
+import { SpeakerList } from '../../components/speakerList/SpeakerList';
 
 import style from './Speakers.module.scss';
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Calendar from 'react-calendar';
-import { compareDatesFn } from '../../../Utils/Utils';
+import { compareDatesFn } from '../../../utils/Utils';
 import '../calendar.scss';
 
 const OrganizationCalendar = (props) => {
