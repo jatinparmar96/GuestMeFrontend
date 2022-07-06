@@ -1,0 +1,12 @@
+.linkContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  border: 1px solid black;
+}

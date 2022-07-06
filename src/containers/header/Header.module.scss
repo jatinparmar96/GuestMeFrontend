@@ -1,0 +1,23 @@
+@use '../../common/variables' as *;
+.header {
+  width: 100%;
+
+  .navContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      width: 84px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}

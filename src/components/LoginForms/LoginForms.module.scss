@@ -1,0 +1,34 @@
+@use '../../common/variables'as *;
+
+.loginformContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: $bg-auth-form;
+}
+
+.formContainer {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.formHeading {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-items: flex-start;
+  align-items: flex-start;
+}
+
+.aside {
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  max-height: 800px;
+}
+
+.registerLink {
+  color: $mint-blue;
+}

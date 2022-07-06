@@ -1,0 +1,18 @@
+.fieldset {
+  border: none;
+}
+
+.form {
+  background-color: white;
+  height: 100%;
+}
+
+.slider {
+  position: relative;
+
+  input[type="range"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

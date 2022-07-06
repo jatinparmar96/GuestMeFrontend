@@ -1,0 +1,37 @@
+.bookSpeakerContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .bookCard{
+    order: 1;
+  }
+}
+
+
+@media screen and (min-width: 992px) {
+.bookSpeakerContainer {
+
+  margin-left: 7.50rem;
+  margin-right: 7.50rem;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: 14.50rem auto;
+
+  .bookForm{
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .bookCard {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+
+
+}
+
+}

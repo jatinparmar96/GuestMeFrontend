@@ -1,0 +1,33 @@
+.navigation {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    display: flex;
+  }
+  .navLinks {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .navigationFooter{
+display: flex;
+flex-direction: column;
+
+
+
+    .navLinks{
+      gap:2rem;
+      // flex-direction: row;
+      // width: 100%;
+
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      font-size: 0.9rem;
+      line-height: 1.50rem;
+
+      ;
+    }
+  }
+}
