@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { getSpeakerBookings } from '../../Api/Speaker.service';
-import SpeakerBookingList from '../../Components/SpeakerBookingList/SpeakerBookingList';
-import tokenAtom from '../../Recoil/Authentication/atom';
+import { getSpeakerBookings } from '../../api/Speaker.service';
+import SpeakerBookingList from '../../components/speakerBookingList/SpeakerBookingList';
+import tokenAtom from '../../recoil/authentication/atom';
 
 const SpeakerBooking = (props) => {
   const [loadingState, setLoadingState] = useState(true);
