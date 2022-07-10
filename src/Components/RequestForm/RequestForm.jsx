@@ -1,7 +1,8 @@
+// import { style } from '@mui/system';
 import { Controller, useForm } from 'react-hook-form';
 import { postBooking } from '../../Api/Booking.service';
 import OrganizationCalendar from '../calendar/organization/organization-calendar';
-import './RequestForm.module.scss';
+import style from './RequestForm.module.scss';
 const { times } = require('./Times');
 
 const RequestForm = (props) => {
@@ -37,6 +38,7 @@ const RequestForm = (props) => {
   return (
     <>
       <form onSubmit={(e) => handleSendRequest(e)}>
+        <div className={style.organizationCalendar}>
         <Controller
           name="bookingDateTime.date"
           control={control}
@@ -45,10 +47,12 @@ const RequestForm = (props) => {
               <OrganizationCalendar
                 value={props.speaker.availability}
                 onChange={onChange}
+
               />
             );
           }}
-        />
+          />
+        </div>
 
         <label>
           {' '}
