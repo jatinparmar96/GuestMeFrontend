@@ -1,0 +1,107 @@
+@use '../../common/variables' as *;
+
+$button-margin: 2rem;
+.topContainer {
+  position: relative;
+  background-image: url('../../assets/mic-logo-white.png');
+  background-repeat: no-repeat;
+  background-size: 100px auto;
+  background-position: 2.4rem 2rem;
+  border-bottom-right-radius: 110px;
+  overflow: hidden;
+  padding-top: 2rem;
+  line-height: 1.5;
+  .textContainer {
+    padding: 0 2rem;
+    h1 {
+      font-family: $barlow-condensed-font;
+      font-weight: 500;
+      font-size: 35px;
+      span {
+        text-transform: uppercase;
+        color: $mint-blue;
+        font-size: 40px;
+      }
+    }
+    .infoContainer {
+      p {
+        text-align: left;
+        font-family: $barlow-font;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0.05em;
+        color: $black;
+      }
+
+      .button {
+        margin-top: $button-margin;
+        background-color: $mint-blue;
+        color: $white;
+        font-family: $barlow-condensed-font;
+        font-weight: 600;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        letter-spacing: 0.05em;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        // &:hover {
+        //   background-color: $white;
+        //   color: $mint-blue;
+        // }
+      }
+    }
+  }
+
+  .heroImage {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-top: calc(-1 * (4rem + $button-margin));
+    z-index: -1;
+  }
+}
+
+.middleContainer {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  background-color: $white;
+  background-image: url('../../assets/lady-with-laptop.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 290px auto;
+  img {
+    position: relative;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+  }
+  .infoTextContainer {
+    align-self: end;
+    max-width: 60%;
+    margin-top: 100px;
+    text-align: right;
+    h2 {
+      font-size: 20px;
+      span {
+        color: $mint-blue;
+        text-transform: uppercase;
+      }
+    }
+    p {
+      color: $black;
+      text-align: right;
+      letter-spacing: 0.05em;
+      line-height: 24px;
+    }
+  }
+  .benefits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
