@@ -1,6 +1,7 @@
+@use '../../common/variables.scss' as *;
 .showMore{
-  color:#35AFAC;
-  font-family: 'Barlow Condensed';
+  color:$mint-blue;
+  font-family: $barlow-condensed-font;
   font-size: 1rem;
   line-height: 1.88rem;
   text-decoration: underline;
