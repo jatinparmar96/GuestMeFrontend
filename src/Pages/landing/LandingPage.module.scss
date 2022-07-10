@@ -68,7 +68,7 @@ $button-margin: 2rem;
 .middleContainer {
   display: flex;
   flex-direction: column;
-  padding-right: 20px;
+  // padding-right: 20px;
   background-color: $white;
   background-image: url('../../assets/lady-with-laptop.png');
   background-position: top left;
@@ -85,6 +85,7 @@ $button-margin: 2rem;
     max-width: 60%;
     margin-top: 100px;
     text-align: right;
+    padding-right: 20px;
     h2 {
       font-size: 20px;
       span {
@@ -100,8 +101,36 @@ $button-margin: 2rem;
     }
   }
   .benefits {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    .benefitContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      .benefitLogo {
+        $dimension: 74px;
+        width: $dimension;
+        height: $dimension;
+        border-radius: 4px;
+        background-color: $light-green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .benefitText {
+        max-width: 60%;
+        font-family: $barlow-condensed-font;
+        font-weight: 600;
+        font-size: 16px;
+        color: $black;
+        margin-top: 0.8rem;
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
+    }
   }
 }

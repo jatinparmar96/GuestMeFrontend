@@ -16,10 +16,10 @@ import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 import { useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { useRecoilState } from 'recoil';
+import './App.module.scss';
 import LandingPage from './Pages/landing/LandingPage';
 import SpeakerBooking from './Pages/SpeakerBooking/SpeakerBooking';
 import tokenAtom from './Recoil/Authentication/atom';
-
 /**@type {React.FC<any>} */
 const App = () => {
   const [, setUser] = useRecoilState(tokenAtom);
