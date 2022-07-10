@@ -41,10 +41,12 @@ const BookSpeaker = (props) => {
                   Home {'>'} Find a speaker {'>'} {speakerData.fullName} {'>'} Request
             </div>
             </div>
+
             <div className={style.bookSpeakerContainer}>
               <div className={style.bookForm}>
                 <BookRequest speaker={speakerData} />
               </div>
+
               <div className={style.bookCard}>
                 <BookingSpeakerCard speaker={speakerData}  />
               </div>
