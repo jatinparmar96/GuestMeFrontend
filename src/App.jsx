@@ -9,8 +9,8 @@ import { Register } from './Pages/Register/Register';
 
 import styles from './App.module.scss';
 import RequireAuth from './auth/RequireAuth';
-import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
 import BookSpeaker from './Pages/BookSpeaker/BookSpeaker';
+import MyPage from './Pages/MyPage/MyPage';
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 // Required for calendar
 import { useEffect } from 'react';
@@ -44,7 +44,7 @@ const App = () => {
             path="/speakers/update/profile"
             element={
               <RequireAuth type="speaker">
-                <SpeakerUpdateProfile />
+                <MyPage />
               </RequireAuth>
             }
           />
