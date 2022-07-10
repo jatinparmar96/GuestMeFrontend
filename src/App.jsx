@@ -9,15 +9,18 @@ import { Register } from './Pages/Register/Register';
 
 import styles from './App.module.scss';
 import RequireAuth from './auth/RequireAuth';
+import SpeakerAccount from './Components/SpeakerAccount/SpeakerAccount';
+import SetSpeakerAvailability from './Components/SpeakersAvailability/SpeakerSetAvailability';
+import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
 import BookSpeaker from './Pages/BookSpeaker/BookSpeaker';
 import MyPage from './Pages/MyPage/MyPage';
+import SpeakerBooking from './Pages/SpeakerBooking/SpeakerBooking';
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 // Required for calendar
 import { useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { useRecoilState } from 'recoil';
 import LandingPage from './Pages/landing/LandingPage';
-import SpeakerBooking from './Pages/SpeakerBooking/SpeakerBooking';
 import tokenAtom from './Recoil/Authentication/atom';
 
 /**@type {React.FC<any>} */
@@ -41,21 +44,27 @@ const App = () => {
           <Route path="/speakers/:id" element={<ViewSpeaker />} />
           <Route path="/" element={<LandingPage />} />
           <Route
-            path="/speakers/update/profile"
+            path="/speakers/mypage"
             element={
               <RequireAuth type="speaker">
                 <MyPage />
               </RequireAuth>
             }
-          />
-          <Route
+          >
+            <Route path="/speakers/mypage" element={<SpeakerUpdateProfile/>} />
+            <Route path="/speakers/mypage/bookings" element={<SpeakerBooking />} />
+            <Route path="/speakers/mypage/availability" element={<SetSpeakerAvailability />} />
+            <Route path="/speakers/mypage/account" element={<SpeakerAccount />} />
+
+          </Route>
+          {/* <Route
             path="/speakers/bookings"
             element={
               <RequireAuth type="speaker">
                 <SpeakerBooking />
               </RequireAuth>
             }
-          />
+          /> */}
 
           <Route
             path="/speakers/:id/request"

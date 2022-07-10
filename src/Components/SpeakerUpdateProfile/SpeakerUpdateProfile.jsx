@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { post } from '../../Api/api';
 import { getSpeaker } from '../../Api/Speaker.service';
-import SpeakerCalendar from '../calendar/speaker/speaker-calendar';
 import MultiSelect from '../form/multi-select/MultiSelect';
 import style from './SpeakerUpdateProfile.module.scss';
 
@@ -35,6 +34,8 @@ const SpeakerUpdateProfile = () => {
 
   return (
     <>
+      <h3>My Info</h3>
+      <p>Information here will be published</p>
       <form
         onSubmit={handleSubmit((data) => {
           post('/speakers/update/profile', data).then((res) => {});
@@ -320,7 +321,7 @@ const SpeakerUpdateProfile = () => {
           name="certifications"
         />
         <label className={`${style.boldFont} ${style.blockDisplay}`}>
-          Youtube videos
+          Youtube video
         </label>
         <input type="text" name="videos" {...register('videos')} />
 
@@ -332,13 +333,13 @@ const SpeakerUpdateProfile = () => {
           name="about"
           {...register('about', { required: 'This is a required field' })}
         />
-        <Controller
+        {/* <Controller
           name="availability"
           control={control}
           render={({ field: { name, onChange, value } }) => (
             <SpeakerCalendar {...{ name, onChange, value }}></SpeakerCalendar>
           )}
-        />
+        /> */}
 
         <div className={style.alignBtn}>
           <button type="submit">Save</button>

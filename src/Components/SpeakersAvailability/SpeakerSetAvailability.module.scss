@@ -1,0 +1,27 @@
+
+@use '../../common/variables.scss' as *;
+.reference {
+
+  display: flex;
+  flex-direction: row;
+
+  div {
+
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.10rem;
+  }
+
+}
+
+.available {
+
+  background-color: $light-orange;
+}
+
+.today {
+
+  background-color:$grey;
+}
+
+

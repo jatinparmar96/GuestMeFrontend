@@ -1,27 +1,32 @@
-import { useNavigate } from 'react-router-dom';
-import { RequestButtonWide } from '../../Components/Buttons/Buttons';
+import { NavLink } from 'react-router-dom';
 import style from './MyPageMenu.module.scss';
-
+import { SpeakerMenu } from './SpeakerMenu';
 const MyPageMenu = (props) => {
-const navigate = useNavigate();
+
+
+
 
   return (
     <>
+      <section>
+      <h2>Menu</h2>
       <div className={style.myPageMenu}>
-        <ul>
-          <li>My Info</li>
-          <li>Bookings</li>
-          <li>Availability</li>
-          <li>Account</li>
-        </ul>
-      </div>
+        {
+            SpeakerMenu.map((link, index) => {
+            return(
+              <div key={index}>
+                <NavLink to={link.path}>
+                  <span>{link.icon}</span>
+                  <span>{link.title}</span>
+                </NavLink>
+                </div>
+          )
 
-      <RequestButtonWide
-              text="Preview your profile"
-            onClick={() =>
-              navigate('/speakers/' + props.id)
-              // {`/speakers/${speaker.id}`
-      }/>
+            })
+        }
+
+        </div>
+        </section>
     </>
 
   );
