@@ -1,7 +1,8 @@
-
+@use '../../common/variables.scss' as *;
 .speakerCard{
 
   width: 17.50rem;
+  background-color: $white; ;
 
   h2{
     color: #35AFAC;
@@ -34,7 +35,7 @@
 
   .speakerCard {
     width: 13.50rem;
-    margin: 3rem 0 0 0;
+    margin: 0 0 0 0;
 
       h2 {
         font-size: 1rem;

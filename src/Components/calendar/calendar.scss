@@ -1,3 +1,4 @@
+@use '../../common/variables.scss' as *;
 $speaker-highlight: #5fa1d0;
 $speaker-highlight-text: white;
 
@@ -41,4 +42,20 @@ $calendar-map: (
       }
     }
   }
+}
+
+.react-calendar{
+  display: inline-block;
+  width: 31rem;
+  height: 27.5rem;
+  font-size: 1rem;
+  font-family: $barlow-condensed-font;
+  text-decoration: none;
+  border: 0px;
+
+
+  .react-calendar__tile{
+  width: 3.7rem;
+  height: 3.7rem;
+}
 }
