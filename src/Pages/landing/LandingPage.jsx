@@ -1,28 +1,13 @@
-import { ReactComponent as BenefitLogo1 } from '../../assets/icons/benefit-icon-1.svg';
-import { ReactComponent as BenefitLogo2 } from '../../assets/icons/benefit-icon-2.svg';
-import { ReactComponent as BenefitLogo3 } from '../../assets/icons/benefit-icon-3.svg';
-import { ReactComponent as BenefitLogo4 } from '../../assets/icons/benefit-icon-4.svg';
 import classImage from '../../assets/pexels-pavel-danilyuk-8423049 5.png';
+import Benefit from '../../Components/landing-page/benefit/Benefit';
+
+import howManySpeeches from '../../assets/how-many-speeches.png';
+import FeaturedSpeakers from '../../Components/landing-page/featured-speakers/FeaturedSpeakers';
 import style from './LandingPage.module.scss';
 
-const benefitsLogos = [
-  {
-    logo: <BenefitLogo1 />,
-    text: 'Welcome a variety of speakers from professional to amateur',
-  },
-  {
-    logo: <BenefitLogo2 />,
-    text: 'Browse and compare speakers depending on the topic and budget',
-  },
-  {
-    logo: <BenefitLogo3 />,
-    text: "Check speaker's availability in their calendar and instantly message them",
-  },
-  {
-    logo: <BenefitLogo4 />,
-    text: 'No commission or transaction fees charged',
-  },
-];
+import footerImage1 from '../../assets/landing-page-footer-1.png';
+import footerImage2 from '../../assets/landing-page-footer-2.png';
+import footerImage3 from '../../assets/landing-page-footer-3.png';
 
 const LandingPage = () => {
   return (
@@ -38,15 +23,14 @@ const LandingPage = () => {
             <p>
               Find guest speakers who are right for your school and your
               students based on speaking topics, budget, location, and
-              experience.{' '}
+              experience.
             </p>
-            <button className={style.button}>Find a Speaker</button>
+            <button className={style.primaryButton}>Find a Speaker</button>
           </div>
         </div>
 
         <img className={style.heroImage} src={classImage} alt="banner"></img>
       </div>
-
       <div className={style.middleContainer}>
         {/* <img src={ladyImage} alt="lady with laptop"></img> */}
         <div className={style.infoTextContainer}>
@@ -61,12 +45,83 @@ const LandingPage = () => {
           </p>
         </div>
         <div className={style.benefits}>
-          {benefitsLogos.map((benefit, index) => (
-            <div key={index} className={style.benefitContainer}>
-              <div className={style.benefitLogo}>{benefit.logo}</div>
-              <p className={style.benefitText}>{benefit.text}</p>
-            </div>
-          ))}
+          <Benefit />
+        </div>
+        <button className={style.primaryButton} style={{ alignSelf: 'center' }}>
+          How it Works
+        </button>
+      </div>
+      <div className={style.speechesContainer}>
+        <h2>
+          How Many <span>Speeches?</span>
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
+          pharetra sem, ut convallis ex. Pellentesque ultrices turpis quis nibh
+          placerat accumsan.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
+          pharetra sem, ut convallis ex.
+        </p>
+        <img src={howManySpeeches} alt="how many speeches"></img>
+      </div>
+      <div className="data-visualization"></div>
+
+      <div className={style.featuredSpeakersContainer}>
+        <h2>
+          Featured <span>Speakers</span>
+        </h2>
+        <FeaturedSpeakers />
+
+        <button className={[style.primaryButton]}>Find a Speaker</button>
+      </div>
+
+      <div className={style.footerContainer}>
+        <div className={style.footerImageContainer}>
+          <img
+            className={style.footerImage2}
+            src={footerImage2}
+            alt="footer-2"
+          />
+          <img
+            className={style.footerImage1}
+            src={footerImage1}
+            alt="footer-1"
+          />
+
+          <img
+            className={style.footerImage3}
+            src={footerImage3}
+            alt="footer-3"
+          />
+        </div>
+        <div className={style.footerMainContent}>
+          <div className={style.signUpContainer}>
+            <h2>
+              Are you <span>looking for a speaker?</span>
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              eget pharetra sem, ut convallis ex.
+            </p>
+            <button className={style.primaryButton}>
+              Register as an Organization
+            </button>
+          </div>
+
+          <div className={style.signUpContainer}>
+            <h2>
+              Do you <span>want to become a speaker?</span>
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              eget pharetra sem, ut convallis ex.
+            </p>
+            <button className={style.primaryButton}>
+              Register as a Speaker
+            </button>
+          </div>
         </div>
       </div>
     </div>

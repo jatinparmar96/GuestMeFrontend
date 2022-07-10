@@ -1,12 +1,11 @@
-//@ts-check
 import style from './Speaker.module.scss';
 
 import { Link } from 'react-router-dom';
 
 export const Speaker = (props) => {
   /**@type {import('./SpeakerType').SpeakerResponse} */
-  const speaker = props.speaker;
 
+  const speaker = props.speaker;
   return (
     <div className={style.speakerContainer}>
       <img
@@ -23,7 +22,7 @@ export const Speaker = (props) => {
         <div>{speaker.tagline}</div>
       </div>
       <div className={style.skills}>
-        {speaker.conditions.areas.map((area) => (
+        {speaker?.conditions?.areas?.map((area) => (
           <span key={area} className={style.skill}>
             {area}
           </span>

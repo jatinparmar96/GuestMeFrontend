@@ -32,25 +32,6 @@ $button-margin: 2rem;
         letter-spacing: 0.05em;
         color: $black;
       }
-
-      .button {
-        margin-top: $button-margin;
-        background-color: $mint-blue;
-        color: $white;
-        font-family: $barlow-condensed-font;
-        font-weight: 600;
-        font-size: 16px;
-        border: none;
-        border-radius: 4px;
-        letter-spacing: 0.05em;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        // &:hover {
-        //   background-color: $white;
-        //   color: $mint-blue;
-        // }
-      }
     }
   }
 
@@ -65,6 +46,19 @@ $button-margin: 2rem;
   }
 }
 
+h2 {
+  font-size: 20px;
+  span {
+    color: $mint-blue;
+  }
+}
+
+p {
+  color: $black;
+  letter-spacing: 0.05em;
+  line-height: 24px;
+}
+
 .middleContainer {
   display: flex;
   flex-direction: column;
@@ -74,11 +68,19 @@ $button-margin: 2rem;
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 290px auto;
+  .benefits {
+    padding-top: 4rem;
+  }
   img {
     position: relative;
     width: 50%;
     height: auto;
     object-fit: cover;
+  }
+  h2 {
+    span {
+      text-transform: uppercase;
+    }
   }
   .infoTextContainer {
     align-self: end;
@@ -86,51 +88,104 @@ $button-margin: 2rem;
     margin-top: 100px;
     text-align: right;
     padding-right: 20px;
-    h2 {
-      font-size: 20px;
-      span {
-        color: $mint-blue;
-        text-transform: uppercase;
-      }
-    }
+
     p {
-      color: $black;
       text-align: right;
-      letter-spacing: 0.05em;
-      line-height: 24px;
     }
   }
-  .benefits {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    .benefitContainer {
+}
+
+.speechesContainer {
+  padding-top: 5rem;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.25rem;
+  p {
+    align-self: center;
+    max-width: 80%;
+  }
+}
+
+.featuredSpeakersContainer {
+  margin-top: 6rem;
+  h2 {
+    text-align: center;
+    span {
+      text-transform: none;
+    }
+  }
+  button {
+    display: block;
+    margin: 3rem auto 6rem auto;
+  }
+}
+
+.footerContainer {
+  background-color: $white;
+  padding-bottom: 3.5rem;
+  .footerImageContainer {
+    background-image: url('../../assets/mic-logo-beige.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    img {
+      width: 138px;
+      height: auto;
+    }
+    .footerImage1 {
+      display: block;
+      margin: 1rem 0 1.5rem 1rem;
+      left: 0;
+    }
+    .footerImage2 {
+      margin-left: auto;
+      margin-right: 1rem;
+      display: block;
+    }
+    .footerImage3 {
+      margin-left: auto;
+      margin-right: 1rem;
+      display: block;
+    }
+  }
+
+  .footerMainContent {
+    .signUpContainer {
+      padding: 0 2rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 2rem;
-      .benefitLogo {
-        $dimension: 74px;
-        width: $dimension;
-        height: $dimension;
-        border-radius: 4px;
-        background-color: $light-green;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .benefitText {
-        max-width: 60%;
-        font-family: $barlow-condensed-font;
-        font-weight: 600;
-        font-size: 16px;
-        color: $black;
-        margin-top: 0.8rem;
-        text-align: center;
-        letter-spacing: 0.05em;
+      button {
+        background-color: $fiery-rose;
+        &:hover {
+          outline: 2px solid $fiery-rose;
+          background-color: $white;
+          color: $fiery-rose;
+        }
       }
     }
+    h2 {
+      text-align: center;
+    }
+  }
+}
+.primaryButton {
+  margin-top: $button-margin;
+  background-color: $mint-blue;
+  color: $white;
+  font-family: $barlow-condensed-font;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $white;
+    color: $mint-blue;
+    outline: 2px solid $mint-blue;
   }
 }

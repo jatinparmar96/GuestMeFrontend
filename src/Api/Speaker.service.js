@@ -13,6 +13,7 @@ const SPEAKER_ENDPOINT = {
   getMaxPrice: `${BASE_ENDPOINT}/max-price`,
   getAvailability: `${BASE_ENDPOINT}/get-availability`,
   getSpeakerBookings: `${BASE_ENDPOINT}/bookings`,
+  randomSpeakers: `${BASE_ENDPOINT}/random-speakers`,
 };
 /**
  * @param  {string} params
@@ -81,4 +82,8 @@ export const getSpeakerAvailability = (id) => {
 
 export const getSpeakerBookings = (id) => {
   return get(`${SPEAKER_ENDPOINT.getSpeakerBookings}/${id}`);
+};
+
+export const getRandomSpeakers = () => {
+  return get(SPEAKER_ENDPOINT.randomSpeakers);
 };
