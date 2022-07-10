@@ -1,14 +1,14 @@
 
-
+@use '../../common/variables.scss' as *;
 .footer{
     width: 100%;
-    background-color: #3A3F3F;
+    background-color: $black;
     border-radius: 3.56rem 0 0 0;
     height: 7.69rem;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr 1fr ;
-    color: #FFFFFF;
+    color: $white;
 
 
 

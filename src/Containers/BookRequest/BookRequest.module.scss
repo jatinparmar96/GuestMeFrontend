@@ -1,3 +1,4 @@
+@use  '../../common/variables.scss' as *;
 .reference {
 
     display: flex;
@@ -14,15 +15,15 @@
 
 .available{
 
-  background-color: #F0A274;
+  background-color: $light-orange;
 }
 
 .notAvailable{
 
-  background-color: #B7BFBF;
+  background-color: $grey;
 }
 
 .bookedByYou{
 
-  background-color: #35AFAC;
+  background-color: $mint-blue;
 }
