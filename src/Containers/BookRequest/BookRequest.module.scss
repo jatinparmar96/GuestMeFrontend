@@ -1,8 +1,4 @@
 @use  '../../common/variables.scss' as *;
-.requestContainer{
-  background-color: $light-beige;
-
-}
 .reference {
 
     display: flex;
@@ -20,50 +16,14 @@
 .available{
 
   background-color: $light-orange;
-  border: 0.1rem solid $black;
 }
 
 .notAvailable{
 
-  background-color: $light-green;
-  border: 0.1rem solid $black;
-
+  background-color: $grey;
 }
 
 .bookedByYou{
 
   background-color: $mint-blue;
-  border: 0.1rem solid $black;
 }
-
-@media screen and (min-width: 992px) {
-
-  .requestContainer {
-
-      // margin-right: 7.50rem;
-      // margin-left: 3.85rem;
-
-
-      h2{
-        margin: 0 0 2.15rem 0;
-        font-size: 1.20rem;
-        font-weight: 700;
-        line-height: 1.50rem;
-      }
-
-      .reference{
-        div{
-          margin-right: 0.55rem;
-          margin-bottom: 1.30rem;
-        }
-
-        .referenceName{
-          font-size: 0.80rem;
-          margin-right: 0.65rem;
-          font-weight: 500;
-        }
-      }
-
-
-    }
-  }
