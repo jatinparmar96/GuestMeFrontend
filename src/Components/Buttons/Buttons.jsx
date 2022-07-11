@@ -1,5 +1,6 @@
 //@ts-check
 import {
+  ContactLinkButtonContainer,
   RegisterPageLinkButtonContainer,
   RequestButtonContainer,
   RequestButtonContainerWide,
@@ -35,9 +36,16 @@ export const RequestButtonWide = (props) => (
   </RequestButtonContainerWide>
 );
 
-/**@type {React.FC<import('./ButtonsTypes.d').RegisterLinkButtonProps>} */
+/**@type {React.FC<import('./ButtonsTypes.d').LinkButtonProps>} */
 export const RegisterLinkButton = (props) => (
   <RegisterPageLinkButtonContainer to={props.to}>
     {props.text}
   </RegisterPageLinkButtonContainer>
+);
+
+/**@type {React.FC<import('./ButtonsTypes.d').LinkButtonProps>} */
+export const ContactLinkButton = (props) => (
+  <ContactLinkButtonContainer to={props.to}>
+    {props.text}
+  </ContactLinkButtonContainer>
 );

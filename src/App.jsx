@@ -12,6 +12,7 @@ import RequireAuth from './auth/RequireAuth';
 import SpeakerAccount from './Components/SpeakerAccount/SpeakerAccount';
 import SetSpeakerAvailability from './Components/SpeakersAvailability/SpeakerSetAvailability';
 import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
+import About from './Pages/about/About';
 import BookSpeaker from './Pages/BookSpeaker/BookSpeaker';
 import MyPage from './Pages/MyPage/MyPage';
 import SpeakerBooking from './Pages/SpeakerBooking/SpeakerBooking';
@@ -67,6 +68,7 @@ const App = () => {
             />
           </Route>
           <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/about" element={<About />} />
           {/* <Route
             path="/speakers/bookings"
             element={

@@ -61,3 +61,16 @@ export const RegisterPageLinkButtonContainer = styled(Link)`
   justify-content: center;
   align-items: center;
 `;
+
+export const ContactLinkButtonContainer = styled(Link)`
+  background: #35afac;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  width: 280px;
+  height: 40px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
