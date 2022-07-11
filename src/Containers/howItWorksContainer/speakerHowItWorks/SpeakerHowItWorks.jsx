@@ -14,25 +14,6 @@ import containerStyle from '../HowItWorks.module.scss';
 import componentStyle from './SpeakerHowItWorks.module.scss';
 
 import { RegisterLinkButton } from '../../../Components/Buttons/Buttons';
-/**@type {AppealPointItem[]} */
-const appealPoints = [
-  {
-    icon: Diamond,
-    text: 'Get recognition, review, and build your career',
-  },
-  {
-    icon: TwoPeople,
-    text: 'Make connections with organizations without paying any commission',
-  },
-  {
-    icon: Pencil,
-    text: 'Add movies and your skills to your profile page to highlight your work',
-  },
-  {
-    icon: Negotiate,
-    text: 'Negotiate for fee and earn satisfactory amount',
-  },
-];
 
 const SpeakerHowItWorks = () => {
   return (
@@ -70,37 +51,16 @@ const SpeakerHowItWorks = () => {
           <div
             className={`${componentStyle.compositeDescription} ${containerStyle.compositeDescription}`}
           >
-            <h4 className={containerStyle.compositeHeading}>Create Profile</h4>
-            <p className={containerStyle.compositeDescription__p}>
-              It is remarkably simple and easy to create a profile, just add
-              your name, field of expertise and delivery method to get started
-              with booking new clients. GuestMe has no fees to create a profile
-              for a speaker.
-            </p>
-            <h4 className={containerStyle.compositeHeading}>
-              Add Your Schedule
-            </h4>
-            <p className={containerStyle.compositeDescription__p}>
-              Add your Schedule and availabilities to your profile to
-              personalize. Guest Me offers ultimate flexibility to Speakers just
-              getting started. Clients will only be able to book you at the time
-              you specify.
-            </p>
-            <h4 className={containerStyle.compositeHeading}>
-              Accept a Booking
-            </h4>
-            <p className={containerStyle.compositeDescription__p}>
-              Whenever you receive a booking, you will be notified instantly,
-              you can choose to accept or reject the booking.
-            </p>
-            <h4 className={containerStyle.compositeHeading}>
-              Receive Feedback
-            </h4>
-            <p className={containerStyle.compositeDescription__p}>
-              Receive feedback for the work you do, get recognized, earn
-              recommendations. Stand out from the crowd, all while doing what
-              you love to do.
-            </p>
+            {descriptions.map((description) => (
+              <>
+                <h4 className={containerStyle.compositeHeading}>
+                  {description.heading}
+                </h4>
+                <p className={containerStyle.compositeDescription__p}>
+                  {description.text}
+                </p>
+              </>
+            ))}
           </div>
         </div>
 
@@ -131,3 +91,53 @@ export default SpeakerHowItWorks;
  * @property {React.FunctionComponent<React.SVGProps<SVGSVGElement>>} icon
  * @property {string} text
  */
+
+/**
+ * @typedef {Object} Description
+ * @property {string} heading
+ * @property {string} text
+ */
+
+/*************************************
+ * Content
+ *************************************/
+
+/**@type {AppealPointItem[]} */
+const appealPoints = [
+  {
+    icon: Diamond,
+    text: 'Get recognition, review, and build your career',
+  },
+  {
+    icon: TwoPeople,
+    text: 'Make connections with organizations without paying any commission',
+  },
+  {
+    icon: Pencil,
+    text: 'Add movies and your skills to your profile page to highlight your work',
+  },
+  {
+    icon: Negotiate,
+    text: 'Negotiate for fee and earn satisfactory amount',
+  },
+];
+
+/**@type {Description[]} */
+const descriptions = [
+  {
+    heading: 'Create Profile',
+    text: 'It is remarkably simple and easy to create a profile, just add your name, field of expertise and delivery method to get started with booking new clients. GuestMe has no fees to create a profile for a speaker. ',
+  },
+  {
+    heading: 'Add Your Schedule',
+    text: 'Add your Schedule and availabilities to your profile to personalize. Guest Me offers ultimate flexibility to Speakers just getting started. Clients will only be able to book you at the time you specify.',
+  },
+  {
+    heading: 'Accept a Booking',
+    text: 'Whenever you receive a booking, you will be notified instantly, you can choose to accept or reject the booking.',
+  },
+  {
+    heading: 'Receive Feedback',
+    text: 'Receive feedback for the work you do, get recognized, earn recommendations. Stand out from the crowd, all while doing what you love to do.',
+  },
+];
