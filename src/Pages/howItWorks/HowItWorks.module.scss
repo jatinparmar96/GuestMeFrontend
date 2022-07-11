@@ -1,0 +1,14 @@
+@use '../../common/variables'as *;
+
+.roleTabContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  font-weight: bold;
+}
+
+.unselectedRoleTab {
+  color: $mint-blue;
+  text-decoration: underline;
+}

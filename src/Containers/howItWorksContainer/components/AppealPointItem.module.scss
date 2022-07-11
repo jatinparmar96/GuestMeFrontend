@@ -1,0 +1,19 @@
+.appealPointItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconContainer {
+  background-color: #ECF2F2;
+  width: 74px;
+  height: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  font-weight: bold;
+}
