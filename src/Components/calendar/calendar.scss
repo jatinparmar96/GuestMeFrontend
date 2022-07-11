@@ -44,18 +44,40 @@ $calendar-map: (
   }
 }
 
-.react-calendar{
+.organization-calendar{
   display: inline-block;
   width: 31rem;
   height: 27.5rem;
   font-size: 1rem;
+  margin: 0;
   font-family: $barlow-condensed-font;
   text-decoration: none;
   border: 0px;
 
 
+  button{
+    font-size: 1rem;
+  }
+
+    .react-calendar__tile:disabled{
+      background-color: $light-green;
+
+    }
+
+
   .react-calendar__tile{
-  width: 3.7rem;
-  height: 3.7rem;
+  width: 3.5rem;
+  height: 3.5rem;
 }
+.react-calendar__month-view__weekdays{
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.react-calendar__month-view__weekdays__weekday :where(abbr[title]){
+  text-decoration: none;
+
+}
+
+
 }

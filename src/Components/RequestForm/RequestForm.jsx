@@ -37,7 +37,7 @@ const RequestForm = (props) => {
   //TODO: Add speaker date values to the calendar
   return (
     <>
-      <form onSubmit={(e) => handleSendRequest(e)}>
+      <form className={style.requestForm} onSubmit={(e) => handleSendRequest(e)}>
         <div className={style.organizationCalendar}>
         <Controller
           name="bookingDateTime.date"
