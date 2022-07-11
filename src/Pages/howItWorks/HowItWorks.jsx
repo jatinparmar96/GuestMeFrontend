@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
+import OrganizationHowItWorks from '../../Containers/howItWorksContainer/organizationHowItWorks/OrganizationHowItWorks';
 import SpeakerHowItWorks from '../../Containers/howItWorksContainer/speakerHowItWorks/SpeakerHowItWorks';
 
 import style from './HowItWorks.module.scss';
@@ -27,11 +28,7 @@ const HowItWorks = (props) => {
           For an organization
         </p>
       </div>
-      {isForSpeaker ? (
-        <SpeakerHowItWorks></SpeakerHowItWorks>
-      ) : (
-        <div>OrganizationContainer</div>
-      )}
+      {isForSpeaker ? <SpeakerHowItWorks /> : <OrganizationHowItWorks />}
     </>
   );
 };
