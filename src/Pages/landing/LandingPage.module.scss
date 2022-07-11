@@ -44,6 +44,42 @@ $button-margin: 2rem;
     margin-top: calc(-1 * (4rem + $button-margin));
     z-index: -1;
   }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: stretch;
+    background-size: 318px auto;
+    background-position: 4rem 4rem;
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      left: 6rem;
+      top: -4rem;
+      h1 {
+        font-size: 70px;
+        span {
+          font-size: 80px;
+        }
+        margin: 0;
+      }
+      .infoContainer {
+        p {
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+
+      br {
+        display: none;
+      }
+    }
+    .heroImage {
+      height: auto;
+      object-fit: contain;
+    }
+  }
 }
 
 h2 {
@@ -93,6 +129,38 @@ p {
       text-align: right;
     }
   }
+  button {
+    align-self: center;
+  }
+
+  @media screen and(min-width: 768px) {
+    background-size: 505px auto;
+    background-position-x: 97px;
+    padding-right: 150px;
+
+    .infoTextContainer {
+      text-align: left;
+      padding-right: 0;
+      max-width: 50%;
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        margin-top: 2rem;
+        text-align: left;
+      }
+    }
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left: auto;
+      padding-top: 0;
+      max-width: 50%;
+    }
+    button {
+      align-self: flex-end;
+    }
+  }
 }
 
 .speechesContainer {
@@ -102,9 +170,27 @@ p {
   flex-direction: column;
   text-align: center;
   gap: 1.25rem;
-  p {
-    align-self: center;
-    max-width: 80%;
+  .speechesTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0 2rem;
+    p {
+      align-self: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    h2 {
+      margin: 0;
+      font-size: 40px;
+    }
+    p {
+      text-align: left;
+    }
   }
 }
 
@@ -167,6 +253,32 @@ p {
     }
     h2 {
       text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 2rem 4rem;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    align-items: center;
+    .footerImageContainer {
+      img {
+        width: 209px;
+      }
+    }
+    .footerMainContent {
+      .signUpContainer {
+        h2 {
+          font-size: 30px;
+        }
+        h2,
+        p {
+          text-align: left;
+        }
+        button {
+          align-self: flex-end;
+        }
+      }
     }
   }
 }

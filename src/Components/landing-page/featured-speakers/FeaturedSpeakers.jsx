@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getRandomSpeakers } from '../../../Api/Speaker.service';
 import { Speaker } from '../../Speaker/Speaker';
-
+import style from './FeaturedSpeakers.module.scss';
 const FeaturedSpeakers = () => {
   const [speakers, setSpeakers] = useState([]);
   useEffect(() => {
@@ -13,11 +13,11 @@ const FeaturedSpeakers = () => {
   }, []);
 
   return (
-    <>
+    <div className={style.featuredSpeakers}>
       {speakers.map((speaker, index) => (
         <Speaker speaker={speaker} key={index} />
       ))}
-    </>
+    </div>
   );
 };
 

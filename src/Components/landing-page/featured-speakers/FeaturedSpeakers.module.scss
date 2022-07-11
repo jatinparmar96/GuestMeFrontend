@@ -1,0 +1,9 @@
+.featuredSpeakers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  @media screen and (min-width: 768px) {
+    padding: 0 3rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

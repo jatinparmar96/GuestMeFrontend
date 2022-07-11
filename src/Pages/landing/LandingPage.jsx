@@ -15,7 +15,7 @@ const LandingPage = () => {
       <div className={style.topContainer}>
         <div className={style.textContainer}>
           <h1>
-            <span>Guest Me</span>
+            <span>Guest Me </span>
             <br />
             for Students
           </h1>
@@ -47,23 +47,24 @@ const LandingPage = () => {
         <div className={style.benefits}>
           <Benefit />
         </div>
-        <button className={style.primaryButton} style={{ alignSelf: 'center' }}>
-          How it Works
-        </button>
+        <button className={style.primaryButton}>How it Works</button>
       </div>
       <div className={style.speechesContainer}>
-        <h2>
-          How Many <span>Speeches?</span>
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-          pharetra sem, ut convallis ex. Pellentesque ultrices turpis quis nibh
-          placerat accumsan.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-          pharetra sem, ut convallis ex.
-        </p>
+        <div className={style.speechesTextContainer}>
+          <h2>
+            How Many <span>Speeches?</span>
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            eget pharetra sem, ut convallis ex. Pellentesque ultrices turpis
+            quis nibh placerat accumsan.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            eget pharetra sem, ut convallis ex.
+          </p>
+        </div>
+
         <img src={howManySpeeches} alt="how many speeches"></img>
       </div>
       <div className="data-visualization"></div>
@@ -74,7 +75,7 @@ const LandingPage = () => {
         </h2>
         <FeaturedSpeakers />
 
-        <button className={[style.primaryButton]}>Find a Speaker</button>
+        <button className={style.primaryButton}>Find a Speaker</button>
       </div>
 
       <div className={style.footerContainer}>
@@ -102,8 +103,8 @@ const LandingPage = () => {
               Are you <span>looking for a speaker?</span>
             </h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              eget pharetra sem, ut convallis ex.
+              Register now and get the opportunity to book speakers for various
+              educational events!
             </p>
             <button className={style.primaryButton}>
               Register as an Organization
@@ -115,8 +116,8 @@ const LandingPage = () => {
               Do you <span>want to become a speaker?</span>
             </h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              eget pharetra sem, ut convallis ex.
+              Join our platform to connect with thousands of students who would
+              like to hear about industry experts like you!
             </p>
             <button className={style.primaryButton}>
               Register as a Speaker
