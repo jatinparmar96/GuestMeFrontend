@@ -70,8 +70,8 @@ const SpeakerHowItWorks = () => {
             <span className={containerStyle.fontMint}>as a speaker?</span>
           </h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            eget pharetra sem, ut convallis ex.
+            Register to join our group of talented and empowering speakers!
+            Build networking connections with event organizers!
           </p>
           <RegisterLinkButton text="Register as a speaker" to="/register" />
           <p>Already have an account?</p>
