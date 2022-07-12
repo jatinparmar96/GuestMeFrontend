@@ -1,6 +1,7 @@
 //@ts-check
 import {
   ContactLinkButtonContainer,
+  PrimaryButtonContainer,
   RegisterPageLinkButtonContainer,
   RequestButtonContainer,
   RequestButtonContainerWide,
@@ -48,4 +49,9 @@ export const ContactLinkButton = (props) => (
   <ContactLinkButtonContainer to={props.to}>
     {props.text}
   </ContactLinkButtonContainer>
+);
+
+/**@type {React.FC<JSX.IntrinsicElements['button'] & {text: string;}>} */
+export const PrimaryButton = (props) => (
+  <PrimaryButtonContainer>{props.text}</PrimaryButtonContainer>
 );

@@ -74,3 +74,17 @@ export const ContactLinkButtonContainer = styled(Link)`
   justify-content: center;
   align-items: center;
 `;
+
+export const PrimaryButtonContainer = styled.button`
+  background: #35afac;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  width: 130px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
