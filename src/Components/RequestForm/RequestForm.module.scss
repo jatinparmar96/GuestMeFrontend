@@ -1,13 +1,136 @@
-// form {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-content: center;
-//   max-width: 800px;
-//   margin: auto;
-//   gap: 1rem;
-// }
+@use '../../common/variables.scss' as *;
+
 
 .requestForm{
   margin:0;
+}
+
+@media screen and (min-width: 992px) {
+  .organizationCalendar{
+    margin-bottom: 2.95rem;
+
+
+  }
+
+  .requestForm{
+
+
+    .formGrid{
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: repeat(8, auto);
+      width: 38.65rem;
+    }
+
+    label {
+      font-size:0.90rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+  .date{
+    margin-left: 0;
+
+
+    div{
+    grid-column: 1;
+      grid-row: 1;
+    }
+
+      span{
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: $fiery-rose;
+        margin-left: 0.7rem;
+
+      }
+
+      input{
+        font-size: 1rem;
+        grid-column: 1;
+        grid-row: 2;
+        border: none;
+        width: 18.75rem;
+        border-bottom: 0.05rem solid $black;
+        background-color: $light-beige;
+        margin-left: 0;
+        margin-top: 0.75rem;
+        padding-bottom: 0.35rem;
+      }
+  }
+  .time{
+    margin-left: 0;
+    grid-column: 2;
+    grid-row: 1;
+
+    span {
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: $fiery-rose;
+        margin-left: 0.7rem;
+      }
+
+.timeSelectors{
+  grid-column: 2;
+  grid-row: 2;
+
+
+
+
+  .timeSelect{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 5rem;
+    height: 2rem;
+    margin-right: 2.55rem;
+    margin-top: 0.35rem;
+    border: 0.13rem solid transparent;
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-family: $barlow-font;
+    color: $black;
+    background-image: url('../../assets/icons/arrow.png');
+    background-repeat: no-repeat;
+    background-position: 3.9rem center;
+    padding-left: 0.6rem;
+    padding-right: 0.35rem;
+
+
+    &:hover{
+      border: 0.13rem solid $mint-blue;
+
+    }
+
+    &::-webkit-scrollbar{
+      width: 0.3rem;
+    }
+    &::-webkit-scrollbar-track{
+      background-color: $light-green;
+    }
+    &::-webkit-scrollbar-thumb{
+      background-color: $mint-blue;
+    }
+
+    &:where(select){
+      text-transform: none;
+    }
+
+
+
+      option{
+        font-size: 0.8rem;
+        font-weight: 400;
+        font-family: $barlow-font;
+      }
+
+
+}
+
+
+
+  }
+
+}
+}
 }
