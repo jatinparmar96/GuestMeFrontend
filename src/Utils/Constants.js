@@ -7,3 +7,18 @@ export const API_URL = {
   SPEAKER_LOGIN: `${BASE_URL}/speakers/login`,
   SPEAKER_REGISTER: `${BASE_URL}/speakers/register`,
 };
+
+export const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];

@@ -4,6 +4,9 @@
  * @param {'speaker' | 'organization'} userType
  * @returns {boolean}
  */
+
+import { months } from './Constants';
+
 export const setAuthInformation = (token, userData = {}, userType) => {
   try {
     localStorage.setItem('token', token);
@@ -64,4 +67,18 @@ export const addDays = (date, days) => {
   const newDate = new Date(date);
   newDate.setDate(newDate.getDate() + days);
   return newDate;
+};
+
+export const convertDateFormat = (ISODate) => {
+  const date = ISODate;
+
+  // console.log(date);
+  var d = new Date(date).getDate();
+  var m = new Date(date).getMonth();
+  var y = new Date(date).getFullYear();
+
+  var dateString =
+    //  (d <= 9 ? '0' + d : d) + '-' + (m <= 9 ? '0' + m : months[m]) + '-' + y;
+    months[m] + ' ' + (d <= 9 ? '0' + d : d) + ' , ' + y;
+  return dateString;
 };
