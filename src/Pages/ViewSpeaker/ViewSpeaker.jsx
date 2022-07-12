@@ -5,6 +5,7 @@ import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformation/SpeakerPrimaryInformation';
 import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryContainer/Speaker_SecondaryContainer';
 import SpeakerTertiaryInformation from '../../Containers/Speaker_TertiaryContainer/Speaker_TertiaryContainer';
+import style from './ViewSpeaker.module.scss';
 
 const ViewSpeaker = (props) => {
   // const [ selectedSpeaker, setSelectedSpeaker ] = useState("");
@@ -39,14 +40,17 @@ const ViewSpeaker = (props) => {
               Home {'>'} Find a speaker {'>'} {speakerData.fullName}
             </div>
           </div>
-          <div>
-            <SpeakerPrimaryInformation speaker={speakerData} />
-          </div>
-          <div>
-            <SpeakerSecondaryInformation speaker={speakerData} />
-          </div>
-          <div>
-            <SpeakerTertiaryInformation speaker={speakerData} />
+
+          <div className={style.viewSpeakerContainer}>
+            <div className={style.primary}>
+              <SpeakerPrimaryInformation speaker={speakerData} />
+            </div>
+            <div className={style.secondary}>
+              <SpeakerSecondaryInformation speaker={speakerData} />
+            </div>
+            <div className={style.tertiary}>
+              <SpeakerTertiaryInformation speaker={speakerData} />
+            </div>
           </div>
         </>
       )}

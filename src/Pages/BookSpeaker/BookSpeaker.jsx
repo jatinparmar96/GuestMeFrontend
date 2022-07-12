@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSpeaker } from '../../Api/Speaker.service';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
+import BookingSpeakerCard from '../../Containers/BookingSpeakerCard/BookingSpeakerCard';
 import BookRequest from '../../Containers/BookRequest/BookRequest';
+import style from './BookSpeaker.module.scss';
 
 
 const BookSpeaker = (props) => {
@@ -31,14 +33,23 @@ const BookSpeaker = (props) => {
       {loadingState ? (
         <p>Loading... </p>
       ) : (
-        <>
-          <div>
-            <PageHeading text="Find a speaker" />
+          <>
+
             <div>
-              Home {'>'} Find a speaker {'>'} {speakerData.fullName} {'>'} Request
-              </div>
+                <PageHeading text="Find a speaker" />
+                <div>
+                  Home {'>'} Find a speaker {'>'} {speakerData.fullName} {'>'} Request
             </div>
-            <BookRequest speaker={speakerData} />
+            </div>
+            <div className={style.bookSpeakerContainer}>
+              <div className={style.bookForm}>
+                <BookRequest speaker={speakerData} />
+              </div>
+              <div className={style.bookCard}>
+                <BookingSpeakerCard speaker={speakerData}  />
+              </div>
+
+            </div>
 
 
         </>
