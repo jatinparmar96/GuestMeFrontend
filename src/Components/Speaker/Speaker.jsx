@@ -6,22 +6,32 @@ export const Speaker = (props) => {
   /**@type {import('./SpeakerType').SpeakerResponse} */
 
   const speaker = props.speaker;
+
+  const reviews = (str, reviewCount) => {
+    if (reviewCount) {
+      return `${reviewCount} ${reviewCount > 1 ? 'reviews' : 'review'}`;
+    }
+  };
   return (
     <div className={style.speakerContainer}>
-      <img
-        src={speaker.profilePicture}
-        alt={speaker.fullName}
-        className={style.img}
-      />
-      <div className={style.speakerTopRight}>
-        <div className={style.speakerTop}>
-          <p className={style.review}>{speaker.reviewsQuantity} reviews</p>
-          <span>☆</span>
+      <div className={style.speakerInfoContainer}>
+        <img
+          src={speaker.profilePicture}
+          alt={speaker.fullName}
+          className={style.img}
+        />
+        <div className={style.speakerTopRight}>
+          <div className={style.speakerTop}>
+            <p className={style.review}>
+              {reviews`${speaker.reviewsQuantity}`}
+            </p>
+            <span>☆</span>
+          </div>
+          <div className={style.speakerName}>{speaker.fullName}</div>
+          <div className={style.tagline}>{speaker.tagline}</div>
         </div>
-        <div>{speaker.fullName}</div>
-        <div>{speaker.tagline}</div>
       </div>
-      <div className={style.skills}>
+      <div className={style.skillsContainer}>
         {speaker?.conditions?.areas?.map((area) => (
           <span key={area} className={style.skill}>
             {area}
