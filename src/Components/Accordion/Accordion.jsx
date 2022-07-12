@@ -44,7 +44,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 export const Accordion = (props) => {
   const { children, label } = props;
-  const [expanded, setExpanded] = useState('panel');
+  const [expanded, setExpanded] = useState('');
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -56,7 +56,7 @@ export const Accordion = (props) => {
         expanded={expanded === 'panel'}
         onChange={handleChange('panel')}
       >
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+        <AccordionSummary aria-controls="panel-content" id="panel-header">
           <Typography>{label}</Typography>
         </AccordionSummary>
         <AccordionDetails>{children}</AccordionDetails>
