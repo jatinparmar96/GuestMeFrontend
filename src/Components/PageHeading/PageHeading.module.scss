@@ -1,11 +1,21 @@
+@use '../../common/variables'as *;
+
+
 .pageHeading {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  background-color: #F9F8F5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $light-beige;
+  height: 100px;
 }
 
 .heading {
   width: 100%;
   margin: 0;
   padding: 0;
+  margin-left: 20px;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-left: 150px;
+  }
 }

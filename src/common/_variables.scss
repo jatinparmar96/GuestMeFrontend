@@ -9,8 +9,13 @@ $light-orange: #F0A274;
 $white: #fff;
 $bg-auth-form: #F5F5F5;
 
+//@TODO: check
+$max-content-width: 1000px;
+
 // Fonts
 $barlow-font: 'Barlow',
 sans-serif;
 $barlow-condensed-font: 'Barlow Condensed',
 sans-serif;
+
+$bp-tablet: 768px;

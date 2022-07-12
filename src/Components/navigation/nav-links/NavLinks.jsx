@@ -11,15 +11,15 @@ const mainLinks = [
     name: 'Find a speaker',
   },
   {
-    path: '/',
+    path: '/how-it-works',
     name: 'How it works',
   },
   {
-    path: '/',
+    path: '/about',
     name: 'About',
   },
   {
-    path: '/',
+    path: '/contact',
     name: 'Contact',
   },
 ];

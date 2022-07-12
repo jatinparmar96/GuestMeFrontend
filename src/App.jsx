@@ -12,6 +12,7 @@ import RequireAuth from './auth/RequireAuth';
 import SpeakerAccount from './Components/SpeakerAccount/SpeakerAccount';
 import SetSpeakerAvailability from './Components/SpeakersAvailability/SpeakerSetAvailability';
 import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
+import About from './Pages/about/About';
 import BookSpeaker from './Pages/BookSpeaker/BookSpeaker';
 import MyPage from './Pages/MyPage/MyPage';
 import SpeakerBooking from './Pages/SpeakerBooking/SpeakerBooking';
@@ -20,7 +21,12 @@ import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 import { useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { useRecoilState } from 'recoil';
+
+import Contact from './Pages/contact/Contact';
+import HowItWorks from './Pages/howItWorks/HowItWorks';
+
 import './App.module.scss';
+
 import LandingPage from './Pages/landing/LandingPage';
 import tokenAtom from './Recoil/Authentication/atom';
 /**@type {React.FC<any>} */
@@ -51,12 +57,23 @@ const App = () => {
               </RequireAuth>
             }
           >
-            <Route path="/speakers/mypage" element={<SpeakerUpdateProfile/>} />
-            <Route path="/speakers/mypage/bookings" element={<SpeakerBooking />} />
-            <Route path="/speakers/mypage/availability" element={<SetSpeakerAvailability />} />
-            <Route path="/speakers/mypage/account" element={<SpeakerAccount />} />
-
+            <Route path="/speakers/mypage" element={<SpeakerUpdateProfile />} />
+            <Route
+              path="/speakers/mypage/bookings"
+              element={<SpeakerBooking />}
+            />
+            <Route
+              path="/speakers/mypage/availability"
+              element={<SetSpeakerAvailability />}
+            />
+            <Route
+              path="/speakers/mypage/account"
+              element={<SpeakerAccount />}
+            />
           </Route>
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           {/* <Route
             path="/speakers/bookings"
             element={

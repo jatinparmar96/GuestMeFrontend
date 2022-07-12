@@ -1,0 +1,32 @@
+.memberContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0 20px;
+  padding-bottom: 35px;
+
+  flex: 1 1 20%;
+}
+
+.memberImage {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.memberHeading {
+  margin: 0;
+}
+
+.iconRow {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 23.5px
+}
+
+.snsLink {
+  color: black;
+}
