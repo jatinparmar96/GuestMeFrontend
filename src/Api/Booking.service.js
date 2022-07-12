@@ -5,6 +5,7 @@ const BASE_ENDPOINT = '/bookings';
 const BOOKING_ENDPOINT = {
   get: `${BASE_ENDPOINT}`,
   post: `${BASE_ENDPOINT}`,
+  setBookingStatus: `${BASE_ENDPOINT}/set-booking`,
 };
 
 /**
@@ -21,6 +22,18 @@ export const getBookings = (params) => {
  */
 export const postBooking = async (bookingData) => {
   post(BOOKING_ENDPOINT.post, bookingData)
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const bookingResponse = async (bookingStatus, bookingID) => {
+  console.log(`${BOOKING_ENDPOINT.setBookingStatus}/${bookingID}`);
+  post(`BOOKING_ENDPOINT.setBookingStatus/${bookingID}`)
+    // post(BOOKING_ENDPOINT.setBookingStatus/bookingID", BookingResponse)
     .then((res) => {
       console.log(res.data);
     })

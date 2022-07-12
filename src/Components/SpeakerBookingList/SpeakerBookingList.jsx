@@ -1,12 +1,22 @@
+import { bookingResponse } from '../../Api/Booking.service';
+import { convertDateFormat } from '../../Utils/Utils';
 import style from './SpeakerBookingList.module.scss';
 
 
 
 const SpeakerBookingList = (props) => {
 
-  console.log(props.speaker);
+   console.log(props.speaker);
 
 
+
+  const bookingStatus = (e,id) => {
+console.log(id)
+    let data = {
+      status: e,
+  }
+    bookingResponse(data,id);
+  }
 
 
   return(
@@ -17,12 +27,12 @@ const SpeakerBookingList = (props) => {
         {props.speaker.pending && (<ul>
           {props.speaker.pending.map((booking, id) => (
           <li key={id}>
-            {/* <p>{ booking.location}</p> */}
+
             <div className={style.verticalGrid}>
 
         <div>
             <p>Request for</p>
-        <p><b>July 7th, 2022</b></p>
+                  <p><b>{ convertDateFormat(booking.bookingDateTime.date)}</b></p>
           </div>
 
           <div>
@@ -35,8 +45,8 @@ const SpeakerBookingList = (props) => {
           </div>
 
         <div className={style.callToActionColumn}>
-          <button onClick={() =>{alert("The booking was accepted!!")}}>Approve</button>
-          <button>Decline</button>
+                  <button onClick={(e) => bookingStatus('accepted',booking)}>Approve</button>
+          <button onClick={(e) =>bookingStatus('rejected',booking._id)}>Decline</button>
         </div>
 
         </div>
@@ -75,7 +85,7 @@ const SpeakerBookingList = (props) => {
           </div>
 
         <div className={style.callToActionColumn}>
-          <button>Cancel/Delete</button>
+          <button onClick={(e) => bookingStatus('delete',booking._id)}>Cancel/Delete</button>
 
         </div>
 

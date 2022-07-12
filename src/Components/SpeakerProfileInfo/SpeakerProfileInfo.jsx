@@ -1,11 +1,6 @@
 
 
 const SpeakerInfo = (props) => {
-
-
-
-
-
     return (
       <>
         <div>
