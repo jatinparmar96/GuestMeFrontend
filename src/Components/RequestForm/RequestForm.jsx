@@ -1,4 +1,5 @@
-// import { style } from '@mui/system';
+
+
 import { Controller, useForm } from 'react-hook-form';
 import { postBooking } from '../../Api/Booking.service';
 import OrganizationCalendar from '../calendar/organization/organization-calendar';
@@ -152,7 +153,7 @@ const RequestForm = (props) => {
             />
           </label>
         ) : null}
-        <label>
+        <label className={style.message}>
           Details & Message*
           <textarea
             className={style.message}
@@ -160,8 +161,16 @@ const RequestForm = (props) => {
             {...register('message', { required: true })}
           />
           </label>
+
         </div>
-        <button className="sendRequest">Send</button>
+
+        <div className={style.conditionsContainer}>
+          <label htmlFor="conditions" className={style.conditions}>
+          <input type="checkbox" name="conditions" id="conditions" />
+          <span>By sending the request I agree that the contact information (organization name, email, and phone) will be sent to the speaker.</span>
+          </label>
+        </div>
+        <button className={style.sendRequest}>Send</button>
       </form>
       {/* Create a form */}
     </>
