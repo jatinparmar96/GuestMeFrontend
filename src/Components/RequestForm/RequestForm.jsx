@@ -34,6 +34,8 @@ const RequestForm = (props) => {
   };
   // const today = new Date();
 
+
+
   //TODO: Add speaker date values to the calendar
   return (
     <>
@@ -53,10 +55,10 @@ const RequestForm = (props) => {
           }}
           />
         </div>
-
-        <label>
+        <div className={style.formGrid}>
+        <label className={style.date}>
           {' '}
-          Selected date* <span>* Select the date in the calendar</span>
+         <div>Selected date* <span>* Select the date in the calendar</span></div>
           <input
             type="date"
             value={
@@ -68,13 +70,13 @@ const RequestForm = (props) => {
             readOnly
           />
         </label>
-        <label>
-          Time* <span>* Timings are in PST(GMT-7)</span>
-          <label>
-            {' '}
-            Start Time{' '}
+        <label className={style.time}>
+            <div>Time* <span>* Timings are in PST(GMT-7)</span></div>
+        <div className={style.timeSelectors}>
+          <label classNames={style.startTime} aria-label="Start Time">
+
             <select
-              className="startTime"
+              className={style.timeSelect}
               name="startTime"
               {...register('bookingDateTime.startDateTime', { required: true })}
             >
@@ -85,24 +87,23 @@ const RequestForm = (props) => {
               ))}
             </select>
           </label>
-          <label>
-            {' '}
-            End Time
-            <select
-              className="endTime"
-              name="endTime"
-              id="endTime"
-              {...register('bookingDateTime.endDateTime', { required: true })}
-            >
-              {times.map((time, index) => (
-                <option key={index} value={time}>
-                  {time}
-                </option>
-              ))}
-            </select>
-          </label>
+          <label className={style.endTime} aria-label="End Time">
+              <select
+                className={style.timeSelect}
+                name="endTime"
+                id="endTime"
+                {...register('bookingDateTime.endDateTime', { required: true })}
+              >
+                {times.map((time, index) => (
+                  <option key={index} value={time}>
+                    {time}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
         </label>
-        <label>
+        <label className={style.topic}>
           {' '}
           Speech topic*
           <input
@@ -111,7 +112,7 @@ const RequestForm = (props) => {
             {...register('topic', { required: true })}
           />
         </label>
-        <label>
+        <label className={style.personInCharge}>
           {' '}
           Person in charge*
           <input
@@ -120,10 +121,10 @@ const RequestForm = (props) => {
             {...register('personInCharge', { required: true })}
           />
         </label>
-        <label>
+        <label className={style.deliveryMethod}>
           Delivery method*
           <select
-            className="deliveryMethod"
+            className={style.deliveryMethodSelector}
             {...register('deliveryMethod', { required: true })}
           >
             <option value="" disabled>
@@ -142,7 +143,7 @@ const RequestForm = (props) => {
           </select>
         </label>
         {watch('deliveryMethod') === 'isInPerson' ? (
-          <label>
+          <label className={style.location}>
             Location*
             <input
               type="text"
@@ -154,10 +155,12 @@ const RequestForm = (props) => {
         <label>
           Details & Message*
           <textarea
+            className={style.message}
             placeholder="Enter the details and message"
             {...register('message', { required: true })}
           />
-        </label>
+          </label>
+        </div>
         <button className="sendRequest">Send</button>
       </form>
       {/* Create a form */}
