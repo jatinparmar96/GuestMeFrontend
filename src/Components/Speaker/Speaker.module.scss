@@ -91,6 +91,13 @@
 }
 
 .viewProfile {
+  font-family: $barlow-condensed-font;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: $mint-blue;
+  color: $white;
+
   grid-column: 1 /-1;
   width: 100%;
   height: max-content;
@@ -98,8 +105,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-  background-color: #35afac;
-  color: white;
   border-radius: 4px;
+  margin-top: auto;
 }
