@@ -46,13 +46,15 @@ $calendar-map: (
 
 .organization-calendar{
   display: inline-block;
-  width: 31rem;
-  height: 27.5rem;
-  font-size: 1rem;
+  // width: 38.65rem;
+  // height: 27.5rem;
+  // font-size: 1rem;
   margin: 0;
   font-family: $barlow-condensed-font;
   text-decoration: none;
   border: 0px;
+  padding-top: 1rem;
+
 
 
   button{
@@ -66,12 +68,12 @@ $calendar-map: (
 
 
   .react-calendar__tile{
-  width: 3.5rem;
-  height: 3.5rem;
+  // width: 3.5rem;
+  // height: 3.5rem;
 }
 .react-calendar__month-view__weekdays{
   text-decoration: none;
-  font-size: 1rem;
+  // font-size: 1rem;
 }
 
 .react-calendar__month-view__weekdays__weekday :where(abbr[title]){
@@ -80,4 +82,27 @@ $calendar-map: (
 }
 
 
+}
+
+@media screen and (min-width: 992px) {
+  .organization-calendar {
+
+      width: 38.65rem;
+      height: 29.75rem;
+      font-size: 1rem;
+      margin: 0;
+
+        button {
+            font-size: 1rem;
+          }
+        .react-calendar__tile {
+          width: 4rem;
+          height: 4rem;
+          font-weight: 700;
+        }
+        .react-calendar__month-view__weekdays {
+          font-size: 1rem;
+        }
+
+  }
 }
