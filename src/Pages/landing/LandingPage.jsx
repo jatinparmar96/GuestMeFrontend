@@ -1,13 +1,13 @@
 import classImage from '../../assets/pexels-pavel-danilyuk-8423049 5.png';
 import Benefit from '../../Components/landing-page/benefit/Benefit';
 
-import howManySpeeches from '../../assets/how-many-speeches.png';
 import FeaturedSpeakers from '../../Components/landing-page/featured-speakers/FeaturedSpeakers';
 import style from './LandingPage.module.scss';
 
 import footerImage1 from '../../assets/landing-page-footer-1.png';
 import footerImage2 from '../../assets/landing-page-footer-2.png';
 import footerImage3 from '../../assets/landing-page-footer-3.png';
+import Speeches from '../../Components/landing-page/speeches/Speeches';
 
 const LandingPage = () => {
   return (
@@ -50,24 +50,8 @@ const LandingPage = () => {
         <button className={style.primaryButton}>How it Works</button>
       </div>
       <div className={style.speechesContainer}>
-        <div className={style.speechesTextContainer}>
-          <h2>
-            How Many <span>Speeches?</span>
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            eget pharetra sem, ut convallis ex. Pellentesque ultrices turpis
-            quis nibh placerat accumsan.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            eget pharetra sem, ut convallis ex.
-          </p>
-        </div>
-
-        <img src={howManySpeeches} alt="how many speeches"></img>
+        <Speeches />
       </div>
-      <div className="data-visualization"></div>
 
       <div className={style.featuredSpeakersContainer}>
         <h2>

@@ -156,6 +156,7 @@ p {
       margin-left: auto;
       padding-top: 0;
       max-width: 50%;
+      gap: 1.5rem;
     }
     button {
       align-self: flex-end;
@@ -170,15 +171,6 @@ p {
   flex-direction: column;
   text-align: center;
   gap: 1.25rem;
-  .speechesTextContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    padding: 0 2rem;
-    p {
-      align-self: center;
-    }
-  }
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
