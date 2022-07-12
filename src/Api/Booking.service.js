@@ -31,9 +31,8 @@ export const postBooking = async (bookingData) => {
 };
 
 export const bookingResponse = async (bookingStatus, bookingID) => {
-  console.log(`${BOOKING_ENDPOINT.setBookingStatus}/${bookingID}`);
-  post(`BOOKING_ENDPOINT.setBookingStatus/${bookingID}`)
-    // post(BOOKING_ENDPOINT.setBookingStatus/bookingID", BookingResponse)
+  // console.log(`${BOOKING_ENDPOINT.setBookingStatus}/${bookingID}`);
+  post(`${BOOKING_ENDPOINT.setBookingStatus}/${bookingID}`, bookingStatus)
     .then((res) => {
       console.log(res.data);
     })

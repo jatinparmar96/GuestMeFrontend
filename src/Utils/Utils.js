@@ -77,8 +77,6 @@ export const convertDateFormat = (ISODate) => {
   var m = new Date(date).getMonth();
   var y = new Date(date).getFullYear();
 
-  var dateString =
-    //  (d <= 9 ? '0' + d : d) + '-' + (m <= 9 ? '0' + m : months[m]) + '-' + y;
-    months[m] + ' ' + (d <= 9 ? '0' + d : d) + ' , ' + y;
+  var dateString = months[m] + ' ' + (d <= 9 ? '0' + d : d) + ' , ' + y;
   return dateString;
 };
