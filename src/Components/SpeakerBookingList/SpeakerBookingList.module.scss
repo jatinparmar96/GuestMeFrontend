@@ -1,41 +1,30 @@
-
-body{
-  background: #F5F5F5;
-}
-
-p,a{
+p,
+a {
   text-align: center;
 }
 
-.verticalGrid{
+.verticalGrid {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-gap: 1rem;
 }
 
-.callToActionColumn{
-
+.callToActionColumn {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   align-items: center;
   margin: 1rem;
 }
 
-.centreColumnTopRow{
-
+.centreColumnTopRow {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
-
-li{
+li {
   list-style-type: none;
   background: white;
   margin: 1rem;
-}
-
-button {
-    height: 30px;
 }

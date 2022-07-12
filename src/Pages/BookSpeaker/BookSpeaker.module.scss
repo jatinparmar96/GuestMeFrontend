@@ -5,33 +5,27 @@
   justify-content: center;
   width: 100%;
 
-  .bookCard{
+  .bookCard {
     order: 1;
   }
 }
 
-
 @media screen and (min-width: 992px) {
-.bookSpeakerContainer {
+  .bookSpeakerContainer {
+    margin-left: 7.5rem;
+    margin-right: 7.5rem;
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 14.5rem auto;
 
-  margin-left: 7.50rem;
-  margin-right: 7.50rem;
-  margin-bottom: 5rem;
-  display: grid;
-  grid-template-columns: 14.50rem auto;
+    .bookForm {
+      grid-column: 2;
+      grid-row: 1;
+    }
 
-  .bookForm{
-    grid-column: 2;
-    grid-row: 1;
+    .bookCard {
+      grid-column: 1;
+      grid-row: 1;
+    }
   }
-
-  .bookCard {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-
-
-}
-
 }

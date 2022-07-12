@@ -1,0 +1,295 @@
+@use '../../common/variables' as *;
+
+$button-margin: 2rem;
+.topContainer {
+  position: relative;
+  background-image: url('../../assets/mic-logo-white.png');
+  background-repeat: no-repeat;
+  background-size: 100px auto;
+  background-position: 2.4rem 2rem;
+  border-bottom-right-radius: 110px;
+  overflow: hidden;
+  padding-top: 2rem;
+  line-height: 1.5;
+  .textContainer {
+    padding: 0 2rem;
+    h1 {
+      font-family: $barlow-condensed-font;
+      font-weight: 500;
+      font-size: 35px;
+      span {
+        text-transform: uppercase;
+        color: $mint-blue;
+        font-size: 40px;
+      }
+    }
+    .infoContainer {
+      p {
+        text-align: left;
+        font-family: $barlow-font;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0.05em;
+        color: $black;
+      }
+    }
+  }
+
+  .heroImage {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-top: calc(-1 * (4rem + $button-margin));
+    z-index: -1;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: stretch;
+    background-size: 318px auto;
+    background-position: 4rem 4rem;
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      left: 6rem;
+      top: -4rem;
+      h1 {
+        font-size: 70px;
+        span {
+          font-size: 80px;
+        }
+        margin: 0;
+      }
+      .infoContainer {
+        p {
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+
+      br {
+        display: none;
+      }
+    }
+    .heroImage {
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+h2 {
+  font-size: 20px;
+  span {
+    color: $mint-blue;
+  }
+}
+
+p {
+  color: $black;
+  letter-spacing: 0.05em;
+  line-height: 24px;
+}
+
+.middleContainer {
+  display: flex;
+  flex-direction: column;
+  // padding-right: 20px;
+  background-color: $white;
+  background-image: url('../../assets/lady-with-laptop.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 290px auto;
+  .benefits {
+    padding-top: 4rem;
+  }
+  img {
+    position: relative;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+  }
+  h2 {
+    span {
+      text-transform: uppercase;
+    }
+  }
+  .infoTextContainer {
+    align-self: end;
+    max-width: 60%;
+    margin-top: 100px;
+    text-align: right;
+    padding-right: 20px;
+
+    p {
+      text-align: right;
+    }
+  }
+  button {
+    align-self: center;
+  }
+
+  @media screen and(min-width: 768px) {
+    background-size: 505px auto;
+    background-position-x: 97px;
+    padding-right: 150px;
+
+    .infoTextContainer {
+      text-align: left;
+      padding-right: 0;
+      max-width: 50%;
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        margin-top: 2rem;
+        text-align: left;
+      }
+    }
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left: auto;
+      padding-top: 0;
+      max-width: 50%;
+      gap: 1.5rem;
+    }
+    button {
+      align-self: flex-end;
+    }
+  }
+}
+
+.speechesContainer {
+  padding-top: 5rem;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.25rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    h2 {
+      margin: 0;
+      font-size: 40px;
+    }
+    p {
+      text-align: left;
+    }
+  }
+}
+
+.featuredSpeakersContainer {
+  margin-top: 6rem;
+  h2 {
+    text-align: center;
+    span {
+      text-transform: none;
+    }
+  }
+  button {
+    display: block;
+    margin: 3rem auto 6rem auto;
+  }
+}
+
+.footerContainer {
+  background-color: $white;
+  padding-bottom: 3.5rem;
+  .footerImageContainer {
+    background-image: url('../../assets/mic-logo-beige.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    img {
+      width: 138px;
+      height: auto;
+    }
+    .footerImage1 {
+      display: block;
+      margin: 1rem 0 1.5rem 1rem;
+      left: 0;
+    }
+    .footerImage2 {
+      margin-left: auto;
+      margin-right: 1rem;
+      display: block;
+    }
+    .footerImage3 {
+      margin-left: auto;
+      margin-right: 1rem;
+      display: block;
+    }
+  }
+
+  .footerMainContent {
+    .signUpContainer {
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      button {
+        background-color: $fiery-rose;
+        &:hover {
+          outline: 2px solid $fiery-rose;
+          background-color: $white;
+          color: $fiery-rose;
+        }
+      }
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 2rem 4rem;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    align-items: center;
+    .footerImageContainer {
+      img {
+        width: 209px;
+      }
+    }
+    .footerMainContent {
+      .signUpContainer {
+        h2 {
+          font-size: 30px;
+        }
+        h2,
+        p {
+          text-align: left;
+        }
+        button {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+}
+.primaryButton {
+  margin-top: $button-margin;
+  background-color: $mint-blue;
+  color: $white;
+  font-family: $barlow-condensed-font;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $white;
+    color: $mint-blue;
+    outline: 2px solid $mint-blue;
+  }
+}
