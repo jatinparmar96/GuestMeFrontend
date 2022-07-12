@@ -1,7 +1,7 @@
 .appealPointItem {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -16,4 +16,5 @@
 
 .description {
   font-weight: bold;
+  flex: 1 0 max-content;
 }

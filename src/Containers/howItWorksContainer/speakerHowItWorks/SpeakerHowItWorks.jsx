@@ -30,42 +30,38 @@ const SpeakerHowItWorks = () => {
         </div>
       </div>
       <div className={containerStyle.appealPointContainer}>
-        {appealPoints.map((appealPoint) => (
-          <AppealPointItem {...appealPoint} />
+        {appealPoints.map((appealPoint, index) => (
+          <AppealPointItem {...appealPoint} key={index} />
         ))}
       </div>
       <div>
-        <div className={containerStyle.compositeContainer}>
+        <div className={componentStyle.compositeContainer}>
           <div
             className={`${componentStyle.compositeImage} ${containerStyle.imageContainer}`}
           >
             <img
               src={speakerImage}
               alt="img"
-              className={`${containerStyle.image} ${componentStyle.image}`}
+              className={containerStyle.image}
             />
           </div>
-          <div
-            className={`${componentStyle.compositeBackground} ${containerStyle.compositeBackground}`}
-          ></div>
-          <div
-            className={`${componentStyle.compositeDescription} ${containerStyle.compositeDescription}`}
-          >
-            {descriptions.map((description) => (
-              <>
-                <h4 className={containerStyle.compositeHeading}>
+          <div className={componentStyle.compositeBackground}></div>
+          <div className={componentStyle.compositeDescription}>
+            {descriptions.map((description, index) => (
+              <React.Fragment key={index}>
+                <h4 className={componentStyle.compositeHeading}>
                   {description.heading}
                 </h4>
-                <p className={containerStyle.compositeDescription__p}>
+                <p className={componentStyle.compositeDescription__p}>
                   {description.text}
                 </p>
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>
 
-        <div className={containerStyle.areYouJoinASpeaker}>
-          <h4 className={containerStyle.compositeHeading}>
+        <div className={containerStyle.areYouJoin}>
+          <h4 className={componentStyle.compositeHeading}>
             Are you ready to join{' '}
             <span className={containerStyle.fontMint}>as a speaker?</span>
           </h4>
