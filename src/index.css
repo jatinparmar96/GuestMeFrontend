@@ -31,26 +31,6 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Barlow Condensed', sans-serif;
 }
 
-
 html {
-  font-size: 16px;
-}
-
-@media (min-width:768px) {
-  html {
-    font-size: 17px;
-  }
-
-}
-
-@media (min-width:1024px) {
-  html {
-    font-size: 19px;
-  }
-}
-
-@media (min-width:1280px) {
-  html {
-    font-size: 20px;
-  }
+  font-size: calc(15px + 0.34722vw);
 }
