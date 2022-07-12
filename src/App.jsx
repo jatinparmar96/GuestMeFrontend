@@ -21,6 +21,7 @@ import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 import { useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { useRecoilState } from 'recoil';
+import Contact from './Pages/contact/Contact';
 import HowItWorks from './Pages/howItWorks/HowItWorks';
 import LandingPage from './Pages/landing/LandingPage';
 import tokenAtom from './Recoil/Authentication/atom';
@@ -69,6 +70,7 @@ const App = () => {
           </Route>
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           {/* <Route
             path="/speakers/bookings"
             element={

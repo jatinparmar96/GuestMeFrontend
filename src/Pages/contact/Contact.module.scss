@@ -1,0 +1,89 @@
+@use '../../common/variables'as *;
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 20px;
+  align-items: flex-start;
+  justify-items: flex-start;
+
+  @media screen and (min-width: $bp-tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.formContainer {
+  display: flex;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  max-width: unset;
+  width: 100%;
+  height: 100%;
+  background-color: $light-beige;
+  padding: 20px;
+  gap: 0;
+  margin: 0;
+  justify-content: flex-start;
+  align-content: flex-start;
+
+  .inputFieldContainer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+
+    @media screen and (min-width: $bp-tablet) {
+      grid-template-columns: 1fr 1fr;
+      gap: 0 21px;
+    }
+  }
+
+  .description {
+    text-align: left;
+  }
+
+  .label {
+    margin: 0;
+  }
+
+  .input {
+    width: 100%;
+    height: 40px;
+    margin-right: 0;
+    margin-left: 0;
+    border: none;
+    grid-column: 1 / -1;
+
+    &:focus {
+      outline: .1px solid grey;
+    }
+  }
+
+  .textarea {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: none;
+    grid-column: 1 / -1;
+    resize: none;
+  }
+}
+
+.featureImage {
+  display: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+  @media screen and (min-width: $bp-tablet) {
+    display: block;
+  }
+}
+
+.buttonContainer {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  flex-grow: 1;
+}
