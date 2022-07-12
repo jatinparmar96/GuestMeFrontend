@@ -25,9 +25,15 @@
 .bookSpeakerContainer {
 
   margin-left: 7.50rem;
-  display: grid;
-  grid-template-columns: 14.50rem auto;
-  grid-gap: 0;
+  margin-right:7.50rem;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-gap: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+
+
 
 
   .topRectangle{
