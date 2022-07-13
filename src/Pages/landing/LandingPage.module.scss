@@ -233,6 +233,9 @@ $button-margin: 2rem;
   }
 
   .footerMainContent {
+    .signUpContainer:nth-child(2) {
+      margin-top: 1rem;
+    }
     .signUpContainer {
       padding: 0 2rem;
       display: flex;
