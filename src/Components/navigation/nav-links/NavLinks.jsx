@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import tokenAtom from '../../../Recoil/Authentication/atom';
 import { removeAuthInformation } from '../../../Utils/Utils';
-import classes from './NavLinks.module.scss';
+import style from './NavLinks.module.scss';
 
 //TODO: Maybe move them to a utils or routes file?
 const mainLinks = [
@@ -27,12 +27,15 @@ const authLinks = [
   {
     path: '/login',
     name: 'Login',
+    class: style.primaryButton,
   },
   {
     path: '/register',
     name: 'Register',
+    class: style.secondaryButton,
   },
 ];
+console.log(style);
 
 const loggedInLinks = [{ path: '/speakers/mypage', name: 'My Page' }];
 
@@ -48,7 +51,7 @@ const NavLinks = (props) => {
     <>
       <ul className={props.className}>
         {mainLinks.map((link, index) => (
-          <Link className={classes.link} key={index} to={link.path}>
+          <Link className={style.link} key={index} to={link.path}>
             {link.name}
           </Link>
         ))}
@@ -56,18 +59,26 @@ const NavLinks = (props) => {
       <ul className={props.className}>
         {!user.value ? (
           authLinks.map((link, index) => (
-            <Link key={index} className={classes.link} to={link.path}>
+            <Link
+              key={index}
+              className={`${style.link} ${style.button} ${link.class}`}
+              to={link.path}
+            >
               {link.name}
             </Link>
           ))
         ) : (
           <>
             {loggedInLinks.map((link, index) => (
-              <Link key={index} className={classes.link} to={link.path}>
+              <Link
+                key={index}
+                className={[style.link, ...link.class]}
+                to={link.path}
+              >
                 {link.name}
               </Link>
             ))}
-            <Link className={classes.link} to="/" onClick={handleLogout}>
+            <Link className={style.link} to="/" onClick={handleLogout}>
               Logout
             </Link>
           </>
