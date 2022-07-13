@@ -1,6 +1,9 @@
 @use '../../common/variables' as *;
 
 $button-margin: 2rem;
+.landingPageContainer {
+  margin-top: -1 * $top-padding-navbar-desktop;
+}
 .topContainer {
   position: relative;
   background-image: url('../../assets/mic-logo-white.png');

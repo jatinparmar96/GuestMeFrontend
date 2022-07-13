@@ -45,31 +45,35 @@ const NavLinks = (props) => {
     removeAuthInformation();
   };
   return (
-    <ul className={props.className}>
-      {mainLinks.map((link, index) => (
-        <Link className={classes.link} key={index} to={link.path}>
-          {link.name}
-        </Link>
-      ))}
-      {!user.value ? (
-        authLinks.map((link, index) => (
-          <Link key={index} className={classes.link} to={link.path}>
+    <>
+      <ul className={props.className}>
+        {mainLinks.map((link, index) => (
+          <Link className={classes.link} key={index} to={link.path}>
             {link.name}
           </Link>
-        ))
-      ) : (
-        <>
-          {loggedInLinks.map((link, index) => (
+        ))}
+      </ul>
+      <ul className={props.className}>
+        {!user.value ? (
+          authLinks.map((link, index) => (
             <Link key={index} className={classes.link} to={link.path}>
               {link.name}
             </Link>
-          ))}
-          <Link className={classes.link} to="/" onClick={handleLogout}>
-            Logout
-          </Link>
-        </>
-      )}
-    </ul>
+          ))
+        ) : (
+          <>
+            {loggedInLinks.map((link, index) => (
+              <Link key={index} className={classes.link} to={link.path}>
+                {link.name}
+              </Link>
+            ))}
+            <Link className={classes.link} to="/" onClick={handleLogout}>
+              Logout
+            </Link>
+          </>
+        )}
+      </ul>
+    </>
   );
 };
 

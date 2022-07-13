@@ -1,11 +1,17 @@
 @use '../../common/variables' as *;
 .header {
   width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  @media screen and (min-width: $bp-tablet) {
+    height: $top-padding-navbar-desktop;
+  }
 
   .navContainer {
     display: flex;
-    justify-content: space-between;
-
+    align-items: center;
+    padding: 0 7.5rem;
     .logo {
       width: 84px;
       height: auto;
