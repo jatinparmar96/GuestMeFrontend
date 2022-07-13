@@ -1,14 +1,19 @@
-
+@use '../../common/variables' as *;
 
 .footer{
     width: 100%;
-    background-color: #3A3F3F;
+    background-color: $black;
     border-radius: 3.56rem 0 0 0;
     height: 7.69rem;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr 1fr 1fr ;
-    color: #FFFFFF;
+    color:$white;
+    p{
+
+      color: $white;
+    }
+
 
 
 
@@ -59,6 +64,7 @@
     height: 14.10rem;
     grid-template-columns: 12.40rem auto auto;
     grid-template-rows: auto auto auto;
+    border-radius: 10rem 0 0 0;
 
     .description{
       display: block;
