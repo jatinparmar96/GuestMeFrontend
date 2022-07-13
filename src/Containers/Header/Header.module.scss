@@ -10,10 +10,17 @@
 
   .navContainer {
     display: flex;
+    width: 100%;
     align-items: center;
-    padding: 0 7.5rem;
+    padding: 1rem 1rem;
+    justify-content: space-between;
+    @media screen and (min-width: $bp-tablet) {
+      justify-content: flex-start;
+      padding: 0 7.5rem;
+    }
+
     .logo {
-      width: 84px;
+      width: 4.2rem;
       height: auto;
       object-fit: contain;
     }
