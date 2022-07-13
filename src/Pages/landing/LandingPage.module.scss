@@ -282,4 +282,8 @@ $button-margin: 2rem;
     color: $mint-blue;
     outline: 2px solid $mint-blue;
   }
+
+  @media screen and (min-width: $bp-tablet) {
+    width: 12rem;
+  }
 }
