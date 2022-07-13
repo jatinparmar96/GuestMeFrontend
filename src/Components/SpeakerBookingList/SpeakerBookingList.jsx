@@ -10,19 +10,19 @@ const SpeakerBookingList = (props) => {
   const [popupOpen, setPopupOpen] = useState(false);
   const [buttonAction, setButtonAction] = useState('');
   const [booking, setBooking] = useState();
+
   const bookingStatus = (e, id) => {
-    // console.log(id)
     let data = {
       status: e,
     };
-    bookingResponse(data, id);
+    const updatedBookingData = bookingResponse(data, id);
+    props.setNewBookingData(updatedBookingData);
   };
 
   const openPopup = (response, bookingData) => {
     setPopupOpen(true);
     setButtonAction(response);
     setBooking(bookingData);
-    // console.log(popupOpen);
   };
 
   return (
@@ -60,9 +60,7 @@ const SpeakerBookingList = (props) => {
                       Approve
                     </button>
                     {/* <button onClick={(e) => bookingStatus('accepted',booking)} >Approve</button> */}
-                    <button
-                      onClick={(e) => bookingStatus('rejected', booking._id)}
-                    >
+                    <button onClick={(e) => openPopup('rejected', booking)}>
                       Decline
                     </button>
                   </div>
@@ -98,9 +96,7 @@ const SpeakerBookingList = (props) => {
                   </div>
 
                   <div className={style.callToActionColumn}>
-                    <button
-                      onClick={(e) => bookingStatus('delete', booking._id)}
-                    >
+                    <button onClick={(e) => openPopup('deleted', booking)}>
                       Cancel/Delete
                     </button>
                   </div>
