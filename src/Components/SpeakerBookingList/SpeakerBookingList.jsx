@@ -52,7 +52,9 @@ const SpeakerBookingList = (props) => {
                       <p>Request from</p>
                       <p>sent at {convertDateFormat(booking.createdAt)}</p>
                     </div>
-                    <p>{booking.organization.name}</p>
+                    <p>
+                      <link>{booking.organization.name}</link>
+                    </p>
                   </div>
 
                   <div className={style.callToActionColumn}>

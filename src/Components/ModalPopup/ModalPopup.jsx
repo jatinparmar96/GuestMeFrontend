@@ -33,13 +33,13 @@ const AlertDialog = (props) => {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Are you sure want to {props.buttonAction}
+            Are you sure want to {props.buttonAction}?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => handleClose(true)}>Yes </Button>
+          <Button onClick={() => handleClose(true)}>Ok </Button>
           <Button onClick={() => handleClose(false)} autoFocus>
-            No
+            Cancel
           </Button>
         </DialogActions>
       </Dialog>
