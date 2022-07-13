@@ -25,11 +25,12 @@ $button-margin: 2rem;
     h1 {
       font-family: $barlow-condensed-font;
       font-weight: 500;
-      font-size: 35px;
+      font-size: 2.19rem;
+      line-height: 1.2;
       span {
         text-transform: uppercase;
         color: $mint-blue;
-        font-size: 40px;
+        font-size: 2.5rem;
       }
     }
     .infoContainer {
