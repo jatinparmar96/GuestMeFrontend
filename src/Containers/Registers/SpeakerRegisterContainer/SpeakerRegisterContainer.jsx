@@ -67,6 +67,7 @@ export const SpeakerRegisterContainer = (props) => {
                 <input
                   type="text"
                   className={style.input}
+                  autoComplete="given-name"
                   {...register('userName', { required: true })}
                 />
               </div>
@@ -75,6 +76,7 @@ export const SpeakerRegisterContainer = (props) => {
                 <input
                   type="text"
                   className={style.input}
+                  autoComplete="family-name"
                   {...register('userLastname', { required: true })}
                 />
               </div>
@@ -84,6 +86,7 @@ export const SpeakerRegisterContainer = (props) => {
               <input
                 type="email"
                 className={style.input}
+                autoComplete="email"
                 {...register('email', { required: true })}
               />
             </div>
