@@ -1,9 +1,11 @@
-@use './common/variables' as *;
+@use './common/variables'as *;
 
 // Root Styles here
 body {
   background-color: $light-beige;
+  font-family: $barlow-font;
 }
+
 .wrapper {
   width: 100%;
   height: 100%;
@@ -33,4 +35,3 @@ h5,
 h6 {
   font-family: $barlow-condensed-font;
 }
-
