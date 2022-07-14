@@ -28,8 +28,9 @@ const LandingPage = () => {
             <button className={style.primaryButton}>Find a Speaker</button>
           </div>
         </div>
-
-        <img className={style.heroImage} src={classImage} alt="banner"></img>
+        <div className={style.imageContainer}>
+          <img className={style.heroImage} src={classImage} alt="banner"></img>
+        </div>
       </div>
       <div className={style.middleContainer}>
         {/* <img src={ladyImage} alt="lady with laptop"></img> */}
