@@ -14,7 +14,9 @@ import style from '../RegisterContainer.module.scss';
 export const SpeakerRegisterContainer = (props) => {
   const [, setToken] = useRecoilState(tokenAtom);
 
+  /**@type {[boolean, React.Dispatch<boolean>]} */
   const [passwordVisible, setPasswordVisible] = useState(false);
+  /**@type {[boolean, React.Dispatch<boolean>]} */
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
   const {
@@ -24,11 +26,11 @@ export const SpeakerRegisterContainer = (props) => {
   } = useForm();
 
   const handleClickPasswordHidden = () => {
-    setPasswordVisible((prev) => !prev);
+    setPasswordVisible(!passwordVisible);
   };
 
   const handleClickConfirmPasswordHidden = () => {
-    setConfirmPasswordVisible((prev) => !prev);
+    setConfirmPasswordVisible(!confirmPasswordVisible);
   };
 
   const onSubmit = async (data) => {

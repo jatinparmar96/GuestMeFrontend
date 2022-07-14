@@ -25,7 +25,9 @@ export const Register = (props) => {
       <BreadCrumbs currentPosition="Register" />
       <div className={style.contentContainer}>
         <div className={style.radioContainer}>
-          <div className={isSpeaker ? style.radioSelected : ''}>
+          <div
+            className={`${style.radio} ${isSpeaker ? style.radioSelected : ''}`}
+          >
             <input
               type="radio"
               name="role"
@@ -35,7 +37,9 @@ export const Register = (props) => {
             />
             <label htmlFor="role-speaker">I am a speaker</label>
           </div>
-          <div className={isSpeaker ? '' : style.radioSelected}>
+          <div
+            className={`${style.radio} ${isSpeaker ? '' : style.radioSelected}`}
+          >
             <input
               type="radio"
               name="role"

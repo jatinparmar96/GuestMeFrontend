@@ -1,9 +1,5 @@
 @use '../../common/variables'as *;
 
-// * {
-//   outline: .1px solid grey;
-// }
-
 .registerContainer {
   display: grid;
   flex-direction: column;
@@ -16,6 +12,7 @@
   padding-top: 46px;
   padding-bottom: 50px;
   padding-right: 51px;
+  width: 100%;
 }
 
 .contentHeading {
@@ -109,6 +106,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  gap: 26px;
 }
 
 .registerLink {
