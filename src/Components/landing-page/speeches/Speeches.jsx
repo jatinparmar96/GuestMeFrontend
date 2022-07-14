@@ -19,7 +19,11 @@ const Speeches = () => {
         </p>
       </div>
 
-      <img src={howManySpeeches} alt="how many speeches"></img>
+      <img
+        className={style.speechesImage}
+        src={howManySpeeches}
+        alt="how many speeches"
+      ></img>
       <div className="data-visualization"></div>
     </>
   );
