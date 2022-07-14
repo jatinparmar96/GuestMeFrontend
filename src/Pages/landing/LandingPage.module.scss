@@ -188,10 +188,10 @@ $button-margin: 2rem;
 }
 
 .featuredSpeakersContainer {
-  margin-top: 6rem;
   padding: 0 1.25rem;
   h2 {
     text-align: center;
+    margin-top: 6.25rem;
     margin-bottom: 1.88rem;
     span {
       text-transform: none;
@@ -200,6 +200,12 @@ $button-margin: 2rem;
   button {
     display: block;
     margin: 3rem auto 6rem auto;
+  }
+  @media screen and (min-width: $bp-tablet) {
+    h2 {
+      margin-bottom: 4rem;
+      margin-top: 8rem;
+    }
   }
 }
 
