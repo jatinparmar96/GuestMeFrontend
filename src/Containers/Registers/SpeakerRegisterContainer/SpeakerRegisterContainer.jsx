@@ -1,7 +1,7 @@
 // @ts-check
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { registerSpeaker } from '../../../Api/Speaker.service';
 import { SubmitButton } from '../../../Components/Buttons/Buttons';
@@ -13,6 +13,8 @@ import style from '../RegisterContainer.module.scss';
 /**@type {React.FC<any>} */
 export const SpeakerRegisterContainer = (props) => {
   const [, setToken] = useRecoilState(tokenAtom);
+
+  let navigate = useNavigate();
 
   /**@type {[boolean, React.Dispatch<boolean>]} */
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -36,7 +38,6 @@ export const SpeakerRegisterContainer = (props) => {
   const onSubmit = async (data) => {
     try {
       const response = await registerSpeaker(data);
-
       if (response.error) {
         throw new AuthError(response.error);
       }
@@ -44,7 +45,9 @@ export const SpeakerRegisterContainer = (props) => {
       if (response.data === undefined) {
         throw new AuthError('Auth failed, token is undefined');
       }
-      setToken({ name: 'token', value: response.data.token });
+
+      setToken({ name: response.data.user, value: response.data.token });
+      navigate(/** @param{string} to */ '/speakers/mypage');
     } catch (error) {
       console.error(error);
     }

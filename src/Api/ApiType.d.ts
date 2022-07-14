@@ -11,6 +11,7 @@ export type RegisterSpeakerData = {
 export type RegisterSpeakerResponse = {
   data?: {
     token: string;
+    user: any;
   };
   status?: number;
   error: AuthError;

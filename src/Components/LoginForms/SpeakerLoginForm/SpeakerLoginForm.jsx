@@ -35,7 +35,7 @@ export const SpeakerLoginForm = (props) => {
         throw new AuthError('Auth failed, token is undefined');
       }
       setToken({ name: response.data.user, value: response.data.token });
-      navigate(from, { replace: true });
+      navigate(/** @param{string} to */ '/speakers/mypage', { replace: true });
     } catch (error) {
       console.error(error);
     }
