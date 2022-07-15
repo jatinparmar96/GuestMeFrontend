@@ -66,7 +66,7 @@ export const SpeakerRegisterContainer = (props) => {
           <div className={style.form}>
             <div className={style.nameFiled}>
               <div className={style.inputField}>
-                <label className={style.label}>First Name</label>
+              <label className={style.label}>First Name*</label>
                 <input
                   type="text"
                   className={style.input}
@@ -75,7 +75,7 @@ export const SpeakerRegisterContainer = (props) => {
                 />
               </div>
               <div className={style.inputField}>
-                <label className={style.label}>Last Name</label>
+              <label className={style.label}>Last Name*</label>
                 <input
                   type="text"
                   className={style.input}
@@ -85,7 +85,7 @@ export const SpeakerRegisterContainer = (props) => {
               </div>
             </div>
             <div className={style.inputField}>
-              <label className={style.label}>Email</label>
+            <label className={style.label}>Email*</label>
               <input
                 type="email"
                 className={style.input}
@@ -96,7 +96,7 @@ export const SpeakerRegisterContainer = (props) => {
 
             {/* {errors.email?.type === "required" && "Password is required"} */}
             <div className={style.inputField}>
-              <label className={style.label}>Password</label>
+            <label className={style.label}>Password*</label>
               <div className={style.passwordContainer}>
                 <input
                   type={passwordVisible ? 'text' : 'password'}
@@ -113,7 +113,7 @@ export const SpeakerRegisterContainer = (props) => {
             </div>
             {/* {errors.password?.type === "required" && "Password is required"} */}
             <div className={style.inputField}>
-              <label className={style.label}>Confirm Password</label>
+            <label className={style.label}>Confirm Password*</label>
               <div className={style.passwordContainer}>
                 <input
                   type={confirmPasswordVisible ? 'text' : 'password'}
