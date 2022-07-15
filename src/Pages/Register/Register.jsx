@@ -33,6 +33,7 @@ export const Register = (props) => {
               name="role"
               id="role-speaker"
               defaultChecked={isSpeaker}
+              className={style.radioInput}
               onClick={() => setIsSpeaker(true)}
             />
             <label htmlFor="role-speaker" className={style.desktopLabel}>
@@ -49,12 +50,13 @@ export const Register = (props) => {
               type="radio"
               name="role"
               id="role-organization"
+              className={style.radioInput}
               onClick={() => setIsSpeaker(false)}
             />
             <label htmlFor="role-speaker" className={style.desktopLabel}>
               I am an organization
             </label>
-            <label htmlFor="role-speaker" className={style.mobileLabel}>
+            <label htmlFor="role-organization" className={style.mobileLabel}>
               Organization
             </label>
           </div>
