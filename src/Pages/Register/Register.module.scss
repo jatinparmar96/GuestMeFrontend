@@ -45,6 +45,11 @@
   background-color: $white;
   padding: 1rem;
   flex-grow: 1;
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-grow: 0;
+  }
+
 }
 
 .radioSelected {
