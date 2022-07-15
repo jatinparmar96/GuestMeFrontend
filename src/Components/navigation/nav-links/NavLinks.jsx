@@ -72,7 +72,7 @@ const NavLinks = (props) => {
             {loggedInLinks.map((link, index) => (
               <Link
                 key={index}
-                className={[style.link, ...link.class]}
+                className={`${style.link} ${link.class}`}
                 to={link.path}
               >
                 {link.name}
