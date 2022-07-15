@@ -39,7 +39,7 @@ export const Register = (props) => {
               I am a speaker
             </label>
             <label htmlFor="role-speaker" className={style.mobileLabel}>
-              speaker
+              Speaker
             </label>
           </div>
           <div
