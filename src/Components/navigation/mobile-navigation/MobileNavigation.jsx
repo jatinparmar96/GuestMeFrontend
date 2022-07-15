@@ -16,7 +16,7 @@ const MobileNavigation = () => {
   }, [location]);
 
   return (
-    <nav className={classes.navigation}>
+    <nav className={classes.navigationMobile}>
       <HamburgerIcon
         className={classes.hamburgerIcon}
         onClick={() => setOpen(true)}
