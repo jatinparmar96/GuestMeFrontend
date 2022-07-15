@@ -8,11 +8,15 @@
   margin: 0 auto;
   background-color: $light-beige;
   height: 100%;
-  padding-left: 50px;
-  padding-top: 46px;
-  padding-bottom: 50px;
-  padding-right: 51px;
   width: 100%;
+  padding: 20px;
+
+  @media screen and (min-width: $bp-tablet) {
+    padding-left: 50px;
+    padding-top: 46px;
+    padding-bottom: 50px;
+    padding-right: 51px;
+  }
 }
 
 .contentHeading {
@@ -23,7 +27,15 @@
 .description {
   text-align: left;
   font-size: 16px;
-  margin-bottom: 41px;
+
+  margin-bottom: 92px;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: 41px;
+  }
+
+
+
 }
 
 .form {
@@ -47,6 +59,12 @@
 .inputField {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: 0;
+  }
+
 
 }
 
@@ -104,11 +122,20 @@
 
 .confirmAccount {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  gap: 26px;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+  }
 }
 
 .registerLink {
   color: $mint-blue;
+  font-weight: 600;
 }

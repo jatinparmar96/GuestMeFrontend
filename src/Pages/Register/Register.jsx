@@ -35,7 +35,12 @@ export const Register = (props) => {
               defaultChecked={isSpeaker}
               onClick={() => setIsSpeaker(true)}
             />
-            <label htmlFor="role-speaker">I am a speaker</label>
+            <label htmlFor="role-speaker" className={style.desktopLabel}>
+              I am a speaker
+            </label>
+            <label htmlFor="role-speaker" className={style.mobileLabel}>
+              speaker
+            </label>
           </div>
           <div
             className={`${style.radio} ${isSpeaker ? '' : style.radioSelected}`}
@@ -46,7 +51,12 @@ export const Register = (props) => {
               id="role-organization"
               onClick={() => setIsSpeaker(false)}
             />
-            <label htmlFor="role-organization">I am a organization</label>
+            <label htmlFor="role-speaker" className={style.desktopLabel}>
+              I am an organization
+            </label>
+            <label htmlFor="role-speaker" className={style.mobileLabel}>
+              Organization
+            </label>
           </div>
         </div>
         {registerContainer}
