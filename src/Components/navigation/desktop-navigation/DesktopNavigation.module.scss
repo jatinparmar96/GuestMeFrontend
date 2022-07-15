@@ -16,18 +16,6 @@
     gap: 1rem;
   }
 
-<<<<<<< HEAD
-  .navigationFooter {
-    display: flex;
-    flex-direction: column;
-
-    .navLinks {
-      gap: 2rem;
-      flex-wrap: nowrap;
-      justify-content: flex-end;
-      font-size: 0.9rem;
-      line-height: 1.5rem;
-=======
   .navigationFooter{
 display: flex;
 flex-direction: column;
@@ -46,7 +34,6 @@ flex-direction: column;
       color:$white;
 
       ;
->>>>>>> 7975b11 (Fix nav links weight)
     }
   }
 }
