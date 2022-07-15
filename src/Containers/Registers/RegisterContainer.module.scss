@@ -1,4 +1,4 @@
-@use '../../common/variables'as *;
+@use "../../common/variables" as *;
 
 .registerContainer {
   display: grid;
@@ -60,8 +60,6 @@
   @media screen and (min-width: $bp-tablet) {
     margin-bottom: 0;
   }
-
-
 }
 
 .input {
