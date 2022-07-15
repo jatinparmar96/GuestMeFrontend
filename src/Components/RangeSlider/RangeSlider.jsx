@@ -20,7 +20,6 @@ export const RangeSlider = (props) => {
     if (!Array.isArray(newValue)) {
       return;
     }
-
     let newValues =
       activeThumb === 0
         ? [Math.min(newValue[0], value[1] - minDistance), value[1]]

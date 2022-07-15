@@ -7,6 +7,7 @@ import style from './LandingPage.module.scss';
 import footerImage1 from '../../assets/landing-page-footer-1.png';
 import footerImage2 from '../../assets/landing-page-footer-2.png';
 import footerImage3 from '../../assets/landing-page-footer-3.png';
+import LandingPageFilter from '../../Components/landing-page/landing-page-filter/LandingPageFilter';
 import Speeches from '../../Components/landing-page/speeches/Speeches';
 
 const LandingPage = () => {
@@ -25,6 +26,7 @@ const LandingPage = () => {
               students based on speaking topics, budget, location, and
               experience.
             </p>
+            <LandingPageFilter />
             <button className={style.primaryButton}>Find a Speaker</button>
           </div>
         </div>
