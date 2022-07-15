@@ -75,7 +75,7 @@ export const OrganizationRegisterContainer = () => {
               <input
                 type="phone"
                 className={style.input}
-                placeholder="012-345-6789"
+                placeholder="+1 012-345-6789"
                 {...register('phone', { required: true })}
               />
             </div>
