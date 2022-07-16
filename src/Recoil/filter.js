@@ -10,18 +10,18 @@
 // export default filter;
 
 import { selector } from 'recoil';
-import areasAtom from './filter/areasAtom';
-import deliveryMethodAtom from './filter/deliveryMethodAtom';
-import locationAtom from './filter/locationAtom';
-import priceAtom from './filter/priceAtom';
+import areasFilterAtom from './filter/areasFilterAtom';
+import deliveryMethodFilterAtom from './filter/deliveryMethodFilterAtom';
+import locationFilterAtom from './filter/locationFilterAtom';
+import priceFilterAtom from './filter/priceFilterAtom';
 
 const filterParamsSelector = selector({
   key: 'filterParamsSelector',
   get: ({ get }) => {
-    const areas = get(areasAtom);
-    const price = get(priceAtom);
-    const locations = get(locationAtom);
-    const deliveryMethod = get(deliveryMethodAtom);
+    const areas = get(areasFilterAtom);
+    const price = get(priceFilterAtom);
+    const locations = get(locationFilterAtom);
+    const deliveryMethod = get(deliveryMethodFilterAtom);
 
     return {
       areas,

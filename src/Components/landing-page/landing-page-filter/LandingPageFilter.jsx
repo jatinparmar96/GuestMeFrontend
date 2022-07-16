@@ -1,21 +1,23 @@
 import { useEffect, useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import filterParamsSelector from '../../../Recoil/filter';
-import areasAtom from '../../../Recoil/filter/areasAtom';
-import deliveryMethodAtom from '../../../Recoil/filter/deliveryMethodAtom';
-import languageAtom from '../../../Recoil/filter/languageAtom';
-import locationAtom from '../../../Recoil/filter/locationAtom';
-import priceAtom from '../../../Recoil/filter/priceAtom';
+import areasFilterAtom from '../../../Recoil/filter/areasFilterAtom';
+import deliveryMethodFilterAtom from '../../../Recoil/filter/deliveryMethodFilterAtom';
+import languageFilterAtom from '../../../Recoil/filter/languageFilterAtom';
+import locationFilterAtom from '../../../Recoil/filter/locationFilterAtom';
+import priceFilterAtom from '../../../Recoil/filter/priceFilterAtom';
+
 import { CheckBoxItem } from '../../CheckBoxItem/CheckBoxItem';
 import { RangeSlider } from '../../RangeSlider/RangeSlider';
 
 const LandingPageFilter = (props) => {
-  const [areas, setAreas] = useRecoilState(areasAtom);
-  const [price, setPrice] = useRecoilState(priceAtom);
-  const [location, setLocation] = useRecoilState(locationAtom);
-  const [language, setLanguage] = useRecoilState(languageAtom);
-  const [deliveryMethod, setDeliveryMethod] =
-    useRecoilState(deliveryMethodAtom);
+  const [areas, setAreas] = useRecoilState(areasFilterAtom);
+  const [price, setPrice] = useRecoilState(priceFilterAtom);
+  const [location, setLocation] = useRecoilState(locationFilterAtom);
+  const [language, setLanguage] = useRecoilState(languageFilterAtom);
+  const [deliveryMethod, setDeliveryMethod] = useRecoilState(
+    deliveryMethodFilterAtom
+  );
 
   const handleAreasChange = ({ target: { value, checked } }) => {
     if (checked) {
