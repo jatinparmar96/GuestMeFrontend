@@ -13,19 +13,27 @@
   }
 
     .requestForm{
+      // max-width: 38.65rem;
+      max-width: 94%;
+      display: flex;
+      flex-direction: column;
 
 
       .formGrid{
         display: grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: repeat(8, auto);
-        width: 38.65rem;
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 1.7rem;
+
       }
+
 
       label {
         font-size:0.90rem;
         font-weight: 700;
         margin: 0;
+        width: 100%;
+
       }
 
     .date{
@@ -38,10 +46,11 @@
       }
 
         span{
-          font-size: 0.7rem;
+          font-size: 0.6rem;
           font-weight: 400;
           color: $fiery-rose;
-          margin-left: 0.7rem;
+
+          display: block;
 
         }
 
@@ -52,12 +61,17 @@
           grid-column: 1;
           grid-row: 2;
           border: none;
-          max-width: 18.75rem;
+          // max-width: 18.75rem;
+          height: 2rem;
+          width: 100%;
+          // min-width: 15rem;
+          // max-width: 17rem;
           border-bottom: 0.05rem solid $black;
           background-color: $light-beige;
           margin-left: 0;
           margin-top: 0.75rem;
           padding-bottom: 0.35rem;
+          padding-left:0.6rem;
 
           &:focus{
             outline: none;
@@ -70,16 +84,20 @@
       grid-column: 2;
       grid-row: 1;
 
+
       span {
-          font-size: 0.7rem;
+          font-size: 0.6rem;
           font-weight: 400;
           color: $fiery-rose;
-          margin-left: 0.7rem;
+          display: block;
         }
 
       .timeSelectors{
         grid-column: 2;
         grid-row: 2;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
 
 
 
@@ -91,7 +109,7 @@
           width: 5rem;
           height: 2rem;
           margin-right: 2.55rem;
-          margin-top: 0.35rem;
+          margin-top: 0.75rem;
           border: 0.13rem solid transparent;
           font-size: 0.8rem;
           font-weight: 400;
@@ -100,7 +118,7 @@
           background-image: url('../../assets/icons/arrow.png');
           background-repeat: no-repeat;
           background-position: 3.9rem center;
-          padding-left: 0.6rem;
+          padding-left: 0.4rem;
           padding-right: 0.35rem;
 
 
@@ -136,10 +154,13 @@
 
     .topic, .personInCharge, .location{
       input{
+        display: block;
         margin-left: 0;
         margin-top: 0.75rem;
         border: none;
-        width: 18.15rem;
+        // min-width: 15rem;
+        // max-width: 17rem;
+                  width: 100%;
         height: 2rem;
         background-color: $white;
         padding-left: 0.6rem;
@@ -161,16 +182,19 @@
 
     .deliveryMethod{
       select{
+        display: block;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
         background-image: url('../../assets/icons/arrow.png');
         background-repeat: no-repeat;
-        background-position: 17.35rem center;
+        background-position: 16em center;
         margin-left: 0;
         margin-top: 0.75rem;
         border: none;
-        width: 18.15rem;
+                  width: 100%;
+        // min-width: 15rem;
+        // max-width: 17rem;
         height: 2rem;
         background-color: $white;
         padding-left: 0.6rem;
@@ -197,7 +221,7 @@
         margin-left: 0;
         margin-top: 0.75rem;
         border: none;
-        width: 38.65rem;
+        width: 100%;
         height: 9.5rem;
         background-color: $white;
         padding: 1.05rem 1.55rem;
@@ -205,6 +229,7 @@
         font-weight: 400;
         font-family: $barlow-font;
         color: $black;
+        margin-bottom: 1.5rem;
 
         &:focus{
           outline-color: $mint-blue;
@@ -219,7 +244,7 @@
 
     .conditionsContainer{
       margin-left:0;
-      margin-top:1.5rem;
+
 
       .conditions {
         height: 100%;
@@ -278,11 +303,311 @@
     font-size: 0.9rem;
     font-weight: 600;
     font-family: $barlow-condensed-font;
-    margin-left:14.45rem ;
-    margin-top: 1.95rem;
-    margin-bottom: 8rem;
+    // margin-left:14.45rem ;
+    // margin-top: 1.95rem;
+    // margin-bottom: 89rem;
+
+    justify-content: center;
+    align-items: center;
+    margin:1.95rem auto 7.9rem;
+
+
   }
 
 
   }
 }
+
+// @media screen and (min-width: 1440px) {
+//   .organizationCalendar {
+//     margin-bottom: 2.95rem;
+
+
+//   }
+
+//   .requestForm {
+//     width: 38.65rem;
+
+
+//     .formGrid {
+//       display: grid;
+//       grid-template-columns: 1fr 1fr;
+//       grid-template-rows: repeat(8, auto);
+//       grid-gap: 1.7rem;
+
+//     }
+
+//     label {
+//       font-size: 0.90rem;
+//       font-weight: 700;
+//       margin: 0;
+//     }
+
+//     .date {
+//       margin-left: 0;
+
+
+//       div {
+//         grid-column: 1;
+//         grid-row: 1;
+//       }
+
+//       span {
+//         font-size: 0.7rem;
+//         font-weight: 400;
+//         color: $fiery-rose;
+//         margin-left: 0.7rem;
+
+//       }
+
+//       input {
+//         font-size: 1rem;
+//         font-family: $barlow-font;
+//         font-weight: 600;
+//         grid-column: 1;
+//         grid-row: 2;
+//         border: none;
+//                   width: 100%;
+//         // max-width: 18.75rem;
+//         height: 2rem;
+//         // width: 17.2rem;
+//         border-bottom: 0.05rem solid $black;
+//         background-color: $light-beige;
+//         margin-left: 0;
+//         margin-top: 0.75rem;
+//         padding-bottom: 0.35rem;
+
+//         &:focus {
+//           outline: none;
+//         }
+
+//       }
+//     }
+
+//     .time {
+//       margin-left: 0;
+//       grid-column: 2;
+//       grid-row: 1;
+
+//       span {
+//         font-size: 0.7rem;
+//         font-weight: 400;
+//         color: $fiery-rose;
+//         margin-left: 0.7rem;
+//       }
+
+//       .timeSelectors {
+//         grid-column: 2;
+//         grid-row: 2;
+
+
+
+
+//         .timeSelect {
+//           -webkit-appearance: none;
+//           -moz-appearance: none;
+//           appearance: none;
+//           width: 5rem;
+//           height: 2rem;
+//           margin-right: 2.55rem;
+//           margin-top: 0.75rem;
+//           border: 0.13rem solid transparent;
+//           font-size: 0.8rem;
+//           font-weight: 400;
+//           font-family: $barlow-font;
+//           color: $black;
+//           background-image: url('../../assets/icons/arrow.png');
+//           background-repeat: no-repeat;
+//           background-position: 3.9rem center;
+//           padding-left: 0.6rem;
+//           padding-right: 0.35rem;
+
+
+//           &:hover {
+//             border: 0.13rem solid $mint-blue;
+
+//           }
+
+//           &::-webkit-scrollbar {
+//             width: 0.3rem;
+//           }
+
+//           &::-webkit-scrollbar-track {
+//             background-color: $light-green;
+//           }
+
+//           &::-webkit-scrollbar-thumb {
+//             background-color: $mint-blue;
+//           }
+
+//           &:focus {
+//             outline-color: $mint-blue;
+//           }
+
+//           option {
+//             font-size: 0.8rem;
+//             font-weight: 400;
+//             font-family: $barlow-font;
+//           }
+
+
+//         }
+//       }
+
+//     }
+
+//     .topic,
+//     .personInCharge,
+//     .location {
+//       input {
+//         margin-left: 0;
+//         margin-top: 0.75rem;
+//         border: none;
+//         width: 18.15rem;
+//         height: 2rem;
+//         background-color: $white;
+//         padding-left: 0.6rem;
+//         font-size: 1rem;
+//         font-weight: 400;
+//         font-family: $barlow-font;
+//         color: $black;
+
+//         &:focus {
+//           outline-color: $mint-blue;
+
+//         }
+
+//         &::placeholder {
+//           opacity: 0.8;
+//         }
+//       }
+//     }
+
+//     .deliveryMethod {
+//       select {
+//         -webkit-appearance: none;
+//         -moz-appearance: none;
+//         appearance: none;
+//         background-image: url('../../assets/icons/arrow.png');
+//         background-repeat: no-repeat;
+//         background-position: 17rem center;
+//         margin-left: 0;
+//         margin-top: 0.75rem;
+//         border: none;
+//         width: 18.15rem;
+//         height: 2rem;
+//         background-color: $white;
+//         padding-left: 0.6rem;
+//         font-size: 1rem;
+//         font-weight: 400;
+//         font-family: $barlow-font;
+//         color: $black;
+
+//         &:focus {
+//           outline-color: $mint-blue;
+
+//         }
+
+//         &::placeholder {
+//           opacity: 0.8;
+//         }
+//       }
+//     }
+
+//     .message {
+//       grid-column: 1/3;
+
+//       textarea {
+
+//         margin-left: 0;
+//         margin-top: 0.75rem;
+//         border: none;
+//         width: 100%;
+//         height: 9.5rem;
+//         background-color: $white;
+//         padding: 1.05rem 1.55rem;
+//         font-size: 1rem;
+//         font-weight: 400;
+//         font-family: $barlow-font;
+//         color: $black;
+
+//         &:focus {
+//           outline-color: $mint-blue;
+
+//         }
+
+//         &::placeholder {
+//           opacity: 0.8;
+//         }
+//       }
+//     }
+
+//     .conditionsContainer {
+//       margin-left: 0;
+//       margin-top: 1.5rem;
+
+//       .conditions {
+//         height: 100%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: flex-start;
+//         line-height: 1rem;
+
+//         input {
+//           margin: 0.20rem 0 0 0;
+//         }
+
+
+//         input[type="checkbox" i] {
+//           visibility: hidden;
+//         }
+
+//         input[type="checkbox" i]:checked:after {
+//           background-color: rgba($mint-blue, 0);
+//           border: .1px solid black;
+//         }
+
+//         input[type="checkbox" i]:after {
+//           visibility: visible;
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           content: "\2713";
+//           font-size: 0.55rem;
+//           width: 0.8rem;
+//           height: 0.8rem;
+//           color: $white;
+//           background-color: rgba($mint-blue, 1);
+
+//         }
+
+//         span {
+//           display: inline-block;
+//           margin-left: .6rem;
+//           font-size: 0.7rem;
+//           font-weight: 500;
+//         }
+//       }
+
+//     }
+
+//     .sendRequest {
+//       background-color: $mint-blue;
+//       width: 8.7rem;
+//       height: 2.5rem;
+//       border-radius: 0.2rem;
+//       letter-spacing: 0.05rem;
+//       line-height: 1.05rem;
+//       border: 0.2rem solid transparent;
+//       color: $white;
+//       font-size: 0.9rem;
+//       font-weight: 600;
+//       font-family: $barlow-condensed-font;
+//       margin-left: 14.45rem;
+//       margin-top: 1.95rem;
+//       margin-bottom: 8rem;
+//     }
+
+
+//   }
+// }

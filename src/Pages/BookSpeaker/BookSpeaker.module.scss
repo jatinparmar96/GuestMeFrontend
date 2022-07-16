@@ -24,38 +24,54 @@
 @media screen and (min-width: 992px) {
 .bookSpeakerContainer {
 
-  margin-left: 7.50rem;
-  margin-right:7.50rem;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // grid-gap: 0;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 34.16% calc(100% - 34.16%);
+
+    .white {
+        background-color: $white;
+        width: 100%;
+        height: 100%;
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+          justify-content: flex-end;
+
+          // flex-shrink: 2;
+      }
+
+    .beige {
+      grid-column: 2;
+      grid-row: 1;
+      background-color: $light-beige;
+      display: flex;
+      flex-shrink: 1;
+      // max-width: 100%;
+    }
 
 
 
 
   .topRectangle{
-    grid-column:2;
-    grid-row:1;
+
     height: 3.05rem;
   }
 
 
   .bookForm{
-    grid-column: 2;
-    grid-row: 1;
-    align-self: start;
+
     padding-top: 3.05rem;
-    // padding-right: 7.50rem;
+    margin-left: 3.85rem;
+    // margin-left: 5.3472%;
+    margin-right: 10.416%;
 
   }
 
   .bookCard {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: start;
     padding-top: 3.05rem;
+    margin-right:5%;
+    // margin-left: 29.16%;
+    margin-left: 10.416%;
+
   }
+}
 }
