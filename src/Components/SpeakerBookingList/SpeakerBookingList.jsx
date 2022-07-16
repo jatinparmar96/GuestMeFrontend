@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { bookingResponse } from '../../Api/Booking.service';
 import { convertDateFormat } from '../../Utils/Utils';
 import AlertDialog from '../ModalPopup/ModalPopup';
+import OrganizationDetails from '../OrganizationDetails/OrganizationDetails';
 import style from './SpeakerBookingList.module.scss';
 
 const SpeakerBookingList = (props) => {
-  console.log(props.speaker);
-
   const [popupOpen, setPopupOpen] = useState(false);
   const [buttonAction, setButtonAction] = useState('');
   const [booking, setBooking] = useState();
+  const [bookingDataOrganization, setBookingDataOrganization] = useState([]);
 
   const bookingStatus = (e, id) => {
     let data = {
@@ -25,15 +25,32 @@ const SpeakerBookingList = (props) => {
     setBooking(bookingData);
   };
 
+  const organizationData = (id) => {
+    bookingDataOrganization[id] = !bookingDataOrganization[id];
+    setBookingDataOrganization([...bookingDataOrganization]);
+  };
+  // console.log(count);
+
+  useEffect(() => {
+    const pendingLength = props.speaker.pending.length;
+    let pendingArray = [];
+    for (let i = 0; i < pendingLength; i++) {
+      pendingArray.push(false);
+    }
+    // console.log(pendingArray);
+    setBookingDataOrganization(pendingArray);
+  }, [props.speaker.pending]);
+
   return (
     <>
+      <AlertDialog
+        open={popupOpen}
+        buttonAction={buttonAction}
+        bookingStatus={bookingStatus}
+        booking={booking}
+      />
+
       <div>
-        <AlertDialog
-          open={popupOpen}
-          buttonAction={buttonAction}
-          bookingStatus={bookingStatus}
-          booking={booking}
-        />
         <h3>Waiting List</h3>
         {props.speaker.pending && (
           <ul>
@@ -53,8 +70,16 @@ const SpeakerBookingList = (props) => {
                       <p>sent at {convertDateFormat(booking.createdAt)}</p>
                     </div>
                     <p>
-                      <link>{booking.organization.name}</link>
+                      <button onClick={(e) => organizationData(id)}>
+                        {booking.organization.name}
+                      </button>
                     </p>
+
+                    {bookingDataOrganization[id] ? (
+                      <OrganizationDetails booking={booking} />
+                    ) : (
+                      ''
+                    )}
                   </div>
 
                   <div className={style.callToActionColumn}>
