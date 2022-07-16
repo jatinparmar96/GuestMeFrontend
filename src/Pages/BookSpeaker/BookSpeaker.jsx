@@ -43,14 +43,16 @@ const BookSpeaker = (props) => {
             </div>
 
             <div className={style.bookSpeakerContainer}>
-              <div className={style.bookForm}>
-                <BookRequest speaker={speakerData} />
+              <div className={style.beige}>
+                <div className={style.bookForm}>
+                  <BookRequest speaker={speakerData} />
+                </div>
               </div>
-
-              <div className={style.bookCard}>
-                <BookingSpeakerCard speaker={speakerData}  />
+              <div className={style.white}>
+                <div className={style.bookCard}>
+                  <BookingSpeakerCard speaker={speakerData}  />
+                </div>
               </div>
-
             </div>
 
 
