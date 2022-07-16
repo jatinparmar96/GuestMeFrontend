@@ -1,0 +1,312 @@
+@use '../../common/variables' as *;
+
+$button-margin: 2rem;
+.landingPageContainer {
+  margin-top: -1 * $top-padding-navbar-desktop;
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    @media screen and (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+    span {
+      color: $mint-blue;
+    }
+  }
+}
+.topContainer {
+  position: relative;
+  background-image: url('../../assets/mic-logo-white.png');
+  background-repeat: no-repeat;
+  background-size: 100px auto;
+  background-position: 2.4rem 2rem;
+  overflow: hidden;
+  padding-top: 2rem;
+  line-height: 1.5;
+  .textContainer {
+    padding: 0 2rem;
+    h1 {
+      font-family: $barlow-condensed-font;
+      font-weight: 500;
+      font-size: 2.19rem;
+      line-height: 1.2;
+      span {
+        text-transform: uppercase;
+        color: $mint-blue;
+        font-size: 2.5rem;
+      }
+    }
+    .infoContainer {
+      p {
+        text-align: left;
+        font-family: $barlow-font;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0.05em;
+        color: $black;
+      }
+    }
+  }
+
+  .heroImage {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-top: calc(-1 * (4rem + $button-margin));
+    border-bottom-right-radius: 7rem;
+
+    @media screen and (min-width: $bp-tablet) {
+      border-bottom-right-radius: 15rem;
+    }
+  }
+
+  .imageContainer {
+    width: 100%;
+    position: relative;
+    display: block;
+    z-index: -1;
+    background-color: $white;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: stretch;
+    background-size: 318px auto;
+    background-position: 4rem 4rem;
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      left: 6rem;
+      top: -3rem;
+      h1 {
+        font-size: 70px;
+        span {
+          font-size: 80px;
+        }
+        margin: 0;
+      }
+      .infoContainer {
+        p {
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+
+      br {
+        display: none;
+      }
+    }
+    .heroImage {
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+.middleContainer {
+  display: flex;
+  flex-direction: column;
+  // padding-right: 20px;
+  background-color: $white;
+  background-image: url('../../assets/lady-with-laptop.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 290px auto;
+  img {
+    position: relative;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+  }
+  h2 {
+    span {
+      text-transform: uppercase;
+    }
+  }
+  .infoTextContainer {
+    align-self: end;
+    max-width: 60%;
+    margin-top: 100px;
+    text-align: right;
+    padding-right: 20px;
+
+    p {
+      text-align: right;
+    }
+  }
+  a {
+    align-self: center;
+  }
+
+  @media screen and(min-width: 768px) {
+    background-size: 505px auto;
+    background-position-x: 97px;
+    padding-right: 150px;
+
+    .infoTextContainer {
+      text-align: left;
+      padding-right: 0;
+      max-width: 50%;
+      p {
+        margin-top: 2rem;
+        text-align: left;
+      }
+    }
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left: auto;
+      padding-top: 0;
+      max-width: 50%;
+      gap: 1.5rem;
+    }
+    a {
+      align-self: flex-end;
+    }
+  }
+}
+
+.speechesContainer {
+  padding-top: 5rem;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.25rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    p {
+      text-align: left;
+    }
+  }
+}
+
+.featuredSpeakersContainer {
+  padding: 0 1.25rem;
+  h2 {
+    text-align: center;
+    margin-top: 6.25rem;
+    margin-bottom: 1.88rem;
+    span {
+      text-transform: none;
+    }
+  }
+  button {
+    display: block;
+    margin: 3rem auto 6rem auto;
+  }
+  @media screen and (min-width: $bp-tablet) {
+    h2 {
+      margin-bottom: 4rem;
+      margin-top: 8rem;
+    }
+  }
+}
+
+.footerContainer {
+  background-color: $white;
+  padding-bottom: 3.5rem;
+  .footerImageContainer {
+    background-image: url('../../assets/mic-logo-beige.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    padding: 3.13rem 0;
+    img {
+      width: 138px;
+      height: auto;
+    }
+    .footerImage1 {
+      display: block;
+      margin: 1rem 0 1.5rem 1rem;
+      left: 0;
+    }
+    .footerImage2 {
+      margin-left: auto;
+      margin-right: 1rem;
+      display: block;
+    }
+    .footerImage3 {
+      margin-left: auto;
+      margin-right: 1rem;
+      display: block;
+    }
+  }
+
+  .footerMainContent {
+    .signUpContainer:nth-child(2) {
+      margin-top: 1rem;
+    }
+    .signUpContainer {
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      button {
+        width: 80%;
+        background-color: $fiery-rose;
+        &:hover {
+          outline: 2px solid $fiery-rose;
+          background-color: $white;
+          color: $fiery-rose;
+        }
+      }
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 4rem 4rem;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    align-items: center;
+    .footerImageContainer {
+      img {
+        width: 209px;
+      }
+    }
+    .footerMainContent {
+      .signUpContainer {
+        h2 {
+          font-size: 30px;
+        }
+        h2,
+        p {
+          text-align: left;
+        }
+        a {
+          align-self: flex-end;
+        }
+        button {
+          width: 12rem;
+        }
+      }
+    }
+  }
+}
+.primaryButton {
+  margin-top: $button-margin;
+  background-color: $mint-blue;
+  color: $white;
+  font-family: $barlow-condensed-font;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $white;
+    color: $mint-blue;
+    outline: 2px solid $mint-blue;
+  }
+}

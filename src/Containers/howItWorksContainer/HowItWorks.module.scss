@@ -1,0 +1,70 @@
+@use '../../common/variables'as *;
+
+
+.fontMint {
+  color: $mint-blue
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: start;
+  max-width: 100%;
+}
+
+.whyGuestMe {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  max-width: 100%;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.imageContainer {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+
+  z-index: 10;
+}
+
+.appealPointContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: flex-start;
+
+  gap: 1rem;
+  margin-top: 50px;
+
+  @media screen and (min-width: $bp-tablet) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+.areYouJoin {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  max-width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.loginLink {
+  font-weight: bold;
+  color: $mint-blue;
+}

@@ -1,0 +1,38 @@
+@use '../../common/variables'as *;
+
+.fontMint {
+  color: $mint-blue;
+}
+
+.pageContainer {
+  max-width: $max-content-width;
+  margin: 0 auto;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  &__text {
+    text-align: left;
+  }
+
+}
+
+.membersContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 500px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

@@ -125,9 +125,7 @@ const SpeakerBookingList = (props) => {
                   </div>
 
                   <div className={style.callToActionColumn}>
-                    <button onClick={(e) => openPopup('deleted', booking)}>
-                      Cancel/Delete
-                    </button>
+                    <button>Cancel/Delete</button>
                   </div>
                 </div>
               </li>

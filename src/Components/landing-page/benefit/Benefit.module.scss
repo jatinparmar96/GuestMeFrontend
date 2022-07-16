@@ -1,0 +1,38 @@
+@use '../../../common/variables' as *;
+
+.benefitContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  .benefitLogo {
+    $dimension: 74px;
+    width: $dimension;
+    height: $dimension;
+    border-radius: 4px;
+    background-color: $light-green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .benefitText {
+    max-width: 60%;
+    font-family: $barlow-condensed-font;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $black;
+    margin-top: 0.8rem;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  @media screen and(min-width: 768px) {
+    justify-content: flex-start;
+    align-items: flex-start;
+    .benefitText {
+      max-width: 100%;
+      text-align: left;
+    }
+  }
+}

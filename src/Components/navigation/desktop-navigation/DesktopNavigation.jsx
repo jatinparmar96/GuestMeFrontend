@@ -8,7 +8,7 @@ const DesktopNavigation = (props) => {
       <nav className={classes.navigationFooter}>
         <NavLinksFooter className={classes.navLinks} />
       </nav>
-    )
+    );
   }
   return (
     <nav className={classes.navigation}>

@@ -1,0 +1,16 @@
+@use '../../common/variables'as *;
+
+.breadCrumbsContainer {
+  width: 100%;
+  background-color: $black;
+  color: $white;
+  padding: 5px 0;
+}
+
+.breadCrumbs {
+  margin-left: 20px;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-left: 150px;
+  }
+}

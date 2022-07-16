@@ -1,0 +1,19 @@
+.speechesTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0 2rem;
+  p {
+    align-self: center;
+  }
+}
+.speechesImage {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .speechesImage {
+    width: 50%;
+  }
+}
