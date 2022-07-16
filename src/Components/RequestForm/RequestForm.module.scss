@@ -188,7 +188,7 @@
         appearance: none;
         background-image: url('../../assets/icons/arrow.png');
         background-repeat: no-repeat;
-        background-position: 16em center;
+        background-position:percentage($number: .98);
         margin-left: 0;
         margin-top: 0.75rem;
         border: none;
