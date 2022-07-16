@@ -50,6 +50,8 @@ const SpeakerBookingList = (props) => {
         booking={booking}
       />
 
+      <h2>Booking</h2>
+
       <div>
         <h3>Waiting List</h3>
         {props.speaker.pending && (
