@@ -27,37 +27,35 @@ export const Register = (props) => {
         <div className={style.radioContainer}>
           <div
             className={`${style.radio} ${isSpeaker ? style.radioSelected : ''}`}
+            onClick={() => setIsSpeaker(true)}
           >
             <input
               type="radio"
               name="role"
               id="role-speaker"
               defaultChecked={isSpeaker}
+              checked={isSpeaker}
               className={style.radioInput}
-              onClick={() => setIsSpeaker(true)}
             />
             <span className={style.radioButton}></span>
-            <label htmlFor="role-speaker" className={style.desktopLabel}>
-              I am a speaker
-            </label>
+            <label className={style.desktopLabel}>I am a speaker</label>
             <label htmlFor="role-speaker" className={style.mobileLabel}>
               Speaker
             </label>
           </div>
           <div
             className={`${style.radio} ${isSpeaker ? '' : style.radioSelected}`}
+            onClick={() => setIsSpeaker(false)}
           >
             <input
               type="radio"
               name="role"
               id="role-organization"
+              checked={!isSpeaker}
               className={style.radioInput}
-              onClick={() => setIsSpeaker(false)}
             />
             <span className={style.radioButton}></span>
-            <label htmlFor="role-speaker" className={style.desktopLabel}>
-              I am an organization
-            </label>
+            <label className={style.desktopLabel}>I am an organization</label>
             <label htmlFor="role-organization" className={style.mobileLabel}>
               Organization
             </label>
