@@ -16,22 +16,10 @@ const LandingPageFilter = (props) => {
   return (
     <div className="filterContainer">
       <form>
-        {/* <fieldset onChange={handleAreasChange}>
-          <CheckBoxItem label="Finance" />
-          <CheckBoxItem label="Law" />
-          <CheckBoxItem label="Arts" />
-          <CheckBoxItem label="Science" />
-          <CheckBoxItem
-            label="Health & Well-being"
-            propName="HealthAndWellbeing"
-          />
-        </fieldset> */}
         <AreaFilterComponent />
         <PriceFilterComponent />
         <DeliveryMethodComponent />
-
         <LanguageFilterComponent />
-
         <LocationFilterComponent />
       </form>
       <button onClick={handleSubmit}>Find a speaker</button>

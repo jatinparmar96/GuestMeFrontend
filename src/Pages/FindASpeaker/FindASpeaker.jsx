@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
 
 import { getSpeakers } from '../../Api/Speaker.service';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import { Filter } from '../../Containers/Filter/Filter';
 import { Speakers } from '../../Containers/Speakers/Speakers';
+import filterParamsSelector from '../../Recoil/filter';
 import style from './FindASpeaker.module.scss';
 
 /**@type {React.FC<any>} */
@@ -28,32 +30,18 @@ export const FindASpeaker = (props) => {
   /**
    * @description Handles the change of all states
    */
-  const handleChangeFilter = async () => {
-    const isOnline = deliveryMethod.includes('isOnline');
-    const isInPerson = deliveryMethod.includes('isInPerson');
-    const [priceMin, priceMax] = price;
 
-    const query = `${areas.length > 0 ? `&areas=${areas.join('_')}` : ''}${
-      isOnline ? '&isOnline=true' : ''
-    }${isInPerson ? '&isInPerson=true' : ''}${
-      languages.length > 0 ? `&language=${languages.join('_')}` : ''
-    }${
-      locations.length > 0 ? `&location=${locations.join('_')}` : ''
-    }&priceMin=${priceMin}&priceMax=${priceMax}`;
-    console.log(query);
-
-    const { data } = await getSpeakers(query);
-    const { speakers, count } = data;
-
-    setSpeakers(speakers);
-    setCount(count);
-  };
+  const filter = useRecoilValue(filterParamsSelector);
 
   useEffect(() => {
-    handleChangeFilter();
-    console.log(locations);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [areas, price, deliveryMethod, languages, locations]);
+    (async () => {
+      const { data } = await getSpeakers(filter);
+      const { speakers, count } = data;
+
+      setSpeakers(speakers);
+      setCount(count);
+    })();
+  }, [filter]);
 
   const changeAreas = ({ target: { value, checked } }) => {
     if (checked) {

@@ -9,8 +9,8 @@ const DeliveryMethodComponent = (props) => {
 
   return (
     <fieldset onChange={setDeliveryMethod}>
-      <CheckBoxItem label="Delivery" />
-      <CheckBoxItem label="Pickup" />
+      <CheckBoxItem label="In Person" propName="isInPerson" />
+      <CheckBoxItem label="Online" propName="isOnline" />
     </fieldset>
   );
 };

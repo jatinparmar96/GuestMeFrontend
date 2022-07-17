@@ -3,9 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { Accordion } from '../../Components/Accordion/Accordion';
 
 import { getMaxPrice } from '../../Api/Speaker.service';
-import { CheckBoxItem } from '../../Components/CheckBoxItem/CheckBoxItem';
-import { RangeSlider } from '../../Components/RangeSlider/RangeSlider';
 
+import AreaFilterComponent from '../../Components/filter/areaFilter/AreaFilterComponent';
+import DeliveryMethodComponent from '../../Components/filter/deliveryMethod/DeliveryMethodComponent';
+import LanguageFilterComponent from '../../Components/filter/languageFilter/LanguageFilterComponent';
+import LocationFilterComponent from '../../Components/filter/locationFilter/LocationFilterComponent';
+import PriceFilterComponent from '../../Components/filter/priceFilter/PriceFilterComponent';
 import style from './Filter.module.scss';
 
 /**@type {React.FC<any>} */
@@ -18,64 +21,22 @@ export const Filter = (props) => {
     });
   }, []);
 
-  const {
-    changeAreas,
-    setPrice,
-    changeDeliveryMethod,
-    changeLanguages,
-    changeLocations,
-  } = props;
-
   return (
     <form className={style.form}>
       <Accordion label="Area of expertise">
-        <fieldset
-          className={style.fieldset}
-          onChange={(event) => changeAreas(event)}
-        >
-          <CheckBoxItem label="Finance" />
-          <CheckBoxItem label="Law" />
-          <CheckBoxItem label="Arts" />
-          <CheckBoxItem label="Science" />
-          <CheckBoxItem
-            label="Health & Well-being"
-            propName="HealthAndWellbeing"
-          />
-        </fieldset>
+        <AreaFilterComponent />
       </Accordion>
       <Accordion label="Price per hour">
-        <fieldset className={style.fieldset}>
-          <div className={style.slider}>
-            <RangeSlider setPrice={setPrice} priceMax={priceMax} />
-          </div>
-        </fieldset>
+        <PriceFilterComponent maxPrice={priceMax} />
       </Accordion>
       <Accordion label="Delivery Method">
-        <fieldset
-          className={style.fieldset}
-          onChange={(event) => changeDeliveryMethod(event)}
-        >
-          <CheckBoxItem label="online" propName="isOnline" />
-          <CheckBoxItem label="in-person" propName="isInPerson" />
-        </fieldset>
+        <DeliveryMethodComponent />
       </Accordion>
       <Accordion label="Language">
-        <fieldset
-          className={style.fieldset}
-          onChange={(event) => changeLanguages(event)}
-        >
-          <CheckBoxItem label="English" />
-          <CheckBoxItem label="Spanish" />
-        </fieldset>
+        <LanguageFilterComponent />
       </Accordion>
       <Accordion label="Location">
-        <fieldset
-          className={style.fieldset}
-          onChange={(event) => changeLocations(event)}
-        >
-          <CheckBoxItem label="Vancouver" />
-          <CheckBoxItem label="Burnaby" />
-        </fieldset>
+        <LocationFilterComponent />
       </Accordion>
     </form>
   );
