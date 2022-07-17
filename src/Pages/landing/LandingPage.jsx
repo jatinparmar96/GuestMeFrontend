@@ -4,6 +4,7 @@ import Benefit from '../../Components/landing-page/benefit/Benefit';
 import FeaturedSpeakers from '../../Components/landing-page/featured-speakers/FeaturedSpeakers';
 import style from './LandingPage.module.scss';
 
+import { Link } from 'react-router-dom';
 import footerImage1 from '../../assets/landing-page-footer-1.png';
 import footerImage2 from '../../assets/landing-page-footer-2.png';
 import footerImage3 from '../../assets/landing-page-footer-3.png';
@@ -50,7 +51,9 @@ const LandingPage = () => {
         <div className={style.benefits}>
           <Benefit />
         </div>
-        <button className={style.primaryButton}>How it Works</button>
+        <Link to="/how-it-works">
+          <button className={style.primaryButton}>How it Works</button>
+        </Link>
       </div>
       <div className={style.speechesContainer}>
         <Speeches />
@@ -93,9 +96,11 @@ const LandingPage = () => {
               Register now and get the opportunity to book speakers for various
               educational events!
             </p>
-            <button className={style.primaryButton}>
-              Register as an Organization
-            </button>
+            <Link to="/register">
+              <button className={style.primaryButton}>
+                Register as an Organization
+              </button>
+            </Link>
           </div>
 
           <div className={style.signUpContainer}>
@@ -106,9 +111,11 @@ const LandingPage = () => {
               Join our platform to connect with thousands of students who would
               like to hear about industry experts like you!
             </p>
-            <button className={style.primaryButton}>
-              Register as a Speaker
-            </button>
+            <Link to="/register">
+              <button className={style.primaryButton}>
+                Register as a Speaker
+              </button>
+            </Link>
           </div>
         </div>
       </div>
