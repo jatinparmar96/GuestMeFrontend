@@ -2,39 +2,48 @@
 .requestContainer{
   background-color: $light-beige;
 
-
-}
-.reference {
-
-    display: flex;
-    flex-direction: row;
-
-  div {
-
-    width: 1rem;
-    height: 1rem;
-    border-radius: 0.10rem;
+  h2{
+    margin-top:2.50rem ;
+    margin-left:1.31rem ;
   }
 
-}
+  .reference {
 
-.available{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 0.69rem;
+      font-size: 0.69rem;
 
-  background-color: $light-orange;
-  border: 0.1rem solid $black;
-}
+      div {
 
-.notAvailable{
+        width: 0.69rem;
+        height: 0.69rem;
+        border-radius: 0.10rem;
+      }
 
-  background-color: $light-green;
-  border: 0.1rem solid $black;
+    }
 
-}
+    .available {
 
-.bookedByYou{
+      background-color: $light-orange;
+      border: 0.1rem solid $black;
+    }
 
-  background-color: $mint-blue;
-  border: 0.1rem solid $black;
+    .notAvailable {
+
+      background-color: $light-green;
+      border: 0.1rem solid $black;
+
+    }
+
+    .bookedByYou {
+
+      background-color: $mint-blue;
+      border: 0.1rem solid $black;
+    }
+
+
 }
 
 @media screen and (min-width: 992px) {
@@ -42,8 +51,8 @@
   .requestContainer {
 display: flex;
 flex-direction: column;
-width: 100%;
-flex-shrink: 7;
+max-width: 94%;
+
       h2{
         margin: 0 0 2.15rem 0;
         font-size: 1.20rem;
@@ -52,9 +61,15 @@ flex-shrink: 7;
       }
 
       .reference{
+        font-size: 0.8rem;
+        justify-content: flex-start;
+        gap:0;
+
         div{
           margin-right: 0.55rem;
           margin-bottom: 1.30rem;
+          width: 1rem;
+          height: 1rem;
         }
 
         .referenceName{
