@@ -1,6 +1,15 @@
+@use "../../common/variables" as *;
+
+.pageContainer {
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+}
+
 .contentContainer {
   display: grid;
   grid-template-columns: 300px 1fr;
-  background-color: #F9F8F5;
-  ;
+  background-color: #f9f8f5;
+  max-width: $max-content-width;
+  margin: 0 auto;
 }

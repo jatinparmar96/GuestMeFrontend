@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
-
 import { getSpeakers } from '../../Api/Speaker.service';
+import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import { Filter } from '../../Containers/Filter/Filter';
 import { Speakers } from '../../Containers/Speakers/Speakers';
@@ -74,9 +74,10 @@ export const FindASpeaker = (props) => {
   };
 
   return (
-    <div>
+    <div className={style.pageContainer}>
       <PageHeading text="Find a speaker" />
-      <div className={style.breadCrumbs}>Home {'>'} Find a speaker</div>
+      <BreadCrumbs currentPosition="Find a Speaker" />
+
       <div className={style.contentContainer}>
         <aside>
           <Filter
