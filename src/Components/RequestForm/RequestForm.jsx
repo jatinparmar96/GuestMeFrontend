@@ -87,7 +87,8 @@ const RequestForm = (props) => {
                 </option>
               ))}
             </select>
-          </label>
+              </label>
+
           <label className={style.endTime} aria-label="End Time">
               <select
                 className={style.timeSelect}
@@ -162,15 +163,16 @@ const RequestForm = (props) => {
           />
           </label>
 
-        </div>
+
 
         <div className={style.conditionsContainer}>
           <label htmlFor="conditions" className={style.conditions}>
           <input type="checkbox" name="conditions" id="conditions" />
-          <span>By sending the request I agree that the contact information (organization name, email, and phone) will be sent to the speaker.</span>
+          <span className={style.conditionsSpan}>By sending the request I agree that the contact information (organization name, email, and phone) will be sent to the speaker.</span>
           </label>
         </div>
-        <button className={style.sendRequest}>Send</button>
+          <button className={style.sendRequest}>Send</button>
+          </div>
       </form>
       {/* Create a form */}
     </>
