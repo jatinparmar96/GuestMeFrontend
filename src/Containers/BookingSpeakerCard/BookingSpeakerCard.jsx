@@ -12,7 +12,7 @@ const BookingSpeakerCard = (props) => {
   const navigate = useNavigate();
   return (
     <>
-      {width > 768 ? (
+      {width > 992 ? (
         <aside className={style.speakerCard}>
           <h2>Request to</h2>
           <figure>
@@ -63,7 +63,7 @@ const BookingSpeakerCard = (props) => {
           </figure>
           <h3>{props.speaker.fullName}</h3>
             <p className={style.tagline}>{props.speaker.tagline}</p>
-          <div className={style.showMore}>
+          <div className={style.more}>
             < ShowMore more={<Fragment>
                 <div>
                   <h4>Areas of expertise</h4>
