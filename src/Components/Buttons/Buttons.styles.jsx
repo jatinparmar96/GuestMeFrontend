@@ -45,7 +45,7 @@ export const RequestButtonContainerWide = styled.button`
 
 export const SaveButtonContainer = styled.button`
   background-color: white;
-  color: black;
+  color: #3a3f3f;
   text-align: center;
   letter-spacing: 0.05em;
   width: 174px;
