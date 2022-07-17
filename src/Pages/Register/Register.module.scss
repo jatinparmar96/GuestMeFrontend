@@ -47,10 +47,6 @@
   }
 }
 
-.radioSelected {
-  background-color: $light-beige;
-}
-
 .desktopLabel {
   display: none;
 
@@ -68,6 +64,31 @@
 }
 .radioInput {
   visibility: hidden;
+
+  &:checked + span::after {
+    opacity: 1;
+  }
+}
+
+.radioButton {
+  height: 0.8rem;
+  width: 0.8rem;
+  border: 0.2px solid $grey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::after {
+    content: "";
+    display: block;
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    background-color: $mint-blue;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
   @media screen and (min-width: $bp-tablet) {
     visibility: visible;
   }

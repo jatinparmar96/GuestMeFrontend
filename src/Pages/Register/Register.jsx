@@ -36,6 +36,7 @@ export const Register = (props) => {
               className={style.radioInput}
               onClick={() => setIsSpeaker(true)}
             />
+            <span className={style.radioButton}></span>
             <label htmlFor="role-speaker" className={style.desktopLabel}>
               I am a speaker
             </label>
@@ -53,6 +54,7 @@ export const Register = (props) => {
               className={style.radioInput}
               onClick={() => setIsSpeaker(false)}
             />
+            <span className={style.radioButton}></span>
             <label htmlFor="role-speaker" className={style.desktopLabel}>
               I am an organization
             </label>
