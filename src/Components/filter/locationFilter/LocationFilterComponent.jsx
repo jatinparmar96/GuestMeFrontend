@@ -1,14 +1,20 @@
 import useFilter from '../../../hooks/useFilter';
 import locationFilterAtom from '../../../Recoil/filter/locationFilterAtom';
+import { locationFilterValues } from '../../../Utils/filter-values';
 import { CheckBoxItem } from '../../CheckBoxItem/CheckBoxItem';
 
 const LocationFilterComponent = (props) => {
-  const [, setLocation] = useFilter({ selector: locationFilterAtom });
+  const [location, setLocation] = useFilter({ selector: locationFilterAtom });
 
   return (
     <fieldset onChange={setLocation}>
-      <CheckBoxItem label="Vancouver" />
-      <CheckBoxItem label="Burnaby" />
+      {locationFilterValues.map((filter) => (
+        <CheckBoxItem
+          checked={location.includes(filter.value)}
+          label={filter.label}
+          propName={filter.value}
+        />
+      ))}
     </fieldset>
   );
 };
