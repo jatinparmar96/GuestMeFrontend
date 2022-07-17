@@ -98,7 +98,6 @@ export const OrganizationRegisterContainer = () => {
               <input
                 type={passwordVisible ? 'text' : 'password'}
                 className={`${style.input} ${style.passwordField}`}
-                placeholder="････････"
                 {...register('password', { required: true })}
               />
               <div className={style.eyesContainer}>
@@ -116,7 +115,6 @@ export const OrganizationRegisterContainer = () => {
               <input
                 type={confirmPasswordVisible ? 'text' : 'password'}
                 className={`${style.input} ${style.passwordField}`}
-                placeholder="････････"
                 {...register('confirmPassword', { required: true })}
               />
               <div className={style.eyesContainer}>

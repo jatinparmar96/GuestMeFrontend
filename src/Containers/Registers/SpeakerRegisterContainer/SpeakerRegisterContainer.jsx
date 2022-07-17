@@ -103,7 +103,6 @@ export const SpeakerRegisterContainer = (props) => {
               <input
                 type={passwordVisible ? 'text' : 'password'}
                 className={`${style.input} ${style.passwordField}`}
-                placeholder="････････"
                 {...register('password', { required: true })}
               />
               <div className={style.eyesContainer}>
@@ -121,7 +120,6 @@ export const SpeakerRegisterContainer = (props) => {
               <input
                 type={confirmPasswordVisible ? 'text' : 'password'}
                 className={`${style.input} ${style.passwordField}`}
-                placeholder="････････"
                 {...register('confirmPassword', { required: true })}
               />
               <div className={style.eyesContainer}>
