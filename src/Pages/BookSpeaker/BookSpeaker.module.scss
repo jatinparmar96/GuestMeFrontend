@@ -49,6 +49,7 @@
   display: grid;
   grid-template-columns: 34.16% calc(100% - 34.16%);
 
+
     .white {
 
         width: 100%;
@@ -56,8 +57,9 @@
         padding: 0;
         grid-column: 1;
         grid-row: 1;
-        display: flex;
         justify-content: flex-end;
+
+
 
 
       }
