@@ -56,6 +56,21 @@ export const RequestButtonContainerWide = styled.button`
   font-weight: 600;
 `;
 
+export const RequestButtonContainerWideMobile = styled.button`
+  background-color: #35afac;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 0.05em;
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  border: 2px solid #35afac;
+  box-sizing: border-box;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+`;
+
 export const SaveButtonContainer = styled.button`
   background-color: white;
   color: black;
