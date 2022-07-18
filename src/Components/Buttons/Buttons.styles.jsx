@@ -26,6 +26,21 @@ export const RequestButtonContainer = styled.button`
   box-sizing: border-box;
 `;
 
+export const RequestButtonContainerMobile = styled.button`
+  background-color: #35afac;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 0.05em;
+  width: 8.13rem;
+  height: 2.5rem;
+  border-radius: 4px;
+  border: 2px solid #35afac;
+  box-sizing: border-box;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+`;
+
 export const RequestButtonContainerWide = styled.button`
   background-color: #35afac;
   color: #ffffff;
@@ -51,6 +66,21 @@ export const SaveButtonContainer = styled.button`
   border-radius: 4px;
   border: 2px solid #3a3f3f;
   box-sizing: border-box;
+`;
+
+export const SaveButtonContainerMobile = styled.button`
+  background-color: #ffffff;
+  color: #3a3f3f;
+  text-align: center;
+  letter-spacing: 0.05em;
+  width: 8.13rem;
+  height: 2.5rem;
+  border-radius: 4px;
+  border: 2px solid #3a3f3f;
+  box-sizing: border-box;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
 `;
 
 export const RegisterPageLinkButtonContainer = styled(Link)`

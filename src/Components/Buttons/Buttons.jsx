@@ -4,9 +4,11 @@ import {
   PrimaryButtonContainer,
   RegisterPageLinkButtonContainer,
   RequestButtonContainer,
+  RequestButtonContainerMobile,
   RequestButtonContainerWide,
   SaveButtonContainer,
-  SubmitButtonContainer,
+  SaveButtonContainerMobile,
+  SubmitButtonContainer
 } from './Buttons.styles';
 
 import React from 'react';
@@ -24,11 +26,22 @@ export const SaveButton = (props) => (
     {props.text}
   </SaveButtonContainer>
 );
+export const SaveButtonMobile = (props) => (
+  <SaveButtonContainerMobile onClick={props.onClick}>
+    {props.text}
+  </SaveButtonContainerMobile>
+);
 
 export const RequestButton = (props) => (
   <RequestButtonContainer onClick={props.onClick}>
     {props.text}
   </RequestButtonContainer>
+);
+
+export const RequestButtonMobile = (props) => (
+  <RequestButtonContainerMobile onClick={props.onClick}>
+    {props.text}
+  </RequestButtonContainerMobile>
 );
 
 export const RequestButtonWide = (props) => (

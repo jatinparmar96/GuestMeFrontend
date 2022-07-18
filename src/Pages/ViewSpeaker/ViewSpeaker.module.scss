@@ -1,3 +1,12 @@
+@use '../../common/variables.scss' as *;
+
+.primary{
+      background-color: $white;
+      width: 100%;
+}
+
+
+
 @media screen and (min-width: 992px) {
       .viewSpeakerContainer{
 
