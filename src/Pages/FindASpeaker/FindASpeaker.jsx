@@ -48,10 +48,10 @@ export const FindASpeaker = (props) => {
       <BreadCrumbs currentPosition="Find a Speaker" />
 
       <div className={style.contentContainer}>
-        <aside>
+        <aside className={style.aside}>
           <Filter />
         </aside>
-        <main>
+        <div>
           <Speakers
             speakers={speakers}
             count={count}
@@ -62,7 +62,7 @@ export const FindASpeaker = (props) => {
             handleNextPage={handleNextPage}
             handlePrevPage={handlePrevPage}
           />
-        </main>
+        </div>
       </div>
     </div>
   );

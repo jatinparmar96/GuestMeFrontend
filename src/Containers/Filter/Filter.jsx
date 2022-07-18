@@ -50,21 +50,23 @@ export const Filter = (props) => {
           Clear all
         </span>
       </div>
-      <Accordion label="Area of expertise">
-        <AreaFilterComponent />
-      </Accordion>
-      <Accordion label="Price per hour">
-        <PriceFilterComponent maxPrice={priceMax} />
-      </Accordion>
-      <Accordion label="Delivery Method">
-        <DeliveryMethodComponent />
-      </Accordion>
-      <Accordion label="Language">
-        <LanguageFilterComponent />
-      </Accordion>
-      <Accordion label="Location">
-        <LocationFilterComponent />
-      </Accordion>
+      <div className={style.filterContainer}>
+        <Accordion label="Area of expertise">
+          <AreaFilterComponent />
+        </Accordion>
+        <Accordion label="Price per hour">
+          <PriceFilterComponent maxPrice={priceMax} />
+        </Accordion>
+        <Accordion label="Delivery Method">
+          <DeliveryMethodComponent />
+        </Accordion>
+        <Accordion label="Language">
+          <LanguageFilterComponent />
+        </Accordion>
+        <Accordion label="Location">
+          <LocationFilterComponent />
+        </Accordion>
+      </div>
     </form>
   );
 };

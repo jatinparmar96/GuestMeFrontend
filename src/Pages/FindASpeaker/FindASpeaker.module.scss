@@ -9,7 +9,10 @@
 .contentContainer {
   display: grid;
   grid-template-columns: 300px 1fr;
-  background-color: #f9f8f5;
   max-width: $max-content-width;
   margin: 0 auto;
+  padding-top: 2.55rem;
+}
+.aside {
+  margin-right: 2rem;
 }

@@ -33,4 +33,12 @@
 .clearFilter {
   color: $mint-blue;
   text-decoration: underline;
+  font-weight: 600;
+  font-family: $barlow-condensed-font;
+  line-height: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.filterContainer {
+  margin-top: 2rem;
 }

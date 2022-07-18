@@ -58,19 +58,23 @@ export const Accordion = (props) => {
   };
 
   return (
-    <div>
+    <>
       <AccordionItem
         expanded={expanded === 'panel'}
         onChange={handleChange('panel')}
       >
         <AccordionSummary aria-controls="panel-content" id="panel-header">
-          <Typography fontWeight={700} fontSize={'0.9rem'}>
+          <Typography
+            fontWeight={700}
+            fontSize={'0.9rem'}
+            fontFamily={'"Barlow Condensed", sans-serif'}
+          >
             {label}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>{children}</AccordionDetails>
       </AccordionItem>
-    </div>
+    </>
   );
 };
 
