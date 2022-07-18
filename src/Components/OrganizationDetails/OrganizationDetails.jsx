@@ -1,5 +1,5 @@
 const OrganizationDetails = ({ booking }) => {
-  console.log(booking);
+  // console.log(booking);
   return (
     <>
       <p> Email {booking.organization.organizationEmail}</p>

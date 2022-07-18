@@ -49,118 +49,118 @@ const SpeakerBookingList = (props) => {
         bookingStatus={bookingStatus}
         booking={booking}
       />
-
-      <h2>Booking</h2>
-
-      <div>
-        <h3>Waiting List</h3>
-        {props.speaker.pending && (
-          <ul>
-            {props.speaker.pending.map((booking, id) => (
-              <li key={id}>
-                <div className={style.verticalGrid}>
-                  <div>
-                    <p>Request for</p>
-                    <p>
-                      <b>{convertDateFormat(booking.bookingDateTime.date)}</b>
-                    </p>
-                  </div>
-
-                  <div>
-                    <div className={style.centreColumnTopRow}>
-                      <p>Request from</p>
-                      <p>sent at {convertDateFormat(booking.createdAt)}</p>
+      <div className={style.bookingInfo}>
+        <div>
+          <h2>Booking</h2>
+          <h3>Waiting</h3>
+          {props.speaker.pending && (
+            <ul>
+              {props.speaker.pending.map((booking, id) => (
+                <li key={id}>
+                  <div className={style.verticalGrid}>
+                    <div className={style.forBorderDiv}>
+                      <p className={style.mintBlueText}>Request for</p>
+                      <p className={style.date}>
+                        {convertDateFormat(booking.bookingDateTime.date)}
+                      </p>
                     </div>
-                    <p>
-                      <button onClick={(e) => organizationData(id)}>
-                        {booking.organization.name}
+
+                    <div className={style.forBorderDiv}>
+                      <div className={style.centreColumnTopRow}>
+                        <p className={style.mintBlueText}>Request from</p>
+                        <p>sent at {convertDateFormat(booking.createdAt)}</p>
+                      </div>
+                      <p>
+                        <button onClick={(e) => organizationData(id)}>
+                          {booking.organization.name}
+                        </button>
+                      </p>
+
+                      {bookingDataOrganization[id] ? (
+                        <OrganizationDetails booking={booking} />
+                      ) : (
+                        ''
+                      )}
+                    </div>
+
+                    <div className={style.callToActionColumn}>
+                      <button onClick={() => openPopup('accepted', booking)}>
+                        Approve
                       </button>
-                    </p>
-
-                    {bookingDataOrganization[id] ? (
-                      <OrganizationDetails booking={booking} />
-                    ) : (
-                      ''
-                    )}
-                  </div>
-
-                  <div className={style.callToActionColumn}>
-                    <button onClick={() => openPopup('accepted', booking)}>
-                      Approve
-                    </button>
-                    {/* <button onClick={(e) => bookingStatus('accepted',booking)} >Approve</button> */}
-                    <button onClick={(e) => openPopup('rejected', booking)}>
-                      Decline
-                    </button>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      <div>
-        <h3>Upcoming List</h3>
-
-        {props.speaker.accepted && (
-          <ul>
-            {props.speaker.accepted.map((booking, id) => (
-              <li key={id}>
-                {/* <p>{ booking.location}</p> */}
-                <div className={style.verticalGrid}>
-                  <div>
-                    <p>Request for</p>
-                    <p>
-                      <b>{convertDateFormat(booking.bookingDateTime.date)}</b>
-                    </p>
-                  </div>
-
-                  <div>
-                    <div className={style.centreColumnTopRow}>
-                      <p>Request from</p>
-                      <p>sent at {convertDateFormat(booking.createdAt)}</p>
+                      {/* <button onClick={(e) => bookingStatus('accepted',booking)} >Approve</button> */}
+                      <button onClick={(e) => openPopup('rejected', booking)}>
+                        Decline
+                      </button>
                     </div>
-                    <p>{booking.organization.name}</p>
                   </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
 
-                  <div className={style.callToActionColumn}>
-                    <button>Cancel/Delete</button>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-      <div>
-        <h3>History List</h3>
+        <div>
+          <h3>Upcoming List</h3>
 
-        {props.speaker.accepted && (
-          <ul>
-            {props.speaker.accepted.map((booking, id) => (
-              <li key={id}>
-                {/* <p>{ booking.location}</p> */}
-                <div className={style.verticalGrid}>
-                  <div>
-                    <p>Request for</p>
-                    <p>
-                      <b>{convertDateFormat(booking.bookingDateTime.date)}</b>
-                    </p>
-                  </div>
-
-                  <div>
-                    <div className={style.centreColumnTopRow}>
-                      <p>Request from</p>
-                      <p>sent at {convertDateFormat(booking.createdAt)}</p>
+          {props.speaker.accepted && (
+            <ul>
+              {props.speaker.accepted.map((booking, id) => (
+                <li key={id}>
+                  {/* <p>{ booking.location}</p> */}
+                  <div className={style.verticalGrid}>
+                    <div className={style.forBorderDiv}>
+                      <p className={style.mintBlueText}>Request for</p>
+                      <p className={style.date}>
+                        {convertDateFormat(booking.bookingDateTime.date)}
+                      </p>
                     </div>
-                    <p>{booking.organization.name}</p>
+
+                    <div className={style.forBorderDiv}>
+                      <div className={style.centreColumnTopRow}>
+                        <p className={style.mintBlueText}>Request from</p>
+                        <p>sent at {convertDateFormat(booking.createdAt)}</p>
+                      </div>
+                      <p>{booking.organization.name}</p>
+                    </div>
+
+                    <div className={style.callToActionColumn}>
+                      <button>Cancel/Delete</button>
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div>
+          <h3>History List</h3>
+
+          {props.speaker.accepted && (
+            <ul>
+              {props.speaker.accepted.map((booking, id) => (
+                <li key={id}>
+                  {/* <p>{ booking.location}</p> */}
+                  <div className={style.verticalGrid}>
+                    <div className={style.forBorderDiv}>
+                      <p className={style.mintBlueText}>Request for</p>
+                      <p className={style.date}>
+                        {convertDateFormat(booking.bookingDateTime.date)}
+                      </p>
+                    </div>
+
+                    <div>
+                      <div className={style.centreColumnTopRow}>
+                        <p className={style.mintBlueText}>Request from</p>
+                        <p>sent at {convertDateFormat(booking.createdAt)}</p>
+                      </div>
+                      <p>{booking.organization.name}</p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </>
   );
