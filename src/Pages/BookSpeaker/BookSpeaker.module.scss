@@ -5,9 +5,11 @@
   align-items: center;
   justify-content: center;
 
+
   .white{
     background-color: $white;
     width: 100%;
+    max-width: 450px;
     display: flex;
     justify-content: center;
     padding-bottom: 1.56rem;
@@ -17,6 +19,8 @@
     background-color: $light-beige;
     display: flex;
     justify-content: center;
+    width: 100%;
+    max-width: 450px;
 
 
 
@@ -32,6 +36,8 @@
     background-color: $light-beige;
     display: flex;
     justify-content: center;
+    margin: 0 1.23rem;
+    width: 100%;
 
   }
 
@@ -53,6 +59,7 @@
     .white {
 
         width: 100%;
+        max-width: unset;
         height: 100%;
         padding: 0;
         grid-column: 1;
@@ -69,7 +76,7 @@
       grid-row: 1;
       flex-shrink: 1;
       max-width: 1140px;
-      // max-width: 100%;
+      max-width: unset;
     }
 
 
