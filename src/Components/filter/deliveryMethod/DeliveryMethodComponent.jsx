@@ -10,8 +10,9 @@ const DeliveryMethodComponent = (props) => {
 
   return (
     <fieldset onChange={setDeliveryMethod}>
-      {deliveryMethodFilterValues.map((filter) => (
+      {deliveryMethodFilterValues.map((filter, index) => (
         <CheckBoxItem
+          key={index}
           checked={delivery.includes(filter.value)}
           label={filter.label}
           propName={filter.value}
