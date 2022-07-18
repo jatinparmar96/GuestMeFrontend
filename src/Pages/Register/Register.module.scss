@@ -1,3 +1,129 @@
+@use "../../common/variables" as *;
+
+.contentContainer {
+  background-color: $white;
+
+  padding: 0 20px;
+  padding-top: 28px;
+  padding-bottom: 50px;
+}
+
+.maxContent {
+  max-width: $max-content-width;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-items: flex-start;
+
+  @media screen and (min-width: $bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    // padding: 0 150px;
+    padding-top: 66px;
+    padding-bottom: 160px;
+  }
+}
+
 .radioContainer {
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: $white;
+
+  grid-column: 1 /-1;
+}
+
+.radio {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: $white;
+  padding: 1rem;
+  flex-grow: 1;
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-grow: 0;
+  }
+}
+.radioSelected {
+  height: 100%;
+  background-color: $light-beige;
+  padding: 0.7rem 2.5rem;
+  font-weight: 700;
+  border-radius: 4px;
+}
+.desktopLabel {
+  display: none;
+
+  @media screen and (min-width: $bp-tablet) {
+    display: block;
+  }
+}
+
+.mobileLabel {
+  display: block;
+
+  @media screen and (min-width: $bp-tablet) {
+    display: none;
+  }
+}
+.radioInput {
+  visibility: hidden;
+  display: none;
+
+  &:checked + span::after {
+    opacity: 1;
+  }
+}
+
+.radioButton {
+  height: 0.8rem;
+  width: 0.8rem;
+  border: 0.2px solid $grey;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    background-color: $mint-blue;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  @media screen and (min-width: $bp-tablet) {
+    display: flex;
+  }
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  @media screen and (min-width: $bp-tablet) {
+    display: block;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

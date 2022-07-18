@@ -1,3 +1,4 @@
+@use "../../common/variables" as *;
 $speaker-highlight: #5fa1d0;
 $speaker-highlight-text: white;
 
@@ -7,18 +8,18 @@ $organization-highlight-text: white;
 $weekend-color: #f28080;
 
 $speaker: (
-  'highlight': $speaker-highlight,
-  'highlight-text': $speaker-highlight-text,
+  "highlight": $speaker-highlight,
+  "highlight-text": $speaker-highlight-text,
 );
 
 $organization: (
-  'highlight': $organization-highlight,
-  'highlight-text': $organization-highlight-text,
+  "highlight": $organization-highlight,
+  "highlight-text": $organization-highlight-text,
 );
 
 $calendar-map: (
-  'speaker': $speaker,
-  'organization': $organization,
+  "speaker": $speaker,
+  "organization": $organization,
 );
 
 @each $type, $value in $calendar-map {
@@ -28,16 +29,16 @@ $calendar-map: (
     }
 
     .highlight {
-      background-color: map-get($value, 'highlight');
-      color: map-get($value, 'highlight-text');
+      background-color: map-get($value, "highlight");
+      color: map-get($value, "highlight-text");
       &:hover,
       &:focus {
-        background-color: lighten(map-get($value, 'highlight'), 10) !important;
-        color: black;
+        background-color: lighten(map-get($value, "highlight"), 10) !important;
+        color: $black;
       }
       &:focus:not(:hover) {
-        background-color: map-get($value, 'highlight');
-        color: map-get($value, 'highlight-text');
+        background-color: map-get($value, "highlight");
+        color: map-get($value, "highlight-text");
       }
     }
   }

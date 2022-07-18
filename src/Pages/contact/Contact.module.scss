@@ -1,4 +1,4 @@
-@use '../../common/variables'as *;
+@use "../../common/variables" as *;
 
 .contactContainer {
   display: grid;
@@ -58,7 +58,7 @@
     grid-column: 1 / -1;
 
     &:focus {
-      outline: .1px solid grey;
+      outline: 0.1px solid $grey;
     }
   }
 

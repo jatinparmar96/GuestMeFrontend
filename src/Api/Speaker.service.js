@@ -59,7 +59,7 @@ export const registerSpeaker = async (registerData) => {
       SPEAKER_ENDPOINT.register,
       registerData
     );
-    const result = setAuthInformation(data.token, 'speaker');
+    const result = setAuthInformation(data.token, data.user, 'speaker');
     if (result) {
       console.log('storage: ', getAuthInformationFromLocalStorage('speaker'));
       console.log('Login success, your token has been saved as:');

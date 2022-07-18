@@ -2,7 +2,6 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { RequestButtonWide } from '../../Components/Buttons/Buttons';
 import MyPageMenu from '../../Containers/MyPageMenu/MyPageMenu';
 
-
 const MyPage = () => {
   const id = JSON.parse(localStorage.getItem('speaker')).id;
   const navigate = useNavigate();
@@ -11,23 +10,18 @@ const MyPage = () => {
     <>
       <section>
         <div>
-        <MyPageMenu  />
+          <MyPageMenu />
           <RequestButtonWide
-              text="Preview your profile"
-              onClick={() =>
-                navigate('/speakers/' + id)
-            }
+            text="Preview your profile"
+            onClick={() => navigate('/speakers/' + id)}
           />
         </div>
         <div>
-          <Outlet/>
+          <Outlet />
         </div>
       </section>
-
-
-
     </>
   );
-}
+};
 
 export default MyPage;
