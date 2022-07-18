@@ -1,8 +1,32 @@
+@use "../../common/variables" as *;
+
 .speakersHeading {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
 
-  .paging {
-    align-self: flex-end;
-  }
+.paging {
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.45rem;
+  margin-bottom: 1.55rem;
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrowEnable {
+  color: $mint-blue;
+}
+.arrowDisable {
+  color: $black;
 }

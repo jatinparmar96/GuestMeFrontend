@@ -10,68 +10,37 @@ import style from './FindASpeaker.module.scss';
 
 /**@type {React.FC<any>} */
 export const FindASpeaker = (props) => {
-  /**@type {[string[], React.Dispatch<string[]>]} */
-  const [areas, setAreas] = useState([]);
-  /**@type {[string[], React.Dispatch<string[]>]} */
-  const [deliveryMethod, setDeliveryMethod] = useState([]);
-  /**@type {[string[], React.Dispatch<string[]>]} */
-  const [languages, setLanguages] = useState([]);
-  /**@type {[string[], React.Dispatch<string[]>]} */
-  const [locations, setLocations] = useState([]);
-  /**@type {[number[], React.Dispatch<number[]>]} */
-  const [price, setPrice] = useState([0, Infinity]);
-
   /**@type {[number, React.Dispatch<number>]} */
   const [count, setCount] = useState();
-
   /**@type {[SpeakerResponse[], React.Dispatch<SpeakerResponse[]>]} */
   const [speakers, setSpeakers] = useState([]);
+  /**@type {[number, React.Dispatch<number>]} */
+  const [page, setPage] = useState(1);
+  /**@type {[boolean, React.Dispatch<number>]} */
+  const [hasNextPage, setHasNextPage] = useState(true);
+  /**@type {[boolean, React.Dispatch<number>]} */
+  const [hasPrevPage, setHasPrevPage] = useState(false);
 
   /**
    * @description Handles the change of all states
    */
-
   const filter = useRecoilValue(filterParamsSelector);
+
+  const handleNextPage = () => hasNextPage && setPage((prev) => prev + 1);
+  const handlePrevPage = () => hasPrevPage && setPage((prev) => prev - 1);
 
   useEffect(() => {
     (async () => {
-      const { data } = await getSpeakers(filter);
+      const { data } = await getSpeakers(filter, page);
       const { speakers, count } = data;
 
       setSpeakers(speakers);
       setCount(count);
+
+      setHasNextPage(page * 10 < count);
+      setHasPrevPage(page > 1);
     })();
-  }, [filter]);
-
-  const changeAreas = ({ target: { value, checked } }) => {
-    if (checked) {
-      setAreas([...areas, value]);
-    } else {
-      setAreas(areas.filter((area) => area !== value));
-    }
-  };
-
-  const changeDeliveryMethod = ({ target: { value, checked } }) => {
-    if (checked) {
-      setDeliveryMethod([...deliveryMethod, value]);
-    } else {
-      setDeliveryMethod(deliveryMethod.filter((method) => method !== value));
-    }
-  };
-  const changeLanguages = ({ target: { value, checked } }) => {
-    if (checked) {
-      setLanguages([...languages, value]);
-    } else {
-      setLanguages(languages.filter((language) => language !== value));
-    }
-  };
-  const changeLocations = ({ target: { value, checked } }) => {
-    if (checked) {
-      setLocations([...locations, value]);
-    } else {
-      setLocations(locations.filter((location) => location !== value));
-    }
-  };
+  }, [filter, page]);
 
   return (
     <div className={style.pageContainer}>
@@ -80,16 +49,19 @@ export const FindASpeaker = (props) => {
 
       <div className={style.contentContainer}>
         <aside>
-          <Filter
-            changeAreas={changeAreas}
-            setPrice={setPrice}
-            changeDeliveryMethod={changeDeliveryMethod}
-            changeLanguages={changeLanguages}
-            changeLocations={changeLocations}
-          />
+          <Filter />
         </aside>
         <main>
-          <Speakers speakers={speakers} count={count} />
+          <Speakers
+            speakers={speakers}
+            count={count}
+            page={page}
+            setPage={setPage}
+            hasNextPage={hasNextPage}
+            hasPrevPage={hasPrevPage}
+            handleNextPage={handleNextPage}
+            handlePrevPage={handlePrevPage}
+          />
         </main>
       </div>
     </div>
