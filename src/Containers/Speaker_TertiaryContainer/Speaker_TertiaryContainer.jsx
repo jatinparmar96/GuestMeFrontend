@@ -1,14 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 import { RequestButtonWide } from '../../Components/Buttons/Buttons';
 import SpeakerAvailability from '../../Components/SpeakersAvailability/SpeakerAvailability';
-import SpeakerVideo from '../../Components/SpeakersVideo/SpeakerVideo';
+import VideoEmbed from '../../Components/VideoEmbed/VideoEmbed';
+import style from './Speaker_TertiaryContainer.module.scss';
 
 const SpeakerTertiaryInformation = (props) => {
   const navigate = useNavigate();
   return (
     <>
-      <div>
-        <SpeakerVideo video={props.speaker.videos} />
+      <div className={style.tertiaryContainer}>
+        <div className={style.video}>
+          <h4>Video</h4>
+          <VideoEmbed video={props.speaker.videos} />
+        </div>
         <SpeakerAvailability value={props.speaker.availability} />
         <div className="RequestButtonContainer">
           <RequestButtonWide

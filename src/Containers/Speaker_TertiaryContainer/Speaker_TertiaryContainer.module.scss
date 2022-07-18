@@ -1,0 +1,29 @@
+@use '../../common/variables.scss' as *;
+
+.tertiaryContainer{
+
+  background-color: $light-beige;
+
+
+  .video{
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    margin: 3.13rem 1.14rem 0 1.14rem;
+
+
+    h4{
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5rem;
+      color: $black;
+      margin: 1.14rem auto 0.45rem 1.14rem;
+
+    }
+
+    :last-child{
+      margin:0 1.14rem 1.14rem 1.14rem;
+    }
+
+  }
+}
