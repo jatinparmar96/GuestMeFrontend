@@ -1,4 +1,79 @@
 @use '../../common/variables.scss' as *;
+
+
+.profileMainInfo{
+    margin: 0 1.23rem;
+    background-color: $white;
+    padding-bottom: 1.94rem;
+
+    figure {
+        margin: 0;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+      }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+
+      }
+
+    h4{
+      font-weight: 700;
+      font-size: 1;
+      line-height: 1.5rem;
+
+
+    }
+
+    p{
+      font-weight: 400;
+      font-size: 1;
+      line-height: 1.5rem;
+    }
+
+      .reviewsContainer{
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 1.25rem;
+        margin-bottom: 1.31rem;
+            .reviewsQuantity {
+                color: $mint-blue;
+                font-size: 1rem;
+                font-weight: 600;
+                text-decoration: underline;
+                grid-row: 1;
+                grid-column: 1;
+              }
+
+              .star {
+                width: 1.5rem;
+                height: 1.5rem;
+                background-color: red;
+                grid-row: 1;
+                grid-column: 2;
+                justify-self: right;
+
+              }
+
+      }
+
+                .tagline {
+                  font-style: italic;
+                  margin-top: 0.88rem;
+                  margin-bottom: 2.69rem;
+                }
+
+}
+
+
+@media screen and (min-width: 992px) {
 .profileMainInfo{
   width: 57.05rem;
   display: grid;
@@ -31,5 +106,7 @@
     font-family: $barlow-condensed-font;
     font-weight: 600;
   }
+
+}
 
 }
