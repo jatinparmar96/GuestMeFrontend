@@ -1,4 +1,6 @@
+import { Line } from 'react-chartjs-2';
 import howManySpeeches from '../../../assets/how-many-speeches.png';
+
 import style from './Speeches.module.scss';
 
 const Speeches = () => {
@@ -24,7 +26,28 @@ const Speeches = () => {
         src={howManySpeeches}
         alt="how many speeches"
       ></img>
-      <div className="data-visualization"></div>
+      <div className={style.dataVisualization}>
+        <Line
+          data={{
+            labels: [
+              'January',
+              'February',
+              'March',
+              'April',
+              'May',
+              'June',
+              'July',
+            ],
+            datasets: [
+              {
+                label: 'Number of Speeches',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                borderColor: '#35afac',
+              },
+            ],
+          }}
+        />
+      </div>
     </>
   );
 };

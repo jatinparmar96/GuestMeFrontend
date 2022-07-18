@@ -11,9 +11,7 @@
   width: 100%;
   height: auto;
 }
-
-@media screen and (min-width: 768px) {
-  .speechesImage {
-    width: 50%;
-  }
+.dataVisualization {
+  grid-column: 1/-1;
+  padding: 0 6rem;
 }
