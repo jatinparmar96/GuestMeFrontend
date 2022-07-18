@@ -1,16 +1,20 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 import { useEffect, useState } from 'react';
+import useFilter from '../../hooks/useFilter';
+import priceFilterAtom from '../../Recoil/filter/priceFilterAtom';
 import { CheckBoxItem } from '../CheckBoxItem/CheckBoxItem';
 import style from './RangeSlider.module.scss';
 
 const minDistance = 0;
 
 export const RangeSlider = (props) => {
-  const { setPrice, priceMax } = props;
-  const [value, setValue] = useState([0, priceMax]);
+  const [price, setPriceFilter] = useFilter({
+    selector: priceFilterAtom,
+  });
+  const { priceMax } = props;
+
   const [checkedFree, setCheckedFree] = useState(false);
 
   useEffect(() => {
@@ -24,16 +28,15 @@ export const RangeSlider = (props) => {
     }
     let newValues =
       activeThumb === 0
-        ? [Math.min(newValue[0], value[1] - minDistance), value[1]]
-        : [value[0], Math.max(newValue[1], value[0] + minDistance)];
+        ? [Math.min(newValue[0], price[1] - minDistance), price[1]]
+        : [price[0], Math.max(newValue[1], price[0] + minDistance)];
 
     setAllPriceStates(newValues);
     setCheckedFree(newValues[0] === 0 && newValues[1] === 0);
   };
 
   const setAllPriceStates = (newValues) => {
-    setValue(newValues);
-    setPrice(newValues);
+    setPriceFilter(newValues);
   };
 
   const handleClickFree = ({ target: { checked } }) => {
@@ -78,7 +81,7 @@ export const RangeSlider = (props) => {
       <ThemeProvider theme={sliderTheme}>
         <Slider
           getAriaLabel={() => 'Minimum distance'}
-          value={value}
+          value={[price[0], price[1]]}
           onChange={handleChange}
           valueLabelDisplay="on"
           getAriaValueText={(value) => `${value}`}
@@ -92,7 +95,7 @@ export const RangeSlider = (props) => {
 
       <div className={style.displayValueContainer}>
         <span>${0}</span>
-        <span>${value[1]}</span>
+        <span>${priceMax}</span>
       </div>
     </Box>
   );
