@@ -44,9 +44,11 @@ export const Filter = (props) => {
 
   return (
     <form className={style.form}>
-      <div className="heading">
-        <h3>Search filters</h3>
-        <span onClick={handleReset}>Clear all</span>
+      <div className={style.filterHeader}>
+        <h3 className={style.filterHeaderHeading}>Search filters</h3>
+        <span onClick={handleReset} className={style.clearFilter}>
+          Clear all
+        </span>
       </div>
       <Accordion label="Area of expertise">
         <AreaFilterComponent />

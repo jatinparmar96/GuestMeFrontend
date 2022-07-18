@@ -24,6 +24,8 @@ const AccordionSummary = styled((props) => (
     {...props}
   />
 ))(({ theme }) => ({
+  margin: 0,
+  padding: 0,
   backgroundColor:
     theme.palette.mode === 'dark'
       ? 'rgba(255, 255, 255, 0)'
@@ -37,13 +39,14 @@ const AccordionSummary = styled((props) => (
     transform: 'rotate(270deg)',
   },
   '& .MuiAccordionSummary-content': {
+    margin: 0,
     marginLeft: theme.spacing(1),
   },
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-  padding: theme.spacing(2),
-  borderTop: '1px solid rgba(0, 0, 0, .125)',
+  padding: 0,
+  margin: 0,
 }));
 
 export const Accordion = (props) => {
@@ -61,7 +64,9 @@ export const Accordion = (props) => {
         onChange={handleChange('panel')}
       >
         <AccordionSummary aria-controls="panel-content" id="panel-header">
-          <Typography>{label}</Typography>
+          <Typography fontWeight={700} fontSize={'0.9rem'}>
+            {label}
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>{children}</AccordionDetails>
       </AccordionItem>

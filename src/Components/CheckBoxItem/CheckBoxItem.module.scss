@@ -1,7 +1,20 @@
+@use "../../common/variables" as *;
 .row {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-start;
-  gap: 5px;
+  gap: 0.5rem;
+  height: min-content;
+}
+
+.checkbox {
+  accent-color: $mint-blue;
+  color: $white;
+  margin: 0;
+  height: 100%;
+}
+
+.label {
+  margin: 0;
 }

@@ -1,3 +1,5 @@
+@use "../../common/variables" as *;
+
 .fieldset {
   border: none;
 }
@@ -17,4 +19,18 @@
     top: 0;
     left: 0;
   }
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.filterHeaderHeading {
+  margin: 0;
+}
+
+.clearFilter {
+  color: $mint-blue;
+  text-decoration: underline;
 }

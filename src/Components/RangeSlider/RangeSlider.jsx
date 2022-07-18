@@ -1,5 +1,7 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import { useEffect, useState } from 'react';
 import { CheckBoxItem } from '../CheckBoxItem/CheckBoxItem';
 import style from './RangeSlider.module.scss';
@@ -41,24 +43,53 @@ export const RangeSlider = (props) => {
     }
   };
 
+  const sliderTheme = createTheme({
+    components: {
+      MuiSlider: {
+        styleOverrides: {
+          valueLabel: ({ ownerState, theme }) => ({
+            ...(ownerState.orientation === 'horizontal' && {
+              backgroundColor: 'transparent',
+              color: '#3a3f3f',
+            }),
+          }),
+          track: ({ ownerState, theme }) => ({
+            backgroundColor: '#35afac',
+            border: 'none',
+          }),
+          thumb: ({ ownerState, theme }) => ({
+            backgroundColor: '#35afac',
+            border: '#F5F5F4 3px solid',
+          }),
+        },
+      },
+    },
+  });
+
   return (
     <Box sx={{ width: '100%' }}>
-      <CheckBoxItem
-        label="Free"
-        onChange={handleClickFree}
-        checked={checkedFree}
-      />
-      <Slider
-        getAriaLabel={() => 'Minimum distance'}
-        value={value}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        getAriaValueText={(value) => `${value}`}
-        disableSwap
-        min={0}
-        max={priceMax}
-        defaultValue={[0, priceMax]}
-      />
+      <div className={style.freeCheckbox}>
+        <CheckBoxItem
+          label="Free"
+          onChange={handleClickFree}
+          checked={checkedFree}
+        />
+      </div>
+      <ThemeProvider theme={sliderTheme}>
+        <Slider
+          getAriaLabel={() => 'Minimum distance'}
+          value={value}
+          onChange={handleChange}
+          valueLabelDisplay="on"
+          getAriaValueText={(value) => `${value}`}
+          valueLabelFormat={(value) => `$${value}`}
+          disableSwap
+          min={0}
+          max={priceMax}
+          defaultValue={[0, priceMax]}
+        />
+      </ThemeProvider>
+
       <div className={style.displayValueContainer}>
         <span>${value[0]}</span>
         <span>${value[1]}</span>
