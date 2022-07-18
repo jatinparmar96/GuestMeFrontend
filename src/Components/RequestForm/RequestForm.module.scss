@@ -151,8 +151,8 @@
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
-          justify-content: space-between;
           margin-top: 0.44rem;
+
 
           .timeSelect {
               -webkit-appearance: none;
@@ -168,8 +168,10 @@
               background-repeat: no-repeat;
               background-position: 5.6rem center;
               background-size: 0.7rem;
+              background-color: $white;
               padding-left: 0.4rem;
               padding-right: 0.35rem;
+              margin-right: 3.06rem;
 
               &::-webkit-scrollbar {
                   width: 0.3rem;
@@ -348,6 +350,7 @@
 
         .timeSelect{
           margin-top: 0.75rem;
+          margin-right: 2.55rem;
           width: 5rem;
           height: 2rem;
           font-size: 0.8rem;
