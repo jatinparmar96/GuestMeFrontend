@@ -9,6 +9,7 @@ import {
   RequestButtonContainerWideMobile,
   SaveButtonContainer,
   SaveButtonContainerMobile,
+  SaveButtonContainerWideMobile,
   SubmitButtonContainer
 } from './Buttons.styles';
 
@@ -55,6 +56,12 @@ export const RequestButtonWideMobile = (props) => (
   <RequestButtonContainerWideMobile onClick={props.onClick}>
     {props.text}
   </RequestButtonContainerWideMobile>
+);
+
+export const SaveButtonWideMobile = (props) => (
+  <SaveButtonContainerWideMobile onClick={props.onClick}>
+    {props.text}
+  </SaveButtonContainerWideMobile>
 );
 
 /**@type {React.FC<import('./ButtonsTypes.d').LinkButtonProps>} */
