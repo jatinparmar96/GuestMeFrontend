@@ -1,0 +1,23 @@
+@use '../../common/variables.scss' as *;
+
+
+.secondary{
+  background-color: $light-beige;
+
+  .about{
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        margin:1.25rem 1.14rem 0 1.14rem;
+
+        h4{
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.5rem;
+            color: $black;
+            margin: 1.14rem auto 0.45rem 1.14rem;
+        }
+
+
+  }
+}
