@@ -58,7 +58,7 @@ export const FindASpeaker = (props) => {
             <Filter />
             <MobileFilter />
           </aside>
-          <div>
+          <div className={style.mainContainer}>
             <Speakers
               speakers={speakers}
               count={count}
