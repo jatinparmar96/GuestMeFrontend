@@ -104,6 +104,20 @@ export const SaveButtonContainerMobile = styled.button`
   font-weight: 600;
 `;
 
+export const SaveButtonContainerWideMobile = styled.button`
+  background-color: #ffffff;
+  color: #3a3f3f;
+  text-align: center;
+  letter-spacing: 0.05em;
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  border: 2px solid #3a3f3f;
+  box-sizing: border-box;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+`;
 export const RegisterPageLinkButtonContainer = styled(Link)`
   background: #f28080;
   color: #ffffff;

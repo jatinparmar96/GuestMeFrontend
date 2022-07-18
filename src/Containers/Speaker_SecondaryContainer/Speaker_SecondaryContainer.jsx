@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { RequestButton, SaveButton } from '../../Components/Buttons/Buttons';
+import { RequestButtonWideMobile, SaveButtonWideMobile } from '../../Components/Buttons/Buttons';
 import SpeakerAboutMe from '../../Components/SpeakerAboutMe/SpeakerAboutMe';
 import SpeakerCertifications from '../../Components/SpeakersCertifications/SpeakerCertifications';
 import SpeakerSkills from '../../Components/SpeakerSkills/SpeakerSkills';
@@ -24,18 +24,19 @@ const SpeakerSecondaryInformation = (props) => {
         <div className={style.reviews}>
           <SpeakerReviews speaker={props.speaker} />
         </div>
-        <div className="SaveButtonContainer">
-          <SaveButton
+        <div className={style.buttons}>
+          <SaveButtonWideMobile
             text="Save"
             // onClick={}
           />
-        </div>
-        <div className="RequestButtonContainer">
-          <RequestButton
+
+
+          <RequestButtonWideMobile
             text="Request"
             onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
           />
-        </div>
+          </div>
+
       </div>
     </>
   );
