@@ -11,8 +11,11 @@
   grid-template-columns: 300px 1fr;
   max-width: $max-content-width;
   margin: 0 auto;
-  padding-top: 2.55rem;
+  background-color: $light-beige;
 }
 .aside {
+  padding-top: 2.55rem;
+  padding-right: 1.5rem;
   margin-right: 2rem;
+  background-color: white;
 }

@@ -1,7 +1,9 @@
+//@ts-check
 import React from 'react';
 
 import { SpeakerList } from '../../Components/SpeakerList/SpeakerList';
-
+import { Arrows } from './components/arrows/Arrows';
+import { Result } from './components/result/Result';
 import style from './Speakers.module.scss';
 
 /**@type {React.FC<any>} */
@@ -22,31 +24,28 @@ export const Speakers = (props) => {
   return (
     <div>
       <div className={style.speakersHeading}>
-        <div className="resultCounter">
-          Results: {pageFirst}-{pageLast} speakers / {count} speakers
+        <div className={style.resultDisplay}>
+          <Result pageFirst={pageFirst} pageLast={pageLast} count={count} />
         </div>
         <div className={style.paging}>
-          <span
-            onClick={handlePrevPage}
-            className={`${style.arrow} ${
-              hasPrevPage ? style.arrowEnable : style.arrowDisable
-            }`}
-          >
-            {' '}
-            {'<'}
-          </span>
-          <span
-            onClick={handleNextPage}
-            className={`${style.arrow} ${
-              hasNextPage ? style.arrowEnable : style.arrowDisable
-            }`}
-          >
-            {' '}
-            {'>'}
-          </span>
+          <Arrows
+            handleNextPage={handleNextPage}
+            handlePrevPage={handlePrevPage}
+            hasNextPage={hasNextPage}
+            hasPrevPage={hasPrevPage}
+          />
         </div>
       </div>
       <SpeakerList speakers={speakers} />
+      <div className={style.speakerFooter}>
+        <Result pageFirst={pageFirst} pageLast={pageLast} count={count} />
+        <Arrows
+          handleNextPage={handleNextPage}
+          handlePrevPage={handlePrevPage}
+          hasNextPage={hasNextPage}
+          hasPrevPage={hasPrevPage}
+        />
+      </div>
     </div>
   );
 };
