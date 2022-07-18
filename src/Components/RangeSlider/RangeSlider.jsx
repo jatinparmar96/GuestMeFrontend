@@ -91,7 +91,7 @@ export const RangeSlider = (props) => {
       </ThemeProvider>
 
       <div className={style.displayValueContainer}>
-        <span>${value[0]}</span>
+        <span>${0}</span>
         <span>${value[1]}</span>
       </div>
     </Box>
