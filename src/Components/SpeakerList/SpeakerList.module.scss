@@ -1,5 +1,10 @@
+@use "../../common/variables" as *;
 .speakerList {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
+
+  @media screen and (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+  }
 }

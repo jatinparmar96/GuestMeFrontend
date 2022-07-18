@@ -10,8 +10,8 @@ import LanguageFilterComponent from '../../Components/filter/languageFilter/Lang
 import LocationFilterComponent from '../../Components/filter/locationFilter/LocationFilterComponent';
 import PriceFilterComponent from '../../Components/filter/priceFilter/PriceFilterComponent';
 import areasFilterAtom from '../../Recoil/filter/areasFilterAtom';
-import { FilterHeader } from './components/filterHeader/FilterHeader';
-import style from './Filter.module.scss';
+import { MobileFilterHeader } from './components/filterHeader/MobileFilterHeader';
+import style from './MobileFilter.module.scss';
 
 import deliveryMethodFilterAtom from '../../Recoil/filter/deliveryMethodFilterAtom';
 import languageFilterAtom from '../../Recoil/filter/languageFilterAtom';
@@ -19,8 +19,10 @@ import locationFilterAtom from '../../Recoil/filter/locationFilterAtom';
 import priceFilterAtom from '../../Recoil/filter/priceFilterAtom';
 
 /**@type {React.FC<any>} */
-export const Filter = (props) => {
+export const MobileFilter = (props) => {
   const [priceMax, setPriceMax] = useState(500);
+
+  const [inspectMode, setInspectMode] = useState(false);
 
   useEffect(() => {
     getMaxPrice(setPriceMax).then((res) => {
@@ -45,25 +47,33 @@ export const Filter = (props) => {
   return (
     <form className={style.form}>
       <div className={style.filterHeader}>
-        <FilterHeader handleReset={handleReset} />
+        <MobileFilterHeader
+          handleReset={handleReset}
+          inspectMode={inspectMode}
+          setInspectMode={setInspectMode}
+        />
       </div>
-      <div className={style.filterContainer}>
-        <Accordion label="Area of expertise">
-          <AreaFilterComponent />
-        </Accordion>
-        <Accordion label="Price per hour">
-          <PriceFilterComponent maxPrice={priceMax} />
-        </Accordion>
-        <Accordion label="Delivery Method">
-          <DeliveryMethodComponent />
-        </Accordion>
-        <Accordion label="Language">
-          <LanguageFilterComponent />
-        </Accordion>
-        <Accordion label="Location">
-          <LocationFilterComponent />
-        </Accordion>
-      </div>
+      {inspectMode ? (
+        <>
+          <div className={style.filterContainer}>
+            <Accordion label="Area of expertise">
+              <AreaFilterComponent />
+            </Accordion>
+            <Accordion label="Price per hour">
+              <PriceFilterComponent maxPrice={priceMax} />
+            </Accordion>
+            <Accordion label="Delivery Method">
+              <DeliveryMethodComponent />
+            </Accordion>
+            <Accordion label="Language">
+              <LanguageFilterComponent />
+            </Accordion>
+            <Accordion label="Location">
+              <LocationFilterComponent />
+            </Accordion>
+          </div>
+        </>
+      ) : null}
     </form>
   );
 };

@@ -1,24 +1,27 @@
+//@ts-check
 import React, { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { getSpeakers } from '../../Api/Speaker.service';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import { Filter } from '../../Containers/Filter/Filter';
+import { MobileFilter } from '../../Containers/mobileFilter/MobileFilter';
 import { Speakers } from '../../Containers/Speakers/Speakers';
 import filterParamsSelector from '../../Recoil/filter';
 import style from './FindASpeaker.module.scss';
 
 /**@type {React.FC<any>} */
 export const FindASpeaker = (props) => {
-  /**@type {[number, React.Dispatch<number>]} */
+  /**@type {[number | undefined, React.Dispatch<number>]} */
   const [count, setCount] = useState();
   /**@type {[SpeakerResponse[], React.Dispatch<SpeakerResponse[]>]} */
+  // @ts-ignore
   const [speakers, setSpeakers] = useState([]);
   /**@type {[number, React.Dispatch<number>]} */
   const [page, setPage] = useState(1);
-  /**@type {[boolean, React.Dispatch<number>]} */
+  /**@type {[boolean, React.Dispatch<boolean>]} */
   const [hasNextPage, setHasNextPage] = useState(true);
-  /**@type {[boolean, React.Dispatch<number>]} */
+  /**@type {[boolean, React.Dispatch<boolean>]} */
   const [hasPrevPage, setHasPrevPage] = useState(false);
 
   /**
@@ -26,7 +29,9 @@ export const FindASpeaker = (props) => {
    */
   const filter = useRecoilValue(filterParamsSelector);
 
+  // @ts-ignore
   const handleNextPage = () => hasNextPage && setPage((prev) => prev + 1);
+  // @ts-ignore
   const handlePrevPage = () => hasPrevPage && setPage((prev) => prev - 1);
 
   useEffect(() => {
@@ -50,6 +55,7 @@ export const FindASpeaker = (props) => {
       <div className={style.contentContainer}>
         <aside className={style.aside}>
           <Filter />
+          <MobileFilter />
         </aside>
         <div>
           <Speakers

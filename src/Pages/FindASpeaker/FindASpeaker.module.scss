@@ -7,14 +7,27 @@
 }
 
 .contentContainer {
-  display: grid;
-  grid-template-columns: 300px 1fr;
+  display: flex;
+
   max-width: $max-content-width;
   margin: 0 auto;
+  flex-direction: column;
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-flow: row nowrap;
+  }
 }
+
 .aside {
-  padding-top: 2.55rem;
-  padding-right: 1.5rem;
-  margin-right: 2rem;
-  background-color: white;
+  flex-basis: unset;
+  padding: 0 1.25rem;
+  padding-top: 0.63rem;
+  background-color: $white;
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-basis: 500px;
+    padding-top: 2.55rem;
+    padding-right: 1.5rem;
+    margin-right: 2rem;
+  }
 }

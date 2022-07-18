@@ -9,10 +9,10 @@ import { useState } from 'react';
 const AccordionItem = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  borderBottom: `1px solid ${theme.palette.divider}`,
-  '&:not(:last-child)': {
-    borderBottom: 0,
-  },
+  borderBottom: `1px solid #B7BFBF`,
+  // '&:not(:last-child)': {
+  //   borderBottom: 0,
+  // },
   '&:before': {
     display: 'none',
   },
@@ -68,6 +68,7 @@ export const Accordion = (props) => {
             fontWeight={700}
             fontSize={'0.9rem'}
             fontFamily={'"Barlow Condensed", sans-serif'}
+            lineHeight={'4rem'}
           >
             {label}
           </Typography>

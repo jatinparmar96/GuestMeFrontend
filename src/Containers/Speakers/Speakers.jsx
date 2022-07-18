@@ -22,7 +22,7 @@ export const Speakers = (props) => {
   const pageLast = (page - 1) * 10 + 10;
 
   return (
-    <div>
+    <div className={style.speakersContainer}>
       <div className={style.speakersHeading}>
         <div className={style.resultDisplay}>
           <Result pageFirst={pageFirst} pageLast={pageLast} count={count} />
