@@ -1,5 +1,13 @@
-@use '../../common/variables' as *;
-@media screen and (min-width: $bp-large) {
+@use '../../common/variables.scss' as *;
+
+.primary{
+      background-color: $white;
+      width: 100%;
+}
+
+
+
+@media screen and (min-width: 992px) {
       .viewSpeakerContainer{
 
             margin-left: 7.50rem;

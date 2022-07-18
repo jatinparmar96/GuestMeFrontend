@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import { RequestButton, SaveButton } from '../../Components/Buttons/Buttons';
+import { RequestButtonMobile, SaveButtonMobile } from '../../Components/Buttons/Buttons';
 import SpeakerInfo from '../../Components/SpeakerProfileInfo/SpeakerProfileInfo';
+import style from './SpeakerPrimaryInformation.module.scss';
 
 
 const SpeakerPrimaryInformation = (props) => {
@@ -8,14 +9,14 @@ const SpeakerPrimaryInformation = (props) => {
 
   return (
     <>
-      <div>
+      <div className={style.primary}>
         <SpeakerInfo speaker={props.speaker} />
-        <div className="SaveButtonContainer">
-          <SaveButton
+        <div className={style.buttonsContainer}>
+          <SaveButtonMobile
             text="Save"
             // onClick={}
           />
-          <RequestButton
+          <RequestButtonMobile
             text="Request"
             onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
           />

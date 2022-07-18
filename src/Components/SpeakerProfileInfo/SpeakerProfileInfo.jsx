@@ -15,7 +15,7 @@ const SpeakerInfo = (props) => {
             </figure>
             <div className={style.profileBasicInfo}>
               <div className={style.reviewsContainer}>
-              <p className={style.reviewsQuantity}>{props.speaker.reviewsQuantity} Reviews</p>
+              <p className={style.reviewsQuantity}>{props.speaker.reviewsQuantity} reviews</p>
                 <div className={style.star}></div>
               </div>
               {/* TODO: Add star */}
