@@ -1,8 +1,9 @@
 @use '../../common/variables.scss' as *;
 .speakerCard{
 
-  width: 17.50rem;
-  background-color: $white; ;
+
+  margin: 0 1.23rem;
+  background-color: $white;
 
   h2{
     color: #35AFAC;
@@ -15,8 +16,8 @@
   figure {
     margin:0;
     img {
-      width: 17.50rem;
-      height: 17rem;
+      width: 100%;
+      height: auto;
     }
 
   }
@@ -24,9 +25,6 @@
   .tagline {
     font-style: italic;
   }
-
-
-
 
 
 }
