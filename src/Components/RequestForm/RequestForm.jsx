@@ -1,7 +1,7 @@
 import { Controller, useForm } from 'react-hook-form';
 import { postBooking } from '../../Api/Booking.service';
 import OrganizationCalendar from '../calendar/organization/organization-calendar';
-import './RequestForm.module.scss';
+import style from './RequestForm.module.scss';
 const { times } = require('./Times');
 
 const RequestForm = (props) => {
@@ -36,7 +36,7 @@ const RequestForm = (props) => {
   //TODO: Add speaker date values to the calendar
   return (
     <>
-      <form onSubmit={(e) => handleSendRequest(e)}>
+      <form className={style.form} onSubmit={(e) => handleSendRequest(e)}>
         <Controller
           name="bookingDateTime.date"
           control={control}

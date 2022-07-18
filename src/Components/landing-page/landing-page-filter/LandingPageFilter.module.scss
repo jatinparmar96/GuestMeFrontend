@@ -1,0 +1,58 @@
+@use '../../../common/variables' as *;
+
+.filterFormContainer {
+  position: absolute;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  .filterForm {
+    display: flex;
+
+    .filterContainer {
+      position: relative;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      font-family: $barlow-condensed-font;
+      font-weight: 600;
+      font-size: 0.8rem;
+      &:not(:first-child) {
+        border-left: 1px solid $grey;
+        margin-left: 0.5rem;
+        padding-left: 0.5rem;
+      }
+      fieldset {
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-left: 0px;
+      }
+      .filterLabel {
+        white-space: nowrap;
+        font-family: $barlow-condensed-font;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+      .filterValues {
+        display: none;
+      }
+      &:hover .filterValues {
+        padding: 0.5rem 0.5rem 0.5rem 0;
+        position: absolute;
+        background-color: $white;
+        top: 100%;
+        display: block;
+        width: max-content;
+      }
+    }
+    button {
+      margin-left: 1rem;
+      align-self: center;
+    }
+  }
+}
