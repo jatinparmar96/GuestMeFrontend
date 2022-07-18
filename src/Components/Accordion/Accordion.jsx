@@ -9,7 +9,7 @@ import { useState } from 'react';
 const AccordionItem = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
+  borderBottom: `1px solid ${theme.palette.divider}`,
   '&:not(:last-child)': {
     borderBottom: 0,
   },
@@ -26,11 +26,15 @@ const AccordionSummary = styled((props) => (
 ))(({ theme }) => ({
   backgroundColor:
     theme.palette.mode === 'dark'
-      ? 'rgba(255, 255, 255, .05)'
-      : 'rgba(0, 0, 0, .03)',
-  flexDirection: 'row-reverse',
-  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+      ? 'rgba(255, 255, 255, 0)'
+      : 'rgba(0, 0, 0, 0)',
+  flexDirection: 'row',
+  '& .MuiAccordionSummary-expandIconWrapper': {
     transform: 'rotate(90deg)',
+    color: '#35afac',
+  },
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(270deg)',
   },
   '& .MuiAccordionSummary-content': {
     marginLeft: theme.spacing(1),
