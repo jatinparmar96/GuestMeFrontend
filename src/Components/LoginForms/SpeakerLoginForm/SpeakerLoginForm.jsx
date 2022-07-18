@@ -1,6 +1,6 @@
 //@ts-check
 import React, { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { loginSpeaker } from '../../../Api/Speaker.service';
 import { AuthError } from '../../../Errors/AuthError';
@@ -13,10 +13,10 @@ export const SpeakerLoginForm = (props) => {
   const [, setToken] = useRecoilState(tokenAtom);
 
   let navigate = useNavigate();
-  let location = useLocation();
+  // // let location = useLocation();
 
-  // @ts-ignore
-  let from = location.state?.from?.pathname || '/';
+  // // @ts-ignore
+  // let from = location.state?.from?.pathname || '/';
 
   const {
     register,
