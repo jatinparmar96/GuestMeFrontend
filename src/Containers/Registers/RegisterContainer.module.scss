@@ -1,10 +1,37 @@
+@use "../../common/variables" as *;
+
 .registerContainer {
-  display: flex;
+  display: grid;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  max-width: 800px;
+  justify-items: flex-start;
   margin: 0 auto;
+  background-color: $light-beige;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+
+  @media screen and (min-width: $bp-tablet) {
+    padding-left: 50px;
+    padding-top: 46px;
+    padding-bottom: 50px;
+    padding-right: 51px;
+  }
+}
+
+.contentHeading {
+  font-size: 24px;
+  margin: 11px 0;
+}
+
+.description {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 2.5rem;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: 41px;
+  }
 }
 
 .form {
@@ -15,20 +42,38 @@
   gap: 10px;
 }
 
+.label {
+  font-size: 18px;
+  line-height: 21.6px;
+  margin-bottom: 8px;
+
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
 .inputField {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 
-  input {
-    flex-grow: 1;
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: 0;
   }
+}
+
+.input {
+  height: 40px;
+  flex-grow: 1;
+  border: none;
+  padding: 12px;
 }
 
 .nameFiled {
   flex-direction: column;
   display: flex;
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: $bp-tablet) {
     flex-direction: row;
     justify-content: space-between;
     gap: 30px;
@@ -37,11 +82,54 @@
   .inputField {
     flex-basis: 40%;
     flex-grow: 1;
+    width: 100%;
   }
 }
 
-.submitBUttonContainer {
+.passwordContainer {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+}
+
+.passwordField {
+  grid-column: 1 / -1;
+  grid-row: 1 / 1;
+}
+
+.eyesContainer {
+  grid-column: 2 / -1;
+  grid-row: 1 / 1;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitButtonContainer {
+  margin-top: 20px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+.confirmAccount {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+
+  @media screen and (min-width: $bp-tablet) {
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+  }
+}
+
+.registerLink {
+  color: $mint-blue;
+  font-weight: 600;
 }
