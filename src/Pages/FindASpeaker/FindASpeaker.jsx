@@ -48,28 +48,32 @@ export const FindASpeaker = (props) => {
   }, [filter, page]);
 
   return (
-    <div className={style.pageContainer}>
-      <PageHeading text="Find a speaker" />
-      <BreadCrumbs currentPosition="Find a Speaker" />
+    <div className={style.styleContainer}>
+      <div className={style.pageContainer}>
+        <PageHeading text="Find a speaker" />
+        <BreadCrumbs currentPosition="Find a Speaker" />
 
-      <div className={style.contentContainer}>
-        <aside className={style.aside}>
-          <Filter />
-          <MobileFilter />
-        </aside>
-        <div>
-          <Speakers
-            speakers={speakers}
-            count={count}
-            page={page}
-            setPage={setPage}
-            hasNextPage={hasNextPage}
-            hasPrevPage={hasPrevPage}
-            handleNextPage={handleNextPage}
-            handlePrevPage={handlePrevPage}
-          />
+        <div className={style.contentContainer}>
+          <aside className={style.aside}>
+            <Filter />
+            <MobileFilter />
+          </aside>
+          <div>
+            <Speakers
+              speakers={speakers}
+              count={count}
+              page={page}
+              setPage={setPage}
+              hasNextPage={hasNextPage}
+              hasPrevPage={hasPrevPage}
+              handleNextPage={handleNextPage}
+              handlePrevPage={handlePrevPage}
+            />
+          </div>
         </div>
       </div>
+      <div className={style.backgroundBeige}></div>
+      <div className={style.backgroundWhite}></div>
     </div>
   );
 };
