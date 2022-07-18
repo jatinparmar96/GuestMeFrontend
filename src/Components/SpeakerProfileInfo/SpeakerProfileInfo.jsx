@@ -14,10 +14,13 @@ const SpeakerInfo = (props) => {
                <img src={props.speaker.profilePicture} alt={`${props.speaker.fullName}` } />
             </figure>
             <div className={style.profileBasicInfo}>
+              <div className={style.reviewsContainer}>
               <p className={style.reviewsQuantity}>{props.speaker.reviewsQuantity} Reviews</p>
+                <div className={style.star}></div>
+              </div>
               {/* TODO: Add star */}
-              <h3>{props.speaker.fullName}</h3>
-              <p className='tagline'>{ props.speaker.tagline}</p>
+              <h2>{props.speaker.fullName}</h2>
+              <p className={style.tagline}>{ props.speaker.tagline}</p>
               <div>
                 <h4>Areas of expertise</h4>
                 <p>{props.speaker.conditions.areas.join(", ")}</p>
