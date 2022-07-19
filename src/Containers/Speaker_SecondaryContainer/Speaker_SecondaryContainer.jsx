@@ -24,6 +24,7 @@ const SpeakerSecondaryInformation = (props) => {
         <div className={style.reviews}>
           <SpeakerReviews speaker={props.speaker} />
         </div>
+        <div className={style.buttonsContainer}>
         <div className={style.buttons}>
           <SaveButtonWideMobile
             text="Save"
@@ -35,6 +36,7 @@ const SpeakerSecondaryInformation = (props) => {
             text="Request"
             onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
           />
+          </div>
           </div>
 
       </div>

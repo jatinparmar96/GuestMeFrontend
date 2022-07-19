@@ -13,6 +13,7 @@ const SpeakerTertiaryInformation = (props) => {
           <h4>Video</h4>
           <VideoEmbed video={props.speaker.videos} />
         </div>
+        <div className={style.availabilityContainer}>
         <div className={style.availability}>
           <h4>Availability</h4>
           <SpeakerAvailability value={props.speaker.availability} />
@@ -24,7 +25,8 @@ const SpeakerTertiaryInformation = (props) => {
               navigate('/speakers/' + props.speaker.id + '/request')
             }
           />
-        </div>
+          </div>
+          </div>
       </div>
     </>
   );

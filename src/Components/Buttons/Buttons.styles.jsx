@@ -37,7 +37,7 @@ export const RequestButtonContainerMobile = styled.button`
   color: #ffffff;
   text-align: center;
   letter-spacing: 0.05em;
-  width: 8.13rem;
+  width: 10rem;
   height: 2.5rem;
   border-radius: 4px;
   border: 2px solid #35afac;
@@ -94,7 +94,7 @@ export const SaveButtonContainerMobile = styled.button`
   color: #3a3f3f;
   text-align: center;
   letter-spacing: 0.05em;
-  width: 8.13rem;
+  width: 10rem;
   height: 2.5rem;
   border-radius: 4px;
   border: 2px solid #3a3f3f;

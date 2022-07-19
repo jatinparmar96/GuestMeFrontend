@@ -26,6 +26,9 @@
     }
 
   }
+  .availabilityContainer{
+    margin: 0 1.14rem 1.25rem 1.14rem;
+    background-color: $white;
 
   .availability{
         background-color: $white;
@@ -52,7 +55,14 @@
     flex-direction: column;
     align-items: center;
     height: 3.75rem;
-    margin: 0 1.14rem 1.25rem 1.14rem;
+    margin: 0 2.28rem 1.25rem 2.28rem;
+
+    :first-child{
+      width: 100%;
+
+    }
+
   }
+}
 
 }
