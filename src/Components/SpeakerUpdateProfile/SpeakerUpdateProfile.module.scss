@@ -33,33 +33,29 @@
 
 // }
 
-
-
-.blockDisplay{
+.blockDisplay {
   display: block;
 }
 
-.topRightGrid{
+.topRightGrid {
   margin: 0;
 }
 
-.twoColumn{
+.twoColumn {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   max-width: 500px;
   margin: 0;
 }
 
-.oneColumn{
+.oneColumn {
   width: 500px;
 }
 
-
-
-.topGrid{
+.topGrid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   max-width: 1000px;
 }
