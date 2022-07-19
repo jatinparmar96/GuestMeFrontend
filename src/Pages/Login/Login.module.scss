@@ -47,7 +47,6 @@
 
   .radio {
     flex-grow: 0;
-    width: 100%;
 
     @media screen and (max-width: $bp-tablet) {
       flex-grow: 1;

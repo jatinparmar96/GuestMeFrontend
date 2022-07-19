@@ -69,8 +69,9 @@ const OrganizationHowItWorks = () => {
             <span className={containerStyle.fontMint}>as an organization?</span>
           </h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            eget pharetra sem, ut convallis ex.
+            Register to choose a perfect speaker for your event from a wide
+            roster of professionals! Bring that extra energy your audience
+            needs!
           </p>
           <span>
             <RegisterLinkButton
