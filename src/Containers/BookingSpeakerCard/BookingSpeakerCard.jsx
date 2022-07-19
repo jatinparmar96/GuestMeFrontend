@@ -7,7 +7,7 @@ import style from './BookingSpeakerCard.module.scss';
 
 const BookingSpeakerCard = (props) => {
   const width = ScreenWidth();
-  console.log(width);
+
 
   const navigate = useNavigate();
   return (
