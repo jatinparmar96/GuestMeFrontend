@@ -55,6 +55,16 @@ const SpeakerBookingList = (props) => {
     setBookingDataOrganization(pendingArray);
   }, [props.speaker.pending]);
 
+  useEffect(() => {
+    const acceptedLength = props.speaker.accepted.length;
+    let acceptedArray = [];
+    for (let i = 0; i < acceptedLength; i++) {
+      acceptedArray.push(false);
+    }
+    // console.log(acceptedArray);
+    setBookingDataOrganization(acceptedArray);
+  }, [props.speaker.accepted]);
+
   return (
     <>
       <AlertDialog
@@ -126,7 +136,7 @@ const SpeakerBookingList = (props) => {
         </div>
 
         <div>
-          <h3>Upcoming List</h3>
+          <h3>Upcoming</h3>
 
           {props.speaker.accepted && (
             <ul>
@@ -154,12 +164,20 @@ const SpeakerBookingList = (props) => {
                         </span>{' '}
                         {arrowDecider}
                       </p>
+                      {bookingDataOrganization[id] ? (
+                        <OrganizationDetails
+                          booking={booking}
+                          organizationData={organizationData}
+                        />
+                      ) : (
+                        ''
+                      )}
                     </div>
 
-                    <div
-                      className={`${style.callToActionColumn} ${style.cancel}`}
-                    >
-                      <Cancel />
+                    <div className={`${style.callToActionColumn}`}>
+                      <p className={style.cancel}>
+                        <Cancel />
+                      </p>
                     </div>
                   </div>
                 </li>
@@ -168,7 +186,7 @@ const SpeakerBookingList = (props) => {
           )}
         </div>
         <div>
-          <h3>History List</h3>
+          <h3>History</h3>
 
           {props.speaker.accepted && (
             <ul>
@@ -196,6 +214,14 @@ const SpeakerBookingList = (props) => {
                         </span>{' '}
                         {arrowDecider}
                       </p>
+                      {bookingDataOrganization[id] ? (
+                        <OrganizationDetails
+                          booking={booking}
+                          organizationData={organizationData}
+                        />
+                      ) : (
+                        ''
+                      )}
                     </div>
                   </div>
                 </li>

@@ -26,6 +26,7 @@
       list-style-type: none;
       background: white;
       padding: 20px;
+      margin-bottom: 20px;
       .mintBlueText {
         color: #35afac;
         font-size: 16px;
@@ -63,9 +64,11 @@
           margin-right: 5px;
         }
       }
-      .approve,
-      .cancel {
+      .approve {
         width: 60px;
+        height: 39px;
+      }
+      .cancel {
         height: 39px;
       }
       .decline {
