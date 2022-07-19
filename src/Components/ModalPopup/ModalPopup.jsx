@@ -6,8 +6,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import * as React from 'react';
 import { useEffect } from 'react';
-import logoMic from '../../assets/logo-mic-green.png';
 import { ReactComponent as CrossMark } from '../../assets/icons/cross.svg';
+import { ReactComponent as LogoWithName } from '../../assets/logo-with-name.svg';
 
 const AlertDialog = (props) => {
   const [open, setOpen] = React.useState(false);
@@ -22,42 +22,57 @@ const AlertDialog = (props) => {
     setOpen(props.open);
   }, [props.open]);
 
+  let buttonActionText = <></>;
+  if (props.buttonAction === 'accepted') {
+    buttonActionText = 'approve';
+  } else if (props.buttonAction === 'rejected') {
+    buttonActionText = 'decline';
+  }
+
   return (
-    <Dialog
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="alert-dialog-title"
-      aria-describedby="alert-dialog-description"
-    >
-      <div className={style.popup}>
-        <div className={style.crossMark} onClick={() => handleClose(false)}>
-          <CrossMark />
+    <div className={style.dialogBox}>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <div className={style.popup}>
+          <div className={style.crossMark} onClick={() => handleClose(false)}>
+            <CrossMark />
+          </div>
+          <div className={style.logoMic}>
+            <p>
+              {' '}
+              <LogoWithName />
+            </p>
+          </div>
+          <DialogContent className={style.dialogContent}>
+            <DialogContentText
+              className={style.confirmationText}
+              id="alert-dialog-description"
+            >
+              Are you sure to {buttonActionText}?
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions className={style.dialogActions}>
+            <Button
+              className={style.okButton}
+              onClick={() => handleClose(true)}
+            >
+              Ok
+            </Button>
+            <Button
+              className={style.cancelButton}
+              onClick={() => handleClose(false)}
+              autoFocus
+            >
+              Cancel
+            </Button>
+          </DialogActions>
         </div>
-        <div className={style.logoMic}>
-          <img src={logoMic} alt="logo"></img>
-        </div>
-        <DialogContent className={style.dialogContent}>
-          <DialogContentText
-            className={style.confirmationText}
-            id="alert-dialog-description"
-          >
-            Are you sure want to {props.buttonAction}?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions className={style.dialogActions}>
-          <Button className={style.okButton} onClick={() => handleClose(true)}>
-            Ok
-          </Button>
-          <Button
-            className={style.cancelButton}
-            onClick={() => handleClose(false)}
-            autoFocus
-          >
-            Cancel
-          </Button>
-        </DialogActions>
-      </div>
-    </Dialog>
+      </Dialog>
+    </div>
   );
 };
 
