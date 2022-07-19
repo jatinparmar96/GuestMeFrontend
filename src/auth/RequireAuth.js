@@ -6,9 +6,21 @@ const RequireAuth = ({ children, type }) => {
   let location = useLocation();
   if (!user) {
     if (type === 'speaker') {
-      return <Navigate to="/login" state={{ from: location }} replace />;
+      return (
+        <Navigate
+          to="/login"
+          state={{ from: location, userType: 'speaker' }}
+          replace
+        />
+      );
     } else {
-      return <Navigate to="/login" state={{ from: location }} replace />;
+      return (
+        <Navigate
+          to="/login"
+          state={{ from: location, userType: 'organization' }}
+          replace
+        />
+      );
     }
   }
   return children;

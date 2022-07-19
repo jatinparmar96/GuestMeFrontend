@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import RegistrationImage from '../../assets/registration_speaker.png';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { OrganizationLoginForm } from '../../Components/LoginForms/OrganizationLoginForm/OrganizationLoginForm';
@@ -6,10 +7,18 @@ import { SpeakerLoginForm } from '../../Components/LoginForms/SpeakerLoginForm/S
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import style from './Login.module.scss';
 
-export const Login = (props) => {
+export const Login = () => {
   /**@type {[boolean, React.Dispatch<boolean>]} */
-  const [isSpeaker, setIsSpeaker] = useState(props.type !== 'organization');
 
+  const location = useLocation();
+
+  const [isSpeaker, setIsSpeaker] = useState(true);
+
+  useEffect(() => {
+    if (location.state?.userType) {
+      setIsSpeaker(location.state?.userType === 'speaker');
+    }
+  }, []);
   const container = isSpeaker ? (
     <SpeakerLoginForm />
   ) : (

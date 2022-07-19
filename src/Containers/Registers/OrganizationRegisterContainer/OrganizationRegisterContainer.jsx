@@ -8,6 +8,7 @@ import { SubmitButton } from '../../../Components/Buttons/Buttons';
 import Eyes from '../../../Components/eyes/Eyes';
 import { AuthError } from '../../../Errors/AuthError';
 import tokenAtom from '../../../Recoil/Authentication/index';
+import { getAuthInformationFromLocalStorage } from '../../../Utils/Utils';
 import style from '../RegisterContainer.module.scss';
 
 export const OrganizationRegisterContainer = () => {
@@ -43,7 +44,8 @@ export const OrganizationRegisterContainer = () => {
       if (response.data === undefined) {
         throw new AuthError('Auth failed, token is undefined');
       }
-      setToken({ name: 'token', value: response.data.token });
+      const user = getAuthInformationFromLocalStorage('user');
+      setToken({ name: user, value: response.data.token });
     } catch (error) {
       console.error(error);
     }

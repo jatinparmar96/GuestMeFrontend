@@ -56,10 +56,8 @@ ChartJS.register(
 const App = () => {
   const [, setUser] = useRecoilState(tokenAtom);
   useEffect(() => {
-    const speaker = localStorage.getItem('speaker');
-    const organization = localStorage.getItem('organization');
+    const user = localStorage.getItem('user');
     const token = localStorage.getItem('token');
-    const user = speaker || organization;
     setUser({ name: JSON.parse(user), value: token });
   }, [setUser]);
   return (
