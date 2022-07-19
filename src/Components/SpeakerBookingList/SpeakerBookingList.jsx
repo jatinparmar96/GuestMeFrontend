@@ -174,6 +174,7 @@ const SpeakerBookingList = (props) => {
                         <OrganizationDetails
                           booking={booking}
                           organizationData={organizationData}
+                          id={id}
                         />
                       ) : (
                         ''
@@ -224,6 +225,7 @@ const SpeakerBookingList = (props) => {
                         <OrganizationDetails
                           booking={booking}
                           organizationData={organizationData}
+                          id={id}
                         />
                       ) : (
                         ''
