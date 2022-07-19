@@ -90,6 +90,28 @@
   grid-template-columns: 13.50rem 42.3% auto;
   margin-top: 2.55rem;
   padding:0;
+  padding-bottom: 3rem;
+
+    .reviewsContainer {
+
+        margin-top: 0;
+
+
+        .reviewsQuantity {
+          font-size: 0.8rem;
+          line-height: 1.5rem;
+          text-decoration: underline;
+          color: $mint-blue;
+          font-family: $barlow-condensed-font;
+          font-weight: 600;
+        }
+
+        .star {
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+
+      }
 
   figure{
     grid-column: 1;
@@ -173,25 +195,7 @@
       }
   }
 
-  .reviewsContainer{
-    margin-top: 0;
 
-
-        .reviewsQuantity{
-          font-size: 0.8rem;
-          line-height: 1.5rem;
-          text-decoration: underline;
-          color:$mint-blue;
-          font-family: $barlow-condensed-font;
-          font-weight: 600;
-        }
-
-        .star{
-          width: 1.2rem;
-          height: 1.2rem;
-        }
-
-}
 }
 }
 }
