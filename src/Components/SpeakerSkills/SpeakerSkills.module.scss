@@ -1,0 +1,38 @@
+@use '../../common/variables.scss' as *;
+
+
+.profileSkills{
+
+    margin: 0 auto 2.75rem 1.14rem;
+
+  .skills{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    span{
+      background-color: $light-green;
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.88rem;
+      line-height: 1.5rem;
+      letter-spacing: 0.05em;
+      font-weight: 400;
+      font-style: italic;
+      margin-right: 0.63rem;
+
+    }
+  }
+}
+
+@media screen and (min-width: $bp-large) {
+  .profileSkills{
+    margin: 0 auto 1.5rem 1.5rem;
+
+    .skills{
+      span{
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

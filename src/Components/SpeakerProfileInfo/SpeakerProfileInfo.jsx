@@ -1,9 +1,12 @@
+import { useNavigate } from 'react-router-dom';
+import { RequestButton, SaveButton } from '../Buttons/Buttons';
+import ScreenWidth from '../ScreenSize/ScreenSize';
 import style from './SpeakerProfileInfo.module.scss';
 
+
 const SpeakerInfo = (props) => {
-
-
-
+  const width = ScreenWidth();
+  const navigate = useNavigate();
 
 
     return (
@@ -14,13 +17,16 @@ const SpeakerInfo = (props) => {
                <img src={props.speaker.profilePicture} alt={`${props.speaker.fullName}` } />
             </figure>
             <div className={style.profileBasicInfo}>
-              <p className={style.reviewsQuantity}>{props.speaker.reviewsQuantity} Reviews</p>
+              <div className={style.reviewsContainer}>
+              <p className={style.reviewsQuantity}>{props.speaker.reviewsQuantity} reviews</p>
+                <div className={style.star}></div>
+              </div>
               {/* TODO: Add star */}
-              <h3>{props.speaker.fullName}</h3>
-              <p className='tagline'>{ props.speaker.tagline}</p>
+              <h2>{props.speaker.fullName}</h2>
+              <p className={style.tagline}>{ props.speaker.tagline}</p>
               <div>
                 <h4>Areas of expertise</h4>
-                <p>{props.speaker.conditions.areas.join(", ")}</p>
+                <p className={style.areas}>{props.speaker.conditions.areas.join(", ")}</p>
               </div>
             </div>
             <div className={style.profileAdditionalInfo}>
@@ -47,6 +53,18 @@ const SpeakerInfo = (props) => {
                 <h4>Location</h4>
                 <p>{props.speaker.location}</p>
               </div>
+              {width > 992 ? (
+                <div className={style.buttonsContainer}>
+                  <SaveButton
+                    text="Save"
+                  // onClick={}
+                  />
+                  <RequestButton
+                    text="Request"
+                    onClick={() => navigate('/speakers/' + props.speaker.id + '/request')}
+                  />
+                </div>)
+                : null}
             </div>
           </section>
 

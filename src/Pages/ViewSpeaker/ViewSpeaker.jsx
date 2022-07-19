@@ -8,9 +8,6 @@ import SpeakerTertiaryInformation from '../../Containers/Speaker_TertiaryContain
 import style from './ViewSpeaker.module.scss';
 
 const ViewSpeaker = (props) => {
-  // const [ selectedSpeaker, setSelectedSpeaker ] = useState("");
-  //TODO: Change this fixedID
-  // const selectedSpeaker = '62ba919a08bf555e1d151d72';
   const [loadingState, setLoadingState] = useState(true);
   const [speakerData, setSpeakerData] = useState();
   const { id } = useParams();
@@ -39,18 +36,21 @@ const ViewSpeaker = (props) => {
             <div>
               Home {'>'} Find a speaker {'>'} {speakerData.fullName}
             </div>
-          </div>
+            </div>
+            <div className={style.white}></div>
 
           <div className={style.viewSpeakerContainer}>
             <div className={style.primary}>
               <SpeakerPrimaryInformation speaker={speakerData} />
-            </div>
+              </div>
+          <div className={style.grid}>
             <div className={style.secondary}>
               <SpeakerSecondaryInformation speaker={speakerData} />
             </div>
             <div className={style.tertiary}>
               <SpeakerTertiaryInformation speaker={speakerData} />
-            </div>
+                </div>
+          </div>
           </div>
         </>
       )}

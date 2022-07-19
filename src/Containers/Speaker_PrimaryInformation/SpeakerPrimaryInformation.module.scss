@@ -1,0 +1,22 @@
+@use '../../common/variables.scss' as *;
+.primary{
+
+  margin: 0 1.23rem;
+  .buttonsContainer{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3.13rem;
+
+  }
+}
+
+
+@media screen and (min-width: $bp-large) {
+
+  .primary{
+    margin: 0 7.50rem;
+  }
+}

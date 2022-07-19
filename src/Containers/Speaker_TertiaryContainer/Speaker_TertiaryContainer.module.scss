@@ -1,0 +1,114 @@
+@use '../../common/variables.scss' as *;
+
+.tertiaryContainer{
+
+  background-color: $light-beige;
+
+
+  .video{
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    margin: 3.13rem 1.14rem 0 1.14rem;
+
+
+    h4{
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5rem;
+      color: $black;
+      margin: 1.14rem auto 0.45rem 1.14rem;
+
+    }
+
+    :last-child{
+      // margin:0 1.14rem 1.14rem 1.14rem;
+    }
+
+  }
+  .availabilityContainer{
+    margin: 0 1.14rem 1.25rem 1.14rem;
+    background-color: $white;
+
+  .availability{
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        margin: 3.13rem 1.14rem 0 1.14rem;
+        padding-bottom: 0.5rem;
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.5rem;
+            color: $black;
+            margin: 1.14rem auto 0.45rem 1.14rem;
+
+          }
+
+
+  }
+
+  .button{
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 3.75rem;
+    margin: 0 2.28rem 1.25rem 2.28rem;
+
+    :first-child{
+      width: 100%;
+
+    }
+
+  }
+}
+
+}
+
+@media screen and (min-width: $bp-large) {
+  .tertiaryContainer{
+
+    .video{
+      margin: 0;
+      width: 100%;
+
+      h4{
+        font-size: 1.20rem;
+        margin: 1.5rem auto 0.60rem 1.5rem;
+      }
+    }
+    .availabilityContainer{
+      margin: 0 ;
+      margin-top: 1rem;
+      padding-bottom: 0.5rem;
+
+
+
+
+      .availability{
+
+        margin: 0rem 1.5rem 0 1.5rem;
+        padding-bottom: 0;
+
+          h4 {
+              font-size: 1.20rem;
+              margin:1.5rem 0 0.60rem 0;
+            }
+
+      }
+
+      .button {
+        margin:  1.5rem 1.5rem 0 1.5rem;
+
+        :first-child {
+          width: 100%;
+        }
+      }
+    }
+
+
+
+  }
+}

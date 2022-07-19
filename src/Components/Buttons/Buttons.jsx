@@ -4,9 +4,13 @@ import {
   PrimaryButtonContainer,
   RegisterPageLinkButtonContainer,
   RequestButtonContainer,
+  RequestButtonContainerMobile,
   RequestButtonContainerWide,
+  RequestButtonContainerWideMobile,
   SaveButtonContainer,
-  SubmitButtonContainer,
+  SaveButtonContainerMobile,
+  SaveButtonContainerWideMobile,
+  SubmitButtonContainer
 } from './Buttons.styles';
 
 import React from 'react';
@@ -24,6 +28,11 @@ export const SaveButton = (props) => (
     {props.text}
   </SaveButtonContainer>
 );
+export const SaveButtonMobile = (props) => (
+  <SaveButtonContainerMobile onClick={props.onClick}>
+    {props.text}
+  </SaveButtonContainerMobile>
+);
 
 export const RequestButton = (props) => (
   <RequestButtonContainer onClick={props.onClick}>
@@ -31,10 +40,28 @@ export const RequestButton = (props) => (
   </RequestButtonContainer>
 );
 
+export const RequestButtonMobile = (props) => (
+  <RequestButtonContainerMobile onClick={props.onClick}>
+    {props.text}
+  </RequestButtonContainerMobile>
+);
+
 export const RequestButtonWide = (props) => (
   <RequestButtonContainerWide onClick={props.onClick}>
     {props.text}
   </RequestButtonContainerWide>
+);
+
+export const RequestButtonWideMobile = (props) => (
+  <RequestButtonContainerWideMobile onClick={props.onClick}>
+    {props.text}
+  </RequestButtonContainerWideMobile>
+);
+
+export const SaveButtonWideMobile = (props) => (
+  <SaveButtonContainerWideMobile onClick={props.onClick}>
+    {props.text}
+  </SaveButtonContainerWideMobile>
 );
 
 /**@type {React.FC<import('./ButtonsTypes.d').LinkButtonProps>} */

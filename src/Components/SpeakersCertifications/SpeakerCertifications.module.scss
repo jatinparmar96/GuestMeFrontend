@@ -1,0 +1,16 @@
+@use '../../common/variables.scss' as *;
+
+.profileCertifications{
+  margin: 0 auto 2.75rem 1.14rem;
+}
+
+@media screen and (min-width: $bp-large) {
+
+  .profileCertifications{
+    margin: 0 auto 1.5rem 1.5rem;
+
+    p{
+      font-size: 0.8rem;
+    }
+  }
+}
