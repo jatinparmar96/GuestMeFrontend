@@ -1,31 +1,106 @@
+@use '../../common/variables.scss' as *;
 .bookSpeakerContainer {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  width: 100%;
+
+
+  .white{
+    background-color: $white;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.56rem;
+  }
+
+  .beige{
+    background-color: $light-beige;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 450px;
+
+
+
+  }
+
+
 
   .bookCard {
     order: 1;
   }
+
+  .bookForm{
+    background-color: $light-beige;
+    display: flex;
+    justify-content: center;
+    margin: 0 1.23rem;
+    width: 100%;
+
+  }
+
+    .topRectangle{
+    background-color: $light-beige;
+
+  }
+
+
 }
 
-@media screen and (min-width: 992px) {
-  .bookSpeakerContainer {
-    margin-left: 7.5rem;
-    margin-right: 7.5rem;
-    margin-bottom: 5rem;
-    display: grid;
-    grid-template-columns: 14.5rem auto;
+@media screen and (min-width: $bp-large) {
+.bookSpeakerContainer {
 
-    .bookForm {
+  display: grid;
+  grid-template-columns: 34.16% calc(100% - 34.16%);
+
+
+    .white {
+
+        width: 100%;
+        max-width: unset;
+        height: 100%;
+        padding: 0;
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: flex-end;
+
+
+
+
+      }
+
+    .beige {
       grid-column: 2;
       grid-row: 1;
+      flex-shrink: 1;
+      max-width: 1140px;
+      max-width: unset;
     }
 
-    .bookCard {
-      grid-column: 1;
-      grid-row: 1;
-    }
+
+
+
+  .topRectangle{
+
+    height: 3.05rem;
   }
+
+
+  .bookForm{
+
+    padding-top: 3.05rem;
+    margin-left: 3.85rem;
+    margin-right: 10.416%;
+
+  }
+
+  .bookCard {
+    padding-top: 3.05rem;
+    margin-right:5%;
+    margin-left: 10.416%;
+
+  }
+}
 }
