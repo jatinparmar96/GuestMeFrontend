@@ -1,4 +1,4 @@
-
+@use '../../common/variables.scss' as *;
 .videoContainer{
   display: flex;
   align-content: center;
@@ -16,7 +16,7 @@
 
 
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: $bp-large) {
 
   .videoContainer {
 

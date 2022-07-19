@@ -83,7 +83,7 @@
 }
 
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: $bp-large) {
 .profileMainInfo{
   // width: 57.05rem;
   display: grid;
