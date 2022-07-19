@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { RequestButtonWideMobile, SaveButtonWideMobile } from '../../Components/Buttons/Buttons';
+import { RequestButton, RequestButtonWideMobile, SaveButton, SaveButtonWideMobile } from '../../Components/Buttons/Buttons';
+import ScreenWidth from '../../Components/ScreenSize/ScreenSize';
 import SpeakerAboutMe from '../../Components/SpeakerAboutMe/SpeakerAboutMe';
 import SpeakerCertifications from '../../Components/SpeakersCertifications/SpeakerCertifications';
 import SpeakerSkills from '../../Components/SpeakerSkills/SpeakerSkills';
@@ -8,6 +9,7 @@ import style from './SpeakerSecondaryContainer.module.scss';
 
 const SpeakerSecondaryInformation = (props) => {
   const navigate = useNavigate();
+  const width = ScreenWidth();
   return (
     <>
       <div className={style.secondary}>
@@ -25,17 +27,28 @@ const SpeakerSecondaryInformation = (props) => {
           <SpeakerReviews speaker={props.speaker} />
         </div>
         <div className={style.buttonsContainer}>
-        <div className={style.buttons}>
-          <SaveButtonWideMobile
-            text="Save"
-            // onClick={}
-          />
-
-
-          <RequestButtonWideMobile
-            text="Request"
-            onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
-          />
+          <div className={style.buttons}>
+            {width > 992 ?
+              ( <>
+                  <SaveButton
+                    text="Save"
+                    // onClick={}
+                  />
+                <RequestButton
+                  text="Request"
+                  onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
+                />
+                </>) : (
+                <>
+                <SaveButtonWideMobile
+                text="Save"
+                // onClick={}
+                />
+                <RequestButtonWideMobile
+                  text="Request"
+                  onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
+                  />
+                </>)}
           </div>
           </div>
 

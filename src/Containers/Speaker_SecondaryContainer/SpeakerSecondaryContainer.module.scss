@@ -94,6 +94,21 @@
             }
             .buttonsContainer{
                   margin:0;
+
+                  .buttons {
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        margin: 0 1.5rem;
+                        :first-child {
+
+                              width: 8.7rem;
+                        }
+                        :last-child {
+                              width: 8.7rem;
+                        }
+                  }
             }
       }
 }

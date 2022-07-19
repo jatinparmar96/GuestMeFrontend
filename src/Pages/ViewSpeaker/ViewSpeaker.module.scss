@@ -1,6 +1,7 @@
 @use '../../common/variables.scss' as *;
 
 .viewSpeakerContainer{
+      color: $black;
 
       display: flex;
       flex-direction: column;
