@@ -1,0 +1,105 @@
+@use '../../common/variables' as *;
+.popup {
+  background: #f9f8f5;
+  border-radius: 6px;
+  .crossMark {
+    text-align: end;
+    margin: 8px;
+    margin-top: 20px;
+    margin-right: 21px;
+    margin-bottom: 9px;
+  }
+  .logoMic p svg {
+    margin: 0 24px auto;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    margin: 0 auto 45px !important;
+  }
+  .dialogContent {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    .confirmationText {
+      height: 30px !important;
+      font-style: normal !important;
+      font-weight: 600 !important;
+      font-size: 24px !important;
+      line-height: 30px !important;
+      text-align: center !important;
+      margin-bottom: 37px !important;
+      color: #3a3f3f !important;
+    }
+  }
+  .dialogActions {
+    justify-content: center;
+    margin-bottom: 50px;
+
+    .okButton {
+      border: 1px solid #35afac;
+      background: #35afac;
+      color: #f9f8f5;
+      text-transform: capitalize;
+      width: 100px;
+      margin-right: 20px;
+    }
+    .cancelButton {
+      border: 1px solid #f28080;
+      color: #f28080;
+      text-transform: capitalize;
+      width: 100px;
+    }
+  }
+}
+@media screen and (min-width: $bp-tablet) {
+  .MuiPaper-root,
+  .dialogBox {
+    margin: 0 !important;
+    overflow-y: unset !important;
+  }
+  .popup {
+    width: 640px !important;
+    height: 404px !important;
+    .crossMark {
+      margin-top: 20px;
+      margin-right: 21px;
+      margin-bottom: 9px;
+      height: 21px !important;
+      display: flex !important;
+      justify-content: flex-end !important;
+    }
+    .logoMic p svg {
+      width: 97px !important;
+      height: 142px !important;
+      display: block !important;
+      justify-content: unset !important;
+      margin: 0 auto 45px !important;
+    }
+    .dialogContent {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      .confirmationText {
+        height: 30px !important;
+        font-style: normal !important;
+        font-weight: 600 !important;
+        font-size: 24px !important;
+        line-height: 30px !important;
+        text-align: center !important;
+        margin-bottom: 37px !important;
+      }
+    }
+
+    .okButton,
+    .cancelButton {
+      width: 174px !important;
+      height: 50px !important;
+    }
+    .okButton {
+      margin-right: 20px;
+    }
+    .dialogActions {
+      padding: 0 !important;
+      margin-bottom: 50px !important;
+    }
+  }
+}

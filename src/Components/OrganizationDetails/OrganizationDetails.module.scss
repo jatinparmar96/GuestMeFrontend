@@ -1,0 +1,71 @@
+@use '../../common/variables' as *;
+.organizationDetails {
+  margin-top: 37px;
+  .emailAndCross {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  .crossMark {
+    align-self: start;
+    svg {
+      height: 15px;
+      width: 15px;
+    }
+  }
+  .organizationEmail {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    text-decoration-line: underline;
+    color: #35afac;
+  }
+  p {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: #3a3f3f;
+    margin-bottom: 10px;
+    padding: 0;
+    span {
+      display: block;
+      font-family: 'Barlow';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.05em;
+      color: #3a3f3f;
+    }
+  }
+
+  @media screen and (min-width: $bp-tablet) {
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.05em;
+      color: #3a3f3f;
+      display: grid;
+      grid-template-columns: 1fr 2.5fr;
+      grid-gap: 12px;
+      span {
+        display: inline;
+        height: 38px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.05em;
+        color: #3a3f3f;
+        margin-bottom: 2px;
+        // margin-right: 27px;
+      }
+    }
+  }
+}
