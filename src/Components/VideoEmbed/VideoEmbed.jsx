@@ -1,3 +1,5 @@
+import style from './VideoEmbed.module.scss';
+
 const VideoEmbed = (props) => {
   const getVideoID = (url) => {
     return url.split('v=')[1]?.substring(0, 11);
@@ -7,10 +9,11 @@ const VideoEmbed = (props) => {
 
   return (
     <>
-      <div className="video">
+      <div className={style.videoContainer}>
         <iframe
-          width="402"
-          height="226"
+          // width="402"
+          // height="226"
+          className={style.video}
           src={`https://www.youtube.com/embed/${videoID}`}
           title="YouTube video player"
           frameborder="0"

@@ -1,10 +1,11 @@
+import style from './SpeakerAboutMe.module.scss';
+
 const SpeakerAboutMe = (props) => {
 
     return (
       <>
         <div>
-          <section className='profileAboutMe'>
-            <h4>About me</h4>
+          <section className={style.profileAbout}>
             <p>{props.speaker.about}</p>
           </section>
 

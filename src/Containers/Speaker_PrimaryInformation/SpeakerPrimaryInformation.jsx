@@ -1,25 +1,34 @@
 import { useNavigate } from 'react-router-dom';
-import { RequestButton, SaveButton } from '../../Components/Buttons/Buttons';
+import { RequestButtonMobile, SaveButtonMobile } from '../../Components/Buttons/Buttons';
+import ScreenWidth from '../../Components/ScreenSize/ScreenSize';
 import SpeakerInfo from '../../Components/SpeakerProfileInfo/SpeakerProfileInfo';
+import style from './SpeakerPrimaryInformation.module.scss';
 
 
 const SpeakerPrimaryInformation = (props) => {
   const navigate = useNavigate();
+  const width = ScreenWidth();
 
   return (
     <>
-      <div>
+
+      <div className={style.primary}>
         <SpeakerInfo speaker={props.speaker} />
-        <div className="SaveButtonContainer">
-          <SaveButton
-            text="Save"
+        {width > 992 ?
+          null
+          :
+          (<div className={style.buttonsContainer}>
+
+
+            <SaveButtonMobile
+              text="Save"
             // onClick={}
-          />
-          <RequestButton
-            text="Request"
-            onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
-          />
-        </div>
+            />
+            <RequestButtonMobile
+              text="Request"
+              onClick={() => navigate('/speakers/' + props.speaker.id + '/request')}
+            />
+          </div>)}
       </div>
     </>
   );
