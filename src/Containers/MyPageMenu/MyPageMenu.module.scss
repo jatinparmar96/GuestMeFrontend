@@ -1,0 +1,45 @@
+@use '../../common/variables' as *;
+
+.myPageMenu{
+  width: 100%;
+  background-color: $white;
+  color:$black;
+  font-family: $barlow-condensed-font;
+  padding-bottom: 3px;
+
+    h2{
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.88rem;
+      margin-top:0.5rem;
+      margin-left:1.25rem;
+      margin-bottom: 1rem;
+
+    }
+    .myPageMenuContainer{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      margin-bottom: 0.44rem;
+
+      a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color:$black;
+
+        .active{
+          background-color: red;
+        }
+      }
+
+
+    }
+}
+
+@media screen and (min-width: $bp-large) {
+}

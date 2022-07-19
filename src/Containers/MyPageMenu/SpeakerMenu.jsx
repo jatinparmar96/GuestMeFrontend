@@ -8,7 +8,7 @@ import { ReactComponent as InfoIcon } from '../../assets/icons/info-icon.svg';
 export const SpeakerMenu = [
   {
     title: 'My Info',
-    path: '/speakers/mypage',
+    path: '/speakers/mypage/update',
     icon: <InfoIcon />,
   },
   {

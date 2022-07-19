@@ -39,7 +39,7 @@ import {
   LineElement,
   PointElement,
   Title,
-  Tooltip,
+  Tooltip
 } from 'chart.js';
 
 ChartJS.register(
@@ -80,7 +80,7 @@ const App = () => {
               </RequireAuth>
             }
           >
-            <Route path="/speakers/mypage" element={<SpeakerUpdateProfile />} />
+            <Route path="/speakers/mypage/update" element={<SpeakerUpdateProfile />} />
             <Route
               path="/speakers/mypage/bookings"
               element={<SpeakerBooking />}
