@@ -70,3 +70,30 @@
 
 
 }
+
+@media screen and (min-width: $bp-large) {
+
+      .secondary{
+            width: 100%;
+            .about{
+                  margin:0;
+
+                  h4{
+                        margin: 1.5rem auto 0.65rem 1.5rem;
+                  }
+            }
+            .skills{
+                  margin:0;
+                  padding: 0;
+            }
+            .certifications{
+                  margin:0;
+            }
+            .reviews{
+                  margin:0;
+            }
+            .buttonsContainer{
+                  margin:0;
+            }
+      }
+}
