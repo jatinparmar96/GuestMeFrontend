@@ -75,6 +75,15 @@
         width: 54px;
         height: 39px;
       }
+      .waitingForReview {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: #b7bfbf !important;
+      }
     }
   }
   .verticalGrid {
@@ -107,6 +116,115 @@
     .verticalGrid {
       display: grid;
       grid-template-columns: 1fr 3fr 1fr;
+      .forBorderDiv {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .forBorderDivSecondSection {
+        border-bottom: none;
+        border-left: solid 1px #b7bfbf;
+        border-right: solid 1px #b7bfbf;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 0;
+      }
+    }
+    margin: 97px;
+    h2 {
+      margin-top: 51px;
+      margin-bottom: 49px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 30px;
+      width: 78px;
+      height: 30px;
+    }
+    h3 {
+      width: 66px;
+      height: 22px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 14px;
+    }
+    li {
+      padding: 10px 20px;
+      width: 753px;
+      margin-bottom: 20px !important;
+      .mintBlueText {
+        padding-top: 15px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 9px;
+      }
+      .date {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+      }
+      .centreColumnTopRow {
+        margin-top: unset !important;
+        margin-bottom: unset !important;
+      }
+      .sentAt {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        align-self: start !important;
+        padding-top: 15px;
+      }
+      .organizationName {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        span {
+          margin-right: 4px !important;
+        }
+      }
+      .approve {
+        margin-left: 33px !important;
+        margin-right: 38px !important;
+      }
+      .callToActionColumn {
+        margin-top: 15px;
+      }
+      .decline {
+        margin-right: 14px !important;
+      }
+    }
+    .upcoming {
+      margin-top: 62px !important;
+    }
+
+    .history {
+      margin-top: 62px !important;
+      li {
+        padding-right: 0 !important;
+      }
+    }
+    .cancel {
+      margin-left: 57px;
+      margin-right: 38px;
+    }
+    .waitingForReview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: #b7bfbf !important;
+        width: 135px;
+        height: 22px;
+        margin: 0 42px;
+      }
     }
   }
 }

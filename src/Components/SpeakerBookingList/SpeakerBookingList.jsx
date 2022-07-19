@@ -141,7 +141,7 @@ const SpeakerBookingList = (props) => {
           )}
         </div>
 
-        <div>
+        <div className={style.upcoming}>
           <h3>Upcoming</h3>
 
           {props.speaker.accepted && (
@@ -151,7 +151,7 @@ const SpeakerBookingList = (props) => {
                   {/* <p>{ booking.location}</p> */}
                   <div className={style.verticalGrid}>
                     <div className={style.forBorderDiv}>
-                      <p className={style.mintBlueText}>Request for</p>
+                      <p className={style.mintBlueText}>Will be on</p>
                       <p className={style.date}>
                         {convertDateFormat(booking.bookingDateTime.date)}
                       </p>
@@ -192,7 +192,7 @@ const SpeakerBookingList = (props) => {
             </ul>
           )}
         </div>
-        <div>
+        <div className={style.history}>
           <h3>History</h3>
 
           {props.speaker.accepted && (
@@ -202,13 +202,13 @@ const SpeakerBookingList = (props) => {
                   {/* <p>{ booking.location}</p> */}
                   <div className={style.verticalGrid}>
                     <div className={style.forBorderDiv}>
-                      <p className={style.mintBlueText}>Request for</p>
+                      <p className={style.mintBlueText}>Held on</p>
                       <p className={style.date}>
                         {convertDateFormat(booking.bookingDateTime.date)}
                       </p>
                     </div>
 
-                    <div>
+                    <div className={style.forBorderDivSecondSection}>
                       <div className={style.centreColumnTopRow}>
                         <p className={style.mintBlueText}>Request from</p>
                         <p className={style.sentAt}>
@@ -230,6 +230,9 @@ const SpeakerBookingList = (props) => {
                       ) : (
                         ''
                       )}
+                    </div>
+                    <div className={style.waitingForReview}>
+                      <p>Waiting for review</p>
                     </div>
                   </div>
                 </li>
