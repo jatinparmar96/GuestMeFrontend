@@ -24,65 +24,69 @@
     margin-top: 0;
     li {
       list-style-type: none;
-      background: white;
-      padding: 20px;
+
       margin-bottom: 20px;
-      .mintBlueText {
-        color: #35afac;
-        font-size: 16px;
-        font-weight: 600;
-      }
-      .date {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        letter-spacing: 0.05em;
-        color: #3a3f3f;
-        margin-top: 9px;
-      }
-      .centreColumnTopRow {
-        margin-top: 19px;
-        margin-bottom: 10px;
-      }
-      .sentAt {
-        font-style: normal;
-        font-weight: 500;
-        font-size: 11px;
-        line-height: 11px;
-        color: #b7bfbf;
-        align-self: end;
-      }
-      .organizationName {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 22px;
-        letter-spacing: 0.05em;
-        text-decoration-line: underline;
-        color: #3a3f3f;
-        span {
-          margin-right: 5px;
+      .eachCard {
+        background: white;
+        padding: 20px;
+
+        .mintBlueText {
+          color: #35afac;
+          font-size: 16px;
+          font-weight: 600;
         }
-      }
-      .approve {
-        width: 60px;
-        height: 39px;
-      }
-      .cancel {
-        height: 39px;
-      }
-      .decline {
-        width: 54px;
-        height: 39px;
-      }
-      .waitingForReview {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 22px;
-        text-align: center;
-        letter-spacing: 0.05em;
-        color: #b7bfbf !important;
+        .date {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          letter-spacing: 0.05em;
+          color: #3a3f3f;
+          margin-top: 9px;
+        }
+        .centreColumnTopRow {
+          margin-top: 19px;
+          margin-bottom: 10px;
+        }
+        .sentAt {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 11px;
+          line-height: 11px;
+          color: #b7bfbf;
+          align-self: end;
+        }
+        .organizationName {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 22px;
+          letter-spacing: 0.05em;
+          text-decoration-line: underline;
+          color: #3a3f3f;
+          span {
+            margin-right: 5px;
+          }
+        }
+        .approve {
+          width: 60px;
+          height: 39px;
+        }
+        .cancel {
+          height: 39px;
+        }
+        .decline {
+          width: 54px;
+          height: 39px;
+        }
+        .waitingForReview {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 22px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          color: #b7bfbf !important;
+        }
       }
     }
   }
@@ -111,7 +115,24 @@
     flex-flow: row wrap;
     justify-content: space-between;
   }
+  .waitingForReview {
+    p {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: #b7bfbf !important;
 
+      margin: 16px;
+    }
+  }
+  @media screen and (max-width: $bp-tablet) {
+    .organizationDataDesktop {
+      display: none;
+    }
+  }
   @media screen and (min-width: $bp-tablet) {
     .verticalGrid {
       display: grid;
@@ -129,7 +150,8 @@
         padding-bottom: 0;
       }
     }
-    margin: 97px;
+    margin-left: 97px;
+    margin-right: 150px;
     h2 {
       margin-top: 51px;
       margin-bottom: 49px;
@@ -149,50 +171,53 @@
       margin-bottom: 14px;
     }
     li {
-      padding: 10px 20px;
       width: 753px;
-      margin-bottom: 20px !important;
-      .mintBlueText {
-        padding-top: 15px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 19px;
-        margin-bottom: 9px;
-      }
-      .date {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 19px;
-      }
-      .centreColumnTopRow {
-        margin-top: unset !important;
-        margin-bottom: unset !important;
-      }
-      .sentAt {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 17px;
-        align-self: start !important;
-        padding-top: 15px;
-      }
-      .organizationName {
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 22px;
-        span {
-          margin-right: 4px !important;
+
+      .eachCard {
+        padding: 10px 20px;
+        margin-bottom: 20px !important;
+        .mintBlueText {
+          padding-top: 15px;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          margin-bottom: 9px;
         }
-      }
-      .approve {
-        margin-left: 33px !important;
-        margin-right: 38px !important;
-      }
-      .callToActionColumn {
-        margin-top: 15px;
-      }
-      .decline {
-        margin-right: 14px !important;
+        .date {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+        }
+        .centreColumnTopRow {
+          margin-top: unset !important;
+          margin-bottom: unset !important;
+        }
+        .sentAt {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          align-self: start !important;
+          padding-top: 15px;
+        }
+        .organizationName {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 22px;
+          span {
+            margin-right: 4px !important;
+          }
+        }
+        .approve {
+          margin-left: 33px !important;
+          margin-right: 38px !important;
+        }
+        .callToActionColumn {
+          margin-top: 15px;
+        }
+        .decline {
+          margin-right: 14px !important;
+        }
       }
     }
     .upcoming {
@@ -225,6 +250,13 @@
         height: 22px;
         margin: 0 42px;
       }
+    }
+    .organizationData {
+      display: none;
+    }
+    .organizationDataDesktop {
+      background: white;
+      padding: 0 20px;
     }
   }
 }

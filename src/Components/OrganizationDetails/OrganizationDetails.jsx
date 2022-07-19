@@ -12,18 +12,19 @@ const OrganizationDetails = ({ booking, organizationData, id }) => {
   return (
     <>
       <div className={style.organizationDetails}>
-        <p>
-          <span className={style.email}>
-            <span>Email </span>
-            <span onClick={() => crossMark()} className={style.crossMark}>
-              <CrossMark />
+        <div className={style.emailAndCross}>
+          <p>
+            <span className={style.email}>
+              <span>Email </span>
             </span>
+            <span className={style.organizationEmail}>
+              {booking.organization.organizationEmail}
+            </span>
+          </p>
+          <span onClick={() => crossMark()} className={style.crossMark}>
+            <CrossMark />
           </span>
-          <span className={style.organizationEmail}>
-            {booking.organization.organizationEmail}
-          </span>
-        </p>
-
+        </div>
         <p>
           <span>Phone</span> {booking.organization.organizationPhone}
         </p>
