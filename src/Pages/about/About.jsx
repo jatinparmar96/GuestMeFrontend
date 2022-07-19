@@ -4,47 +4,59 @@ import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { ContactLinkButton } from '../../Components/Buttons/Buttons';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 
+import Noriko from '../../assets/members/Noriko.png';
+import Satveer from '../../assets/members/Satveer.png';
+import Valentina from '../../assets/members/Valentina.png';
+
+import Arvind from '../../assets/members/Arvind.png';
+import Gabriela from '../../assets/members/Gabriela.png';
+import Jatin from '../../assets/members/Jatin.png';
+
+import Koichi from '../../assets/members/Koichi.png';
+
 import Member from './components/member/Member';
 
 import style from './About.module.scss';
 const About = () => {
   return (
-    <div className={style.pageContainer}>
+    <>
       <PageHeading text="About" />
       <BreadCrumbs currentPosition="About" />
-      <div>
-        <h3>
-          About <span className={style.fontMint}>Our Team</span>
-        </h3>
-        <div className={style.description}>
-          <p className={style.description__text}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Consequuntur, blanditiis voluptate quidem repudiandae saepe placeat
-            repellat neque voluptates quos voluptatibus ab temporibus vero
-            dolorum corporis dolore eius excepturi? Sit, velit?
-          </p>
-          <ContactLinkButton to="/contact" text="Contact us" />
-        </div>
-        <div>
-          <div className="designers">
-            <h4 className={style.fontMint}>Designer</h4>
-            <div className={style.membersContainer}>
-              {designers.map((designer) => (
-                <Member member={designer} key={designer.name} />
-              ))}
+      <div className={style.pageContainer}>
+        <div className={style.contentContainer}>
+          <h3 className={style.heading}>
+            About <span className={style.fontMint}>Our Team</span>
+          </h3>
+          <div className={style.description}>
+            <p className={style.description__text}>
+              Our team of like-minded designers and developers is ready to take
+              on complex projects with passion and enthusiasm!
+            </p>
+            <div className={style.contactButtonContainer}>
+              <ContactLinkButton to="/contact" text="Contact us" />
             </div>
           </div>
-          <div className="develoers">
-            <h4 className={style.fontMint}>Developer</h4>
-            <div className={style.membersContainer}>
-              {developers.map((developer) => (
-                <Member member={developer} key={developer.name} />
-              ))}
+          <div>
+            <div className="designers">
+              <h4 className={style.fontMint}>Designer</h4>
+              <div className={style.membersContainer}>
+                {designers.map((designer) => (
+                  <Member member={designer} key={designer.name} />
+                ))}
+              </div>
+            </div>
+            <div className="develoers">
+              <h4 className={style.fontMint}>Developer</h4>
+              <div className={style.membersContainer}>
+                {developers.map((developer) => (
+                  <Member member={developer} key={developer.name} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -55,23 +67,23 @@ const designers = [
   {
     name: 'Valentina Abanina',
     role: 'Project Manager / Designer',
-    imageUrl: 'https://picsum.photos/id/237/200/300',
+    imageUrl: Valentina,
     introduction:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam maiores cupiditate sint, est enim deserunt animi aut explicabo optio ad beatae alias sapiente libero ipsa cum aliquam aliquid! Molestiae, magnam?',
+      'Graduated with a Master degree in Fine Arts. Work experience includes Quality Management Specialist in Education, Photographer Supervisor and Drama Instructor ',
   },
   {
     name: 'Noriko Gondo',
     role: 'Lead Designer',
-    imageUrl: 'https://picsum.photos/id/238/200/300',
+    imageUrl: Noriko,
     introduction:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam maiores cupiditate sint, est enim deserunt animi aut explicabo optio ad beatae alias sapiente libero ipsa cum aliquam aliquid! Molestiae, magnam?',
+      'Obtained Bachelor of Economics and International Business degrees. Worked as a Recruitment Consultant and freelance Web Designer. ',
   },
   {
     name: 'Satveer Kaur',
     role: 'Designer',
-    imageUrl: 'https://picsum.photos/id/239/200/300',
+    imageUrl: Satveer,
     introduction:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam maiores cupiditate sint, est enim deserunt animi aut explicabo optio ad beatae alias sapiente libero ipsa cum aliquam aliquid! Molestiae, magnam?',
+      'Bachelor of Computer Application, Master’s degree in computer science (Information Technology). Have experience in web development. ',
   },
 ];
 
@@ -80,30 +92,30 @@ const developers = [
   {
     name: 'Jatin Parmar',
     role: 'Lead Developer',
-    imageUrl: 'https://testtasdf54grf.s3.ca-central-1.amazonaws.com/Jatin.png',
+    imageUrl: Jatin,
     introduction:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam maiores cupiditate sint, est enim deserunt animi aut explicabo optio ad beatae alias sapiente libero ipsa cum aliquam aliquid! Molestiae, magnam?',
+      'Holder of a Bachelor of Science degree in Computer Engineering. Extensive experience in developing ERP and Ecommerce web applications. ',
   },
   {
     name: 'Gabriela Fernandez Chaves Arriola',
     role: 'Developer',
-    imageUrl: 'https://picsum.photos/id/241/200/300',
+    imageUrl: Gabriela,
     introduction:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam maiores cupiditate sint, est enim deserunt animi aut explicabo optio ad beatae alias sapiente libero ipsa cum aliquam aliquid! Molestiae, magnam?',
+      'Bachelor of Accounting degree holder.  Extensive experience in Management Control and Logistic teams in Hospitality and Casino industry.',
   },
   {
     name: 'Arvind Kumar Suroju',
     role: 'Developer',
-    imageUrl: 'https://picsum.photos/id/242/200/300',
+    imageUrl: Arvind,
     introduction:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam maiores cupiditate sint, est enim deserunt animi aut explicabo optio ad beatae alias sapiente libero ipsa cum aliquam aliquid! Molestiae, magnam?',
+      'Graduate of Bachelor in Electronics and Communication Engineering. Experienced Application Engineer  and Full Stack developer with a demonstrated history of working in the financial services industry for designing, developing and implementing an application that responds to customer needs and provides innovative solutions to their problems.',
   },
   {
     name: 'Koichi Tanaka',
     role: 'Developer',
-    imageUrl: 'https://picsum.photos/id/243/200/300',
+    imageUrl: Koichi,
     introduction:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam maiores cupiditate sint, est enim deserunt animi aut explicabo optio ad beatae alias sapiente libero ipsa cum aliquam aliquid! Molestiae, magnam?',
+      'Graduate of Bachelor of Information Expression and Informatics in Arts. Worked previously as a full stack web developer.',
   },
 ];
 

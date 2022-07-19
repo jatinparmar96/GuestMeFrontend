@@ -18,8 +18,12 @@ const SPEAKER_ENDPOINT = {
 /**
  * @param  {string} params
  */
-export const getSpeakers = (params) => {
-  return get(`${SPEAKER_ENDPOINT.get}${params ? `?${params}` : ''}`);
+export const getSpeakers = (params, page) => {
+  return get(
+    `${SPEAKER_ENDPOINT.get}${params ? `?${params}` : ''}${
+      page ? `&page=${page}` : ''
+    }`
+  );
 };
 
 /**

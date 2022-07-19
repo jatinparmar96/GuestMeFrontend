@@ -1,16 +1,10 @@
-@use '../../common/variables'as *;
-
-.loginformContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: $bg-auth-form;
-}
+@use "../../common/variables" as *;
 
 .formContainer {
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .formHeading {
@@ -27,6 +21,21 @@
 .img {
   width: 100%;
   max-height: 800px;
+}
+
+.registerRow {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  @media screen and (max-width: $bp-tablet) {
+    padding-top: 3.13rem;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 .registerLink {

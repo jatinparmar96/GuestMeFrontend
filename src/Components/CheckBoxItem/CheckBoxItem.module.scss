@@ -1,7 +1,41 @@
+@use "../../common/variables" as *;
 .row {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-start;
-  gap: 5px;
+  gap: 1rem;
+  height: min-content;
+}
+
+.checkbox {
+  accent-color: $mint-blue;
+  color: $white;
+  margin: 0;
+  height: 100%;
+
+  visibility: hidden;
+
+  &:checked:after {
+    background-color: rgba($mint-blue, 1);
+    border: none;
+  }
+
+  &:after {
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "\2713";
+    width: 1rem;
+    height: 1rem;
+    color: $white;
+    background-color: rgba($mint-blue, 0);
+    border: 0.1px solid $black;
+    border-radius: 4px;
+  }
+}
+
+.label {
+  margin: 0;
 }

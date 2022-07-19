@@ -1,8 +1,7 @@
-@use '../../common/variables'as *;
-
+@use "../../common/variables" as *;
 
 .fontMint {
-  color: $mint-blue
+  color: $mint-blue;
 }
 
 .container {
@@ -53,6 +52,13 @@
   }
 }
 
+.loginRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  margin-top: 2.5rem;
+}
 
 .areYouJoin {
   display: grid;

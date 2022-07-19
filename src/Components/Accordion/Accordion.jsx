@@ -9,10 +9,10 @@ import { useState } from 'react';
 const AccordionItem = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  '&:not(:last-child)': {
-    borderBottom: 0,
-  },
+  borderBottom: `1px solid #B7BFBF`,
+  // '&:not(:last-child)': {
+  //   borderBottom: 0,
+  // },
   '&:before': {
     display: 'none',
   },
@@ -24,22 +24,29 @@ const AccordionSummary = styled((props) => (
     {...props}
   />
 ))(({ theme }) => ({
+  margin: 0,
+  padding: 0,
   backgroundColor:
     theme.palette.mode === 'dark'
-      ? 'rgba(255, 255, 255, .05)'
-      : 'rgba(0, 0, 0, .03)',
-  flexDirection: 'row-reverse',
-  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+      ? 'rgba(255, 255, 255, 0)'
+      : 'rgba(0, 0, 0, 0)',
+  flexDirection: 'row',
+  '& .MuiAccordionSummary-expandIconWrapper': {
     transform: 'rotate(90deg)',
+    color: '#35afac',
+  },
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(270deg)',
   },
   '& .MuiAccordionSummary-content': {
+    margin: 0,
     marginLeft: theme.spacing(1),
   },
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-  padding: theme.spacing(2),
-  borderTop: '1px solid rgba(0, 0, 0, .125)',
+  padding: 0,
+  margin: 0,
 }));
 
 export const Accordion = (props) => {
@@ -51,17 +58,24 @@ export const Accordion = (props) => {
   };
 
   return (
-    <div>
+    <>
       <AccordionItem
         expanded={expanded === 'panel'}
         onChange={handleChange('panel')}
       >
         <AccordionSummary aria-controls="panel-content" id="panel-header">
-          <Typography>{label}</Typography>
+          <Typography
+            fontWeight={700}
+            fontSize={'0.9rem'}
+            fontFamily={'"Barlow Condensed", sans-serif'}
+            lineHeight={'4rem'}
+          >
+            {label}
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>{children}</AccordionDetails>
       </AccordionItem>
-    </div>
+    </>
   );
 };
 

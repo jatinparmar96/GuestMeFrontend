@@ -1,6 +1,6 @@
 //@ts-check
 import React, { useForm } from 'react-hook-form';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { loginSpeaker } from '../../../Api/Speaker.service';
 import { AuthError } from '../../../Errors/AuthError';
@@ -13,10 +13,10 @@ export const SpeakerLoginForm = (props) => {
   const [, setToken] = useRecoilState(tokenAtom);
 
   let navigate = useNavigate();
-  let location = useLocation();
+  // // let location = useLocation();
 
-  // @ts-ignore
-  let from = location.state?.from?.pathname || '/';
+  // // @ts-ignore
+  // let from = location.state?.from?.pathname || '/';
 
   const {
     register,
@@ -42,7 +42,7 @@ export const SpeakerLoginForm = (props) => {
   };
 
   return (
-    <div className={style.loginformContainer}>
+    <>
       <div className={style.formContainer}>
         <div className={style.formHeading}>
           <h2>Log in form for a speaker</h2>
@@ -54,22 +54,13 @@ export const SpeakerLoginForm = (props) => {
           register={register}
           errors={errors}
         />
-        <p>
-          <span>
-            Don't have an account?
-            <Link to="/register" className={style.registerLink}>
-              Register as a speaker
-            </Link>
-          </span>
-        </p>
+        <div className={style.registerRow}>
+          <span>Don't have an account?</span>
+          <Link to="/register" className={style.registerLink}>
+            Register as a speaker
+          </Link>
+        </div>
       </div>
-      <div className={style.aside}>
-        <img
-          src="https://picsum.photos/id/1/200/300"
-          alt="login"
-          className={style.img}
-        />
-      </div>
-    </div>
+    </>
   );
 };

@@ -32,6 +32,7 @@ const Contact = (props) => {
                 type="text"
                 name="firstName"
                 id="firstName"
+                placeholder="First"
                 autoComplete="given-name"
                 className={style.input}
               />
@@ -44,6 +45,7 @@ const Contact = (props) => {
                 type="text"
                 name="lastName"
                 id="lastName"
+                placeholder="Last"
                 autoComplete="family-name"
                 className={style.input}
               />
@@ -55,11 +57,12 @@ const Contact = (props) => {
               type="email"
               name="email"
               id="email"
+              placeholder="email@gmail.com"
               className={style.input}
               autoComplete="email"
             />
             <label className={style.label} htmlFor="message">
-              Message
+              Message*
             </label>
             <textarea
               name="message"

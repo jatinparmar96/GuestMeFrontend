@@ -1,26 +1,113 @@
-@use '../../common/variables'as *;
+@use "../../common/variables" as *;
+
+.backgroundContainer {
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+}
 
 .PageContainer {
+  width: 100%;
+
+  margin-top: 4.3rem;
+
+  @media screen and (max-width: $bp-tablet) {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+  }
+}
+
+.contentContainer {
+  width: 100%;
   height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxContainer {
+  width: 100%;
+  background-color: $light-beige;
+  max-width: $max-content-width;
+  margin-bottom: 7.85rem;
+  border-radius: 4px;
 }
 
 .radioContainer {
   display: flex;
   flex-flow: row nowrap;
+
   gap: 1rem;
-
-  input[type="radio"i] {
-    display: none;
+  background-color: $white;
+  padding-bottom: 0.5rem;
+  @media screen and (max-width: $bp-tablet) {
+    padding-bottom: 0rem;
   }
 
-  label {
-    padding: .5rem;
-  }
+  .radio {
+    flex-grow: 0;
+    width: 100%;
 
-  input:checked {
-    &+label {
-      background: $bg-auth-form;
+    @media screen and (max-width: $bp-tablet) {
+      flex-grow: 1;
+      padding-bottom: 0rem;
     }
   }
+}
 
+input[type="radio"] {
+  display: none;
+}
+
+.radioLabel {
+  padding: 0.5rem;
+
+  @media screen and (max-width: $bp-tablet) {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+}
+
+input:checked {
+  & + label {
+    background-color: $light-beige;
+    font-weight: 700;
+  }
+}
+
+.divideContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.formContentContainer {
+  @media screen and (max-width: $bp-tablet) {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+  }
+}
+
+.imageContainer {
+  height: 100%;
+  flex-grow: 1;
+  flex-basis: 50%;
+
+  display: none;
+  @media screen and (min-width: $bp-tablet) {
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: fill;
 }

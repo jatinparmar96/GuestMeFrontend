@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-
 export const SubmitButtonContainer = styled.button`
   background-color: #35afac;
   color: #ffffff;
@@ -62,7 +61,6 @@ export const SaveButtonContainer = styled.button`
 export const RegisterPageLinkButtonContainer = styled(Link)`
   background: #f28080;
   color: #ffffff;
-  letter-spacing: 0.05em;
   width: 280px;
   height: 40px;
   border-radius: 4px;
