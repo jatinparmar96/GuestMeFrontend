@@ -1,17 +1,21 @@
-import { ReactComponent as CrossMark } from '../../assets/icons/cross.svg';
 import style from './OrganizationDetails.module.scss';
-const OrganizationDetails = ({ booking }) => {
-  // console.log(booking);
+
+import { ReactComponent as CrossMark } from '../../assets/icons/cross.svg';
+
+const OrganizationDetails = ({ booking, organizationData, id }) => {
+  console.log(booking);
+
+  const crossMark = () => {
+    organizationData(id);
+  };
+
   return (
     <>
       <div className={style.organizationDetails}>
         <p>
           <span className={style.email}>
             <span>Email </span>
-            <span
-              // onClick={() => props.organizationData}
-              className={style.crossMark}
-            >
+            <span onClick={() => crossMark()} className={style.crossMark}>
               <CrossMark />
             </span>
           </span>
@@ -63,7 +67,7 @@ const OrganizationDetails = ({ booking }) => {
           <label for="message">Message</label>
           <textarea type="text" name="message">
             {booking.message}
-          </textarea>  </form> */}
+          </textarea>  </form>*/}
       </div>
     </>
   );

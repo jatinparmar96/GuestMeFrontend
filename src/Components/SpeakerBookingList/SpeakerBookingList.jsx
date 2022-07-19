@@ -46,23 +46,28 @@ const SpeakerBookingList = (props) => {
   // console.log(count);
 
   useEffect(() => {
-    const pendingLength = props.speaker.pending.length;
-    let pendingArray = [];
-    for (let i = 0; i < pendingLength; i++) {
-      pendingArray.push(false);
+    if (props.speaker.pending) {
+      const pendingLength = props.speaker.pending.length;
+      let pendingArray = [];
+      for (let i = 0; i < pendingLength; i++) {
+        pendingArray.push(false);
+      }
+      // console.log(pendingArray);
+      setBookingDataOrganization(pendingArray);
     }
-    // console.log(pendingArray);
-    setBookingDataOrganization(pendingArray);
   }, [props.speaker.pending]);
 
   useEffect(() => {
-    const acceptedLength = props.speaker.accepted.length;
-    let acceptedArray = [];
-    for (let i = 0; i < acceptedLength; i++) {
-      acceptedArray.push(false);
+    if (props.speaker.accepted) {
+      const acceptedLength = props.speaker.accepted.length;
+      let acceptedArray = [];
+      for (let i = 0; i < acceptedLength; i++) {
+        acceptedArray.push(false);
+      }
+
+      // console.log(acceptedArray);
+      setBookingDataOrganization(acceptedArray);
     }
-    // console.log(acceptedArray);
-    setBookingDataOrganization(acceptedArray);
   }, [props.speaker.accepted]);
 
   return (
@@ -108,6 +113,7 @@ const SpeakerBookingList = (props) => {
                         <OrganizationDetails
                           booking={booking}
                           organizationData={organizationData}
+                          id={id}
                         />
                       ) : (
                         ''

@@ -7,7 +7,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.addMissingImports": true,
-    "source.organizeImports": true,
+    // "source.organizeImports": true,
     "source.autoFixOnSave": true
   },
   "editor.suggestSelection": "first",
