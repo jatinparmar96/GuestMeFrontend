@@ -46,7 +46,6 @@
     }
 
 
-  background-color: $mint-blue;
 }
 
 @media screen and (min-width: 992px) {
@@ -79,6 +78,7 @@
         .referenceName{
           font-size: 0.80rem;
           margin-right: 0.65rem;
+          font-weight: 500;
         }
       }
 
