@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { bookingResponse } from '../../Api/Booking.service';
+import { ReactComponent as DownArrow } from '../../assets/icons/down-arrow.svg';
+import { ReactComponent as UpArrow } from '../../assets/icons/up-arrow.svg';
 import { convertDateFormat } from '../../Utils/Utils';
 import AlertDialog from '../ModalPopup/ModalPopup';
 import OrganizationDetails from '../OrganizationDetails/OrganizationDetails';
@@ -10,6 +12,7 @@ const SpeakerBookingList = (props) => {
   const [buttonAction, setButtonAction] = useState('');
   const [booking, setBooking] = useState();
   const [bookingDataOrganization, setBookingDataOrganization] = useState([]);
+  const [arrowForOrg, setArrowForOrg] = useState(true);
 
   const bookingStatus = (e, id) => {
     let data = {
@@ -25,7 +28,15 @@ const SpeakerBookingList = (props) => {
     setBooking(bookingData);
   };
 
+  let arrowDecider = <></>;
+  if (arrowForOrg) {
+    arrowDecider = <UpArrow />;
+  } else {
+    arrowDecider = <DownArrow />;
+  }
+
   const organizationData = (id) => {
+    setArrowForOrg(!arrowForOrg);
     bookingDataOrganization[id] = !bookingDataOrganization[id];
     setBookingDataOrganization([...bookingDataOrganization]);
   };
@@ -65,15 +76,19 @@ const SpeakerBookingList = (props) => {
                       </p>
                     </div>
 
-                    <div className={style.forBorderDiv}>
+                    <div className={style.forBorderDivSecondSection}>
                       <div className={style.centreColumnTopRow}>
                         <p className={style.mintBlueText}>Request from</p>
-                        <p>sent at {convertDateFormat(booking.createdAt)}</p>
+                        <p className={style.sentAt}>
+                          sent at {convertDateFormat(booking.createdAt)}
+                        </p>
                       </div>
-                      <p>
-                        <button onClick={(e) => organizationData(id)}>
+
+                      <p onClick={(e) => organizationData(id)}>
+                        <span className={style.organizationName}>
                           {booking.organization.name}
-                        </button>
+                        </span>{' '}
+                        {arrowDecider}
                       </p>
 
                       {bookingDataOrganization[id] ? (
@@ -84,13 +99,12 @@ const SpeakerBookingList = (props) => {
                     </div>
 
                     <div className={style.callToActionColumn}>
-                      <button onClick={() => openPopup('accepted', booking)}>
+                      <p onClick={() => openPopup('accepted', booking)}>
                         Approve
-                      </button>
-                      {/* <button onClick={(e) => bookingStatus('accepted',booking)} >Approve</button> */}
-                      <button onClick={(e) => openPopup('rejected', booking)}>
+                      </p>
+                      <p onClick={(e) => openPopup('rejected', booking)}>
                         Decline
-                      </button>
+                      </p>
                     </div>
                   </div>
                 </li>
@@ -115,16 +129,23 @@ const SpeakerBookingList = (props) => {
                       </p>
                     </div>
 
-                    <div className={style.forBorderDiv}>
+                    <div className={style.forBorderDivSecondSection}>
                       <div className={style.centreColumnTopRow}>
                         <p className={style.mintBlueText}>Request from</p>
-                        <p>sent at {convertDateFormat(booking.createdAt)}</p>
+                        <p className={style.sentAt}>
+                          sent at {convertDateFormat(booking.createdAt)}
+                        </p>
                       </div>
-                      <p>{booking.organization.name}</p>
+                      <p onClick={(e) => organizationData(id)}>
+                        <span className={style.organizationName}>
+                          {booking.organization.name}
+                        </span>{' '}
+                        {arrowDecider}
+                      </p>
                     </div>
 
                     <div className={style.callToActionColumn}>
-                      <button>Cancel/Delete</button>
+                      <p>Cancel/Delete</p>
                     </div>
                   </div>
                 </li>
@@ -151,9 +172,16 @@ const SpeakerBookingList = (props) => {
                     <div>
                       <div className={style.centreColumnTopRow}>
                         <p className={style.mintBlueText}>Request from</p>
-                        <p>sent at {convertDateFormat(booking.createdAt)}</p>
+                        <p className={style.sentAt}>
+                          sent at {convertDateFormat(booking.createdAt)}
+                        </p>
                       </div>
-                      <p>{booking.organization.name}</p>
+                      <p onClick={(e) => organizationData(id)}>
+                        <span className={style.organizationName}>
+                          {booking.organization.name}
+                        </span>{' '}
+                        {arrowDecider}
+                      </p>
                     </div>
                   </div>
                 </li>

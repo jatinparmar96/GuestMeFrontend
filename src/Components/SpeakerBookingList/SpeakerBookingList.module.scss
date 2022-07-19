@@ -1,20 +1,19 @@
 @use '../../common/variables' as *;
 .bookingInfo {
-  margin: 1.25rem;
+  margin: 20px;
   h2 {
-    font-size: 1.13rem;
+    color: #3a3f3f;
     letter-spacing: 0.05em;
-    height: 1.88rem;
-    width: 3.63rem;
-    margin-top: 22px;
-    margin-bottom: 22px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
   }
 
   h3 {
-    font-size: 1rem;
-    height: 1.19rem;
+    font-size: 16px;
     font-style: normal;
-    margin-bottom: 0.563rem;
+    margin-bottom: 9px;
     margin-top: 0;
   }
   ul {
@@ -23,38 +22,62 @@
     li {
       list-style-type: none;
       background: white;
-      padding: 1.25rem;
+      padding: 20px;
       .mintBlueText {
         color: #35afac;
-        font-size: 1rem;
+        font-size: 16px;
+        font-weight: 600;
       }
       .date {
         font-style: normal;
         font-weight: 600;
-        font-size: 1rem;
-        line-height: 1.188rem;
+        font-size: 16px;
         letter-spacing: 0.05em;
         color: #3a3f3f;
-        margin-top: 0.563rem;
+        margin-top: 9px;
+      }
+      .centreColumnTopRow {
+        margin-top: 19px;
+        margin-bottom: 10px;
+      }
+      .sentAt {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 11px;
+        color: #b7bfbf;
+        align-self: end;
+      }
+      .organizationName {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.05em;
+        text-decoration-line: underline;
+        color: #3a3f3f;
+        span {
+          margin-right: 5px;
+        }
       }
     }
   }
   .verticalGrid {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1rem;
     .forBorderDiv {
       border-bottom: solid 1px #b7bfbf;
-      padding-bottom: 1.188rem;
+      padding-bottom: 19px;
+    }
+    .forBorderDivSecondSection {
+      border-bottom: solid 1px #b7bfbf;
+      padding-bottom: 10px;
     }
   }
 
   .callToActionColumn {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
     align-items: center;
-    margin: 1rem;
+    margin: 16px;
   }
 
   .centreColumnTopRow {
@@ -67,7 +90,6 @@
     .verticalGrid {
       display: grid;
       grid-template-columns: 1fr 3fr 1fr;
-      grid-gap: 1rem;
     }
   }
 }
