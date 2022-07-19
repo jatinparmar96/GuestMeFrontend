@@ -18,6 +18,7 @@ export const Login = () => {
     if (location.state?.userType) {
       setIsSpeaker(location.state?.userType === 'speaker');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const container = isSpeaker ? (
     <SpeakerLoginForm />

@@ -5,7 +5,7 @@ import MyPageMenu from '../../Containers/MyPageMenu/MyPageMenu';
 import style from './MyPage.module.scss';
 
 const MyPage = () => {
-  const id = JSON.parse(localStorage.getItem('speaker')).id;
+  const id = JSON.parse(localStorage.getItem('user')).id;
   const navigate = useNavigate();
   const screen = ScreenWidth();
 
@@ -19,8 +19,7 @@ const MyPage = () => {
               text="Preview your profile"
               onClick={() => navigate('/speakers/' + id)}
             />
-          ) :
-            null}
+          ) : null}
         </div>
         <div>
           <Outlet />

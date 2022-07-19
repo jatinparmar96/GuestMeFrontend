@@ -8,7 +8,7 @@ const RequestForm = (props) => {
   const online = props.speaker.conditions.isOnline;
   const person = props.speaker.conditions.isInPerson;
   // eslint-disable-next-line no-unused-vars
-  const organization = JSON.parse(localStorage.getItem('organization'));
+  const organization = JSON.parse(localStorage.getItem('user'));
 
   const { control, register, watch, getValues } = useForm();
 
