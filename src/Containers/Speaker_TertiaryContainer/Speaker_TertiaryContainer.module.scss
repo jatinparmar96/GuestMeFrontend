@@ -22,7 +22,7 @@
     }
 
     :last-child{
-      margin:0 1.14rem 1.14rem 1.14rem;
+      // margin:0 1.14rem 1.14rem 1.14rem;
     }
 
   }
@@ -65,4 +65,50 @@
   }
 }
 
+}
+
+@media screen and (min-width: $bp-large) {
+  .tertiaryContainer{
+
+    .video{
+      margin: 0;
+      width: 100%;
+
+      h4{
+        font-size: 1.20rem;
+        margin: 1.5rem auto 0.60rem 1.5rem;
+      }
+    }
+    .availabilityContainer{
+      margin: 0 ;
+      margin-top: 1rem;
+      padding-bottom: 0.5rem;
+
+
+
+
+      .availability{
+
+        margin: 0rem 1.5rem 0 1.5rem;
+        padding-bottom: 0;
+
+          h4 {
+              font-size: 1.20rem;
+              margin:1.5rem 0 0.60rem 0;
+            }
+
+      }
+
+      .button {
+        margin:  1.5rem 1.5rem 0 1.5rem;
+
+        :first-child {
+          width: 100%;
+        }
+      }
+    }
+
+
+
+  }
 }

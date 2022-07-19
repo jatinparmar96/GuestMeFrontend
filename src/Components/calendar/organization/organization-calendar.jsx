@@ -46,6 +46,16 @@ const OrganizationCalendar = (props) => {
     tileDisabled: tileDisabled,
   };
 
+  if (props.availability) {
+      return (
+    <Calendar
+      locale="en-US"
+      className="availability organization-calendar"
+      {...calendarProps}
+    ></Calendar>
+  );
+  }
+
   return (
     <Calendar
       locale="en-US"

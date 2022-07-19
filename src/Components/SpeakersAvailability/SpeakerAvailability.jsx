@@ -1,12 +1,12 @@
 import OrganizationCalendar from '../calendar/organization/organization-calendar';
+import style from './SpeakerAvailability.module.scss';
 
 const SpeakerAvailability = (props) => {
   return (
     <>
-      <div className="calendarContainer">
+      <div className={style.organizationCalendar}>
 
-
-        <OrganizationCalendar value={props.value} />
+        <OrganizationCalendar className={style.calendar} value={props.value} availability={true} />
       </div>
     </>
   );
