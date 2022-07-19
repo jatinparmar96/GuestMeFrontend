@@ -8,8 +8,9 @@ const LocationFilterComponent = (props) => {
 
   return (
     <fieldset onChange={setLocation}>
-      {locationFilterValues.map((filter) => (
+      {locationFilterValues.map((filter, index) => (
         <CheckBoxItem
+          key={index}
           checked={location.includes(filter.value)}
           label={filter.label}
           propName={filter.value}

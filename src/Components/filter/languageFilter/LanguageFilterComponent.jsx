@@ -8,8 +8,9 @@ const LanguageFilterComponent = (props) => {
 
   return (
     <fieldset onChange={setLanguage}>
-      {languageFilterValues.map((filter) => (
+      {languageFilterValues.map((filter, index) => (
         <CheckBoxItem
+          key={index}
           checked={language.includes(filter.value)}
           label={filter.label}
           propName={filter.value}

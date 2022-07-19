@@ -11,8 +11,9 @@ const AreaFilterComponent = () => {
   return (
     <div>
       <fieldset onChange={setArea}>
-        {areaFilterValues.map((filter) => (
+        {areaFilterValues.map((filter, index) => (
           <CheckBoxItem
+            key={index}
             checked={area.includes(filter.value)}
             label={filter.label}
             propName={filter.value}
