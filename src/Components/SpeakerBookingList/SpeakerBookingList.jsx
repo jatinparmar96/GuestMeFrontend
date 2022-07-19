@@ -86,54 +86,69 @@ const SpeakerBookingList = (props) => {
             <ul>
               {props.speaker.pending.map((booking, id) => (
                 <li key={id}>
-                  <div className={style.verticalGrid}>
-                    <div className={style.forBorderDiv}>
-                      <p className={style.mintBlueText}>Request for</p>
-                      <p className={style.date}>
-                        {convertDateFormat(booking.bookingDateTime.date)}
-                      </p>
-                    </div>
-
-                    <div className={style.forBorderDivSecondSection}>
-                      <div className={style.centreColumnTopRow}>
-                        <p className={style.mintBlueText}>Request from</p>
-                        <p className={style.sentAt}>
-                          sent at {convertDateFormat(booking.createdAt)}
+                  <div className={style.eachCard}>
+                    <div className={style.verticalGrid}>
+                      <div className={style.forBorderDiv}>
+                        <p className={style.mintBlueText}>Request for</p>
+                        <p className={style.date}>
+                          {convertDateFormat(booking.bookingDateTime.date)}
                         </p>
                       </div>
 
-                      <p onClick={(e) => organizationData(id)}>
-                        <span className={style.organizationName}>
-                          {booking.organization.name}
-                        </span>{' '}
-                        {arrowDecider}
-                      </p>
+                      <div className={style.forBorderDivSecondSection}>
+                        <div className={style.centreColumnTopRow}>
+                          <p className={style.mintBlueText}>Request from</p>
+                          <p className={style.sentAt}>
+                            sent at {convertDateFormat(booking.createdAt)}
+                          </p>
+                        </div>
 
-                      {bookingDataOrganization[id] ? (
-                        <OrganizationDetails
-                          booking={booking}
-                          organizationData={organizationData}
-                          id={id}
-                        />
-                      ) : (
-                        ''
-                      )}
-                    </div>
+                        <p onClick={(e) => organizationData(id)}>
+                          <span className={style.organizationName}>
+                            {booking.organization.name}
+                          </span>{' '}
+                          {arrowDecider}
+                        </p>
 
-                    <div className={style.callToActionColumn}>
-                      <p
-                        className={style.approve}
-                        onClick={() => openPopup('accepted', booking)}
-                      >
-                        <Approve />
-                      </p>
-                      <p
-                        className={style.decline}
-                        onClick={(e) => openPopup('rejected', booking)}
-                      >
-                        <Decline />
-                      </p>
+                        <div className={style.organizationData}>
+                          {bookingDataOrganization[id] ? (
+                            <OrganizationDetails
+                              booking={booking}
+                              organizationData={organizationData}
+                              id={id}
+                            />
+                          ) : (
+                            ''
+                          )}
+                        </div>
+                      </div>
+
+                      <div className={style.callToActionColumn}>
+                        <p
+                          className={style.approve}
+                          onClick={() => openPopup('accepted', booking)}
+                        >
+                          <Approve />
+                        </p>
+                        <p
+                          className={style.decline}
+                          onClick={(e) => openPopup('rejected', booking)}
+                        >
+                          <Decline />
+                        </p>
+                      </div>
                     </div>
+                  </div>
+                  <div className={style.organizationDataDesktop}>
+                    {bookingDataOrganization[id] ? (
+                      <OrganizationDetails
+                        booking={booking}
+                        organizationData={organizationData}
+                        id={id}
+                      />
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </li>
               ))}
@@ -149,43 +164,58 @@ const SpeakerBookingList = (props) => {
               {props.speaker.accepted.map((booking, id) => (
                 <li key={id}>
                   {/* <p>{ booking.location}</p> */}
-                  <div className={style.verticalGrid}>
-                    <div className={style.forBorderDiv}>
-                      <p className={style.mintBlueText}>Will be on</p>
-                      <p className={style.date}>
-                        {convertDateFormat(booking.bookingDateTime.date)}
-                      </p>
-                    </div>
-
-                    <div className={style.forBorderDivSecondSection}>
-                      <div className={style.centreColumnTopRow}>
-                        <p className={style.mintBlueText}>Request from</p>
-                        <p className={style.sentAt}>
-                          sent at {convertDateFormat(booking.createdAt)}
+                  <div className={style.eachCard}>
+                    <div className={style.verticalGrid}>
+                      <div className={style.forBorderDiv}>
+                        <p className={style.mintBlueText}>Will be on</p>
+                        <p className={style.date}>
+                          {convertDateFormat(booking.bookingDateTime.date)}
                         </p>
                       </div>
-                      <p onClick={(e) => organizationData(id)}>
-                        <span className={style.organizationName}>
-                          {booking.organization.name}
-                        </span>{' '}
-                        {arrowDecider}
-                      </p>
-                      {bookingDataOrganization[id] ? (
-                        <OrganizationDetails
-                          booking={booking}
-                          organizationData={organizationData}
-                          id={id}
-                        />
-                      ) : (
-                        ''
-                      )}
-                    </div>
 
-                    <div className={`${style.callToActionColumn}`}>
-                      <p className={style.cancel}>
-                        <Cancel />
-                      </p>
+                      <div className={style.forBorderDivSecondSection}>
+                        <div className={style.centreColumnTopRow}>
+                          <p className={style.mintBlueText}>Request from</p>
+                          <p className={style.sentAt}>
+                            sent at {convertDateFormat(booking.createdAt)}
+                          </p>
+                        </div>
+                        <p onClick={(e) => organizationData(id)}>
+                          <span className={style.organizationName}>
+                            {booking.organization.name}
+                          </span>{' '}
+                          {arrowDecider}
+                        </p>
+                        <div className={style.organizationData}>
+                          {bookingDataOrganization[id] ? (
+                            <OrganizationDetails
+                              booking={booking}
+                              organizationData={organizationData}
+                              id={id}
+                            />
+                          ) : (
+                            ''
+                          )}
+                        </div>
+                      </div>
+
+                      <div className={`${style.callToActionColumn}`}>
+                        <p className={style.cancel}>
+                          <Cancel />
+                        </p>
+                      </div>
                     </div>
+                  </div>
+                  <div className={style.organizationDataDesktop}>
+                    {bookingDataOrganization[id] ? (
+                      <OrganizationDetails
+                        booking={booking}
+                        organizationData={organizationData}
+                        id={id}
+                      />
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </li>
               ))}
@@ -200,40 +230,55 @@ const SpeakerBookingList = (props) => {
               {props.speaker.accepted.map((booking, id) => (
                 <li key={id}>
                   {/* <p>{ booking.location}</p> */}
-                  <div className={style.verticalGrid}>
-                    <div className={style.forBorderDiv}>
-                      <p className={style.mintBlueText}>Held on</p>
-                      <p className={style.date}>
-                        {convertDateFormat(booking.bookingDateTime.date)}
-                      </p>
-                    </div>
-
-                    <div className={style.forBorderDivSecondSection}>
-                      <div className={style.centreColumnTopRow}>
-                        <p className={style.mintBlueText}>Request from</p>
-                        <p className={style.sentAt}>
-                          sent at {convertDateFormat(booking.createdAt)}
+                  <div className={style.eachCard}>
+                    <div className={style.verticalGrid}>
+                      <div className={style.forBorderDiv}>
+                        <p className={style.mintBlueText}>Held on</p>
+                        <p className={style.date}>
+                          {convertDateFormat(booking.bookingDateTime.date)}
                         </p>
                       </div>
-                      <p onClick={(e) => organizationData(id)}>
-                        <span className={style.organizationName}>
-                          {booking.organization.name}
-                        </span>{' '}
-                        {arrowDecider}
-                      </p>
-                      {bookingDataOrganization[id] ? (
-                        <OrganizationDetails
-                          booking={booking}
-                          organizationData={organizationData}
-                          id={id}
-                        />
-                      ) : (
-                        ''
-                      )}
+
+                      <div className={style.forBorderDivSecondSection}>
+                        <div className={style.centreColumnTopRow}>
+                          <p className={style.mintBlueText}>Request from</p>
+                          <p className={style.sentAt}>
+                            sent at {convertDateFormat(booking.createdAt)}
+                          </p>
+                        </div>
+                        <p onClick={(e) => organizationData(id)}>
+                          <span className={style.organizationName}>
+                            {booking.organization.name}
+                          </span>{' '}
+                          {arrowDecider}
+                        </p>
+                        <div className={style.organizationData}>
+                          {bookingDataOrganization[id] ? (
+                            <OrganizationDetails
+                              booking={booking}
+                              organizationData={organizationData}
+                              id={id}
+                            />
+                          ) : (
+                            ''
+                          )}
+                        </div>
+                      </div>
+                      <div className={style.waitingForReview}>
+                        <p>Waiting for review</p>
+                      </div>
                     </div>
-                    <div className={style.waitingForReview}>
-                      <p>Waiting for review</p>
-                    </div>
+                  </div>
+                  <div className={style.organizationDataDesktop}>
+                    {bookingDataOrganization[id] ? (
+                      <OrganizationDetails
+                        booking={booking}
+                        organizationData={organizationData}
+                        id={id}
+                      />
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </li>
               ))}
