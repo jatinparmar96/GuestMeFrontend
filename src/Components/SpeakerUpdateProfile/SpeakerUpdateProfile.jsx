@@ -34,6 +34,7 @@ const SpeakerUpdateProfile = () => {
 
   return (
     <>
+      <div className={style.speakerUpdateProfile}>
       <h3>My Info</h3>
       <p>Information here will be published</p>
       <form
@@ -42,15 +43,19 @@ const SpeakerUpdateProfile = () => {
         })}
       >
         <div className={style.topGrid}>
-          <div className={style.topLeft}>
-            <input
-              type="file"
-              name="profilePicture"
-              onChange={(e) => {
-                processImage(e.target.files[0]);
-              }}
-            />
-            <img src={getValues('profilePicture')} alt="Profile" />
+            <div className={style.topLeft}>
+              <img className={style.profilePhoto} src={getValues('profilePicture')} alt="Profile" />
+            <label className={style.imageLabel} for="profilePicture">Update my profile photo</label>
+              <input
+                id='profilePicture'
+                type="file"
+                name="profilePicture"
+                className={style.profilePicture}
+                onChange={(e) => {
+                  processImage(e.target.files[0]);
+                }}
+             />
+
           </div>
           <div className={style.topRight}>
             <div className={style.twoColumn}>
@@ -344,7 +349,8 @@ const SpeakerUpdateProfile = () => {
         <div className={style.alignBtn}>
           <button type="submit">Save</button>
         </div>
-      </form>
+        </form>
+      </div>
     </>
   );
 };
