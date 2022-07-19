@@ -89,3 +89,37 @@
 
 
 }
+
+@media screen and (min-width: $bp-large) {
+
+  .profileReviews{
+
+    .profileReviewsHeader{
+      justify-content: flex-start;
+
+      .arrows{
+        margin-left:2.30rem;
+      }
+    }
+
+    .reviewsContainer{
+
+      .review{
+
+        .date{
+          font-size:0.6rem;
+        }
+        .reviewContainer{
+          h5{
+            font-size: 0.8rem;
+
+          }
+          p{
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+}

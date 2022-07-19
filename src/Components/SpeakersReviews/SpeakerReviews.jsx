@@ -1,8 +1,10 @@
 import arrow from '../../assets/icons/arrow.png';
+import ScreenWidth from '../ScreenSize/ScreenSize';
 import ShowMore from '../ShowMore/ShowMore';
 import style from './SpeakerReviews.module.scss';
 
 const SpeakerReviews = (props) => {
+  const width = ScreenWidth();
 
     return (
       <>
@@ -22,13 +24,25 @@ const SpeakerReviews = (props) => {
                   <p className={style.date}>{new Date(review.createdAt).toLocaleDateString('en-us', { year: "numeric", month: "long", day: "numeric" })}</p>
                   <div className={style.reviewContainer}>
                     <h5>{review.organization.name}</h5>
-                    {/* {TODO: update length} */}
-                    <p>{review.comment.length > 100 ?
-                      <>
-                      { review.comment.substring(0, 100) }
-                        < ShowMore more={review.comment } />
-                      </>
-                      : review.comment}</p>
+
+                    {width > 992 ?
+                      (
+                        <p>{review.comment.length > 200 ?
+                          <>
+                            {review.comment.substring(0, 200)}
+                            < ShowMore more={review.comment} />
+                          </>
+                          : review.comment}</p>
+                      )
+                      : (
+
+                        <p>{review.comment.length > 100 ?
+                          <>
+                            {review.comment.substring(0, 100)}
+                            < ShowMore more={review.comment} />
+                          </>
+                          : review.comment}</p>)
+                    }
 
 
                   </div>
