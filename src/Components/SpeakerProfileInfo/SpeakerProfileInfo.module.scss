@@ -1,3 +1,4 @@
+@use '../../common/variables.scss' as *;
 .profileMainInfo{
   width: 57.05rem;
   display: grid;
@@ -26,8 +27,8 @@
     font-size: 0.8rem;
     line-height: 1.5rem;
     text-decoration: underline;
-    color:#35AFAC;
-    font-family: 'Barlow Condensed', sans-serif;
+    color:$mint-blue;
+    font-family: $barlow-condensed-font;
     font-weight: 600;
   }
 

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+
 export const SubmitButtonContainer = styled.button`
   background-color: #35afac;
   color: #ffffff;
@@ -41,6 +42,9 @@ export const RequestButtonContainerWide = styled.button`
   border-radius: 0.2rem;
   border: 2px solid #35afac;
   box-sizing: border-box;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
 `;
 
 export const SaveButtonContainer = styled.button`

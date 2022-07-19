@@ -1,7 +1,9 @@
+
+
 import { Controller, useForm } from 'react-hook-form';
 import { postBooking } from '../../Api/Booking.service';
 import OrganizationCalendar from '../calendar/organization/organization-calendar';
-import './RequestForm.module.scss';
+import style from './RequestForm.module.scss';
 const { times } = require('./Times');
 
 const RequestForm = (props) => {
@@ -33,10 +35,13 @@ const RequestForm = (props) => {
   };
   // const today = new Date();
 
+
+
   //TODO: Add speaker date values to the calendar
   return (
     <>
-      <form onSubmit={(e) => handleSendRequest(e)}>
+      <form className={style.requestForm} onSubmit={(e) => handleSendRequest(e)}>
+        <div className={style.organizationCalendar}>
         <Controller
           name="bookingDateTime.date"
           control={control}
@@ -45,14 +50,16 @@ const RequestForm = (props) => {
               <OrganizationCalendar
                 value={props.speaker.availability}
                 onChange={onChange}
+
               />
             );
           }}
-        />
-
-        <label>
+          />
+        </div>
+        <div className={style.formGrid}>
+        <label className={style.date}>
           {' '}
-          Selected date* <span>* Select the date in the calendar</span>
+         <div>Selected date* <span>* Select the date in the calendar</span></div>
           <input
             type="date"
             value={
@@ -64,13 +71,13 @@ const RequestForm = (props) => {
             readOnly
           />
         </label>
-        <label>
-          Time* <span>* Timings are in PST(GMT-7)</span>
-          <label>
-            {' '}
-            Start Time{' '}
+        <label className={style.time}>
+            <div>Time* <span>* Timings are in PST(GMT-7)</span></div>
+        <div className={style.timeSelectors}>
+          <label classNames={style.startTime} aria-label="Start Time">
+
             <select
-              className="startTime"
+              className={style.timeSelect}
               name="startTime"
               {...register('bookingDateTime.startDateTime', { required: true })}
             >
@@ -80,25 +87,25 @@ const RequestForm = (props) => {
                 </option>
               ))}
             </select>
-          </label>
-          <label>
-            {' '}
-            End Time
-            <select
-              className="endTime"
-              name="endTime"
-              id="endTime"
-              {...register('bookingDateTime.endDateTime', { required: true })}
-            >
-              {times.map((time, index) => (
-                <option key={index} value={time}>
-                  {time}
-                </option>
-              ))}
-            </select>
-          </label>
+              </label>
+
+          <label className={style.endTime} aria-label="End Time">
+              <select
+                className={style.timeSelect}
+                name="endTime"
+                id="endTime"
+                {...register('bookingDateTime.endDateTime', { required: true })}
+              >
+                {times.map((time, index) => (
+                  <option key={index} value={time}>
+                    {time}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
         </label>
-        <label>
+        <label className={style.topic}>
           {' '}
           Speech topic*
           <input
@@ -107,7 +114,7 @@ const RequestForm = (props) => {
             {...register('topic', { required: true })}
           />
         </label>
-        <label>
+        <label className={style.personInCharge}>
           {' '}
           Person in charge*
           <input
@@ -116,10 +123,10 @@ const RequestForm = (props) => {
             {...register('personInCharge', { required: true })}
           />
         </label>
-        <label>
+        <label className={style.deliveryMethod}>
           Delivery method*
           <select
-            className="deliveryMethod"
+            className={style.deliveryMethodSelector}
             {...register('deliveryMethod', { required: true })}
           >
             <option value="" disabled>
@@ -138,7 +145,7 @@ const RequestForm = (props) => {
           </select>
         </label>
         {watch('deliveryMethod') === 'isInPerson' ? (
-          <label>
+          <label className={style.location}>
             Location*
             <input
               type="text"
@@ -147,14 +154,25 @@ const RequestForm = (props) => {
             />
           </label>
         ) : null}
-        <label>
+        <label className={style.message}>
           Details & Message*
           <textarea
+            className={style.message}
             placeholder="Enter the details and message"
             {...register('message', { required: true })}
           />
-        </label>
-        <button className="sendRequest">Send</button>
+          </label>
+
+
+
+        <div className={style.conditionsContainer}>
+          <label htmlFor="conditions" className={style.conditions}>
+          <input type="checkbox" name="conditions" id="conditions" />
+          <span className={style.conditionsSpan}>By sending the request I agree that the contact information (organization name, email, and phone) will be sent to the speaker.</span>
+          </label>
+        </div>
+          <button className={style.sendRequest}>Send</button>
+          </div>
       </form>
       {/* Create a form */}
     </>

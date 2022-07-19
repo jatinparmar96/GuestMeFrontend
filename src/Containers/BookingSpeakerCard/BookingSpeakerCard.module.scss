@@ -1,7 +1,9 @@
-
+@use '../../common/variables.scss' as *;
 .speakerCard{
 
-  width: 17.50rem;
+
+  margin: 0 1.23rem;
+  background-color: $white;
 
   h2{
     color: #35AFAC;
@@ -14,8 +16,8 @@
   figure {
     margin:0;
     img {
-      width: 17.50rem;
-      height: 17rem;
+      width: 100%;
+      height: auto;
     }
 
   }
@@ -25,16 +27,15 @@
   }
 
 
-
-
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: $bp-large) {
 
 
   .speakerCard {
     width: 13.50rem;
-    margin: 3rem 0 0 0;
+    // width: 61.36%;
+    margin: 0 0 0 0;
 
       h2 {
         font-size: 1rem;
