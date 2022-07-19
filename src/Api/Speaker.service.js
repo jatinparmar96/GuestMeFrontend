@@ -18,8 +18,12 @@ const SPEAKER_ENDPOINT = {
 /**
  * @param  {string} params
  */
-export const getSpeakers = (params) => {
-  return get(`${SPEAKER_ENDPOINT.get}${params ? `?${params}` : ''}`);
+export const getSpeakers = (params, page) => {
+  return get(
+    `${SPEAKER_ENDPOINT.get}${params ? `?${params}` : ''}${
+      page ? `&page=${page}` : ''
+    }`
+  );
 };
 
 /**
@@ -55,7 +59,7 @@ export const registerSpeaker = async (registerData) => {
       SPEAKER_ENDPOINT.register,
       registerData
     );
-    const result = setAuthInformation(data.token, 'speaker');
+    const result = setAuthInformation(data.token, data.user, 'speaker');
     if (result) {
       console.log('storage: ', getAuthInformationFromLocalStorage('speaker'));
       console.log('Login success, your token has been saved as:');

@@ -1,11 +1,12 @@
-@use '../../../common/variables'as *;
+@use "../../../common/variables" as *;
 
-.formContainer {
+.loginFormContainer {
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 0.9rem;
 }
 
 .buttonContainer {
@@ -40,12 +41,11 @@
     grid-column: 1 / -1;
     grid-row: 1 / 2;
   }
+}
 
-  .passwordVisibility {
-    grid-column: 2 /3;
-    grid-row: 1 / 2;
-
-  }
+.eyeContainer {
+  grid-column: 2 / -1;
+  grid-row: 1 / 2;
 }
 
 .keepLogin {
@@ -62,7 +62,7 @@
 
   input[type="checkbox"i]:checked:after {
     background-color: rgba($mint-blue, 0);
-    border: .1px solid black;
+    border: 0.1px solid $black;
   }
 
   input[type="checkbox"i]:after {
@@ -75,11 +75,12 @@
     height: 1rem;
     color: $white;
     background-color: rgba($mint-blue, 1);
+    border-radius: 4px;
   }
 
   span {
     display: inline-block;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 }
 

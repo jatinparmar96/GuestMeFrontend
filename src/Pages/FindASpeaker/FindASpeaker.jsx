@@ -1,108 +1,79 @@
+//@ts-check
 import React, { useEffect, useState } from 'react';
-
+import { useRecoilValue } from 'recoil';
 import { getSpeakers } from '../../Api/Speaker.service';
+import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import { Filter } from '../../Containers/Filter/Filter';
+import { MobileFilter } from '../../Containers/mobileFilter/MobileFilter';
 import { Speakers } from '../../Containers/Speakers/Speakers';
+import filterParamsSelector from '../../Recoil/filter';
 import style from './FindASpeaker.module.scss';
 
 /**@type {React.FC<any>} */
 export const FindASpeaker = (props) => {
-  /**@type {[string[], React.Dispatch<string[]>]} */
-  const [areas, setAreas] = useState([]);
-  /**@type {[string[], React.Dispatch<string[]>]} */
-  const [deliveryMethod, setDeliveryMethod] = useState([]);
-  /**@type {[string[], React.Dispatch<string[]>]} */
-  const [languages, setLanguages] = useState([]);
-  /**@type {[string[], React.Dispatch<string[]>]} */
-  const [locations, setLocations] = useState([]);
-  /**@type {[number[], React.Dispatch<number[]>]} */
-  const [price, setPrice] = useState([0, Infinity]);
-
-  /**@type {[number, React.Dispatch<number>]} */
+  /**@type {[number | undefined, React.Dispatch<number>]} */
   const [count, setCount] = useState();
-
   /**@type {[SpeakerResponse[], React.Dispatch<SpeakerResponse[]>]} */
+  // @ts-ignore
   const [speakers, setSpeakers] = useState([]);
+  /**@type {[number, React.Dispatch<number>]} */
+  const [page, setPage] = useState(1);
+  /**@type {[boolean, React.Dispatch<boolean>]} */
+  const [hasNextPage, setHasNextPage] = useState(true);
+  /**@type {[boolean, React.Dispatch<boolean>]} */
+  const [hasPrevPage, setHasPrevPage] = useState(false);
 
   /**
    * @description Handles the change of all states
    */
-  const handleChangeFilter = async () => {
-    const isOnline = deliveryMethod.includes('isOnline');
-    const isInPerson = deliveryMethod.includes('isInPerson');
-    const [priceMin, priceMax] = price;
+  const filter = useRecoilValue(filterParamsSelector);
 
-    const query = `${areas.length > 0 ? `&areas=${areas.join('_')}` : ''}${
-      isOnline ? '&isOnline=true' : ''
-    }${isInPerson ? '&isInPerson=true' : ''}${
-      languages.length > 0 ? `&language=${languages.join('_')}` : ''
-    }${
-      locations.length > 0 ? `&location=${locations.join('_')}` : ''
-    }&priceMin=${priceMin}&priceMax=${priceMax}`;
-    console.log(query);
-
-    const { data } = await getSpeakers(query);
-    const { speakers, count } = data;
-
-    setSpeakers(speakers);
-    setCount(count);
-  };
+  // @ts-ignore
+  const handleNextPage = () => hasNextPage && setPage((prev) => prev + 1);
+  // @ts-ignore
+  const handlePrevPage = () => hasPrevPage && setPage((prev) => prev - 1);
 
   useEffect(() => {
-    handleChangeFilter();
-    console.log(locations);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [areas, price, deliveryMethod, languages, locations]);
+    (async () => {
+      const { data } = await getSpeakers(filter, page);
+      const { speakers, count } = data;
 
-  const changeAreas = ({ target: { value, checked } }) => {
-    if (checked) {
-      setAreas([...areas, value]);
-    } else {
-      setAreas(areas.filter((area) => area !== value));
-    }
-  };
+      setSpeakers(speakers);
+      setCount(count);
 
-  const changeDeliveryMethod = ({ target: { value, checked } }) => {
-    if (checked) {
-      setDeliveryMethod([...deliveryMethod, value]);
-    } else {
-      setDeliveryMethod(deliveryMethod.filter((method) => method !== value));
-    }
-  };
-  const changeLanguages = ({ target: { value, checked } }) => {
-    if (checked) {
-      setLanguages([...languages, value]);
-    } else {
-      setLanguages(languages.filter((language) => language !== value));
-    }
-  };
-  const changeLocations = ({ target: { value, checked } }) => {
-    if (checked) {
-      setLocations([...locations, value]);
-    } else {
-      setLocations(locations.filter((location) => location !== value));
-    }
-  };
+      setHasNextPage(page * 10 < count);
+      setHasPrevPage(page > 1);
+    })();
+  }, [filter, page]);
 
   return (
-    <div>
-      <PageHeading text="Find a speaker" />
-      <div className={style.breadCrumbs}>Home {'>'} Find a speaker</div>
-      <div className={style.contentContainer}>
-        <aside>
-          <Filter
-            changeAreas={changeAreas}
-            setPrice={setPrice}
-            changeDeliveryMethod={changeDeliveryMethod}
-            changeLanguages={changeLanguages}
-            changeLocations={changeLocations}
-          />
-        </aside>
-        <main>
-          <Speakers speakers={speakers} count={count} />
-        </main>
+    <div className={style.styleContainer}>
+      <div className={style.pageContainer}>
+        <PageHeading text="Find a speaker" />
+        <BreadCrumbs currentPosition="Find a Speaker" />
+
+        <div className={style.contentContainer}>
+          <aside className={style.aside}>
+            <Filter />
+            <MobileFilter />
+          </aside>
+          <div className={style.mainContainer}>
+            <Speakers
+              speakers={speakers}
+              count={count}
+              page={page}
+              setPage={setPage}
+              hasNextPage={hasNextPage}
+              hasPrevPage={hasPrevPage}
+              handleNextPage={handleNextPage}
+              handlePrevPage={handlePrevPage}
+            />
+          </div>
+        </div>
       </div>
+      <div className={style.backgroundBeige}></div>
+      <div className={style.backgroundWhite}></div>
     </div>
   );
 };

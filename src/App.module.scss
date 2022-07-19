@@ -3,6 +3,10 @@
 // Root Styles here
 body {
   background-color: $light-beige;
+  font-family: $barlow-font;
+}
+fieldset {
+  border: none;
 }
 .wrapper {
   width: 100%;
@@ -34,4 +38,3 @@ h5,
 h6 {
   font-family: $barlow-condensed-font;
 }
-

@@ -24,8 +24,11 @@ export const CheckBoxItem = ({
         id={propName}
         onChange={onChange ? (event) => onChange(event) : null}
         ref={checkboxRef}
+        className={style.checkbox}
       />
-      <label htmlFor={propName}>{label}</label>
+      <label htmlFor={propName} className={style.label}>
+        {label}
+      </label>
     </div>
   );
 };

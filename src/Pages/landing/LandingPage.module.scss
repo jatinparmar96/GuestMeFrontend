@@ -172,13 +172,13 @@ $button-margin: 2rem;
 .speechesContainer {
   padding-top: 5rem;
   background-color: $white;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   text-align: center;
   gap: 1.25rem;
 
   @media screen and (min-width: 768px) {
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     text-align: left;
     p {

@@ -70,10 +70,12 @@ const SpeakerHowItWorks = () => {
             Build networking connections with event organizers!
           </p>
           <RegisterLinkButton text="Register as a speaker" to="/register" />
-          <p>Already have an account?</p>
-          <Link to="/login" className={containerStyle.loginLink}>
-            Log in
-          </Link>
+          <div className={containerStyle.loginRow}>
+            <p>Already have an account?</p>
+            <Link to="/login" className={containerStyle.loginLink}>
+              Log in
+            </Link>
+          </div>
         </div>
       </div>
     </div>

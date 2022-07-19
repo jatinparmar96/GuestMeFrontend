@@ -72,10 +72,12 @@ const OrganizationHowItWorks = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
             eget pharetra sem, ut convallis ex.
           </p>
-          <RegisterLinkButton
-            text="Register as an organization"
-            to="/register"
-          />
+          <span>
+            <RegisterLinkButton
+              text="Register as an organization"
+              to="/register"
+            />
+          </span>
           <p>Already have an account?</p>
           <Link to="/login" className={containerStyle.loginLink}>
             Log in
