@@ -14,8 +14,21 @@
   }
 }
 
+.heading {
+  grid-column: 1 / -1;
+}
+
+.description {
+  grid-column: 1 / -1;
+  gap: 1.85rem;
+  @media screen and (min-width: $bp-tablet) {
+    grid-template-columns: 3fr 1fr;
+    gap: 6.35rem;
+  }
+}
+
 .formContainer {
-  display: flex;
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   max-width: unset;
@@ -23,7 +36,6 @@
   height: 100%;
   background-color: $light-beige;
   padding: 20px;
-  gap: 0;
   margin: 0;
   justify-content: flex-start;
   align-content: flex-start;
@@ -34,10 +46,10 @@
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
+    gap: 1rem;
 
     @media screen and (min-width: $bp-tablet) {
       grid-template-columns: 1fr 1fr;
-      gap: 0 21px;
     }
   }
 
@@ -47,6 +59,7 @@
 
   .label {
     margin: 0;
+    font-weight: 700;
   }
 
   .input {
