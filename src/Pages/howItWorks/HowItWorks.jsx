@@ -13,22 +13,23 @@ const HowItWorks = (props) => {
     <>
       <PageHeading text="How it works" />
       <BreadCrumbs currentPosition="How it works" />
-
-      <div className={style.roleTabContainer}>
-        <p
-          onClick={() => setIsForSpeaker(true)}
-          className={isForSpeaker ? undefined : style.unselectedRoleTab}
-        >
-          For a speaker
-        </p>
-        <p
-          onClick={() => setIsForSpeaker(false)}
-          className={isForSpeaker ? style.unselectedRoleTab : undefined}
-        >
-          For an organization
-        </p>
+      <div className={style.pageContainer}>
+        <div className={style.roleTabContainer}>
+          <p
+            onClick={() => setIsForSpeaker(true)}
+            className={isForSpeaker ? undefined : style.unselectedRoleTab}
+          >
+            For a speaker
+          </p>
+          <p
+            onClick={() => setIsForSpeaker(false)}
+            className={isForSpeaker ? style.unselectedRoleTab : undefined}
+          >
+            For an organization
+          </p>
+        </div>
+        {isForSpeaker ? <SpeakerHowItWorks /> : <OrganizationHowItWorks />}
       </div>
-      {isForSpeaker ? <SpeakerHowItWorks /> : <OrganizationHowItWorks />}
     </>
   );
 };
