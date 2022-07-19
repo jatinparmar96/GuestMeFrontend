@@ -1,5 +1,5 @@
 //@ts-check
-import { useForm } from 'react-hook-form';
+import React, { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { loginOrganization } from '../../../Api/Organization.service';
@@ -40,7 +40,7 @@ export const OrganizationLoginForm = (props) => {
     }
   };
   return (
-    <div className={style.loginformContainer}>
+    <>
       <div className={style.formContainer}>
         <div className={style.formHeading}>
           <h2>Log in form for an organization</h2>
@@ -61,13 +61,6 @@ export const OrganizationLoginForm = (props) => {
           </span>
         </p>
       </div>
-      <div className={style.aside}>
-        <img
-          src="https://picsum.photos/id/1/200/300"
-          alt="login"
-          className={style.img}
-        />
-      </div>
-    </div>
+    </>
   );
 };

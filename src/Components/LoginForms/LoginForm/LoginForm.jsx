@@ -1,18 +1,20 @@
 //@ts-check
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Eyes from '../../../Components/eyes/Eyes';
 import { SubmitButton } from '../../Buttons/Buttons';
 import style from './LoginForm.module.scss';
-
 /**@type {React.FC<import('./LoginFormType').LoginFormProps>} */
 export const LoginForm = (props) => {
   const { register, errors, handleSubmit, onSubmit } = props;
 
   const [passwordVisible, setPasswordVisible] = useState(false);
-
+  const handleClickPasswordHidden = () => {
+    setPasswordVisible(!passwordVisible);
+  };
   return (
     <>
-      <div className={style.formContainer}>
+      <div className={style.loginFormContainer}>
         <div className={style.inputRow}>
           <label>Email*</label>
           <input type="text" {...register('email', { required: true })} />
@@ -26,12 +28,12 @@ export const LoginForm = (props) => {
               type={passwordVisible ? 'text' : 'password'}
               {...register('password', { required: true })}
             />
-            <input
-              type="checkbox"
-              name="visible"
-              className={style.passwordVisibility}
-              onChange={() => setPasswordVisible((prev) => !prev)}
-            />
+            <div className={style.eyeContainer}>
+              <Eyes
+                isVisible={passwordVisible}
+                handleClick={handleClickPasswordHidden}
+              />
+            </div>
           </div>
           {errors.password?.type === 'required' && 'Password is required'}
         </div>

@@ -42,7 +42,7 @@ export const SpeakerLoginForm = (props) => {
   };
 
   return (
-    <div className={style.loginformContainer}>
+    <>
       <div className={style.formContainer}>
         <div className={style.formHeading}>
           <h2>Log in form for a speaker</h2>
@@ -63,13 +63,6 @@ export const SpeakerLoginForm = (props) => {
           </span>
         </p>
       </div>
-      <div className={style.aside}>
-        <img
-          src="https://picsum.photos/id/1/200/300"
-          alt="login"
-          className={style.img}
-        />
-      </div>
-    </div>
+    </>
   );
 };
