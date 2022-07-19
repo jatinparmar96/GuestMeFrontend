@@ -52,14 +52,12 @@ export const OrganizationLoginForm = (props) => {
           register={register}
           errors={errors}
         />
-        <p>
-          <span>
-            Don't have an account?
-            <Link to="/register" className={style.registerLink}>
-              Register as an organization
-            </Link>
-          </span>
-        </p>
+        <div className={style.registerRow}>
+          <span>Don't have an account?</span>
+          <Link to="/register" className={style.registerLink}>
+            Register as an organization
+          </Link>
+        </div>
       </div>
     </>
   );

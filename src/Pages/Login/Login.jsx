@@ -26,7 +26,7 @@ export const Login = (props) => {
         <div className={style.contentContainer}>
           <div className={style.boxContainer}>
             <div className={style.radioContainer}>
-              <div>
+              <div className={style.radio}>
                 <input
                   type="radio"
                   name="role"
@@ -34,9 +34,11 @@ export const Login = (props) => {
                   checked={isSpeaker}
                   onClick={() => setIsSpeaker(true)}
                 />
-                <label htmlFor="role-speaker">Speaker</label>
+                <label htmlFor="role-speaker" className={style.radioLabel}>
+                  Speaker
+                </label>
               </div>
-              <div>
+              <div className={style.radio}>
                 <input
                   type="radio"
                   name="role"
@@ -44,7 +46,9 @@ export const Login = (props) => {
                   checked={!isSpeaker}
                   onClick={() => setIsSpeaker(false)}
                 />
-                <label htmlFor="role-organization">Organization</label>
+                <label htmlFor="role-organization" className={style.radioLabel}>
+                  Organization
+                </label>
               </div>
             </div>
             <div className={style.divideContainer}>

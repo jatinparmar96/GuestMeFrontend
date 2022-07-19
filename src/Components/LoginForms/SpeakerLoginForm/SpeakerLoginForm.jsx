@@ -54,14 +54,12 @@ export const SpeakerLoginForm = (props) => {
           register={register}
           errors={errors}
         />
-        <p>
-          <span>
-            Don't have an account?
-            <Link to="/register" className={style.registerLink}>
-              Register as a speaker
-            </Link>
-          </span>
-        </p>
+        <div className={style.registerRow}>
+          <span>Don't have an account?</span>
+          <Link to="/register" className={style.registerLink}>
+            Register as a speaker
+          </Link>
+        </div>
       </div>
     </>
   );

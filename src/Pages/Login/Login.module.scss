@@ -8,7 +8,13 @@
 
 .PageContainer {
   width: 100%;
+
   margin-top: 4.3rem;
+
+  @media screen and (max-width: $bp-tablet) {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+  }
 }
 
 .contentContainer {
@@ -35,19 +41,40 @@
   gap: 1rem;
   background-color: $white;
   padding-bottom: 0.5rem;
-  input[type="radio"] {
-    display: none;
+  @media screen and (max-width: $bp-tablet) {
+    padding-bottom: 0rem;
   }
 
-  label {
-    padding: 0.5rem;
-  }
+  .radio {
+    flex-grow: 0;
+    width: 100%;
 
-  input:checked {
-    & + label {
-      background-color: $light-beige;
-      font-weight: 700;
+    @media screen and (max-width: $bp-tablet) {
+      flex-grow: 1;
+      padding-bottom: 0rem;
     }
+  }
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.radioLabel {
+  padding: 0.5rem;
+
+  @media screen and (max-width: $bp-tablet) {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+}
+
+input:checked {
+  & + label {
+    background-color: $light-beige;
+    font-weight: 700;
   }
 }
 
@@ -55,6 +82,15 @@
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+}
+
+.formContentContainer {
+  @media screen and (max-width: $bp-tablet) {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+  }
 }
 
 .imageContainer {

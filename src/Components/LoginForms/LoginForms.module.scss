@@ -23,7 +23,21 @@
   max-height: 800px;
 }
 
+.registerRow {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  @media screen and (max-width: $bp-tablet) {
+    padding-top: 3.13rem;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
 .registerLink {
   color: $mint-blue;
-  margin-left: 1rem;
 }
