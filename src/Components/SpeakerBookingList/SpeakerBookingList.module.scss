@@ -8,6 +8,7 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 30px;
+    height: 30px;
   }
 
   h3 {
@@ -15,6 +16,8 @@
     font-style: normal;
     margin-bottom: 9px;
     margin-top: 0;
+
+    height: 19px;
   }
   ul {
     padding-left: 0;
@@ -60,6 +63,15 @@
           margin-right: 5px;
         }
       }
+      .approve,
+      .cancel {
+        width: 60px;
+        height: 39px;
+      }
+      .decline {
+        width: 54px;
+        height: 39px;
+      }
     }
   }
   .verticalGrid {
@@ -74,10 +86,12 @@
   }
 
   .callToActionColumn {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
     align-items: center;
-    margin: 16px;
+    margin-top: 26px;
+    margin-bottom: 16px;
   }
 
   .centreColumnTopRow {

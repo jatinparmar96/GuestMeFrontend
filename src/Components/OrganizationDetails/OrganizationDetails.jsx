@@ -1,10 +1,43 @@
+import { ReactComponent as CrossMark } from '../../assets/icons/cross.svg';
 import style from './OrganizationDetails.module.scss';
-
 const OrganizationDetails = ({ booking }) => {
   // console.log(booking);
   return (
     <>
       <div className={style.organizationDetails}>
+        <p>
+          <span className={style.email}>
+            <span>Email </span>
+            <span
+              // onClick={() => props.organizationData}
+              className={style.crossMark}
+            >
+              <CrossMark />
+            </span>
+          </span>
+          <span className={style.organizationEmail}>
+            {booking.organization.organizationEmail}
+          </span>
+        </p>
+
+        <p>
+          <span>Phone</span> {booking.organization.organizationPhone}
+        </p>
+        <p>
+          <span> Time</span> {booking.bookingDateTime.startDateTime} -{' '}
+          {booking.bookingDateTime.endDateTime}
+        </p>
+        <p>
+          <span>Speech topic</span> {booking.topic}
+        </p>
+        <p>
+          <span>Person in Charge </span>
+          {booking.personInCharge}
+        </p>
+        <p>
+          <span>Message</span> {booking.message}
+        </p>
+
         {/* <form>
            <label for="email">Email</label>
           <input type="text" name="email">
@@ -30,31 +63,7 @@ const OrganizationDetails = ({ booking }) => {
           <label for="message">Message</label>
           <textarea type="text" name="message">
             {booking.message}
-          </textarea> */}
-        <p>
-          <span>Email </span>
-          <span className={style.organizationEmail}>
-            {booking.organization.organizationEmail}
-          </span>
-        </p>
-        <p>
-          <span>Phone</span> {booking.organization.organizationPhone}
-        </p>
-        <p>
-          <span> Time</span> {booking.bookingDateTime.startDateTime} -{' '}
-          {booking.bookingDateTime.endDateTime}
-        </p>
-        <p>
-          <span>Speech topic</span> {booking.topic}
-        </p>
-        <p>
-          <span>Person in Charge </span>
-          {booking.personInCharge}
-        </p>
-        <p>
-          <span>Message</span> {booking.message}
-        </p>
-        {/* </form> */}
+          </textarea>  </form> */}
       </div>
     </>
   );

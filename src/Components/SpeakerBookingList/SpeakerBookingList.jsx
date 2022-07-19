@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { bookingResponse } from '../../Api/Booking.service';
+import { ReactComponent as Approve } from '../../assets/icons/approve.svg';
+import { ReactComponent as Cancel } from '../../assets/icons/cancel-delete.svg';
+import { ReactComponent as Decline } from '../../assets/icons/decline.svg';
 import { ReactComponent as DownArrow } from '../../assets/icons/down-arrow.svg';
 import { ReactComponent as UpArrow } from '../../assets/icons/up-arrow.svg';
 import { convertDateFormat } from '../../Utils/Utils';
@@ -92,18 +95,27 @@ const SpeakerBookingList = (props) => {
                       </p>
 
                       {bookingDataOrganization[id] ? (
-                        <OrganizationDetails booking={booking} />
+                        <OrganizationDetails
+                          booking={booking}
+                          organizationData={organizationData}
+                        />
                       ) : (
                         ''
                       )}
                     </div>
 
                     <div className={style.callToActionColumn}>
-                      <p onClick={() => openPopup('accepted', booking)}>
-                        Approve
+                      <p
+                        className={style.approve}
+                        onClick={() => openPopup('accepted', booking)}
+                      >
+                        <Approve />
                       </p>
-                      <p onClick={(e) => openPopup('rejected', booking)}>
-                        Decline
+                      <p
+                        className={style.decline}
+                        onClick={(e) => openPopup('rejected', booking)}
+                      >
+                        <Decline />
                       </p>
                     </div>
                   </div>
@@ -144,8 +156,10 @@ const SpeakerBookingList = (props) => {
                       </p>
                     </div>
 
-                    <div className={style.callToActionColumn}>
-                      <p>Cancel/Delete</p>
+                    <div
+                      className={`${style.callToActionColumn} ${style.cancel}`}
+                    >
+                      <Cancel />
                     </div>
                   </div>
                 </li>
