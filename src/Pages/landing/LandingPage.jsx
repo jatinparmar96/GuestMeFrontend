@@ -28,7 +28,6 @@ const LandingPage = () => {
               experience.
             </p>
             <LandingPageFilter />
-            <button className={style.primaryButton}>Find a Speaker</button>
           </div>
         </div>
         <div className={style.imageContainer}>
