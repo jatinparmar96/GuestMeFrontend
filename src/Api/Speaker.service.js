@@ -38,7 +38,7 @@ export const loginSpeaker = async (loginData) => {
     const { data, status } = await post(SPEAKER_ENDPOINT.login, loginData);
     const result = setAuthInformation(data.token, data.user, 'speaker');
     if (result) {
-      console.log('storage: ', getAuthInformationFromLocalStorage('speaker'));
+      console.log('storage: ', getAuthInformationFromLocalStorage('user'));
       console.log('Login success, your token has been saved as:');
       console.log(data.token);
     }
@@ -61,7 +61,7 @@ export const registerSpeaker = async (registerData) => {
     );
     const result = setAuthInformation(data.token, data.user, 'speaker');
     if (result) {
-      console.log('storage: ', getAuthInformationFromLocalStorage('speaker'));
+      console.log('storage: ', getAuthInformationFromLocalStorage('user'));
       console.log('Login success, your token has been saved as:');
       console.log(data.token);
     }

@@ -35,18 +35,18 @@ const authLinks = [
     class: style.secondaryButton,
   },
 ];
-console.log(style);
 
 const loggedInLinks = [{ path: '/speakers/mypage', name: 'My Page' }];
 
 const NavLinks = (props) => {
   const [user, setUser] = useRecoilState(tokenAtom);
-  // console.log(user);
+  console.log(user);
   //Logout the user
   const handleLogout = () => {
     setUser({ name: '', value: '' });
     removeAuthInformation();
   };
+
   return (
     <>
       <ul className={props.className}>

@@ -5,6 +5,7 @@ import { useRecoilState } from 'recoil';
 import { loginOrganization } from '../../../Api/Organization.service';
 import { AuthError } from '../../../Errors/AuthError';
 import tokenAtom from '../../../Recoil/Authentication/index';
+import { getAuthInformationFromLocalStorage } from '../../../Utils/Utils';
 import { LoginForm } from '../LoginForm/LoginForm';
 
 import style from '../LoginForms.module.scss';
@@ -33,7 +34,9 @@ export const OrganizationLoginForm = (props) => {
       if (response.data === undefined) {
         throw new AuthError('Auth failed, token is undefined');
       }
-      setToken(response.data.token);
+      const user = getAuthInformationFromLocalStorage('user');
+      setToken({ name: user, value: response.data.token });
+
       navigate(from, { replace: true });
     } catch (error) {
       console.error(error);

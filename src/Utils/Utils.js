@@ -6,8 +6,9 @@
  */
 export const setAuthInformation = (token, userData = {}, userType) => {
   try {
+    userData.userType = userType;
     localStorage.setItem('token', token);
-    localStorage.setItem(userType, JSON.stringify(userData));
+    localStorage.setItem('user', JSON.stringify(userData));
   } catch (error) {
     console.log(error);
     return false;
@@ -17,12 +18,11 @@ export const setAuthInformation = (token, userData = {}, userType) => {
 
 export const removeAuthInformation = () => {
   localStorage.removeItem('token');
-  localStorage.removeItem('speaker');
-  localStorage.removeItem('organization');
+  localStorage.removeItem('user');
 };
 
 /**
- * @param {'speaker' | 'organization'} userType
+ * @param {'speaker' | 'organization' | 'user'} userType
  * @returns {Object}
  */
 export const getAuthInformationFromLocalStorage = (userType) => {
