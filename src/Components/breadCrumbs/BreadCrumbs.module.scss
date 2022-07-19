@@ -9,8 +9,15 @@
 
 .breadCrumbs {
   margin-left: 20px;
+  display: flex;
+  gap: .3rem;
 
   @media screen and (min-width: $bp-tablet) {
     margin-left: 150px;
+  }
+
+  .link {
+    color: $white;
+    text-decoration: none;
   }
 }

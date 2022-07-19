@@ -1,3 +1,4 @@
+@use "../../common/variables" as *;
 $speaker-highlight: #5fa1d0;
 $speaker-highlight-text: white;
 
@@ -7,18 +8,18 @@ $organization-highlight-text: white;
 $weekend-color: #f28080;
 
 $speaker: (
-  'highlight': $speaker-highlight,
-  'highlight-text': $speaker-highlight-text,
+  "highlight": $speaker-highlight,
+  "highlight-text": $speaker-highlight-text,
 );
 
 $organization: (
-  'highlight': $organization-highlight,
-  'highlight-text': $organization-highlight-text,
+  "highlight": $organization-highlight,
+  "highlight-text": $organization-highlight-text,
 );
 
 $calendar-map: (
-  'speaker': $speaker,
-  'organization': $organization,
+  "speaker": $speaker,
+  "organization": $organization,
 );
 
 @each $type, $value in $calendar-map {
@@ -28,17 +29,79 @@ $calendar-map: (
     }
 
     .highlight {
-      background-color: map-get($value, 'highlight');
-      color: map-get($value, 'highlight-text');
+      background-color: map-get($value, "highlight");
+      color: map-get($value, "highlight-text");
       &:hover,
       &:focus {
-        background-color: lighten(map-get($value, 'highlight'), 10) !important;
-        color: black;
+        background-color: lighten(map-get($value, "highlight"), 10) !important;
+        color: $black;
       }
       &:focus:not(:hover) {
-        background-color: map-get($value, 'highlight');
-        color: map-get($value, 'highlight-text');
+        background-color: map-get($value, "highlight");
+        color: map-get($value, "highlight-text");
       }
     }
+  }
+}
+
+.organization-calendar{
+  display: inline-block;
+  width: 100%;
+  // padding-top: 100%;
+  margin: 0;
+  font-family: $barlow-condensed-font;
+  text-decoration: none;
+  border: 0px;
+  padding: 1rem;
+
+
+
+  button{
+    font-size: 1rem;
+  }
+
+    .react-calendar__tile:disabled{
+      background-color: $light-green;
+
+    }
+
+
+  .react-calendar__tile{
+  // width: 3rem;
+  // height: 3rem;
+}
+.react-calendar__month-view__weekdays{
+  text-decoration: none;
+  // font-size: 1rem;
+}
+
+.react-calendar__month-view__weekdays__weekday :where(abbr[title]){
+  text-decoration: none;
+
+}
+
+
+}
+
+@media screen and (min-width: $bp-large) {
+  .organization-calendar {
+
+      width: 100%;
+      height: 100%;
+      font-size: 1rem;
+      margin: 0;
+
+        button {
+            font-size: 1rem;
+          }
+        .react-calendar__tile {
+          width: 4rem;
+          height: 4rem;
+          font-weight: 700;
+        }
+        .react-calendar__month-view__weekdays {
+          font-size: 1rem;
+        }
+
   }
 }

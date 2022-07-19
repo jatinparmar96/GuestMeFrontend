@@ -1,9 +1,386 @@
-.form {
+@use '../../common/variables.scss' as *;
+
+.requestForm {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  max-width: 800px;
-  margin: auto;
-  gap: 1rem;
+  width: 100%;
+
+  .organizationCalendar {
+    margin: 0.81rem auto 1.13rem auto;
+  }
+
+  .formGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    // width: 17.5rem;
+    margin: 0 auto;
+    font-family: $barlow-font;
+    color: $black;
+
+    .topic,
+    .personInCharge,
+    .location {
+      margin-top: 2.5rem;
+
+      input {
+        display: block;
+        margin-top: 0.44rem;
+        height: 2.5rem;
+        border: none;
+        width: 100%;
+        background-color: $white;
+        padding-left: 0.6rem;
+        font-size: 1rem;
+        font-weight: 400;
+        color: $black;
+
+        &:focus {
+          outline-color: $mint-blue;
+        }
+
+        &::placeholder {
+          opacity: 0.8;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .deliveryMethod {
+      margin-top: 2.5rem;
+      select {
+        display: block;
+        margin-top: 0.44rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('../../assets/icons/arrow.png');
+        background-repeat: no-repeat;
+        background-position: percentage($number: 0.98);
+        background-size: 0.7rem;
+        border: none;
+        width: 100%;
+        height: 2.5rem;
+        background-color: $white;
+        padding-left: 0.6rem;
+        font-size: 1rem;
+        font-weight: 400;
+        color: $black;
+
+        &:focus {
+          outline-color: $mint-blue;
+        }
+
+        &::placeholder {
+          opacity: 0.8;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .message {
+      margin-top: 2.5rem;
+      textarea {
+        display: block;
+        margin-top: 0.44rem;
+        border: none;
+        width: 100%;
+        height: 9.5rem;
+        background-color: $white;
+        padding: 1.05rem 1.55rem;
+        font-size: 1rem;
+        font-weight: 400;
+        font-family: $barlow-font;
+        color: $black;
+        margin-bottom: 1.5rem;
+
+        &:focus {
+          outline-color: $mint-blue;
+        }
+
+        &::placeholder {
+          opacity: 0.8;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: $black;
+    }
+
+    span {
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: $fiery-rose;
+      display: block;
+      margin-top: 0.44rem;
+    }
+
+    .date {
+      input {
+        border: none;
+        width: 100%;
+        height: 2rem;
+        background-color: $light-beige;
+        font-size: 1rem;
+        font-weight: 600;
+        border-bottom: 0.05rem solid $black;
+        color: $black;
+      }
+    }
+
+    .time {
+      margin-top: 2.5rem;
+
+      .timeSelectors {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 0.44rem;
+
+        .timeSelect {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 7.19rem;
+          height: 2.5rem;
+          border: 0.13rem solid transparent;
+          font-size: 1rem;
+          font-weight: 400;
+          color: $black;
+          background-image: url('../../assets/icons/arrow.png');
+          background-repeat: no-repeat;
+          background-position: 5.6rem center;
+          background-size: 0.7rem;
+          background-color: $white;
+          padding-left: 0.4rem;
+          padding-right: 0.35rem;
+          margin-right: 3.06rem;
+
+          &::-webkit-scrollbar {
+            width: 0.3rem;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: $light-green;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: $mint-blue;
+          }
+
+          &:focus {
+            outline-color: $mint-blue;
+          }
+
+          option {
+            font-size: 0.8rem;
+            font-weight: 400;
+            font-family: $barlow-font;
+          }
+        }
+      }
+    }
+    .conditionsContainer {
+      margin-left: 0;
+      width: 100%;
+
+      .conditions {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        line-height: 1rem;
+
+        input {
+          margin: 0.2rem 0 0 0;
+        }
+
+        input[type='checkbox' i] {
+          visibility: hidden;
+        }
+
+        input[type='checkbox' i]:checked:after {
+          background-color: rgba($mint-blue, 0);
+          border: 0.1px solid black;
+        }
+
+        input[type='checkbox' i]:after {
+          visibility: visible;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          content: '\2713';
+          font-size: 0.55rem;
+          width: 0.8rem;
+          height: 0.8rem;
+          color: $white;
+          background-color: rgba($mint-blue, 1);
+        }
+
+        .conditionsSpan {
+          display: inline-block;
+          color: $black;
+          margin-left: 0.6rem;
+          margin-top: 0;
+          font-size: 0.7rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .sendRequest {
+      background-color: $mint-blue;
+      width: 8.13rem;
+      height: 2.5rem;
+      border-radius: 0.2rem;
+      letter-spacing: 0.05rem;
+      line-height: 1.05rem;
+      border: 0.2rem solid transparent;
+      color: $white;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: $barlow-condensed-font;
+      justify-content: center;
+      align-items: center;
+      margin: 1.95rem auto 3.13rem;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-large) {
+  .requestForm {
+    max-width: 94%;
+
+    .organizationCalendar {
+      margin-bottom: 2.95rem;
+      margin-top: 0;
+    }
+
+    .formGrid {
+      display: grid;
+      grid-template-columns: calc(50% - 0.85rem) calc(50% - 0.85rem);
+      grid-template-rows: repeat(4, auto);
+      grid-gap: 1.7rem;
+      width: 100%;
+
+      label {
+        font-size: 0.9rem;
+        margin-top: 0rem;
+        width: 100%;
+      }
+
+      .date {
+        margin-left: 0;
+
+        div {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        span {
+          font-size: 0.6rem;
+        }
+
+        input {
+          grid-column: 1;
+          grid-row: 2;
+          margin-left: 0;
+          margin-top: 0.75rem;
+          margin-bottom: 0;
+          padding-bottom: 0.35rem;
+          padding-left: 0.6rem;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .time {
+        margin-left: 0;
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 0;
+
+        span {
+          font-size: 0.6rem;
+        }
+
+        .timeSelectors {
+          grid-column: 2;
+          grid-row: 2;
+
+          .timeSelect {
+            margin-top: 0.75rem;
+            margin-right: 2.55rem;
+            width: 5rem;
+            height: 2rem;
+            font-size: 0.8rem;
+            background-position: 3.9rem center;
+
+            &:hover {
+              border: 0.13rem solid $mint-blue;
+            }
+          }
+        }
+      }
+
+      .topic,
+      .personInCharge,
+      .location {
+        margin-top: 0rem;
+        input {
+          margin-left: 0;
+          margin-top: 0.75rem;
+          margin-bottom: 0;
+        }
+      }
+
+      .deliveryMethod {
+        margin-top: 0rem;
+        select {
+          margin-left: 0;
+          margin-top: 0.75rem;
+          margin-bottom: 0;
+        }
+      }
+
+      .message {
+        margin-top: 0rem;
+        grid-column: 1/3;
+        textarea {
+          margin-left: 0;
+          margin-top: 0.75rem;
+          margin-bottom: 0;
+        }
+      }
+
+      .conditionsContainer {
+        grid-column: 1/3;
+        width: 100%;
+
+        .conditions {
+        }
+
+        span {
+          display: inline-block;
+          margin-left: 0.6rem;
+          font-size: 0.7rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .sendRequest {
+      width: 8.7rem;
+      font-size: 0.9rem;
+      margin: 1.95rem auto 7.9rem;
+      grid-column: 1/3;
+    }
+  }
 }
