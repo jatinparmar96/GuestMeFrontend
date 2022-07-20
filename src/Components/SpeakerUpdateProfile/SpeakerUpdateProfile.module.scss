@@ -49,8 +49,83 @@
   form{
     margin: 0 1.25rem;
     max-width: 450px;
+    color:$black;
+
+
+    label, legend{
+      font-size: 1rem;
+      font-weight: 700;
+    }
 
     .topGrid{
+        input{
+          width: 100%;
+          height: 2.50rem;
+          padding: 0.5rem;
+          border: 1px solid transparent;
+          border-radius: 0.25rem;
+          font-size: 1rem;
+          font-weight: 400;
+          color: $black;
+        }
+        fieldset{
+          margin:0;
+          padding:0;
+
+
+          .deliveryMethod{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            height: fit-content;
+
+            margin-top:1rem;
+            margin-bottom: 1.19rem;
+
+            label {
+                font-weight: 500;
+                margin-left: 0.63rem;
+                margin-right: 1.56rem;
+                line-height: 1rem;
+
+              }
+            input[type='checkbox' i] {
+                visibility: hidden;
+                width: unset;
+
+              }
+
+              input[type='checkbox' i]:checked:after {
+                background-color: rgba($mint-blue, 0);
+                border: 0.1px solid $black;
+                border-radius: 0.25rem;
+
+              }
+
+              input[type='checkbox' i]:after {
+                visibility: visible;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                content: '\2713';
+                font-size: 0.55rem;
+                width: 0.8rem;
+                height: 0.8rem;
+                color: $white;
+                background-color: rgba($mint-blue, 1);
+              }
+
+
+
+          }
+
+
+        }
+      .blockDisplay{
+        display: block;
+        margin-top: 0.63rem;
+        margin-bottom: 1.88rem;
+      }
       .topLeft>input{
         display: none;
 
@@ -76,8 +151,18 @@
         font-weight: 700;
         font-family: $barlow-condensed-font;
         text-decoration: underline;
+      }
+      span {
+        font-size: 1rem;
+        font-weight: 600;
+        display: block;
+        margin-top: 0.63rem;
+        margin-bottom: 1.88rem;
 
-
+        input {
+          width: 6.25rem;
+          display: inline-block;
+        }
       }
     }
   }
