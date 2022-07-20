@@ -32,9 +32,9 @@ export const Speaker = (props) => {
         </div>
       </div>
       <div className={style.skillsContainer}>
-        {speaker?.conditions?.areas?.map((area) => (
-          <span key={area} className={style.skill}>
-            {area}
+        {speaker?.skills?.map((skill) => (
+          <span key={skill} className={style.skill}>
+            {skill}
           </span>
         ))}
       </div>
