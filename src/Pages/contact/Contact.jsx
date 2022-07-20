@@ -3,6 +3,7 @@ import React from 'react';
 import WideDisplayImage from '../../assets/contact_page.png';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
+import { Helmet } from 'react-helmet';
 import style from './Contact.module.scss';
 
 import { PrimaryButton } from '../../Components/Buttons/Buttons';
@@ -15,6 +16,9 @@ const Contact = (props) => {
 
   return (
     <div>
+      <Helmet>
+        <title>GUEST ME - Contact</title>
+      </Helmet>
       <PageHeading text="Contact" />
       <BreadCrumbs currentPosition="Contact" />
       <div className={style.contactContainer}>

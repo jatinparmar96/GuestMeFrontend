@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil';
 import { getSpeakerBookings } from '../../Api/Speaker.service';
 import SpeakerBookingList from '../../Components/SpeakerBookingList/SpeakerBookingList';
 import tokenAtom from '../../Recoil/Authentication/atom';
+import { Helmet } from 'react-helmet';
 
 const SpeakerBooking = (props) => {
   const [loadingState, setLoadingState] = useState(true);
@@ -27,6 +28,9 @@ const SpeakerBooking = (props) => {
 
   return (
     <>
+      <Helmet>
+        <title>GUEST ME - Speaker Booking</title>
+      </Helmet>
       {loadingState ? (
         <p>Loading... </p>
       ) : (

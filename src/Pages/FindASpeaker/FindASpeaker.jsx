@@ -1,5 +1,6 @@
 //@ts-check
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useRecoilValue } from 'recoil';
 import { getSpeakers } from '../../Api/Speaker.service';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
@@ -48,33 +49,38 @@ export const FindASpeaker = (props) => {
   }, [filter, page]);
 
   return (
-    <div className={style.styleContainer}>
-      <div className={style.pageContainer}>
-        <PageHeading text="Find a speaker" />
-        <BreadCrumbs currentPosition="Find a Speaker" />
+    <>
+      <Helmet>
+        <title>GUEST ME - Find a Speaker</title>
+      </Helmet>
+      <div className={style.styleContainer}>
+        <div className={style.pageContainer}>
+          <PageHeading text="Find a speaker" />
+          <BreadCrumbs currentPosition="Find a Speaker" />
 
-        <div className={style.contentContainer}>
-          <aside className={style.aside}>
-            <Filter />
-            <MobileFilter />
-          </aside>
-          <div className={style.mainContainer}>
-            <Speakers
-              speakers={speakers}
-              count={count}
-              page={page}
-              setPage={setPage}
-              hasNextPage={hasNextPage}
-              hasPrevPage={hasPrevPage}
-              handleNextPage={handleNextPage}
-              handlePrevPage={handlePrevPage}
-            />
+          <div className={style.contentContainer}>
+            <aside className={style.aside}>
+              <Filter />
+              <MobileFilter />
+            </aside>
+            <div className={style.mainContainer}>
+              <Speakers
+                speakers={speakers}
+                count={count}
+                page={page}
+                setPage={setPage}
+                hasNextPage={hasNextPage}
+                hasPrevPage={hasPrevPage}
+                handleNextPage={handleNextPage}
+                handlePrevPage={handlePrevPage}
+              />
+            </div>
           </div>
         </div>
+        <div className={style.backgroundBeige}></div>
+        <div className={style.backgroundWhite}></div>
       </div>
-      <div className={style.backgroundBeige}></div>
-      <div className={style.backgroundWhite}></div>
-    </div>
+    </>
   );
 };
 

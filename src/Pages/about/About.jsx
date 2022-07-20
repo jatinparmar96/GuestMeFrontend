@@ -3,7 +3,7 @@ import React from 'react';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { ContactLinkButton } from '../../Components/Buttons/Buttons';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
-
+import { Helmet } from 'react-helmet';
 import Noriko from '../../assets/members/Noriko.png';
 import Satveer from '../../assets/members/Satveer.png';
 import Valentina from '../../assets/members/Valentina.png';
@@ -18,6 +18,9 @@ import style from './About.module.scss';
 const About = () => {
   return (
     <>
+      <Helmet>
+        <title>GUEST ME - About</title>
+      </Helmet>
       <PageHeading text="About" />
       <BreadCrumbs currentPosition="About" />
       <div className={style.pageContainer}>

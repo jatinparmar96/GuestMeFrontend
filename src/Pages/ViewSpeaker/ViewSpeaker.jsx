@@ -5,6 +5,7 @@ import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformation/SpeakerPrimaryInformation';
 import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryContainer/Speaker_SecondaryContainer';
 import SpeakerTertiaryInformation from '../../Containers/Speaker_TertiaryContainer/Speaker_TertiaryContainer';
+import { Helmet } from 'react-helmet';
 import style from './ViewSpeaker.module.scss';
 
 const ViewSpeaker = (props) => {
@@ -27,6 +28,9 @@ const ViewSpeaker = (props) => {
 
   return (
     <>
+      <Helmet>
+        <title>GUEST ME - Speaker profile</title>
+      </Helmet>
       {loadingState ? (
         <p>Loading... </p>
       ) : (
@@ -36,21 +40,21 @@ const ViewSpeaker = (props) => {
             <div>
               Home {'>'} Find a speaker {'>'} {speakerData.fullName}
             </div>
-            </div>
-            <div className={style.white}></div>
+          </div>
+          <div className={style.white}></div>
 
           <div className={style.viewSpeakerContainer}>
             <div className={style.primary}>
               <SpeakerPrimaryInformation speaker={speakerData} />
-              </div>
-          <div className={style.grid}>
-            <div className={style.secondary}>
-              <SpeakerSecondaryInformation speaker={speakerData} />
             </div>
-            <div className={style.tertiary}>
-              <SpeakerTertiaryInformation speaker={speakerData} />
-                </div>
-          </div>
+            <div className={style.grid}>
+              <div className={style.secondary}>
+                <SpeakerSecondaryInformation speaker={speakerData} />
+              </div>
+              <div className={style.tertiary}>
+                <SpeakerTertiaryInformation speaker={speakerData} />
+              </div>
+            </div>
           </div>
         </>
       )}
