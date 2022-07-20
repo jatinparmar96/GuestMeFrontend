@@ -89,7 +89,7 @@ const designers = [
 const developers = [
   {
     name: 'Jatin Parmar',
-    role: 'Lead Developer, Full Stack Develope',
+    role: 'Lead Developer, Full Stack Developer',
     imageUrl: Jatin,
     introduction:
       'Holder of a Bachelor of Science degree in Computer Engineering. Extensive experience in developing ERP and Ecommerce web applications.',
@@ -103,7 +103,7 @@ const developers = [
   },
   {
     name: 'Arvind Kumar Suroju',
-    role: 'Full Stack Develope',
+    role: 'Full Stack Developer',
     imageUrl: Arvind,
     introduction:
       'Graduate of a Bachelor in Electronics and Communication Engineering. Experienced Application Engineer and Full Stack developer in the fin-tech industry.',
