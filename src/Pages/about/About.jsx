@@ -7,11 +7,9 @@ import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import Noriko from '../../assets/members/Noriko.png';
 import Satveer from '../../assets/members/Satveer.png';
 import Valentina from '../../assets/members/Valentina.png';
-
 import Arvind from '../../assets/members/Arvind.png';
 import Gabriela from '../../assets/members/Gabriela.png';
 import Jatin from '../../assets/members/Jatin.png';
-
 import Koichi from '../../assets/members/Koichi.png';
 
 import Member from './components/member/Member';
@@ -69,21 +67,21 @@ const designers = [
     role: 'Project Manager / Designer',
     imageUrl: Valentina,
     introduction:
-      'Graduated with a Master degree in Fine Arts. Work experience includes Quality Management Specialist in Education, Photographer Supervisor and Drama Instructor ',
+      'Graduated with a Master degree in Fine Arts. Work experience includes Quality Management Specialist in Education, Photographer Supervisor and Drama Instructor.',
   },
   {
     name: 'Noriko Gondo',
-    role: 'Lead Designer',
+    role: 'Lead Designer, UX/UI Designer',
     imageUrl: Noriko,
     introduction:
-      'Obtained Bachelor of Economics and International Business degrees. Worked as a Recruitment Consultant and freelance Web Designer. ',
+      'Obtained Bachelor of Economics and International Business degrees. Worked as a Recruitment Consultant and freelance Web Designer.',
   },
   {
     name: 'Satveer Kaur',
-    role: 'Designer',
+    role: 'UX/UI Designer',
     imageUrl: Satveer,
     introduction:
-      'Bachelor of Computer Application, Master’s degree in computer science (Information Technology). Have experience in web development. ',
+      'Bachelor of Computer Application, Master’s degree in computer science (Information Technology). Have experience in web development.',
   },
 ];
 
@@ -91,28 +89,28 @@ const designers = [
 const developers = [
   {
     name: 'Jatin Parmar',
-    role: 'Lead Developer',
+    role: 'Lead Developer, Full Stack Develope',
     imageUrl: Jatin,
     introduction:
-      'Holder of a Bachelor of Science degree in Computer Engineering. Extensive experience in developing ERP and Ecommerce web applications. ',
+      'Holder of a Bachelor of Science degree in Computer Engineering. Extensive experience in developing ERP and Ecommerce web applications.',
   },
   {
     name: 'Gabriela Fernandez Chaves Arriola',
-    role: 'Developer',
+    role: 'Full Stack Developer',
     imageUrl: Gabriela,
     introduction:
       'Bachelor of Accounting degree holder.  Extensive experience in Management Control and Logistic teams in Hospitality and Casino industry.',
   },
   {
     name: 'Arvind Kumar Suroju',
-    role: 'Developer',
+    role: 'Full Stack Develope',
     imageUrl: Arvind,
     introduction:
-      'Graduate of Bachelor in Electronics and Communication Engineering. Experienced Application Engineer  and Full Stack developer with a demonstrated history of working in the financial services industry for designing, developing and implementing an application that responds to customer needs and provides innovative solutions to their problems.',
+      'Graduate of a Bachelor in Electronics and Communication Engineering. Experienced Application Engineer and Full Stack developer in the fin-tech industry.',
   },
   {
     name: 'Koichi Tanaka',
-    role: 'Developer',
+    role: 'Full Stack Developer',
     imageUrl: Koichi,
     introduction:
       'Graduate of Bachelor of Information Expression and Informatics in Arts. Worked previously as a full stack web developer.',
