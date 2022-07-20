@@ -90,7 +90,7 @@ const SpeakerUpdateProfile = () => {
                 </div>
               </div>
 
-              <label className={style.boldFont}>Job Title/Company Name</label>
+              <label className={style.boldFont}>Job Title / Company Name</label>
               <input
                 className={`${style.blockDisplay} ${style.oneColumn}`}
                 type="text"
@@ -114,6 +114,7 @@ const SpeakerUpdateProfile = () => {
 
                 <fieldset>
                   <legend className={style.boldFont}>Delivery Method</legend>
+                  <div className={style.deliveryMethod}>
                   <input
                     type="checkbox"
                     name="isInPerson"
@@ -125,21 +126,24 @@ const SpeakerUpdateProfile = () => {
                     name="isOnline"
                     {...register('conditions.isOnline')}
                   />
-                  <label> Online</label>
+                    <label> Online</label>
+                  </div>
                 </fieldset>
               </div>
 
               <div className={style.twoColumn}>
                 <div>
                   <label className={style.boldFont}>Price per hour</label>
+                  <span>$ &nbsp;
                   <input
-                    className={style.blockDisplay}
                     type="number"
                     name="price"
                     {...register('conditions.price', {
                       required: 'This is a required field',
                     })}
-                  />
+                    />
+                    &nbsp; / hour
+                    </span>
                 </div>
                 <fieldset>
                   <legend className={style.boldFont}>Can Volunteer?</legend>
