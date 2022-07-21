@@ -1,7 +1,6 @@
 @use '../../common/variables' as *;
 
 .myPage{
-  background-color: $light-beige;
 
   .outlet{
     display: flex;
@@ -13,4 +12,18 @@
 
 
 @media screen and (min-width: $bp-large) {
+
+  .myPage{
+    display: grid;
+    grid-template-columns: 30.55% calc(100% - 30.55%);
+
+    .menuSide {
+        background-color: $white;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+
+  }
+
 }

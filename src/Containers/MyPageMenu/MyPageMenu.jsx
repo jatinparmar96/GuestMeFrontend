@@ -40,7 +40,9 @@ const MyPageMenu = (props) => {
               <NavLink
                 to={link.path}
                 style={({ isActive }) => isActive ? activeStyle : undefined}
-                className={style.myPageMenuLink}
+                  className={style.myPageMenuLink}
+
+
 
               >
 
