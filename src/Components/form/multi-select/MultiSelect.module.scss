@@ -1,0 +1,55 @@
+@use '../../../common/variables' as *;
+.multiselect{
+  label{
+    font-size: 1rem;
+    font-weight: 700;
+
+  }
+  .input{
+    display: block;
+    margin-top: 0.63rem;
+    margin-bottom: 1.19rem;
+    width: 100%;
+      input{
+          width: calc(100% - 5.56rem);
+          height: 2.50rem;
+            padding: 0.5rem;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            font-weight: 400;
+            color: $black;
+      }
+      button{
+        background-color: $mint-blue;
+        color:$white;
+        width: 5rem;
+        height: 2.50rem;
+        border:1px solid transparent;
+        border-radius: 0.25rem;
+        margin-left: 0.56rem;
+        font-size: 1.13rem;
+        font-weight: 600;
+        font-family: $barlow-condensed-font;
+        letter-spacing: 0.05em;
+
+      }
+
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.63rem;
+    li{
+      list-style: none;
+      display: inline-block;
+      background-color: $light-green ;
+      color: $black;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.88rem;
+      padding: 0.25rem 0.88rem;
+    }
+  }
+}
