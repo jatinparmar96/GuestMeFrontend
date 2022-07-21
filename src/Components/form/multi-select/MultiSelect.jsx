@@ -5,7 +5,9 @@ const MultiSelect = (props) => {
   const inputRef = useRef();
 
   const addOption = (option) => {
-    props.onChange([...options, option]);
+    if (option.trim().length > 0) {
+      props.onChange([ ...options, option ]);
+    }
   };
 
   useEffect(() => {
