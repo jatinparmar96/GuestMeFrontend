@@ -21,7 +21,7 @@ const MyPage = () => {
             />
           ) : null}
         </div>
-        <div>
+        <div className={style.outlet}>
           <Outlet />
         </div>
       </section>
