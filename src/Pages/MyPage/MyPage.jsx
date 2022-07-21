@@ -2,7 +2,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { RequestButtonWide } from '../../Components/Buttons/Buttons';
 import ScreenWidth from '../../Components/ScreenSize/ScreenSize';
 import MyPageMenu from '../../Containers/MyPageMenu/MyPageMenu';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import style from './MyPage.module.scss';
 
 const MyPage = () => {

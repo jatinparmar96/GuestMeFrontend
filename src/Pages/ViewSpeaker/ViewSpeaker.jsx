@@ -5,7 +5,7 @@ import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformation/SpeakerPrimaryInformation';
 import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryContainer/Speaker_SecondaryContainer';
 import SpeakerTertiaryInformation from '../../Containers/Speaker_TertiaryContainer/Speaker_TertiaryContainer';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import style from './ViewSpeaker.module.scss';
 
 const ViewSpeaker = (props) => {

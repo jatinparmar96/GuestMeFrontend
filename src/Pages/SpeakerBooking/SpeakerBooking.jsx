@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil';
 import { getSpeakerBookings } from '../../Api/Speaker.service';
 import SpeakerBookingList from '../../Components/SpeakerBookingList/SpeakerBookingList';
 import tokenAtom from '../../Recoil/Authentication/atom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 const SpeakerBooking = (props) => {
   const [loadingState, setLoadingState] = useState(true);

@@ -4,7 +4,7 @@ import Benefit from '../../Components/landing-page/benefit/Benefit';
 import FeaturedSpeakers from '../../Components/landing-page/featured-speakers/FeaturedSpeakers';
 import style from './LandingPage.module.scss';
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import footerImage1 from '../../assets/landing-page-footer-1.png';
 import footerImage2 from '../../assets/landing-page-footer-2.png';
