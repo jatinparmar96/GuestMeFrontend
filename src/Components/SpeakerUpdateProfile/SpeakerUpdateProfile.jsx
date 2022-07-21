@@ -386,7 +386,7 @@ const SpeakerUpdateProfile = () => {
             }}
           />
 
-          <label className={`${style.boldFont} ${style.blockDisplay}`}>
+          <label className={style.boldFont}>
             Certifications
           </label>
           <input
@@ -394,12 +394,17 @@ const SpeakerUpdateProfile = () => {
             type="text"
             name="certifications"
           />
-          <label className={`${style.boldFont} ${style.blockDisplay}`}>
+          <label className={style.boldFont} >
             Youtube video
           </label>
-          <input type="text" name="videos" {...register('videos')} />
+          <input
+            type="text"
+            name="videos"
+            className={style.blockDisplay}
+            {...register('videos')} />
 
-          <label className={`${style.boldFont} ${style.blockDisplay}`}>
+
+          <label className={style.boldFont}>
             About me
           </label>
           <textarea
