@@ -30,6 +30,7 @@ export const LoginForm = (props) => {
             <input
               className={style.inputPassword}
               type={passwordVisible ? 'text' : 'password'}
+              placeholder="Must have at least 8 characters"
               {...register('password', { required: true })}
             />
             <div className={style.eyeContainer}>
