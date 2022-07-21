@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
+import { Helmet } from 'react-helmet';
+
 import OrganizationHowItWorks from '../../Containers/howItWorksContainer/organizationHowItWorks/OrganizationHowItWorks';
 import SpeakerHowItWorks from '../../Containers/howItWorksContainer/speakerHowItWorks/SpeakerHowItWorks';
 
@@ -11,6 +13,9 @@ const HowItWorks = (props) => {
   const [isForSpeaker, setIsForSpeaker] = useState(true);
   return (
     <>
+      <Helmet>
+        <title>GUEST ME - How it works</title>
+      </Helmet>
       <PageHeading text="How it works" />
       <BreadCrumbs currentPosition="How it works" />
       <div className={style.pageContainer}>

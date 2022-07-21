@@ -1,10 +1,10 @@
 // @ts-check
 import React, { useState } from 'react';
-
 import RegistrationImage from '../../assets/registration_speaker.png';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import { OrganizationRegisterContainer } from '../../Containers/Registers/OrganizationRegisterContainer/OrganizationRegisterContainer';
+import { Helmet } from 'react-helmet';
 import { SpeakerRegisterContainer } from '../../Containers/Registers/SpeakerRegisterContainer/SpeakerRegisterContainer';
 
 import style from './Register.module.scss';
@@ -21,6 +21,9 @@ export const Register = (props) => {
 
   return (
     <>
+      <Helmet>
+        <title>GUEST ME - Register</title>
+      </Helmet>
       <PageHeading text="Register" />
       <BreadCrumbs currentPosition="Register" />
       <div className={style.contentContainer}>
