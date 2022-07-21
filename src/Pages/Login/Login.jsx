@@ -50,6 +50,7 @@ export const Login = () => {
                     name="role"
                     id="role-speaker"
                     checked={isSpeaker}
+                    className={style.toggle}
                     onClick={() => setIsSpeaker(true)}
                   />
                   <label htmlFor="role-speaker" className={style.radioLabel}>
@@ -61,6 +62,7 @@ export const Login = () => {
                     type="radio"
                     name="role"
                     id="role-organization"
+                    className={style.toggle}
                     checked={!isSpeaker}
                     onClick={() => setIsSpeaker(false)}
                   />
