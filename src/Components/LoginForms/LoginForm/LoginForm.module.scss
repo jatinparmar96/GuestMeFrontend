@@ -7,7 +7,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 0.9rem;
-  margin-top: calc(3.13rem - 0.9rem);
+  margin-top: 2.23rem;
 }
 
 .buttonContainer {
@@ -26,7 +26,7 @@
   gap: 0.44rem;
 }
 .loginLabel {
-  font-weight: 799;
+  font-weight: 700;
   $font-family: $barlow-font;
 }
 
@@ -66,16 +66,16 @@
   line-height: 1rem;
   font-weight: 500;
 
-  input[type="checkbox"i] {
+  & [type="checkbox"i] {
     visibility: hidden;
   }
 
-  input[type="checkbox"i]:checked:after {
+  & [type="checkbox"i]:checked:after {
     background-color: rgba($mint-blue, 0);
     border: 0.1px solid $black;
   }
 
-  input[type="checkbox"i]:after {
+  & [type="checkbox"i]:after {
     visibility: visible;
     display: flex;
     justify-content: center;
@@ -88,7 +88,7 @@
     border-radius: 4px;
   }
 
-  span {
+  & span {
     display: inline-block;
     margin-left: 0.5rem;
   }

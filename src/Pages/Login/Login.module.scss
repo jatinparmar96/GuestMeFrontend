@@ -71,14 +71,14 @@ input[type="radio"] {
   }
 }
 
-input:checked {
+.toggle:checked {
   & + label {
     background-color: $light-beige;
     font-weight: 700;
     border-radius: 4px;
 
     @media screen and (min-width: $bp-tablet) {
-      padding-lefts: 1rem;
+      padding-left: 1rem;
       padding-right: 1rem;
     }
   }

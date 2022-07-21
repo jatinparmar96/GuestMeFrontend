@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
-  height: min-content;
+  height: 100%;
 }
 
 .checkbox {
@@ -38,4 +38,5 @@
 
 .label {
   margin: 0;
+  line-height: 1rem;
 }
