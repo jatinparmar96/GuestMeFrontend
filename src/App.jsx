@@ -75,6 +75,7 @@ const App = () => {
             element={
               <RequireAuth type="speaker">
                 <MyPage />
+
               </RequireAuth>
             }
           >
