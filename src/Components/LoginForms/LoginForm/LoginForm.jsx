@@ -52,7 +52,7 @@ export const LoginForm = (props) => {
           onClick={handleSubmit(onSubmit)}
         ></SubmitButton>
       </div>
-      <Link to="forgot" className={style.forgotPassword}>
+      <Link to="/login" className={style.forgotPassword}>
         Forgot password
       </Link>
     </>
