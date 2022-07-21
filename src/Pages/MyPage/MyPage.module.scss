@@ -18,10 +18,18 @@
     display: grid;
     grid-template-columns: 30.55% calc(100% - 30.55%);
 
+
     .menuSide {
         background-color: $white;
         display: flex;
         justify-content: flex-end;
+        padding-top: 2.95rem;
+        margin-top: 0;
+      }
+
+      .outlet{
+        padding-top: 2.95rem;
+
       }
 
 
