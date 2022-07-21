@@ -2,6 +2,13 @@
 
 .myPage{
   background-color: $light-beige;
+
+  .outlet{
+    display: flex;
+    justify-content: center;
+    background-color: $light-beige;
+
+  }
 }
 
 
