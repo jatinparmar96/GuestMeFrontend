@@ -3,7 +3,7 @@ import React from 'react';
 import WideDisplayImage from '../../assets/contact_page.png';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import style from './Contact.module.scss';
 
 import { PrimaryButton } from '../../Components/Buttons/Buttons';
