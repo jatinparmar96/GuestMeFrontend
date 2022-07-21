@@ -58,8 +58,11 @@ export const OrganizationLoginForm = (props) => {
           errors={errors}
         />
         <div className={style.registerRow}>
-          <span>Don't have an account?</span>
-          <Link to="/register" className={style.registerLink}>
+          <span className={style.scaleDownText}>Don't have an account?</span>
+          <Link
+            to="/register"
+            className={`${style.registerLink} ${style.scaleDownText}`}
+          >
             Register as an organization
           </Link>
         </div>
