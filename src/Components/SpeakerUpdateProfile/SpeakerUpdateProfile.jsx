@@ -49,7 +49,7 @@ const SpeakerUpdateProfile = () => {
                 src={getValues('profilePicture')}
                 alt="Profile"
               />
-              <label className={style.imageLabel} for="profilePicture">
+              <label className={style.imageLabel} htmlFor="profilePicture">
                 Update my profile photo
               </label>
               <input
@@ -163,7 +163,7 @@ const SpeakerUpdateProfile = () => {
                     id='no'
 
                     {...register('canVolunteer')} />
-                  <label for="no">No</label>
+                  <label htmlFor="no">No</label>
                 </fieldset>
               </div>
             </div>
