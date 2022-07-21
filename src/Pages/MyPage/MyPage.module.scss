@@ -1,6 +1,7 @@
 @use '../../common/variables' as *;
 
 .myPage{
+  background-color: $light-beige;
 
   .outlet{
     display: flex;
