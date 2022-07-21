@@ -155,7 +155,7 @@ const SpeakerUpdateProfile = () => {
 
                     {...register('canVolunteer')}
                   />
-                  <label for="yes">Yes</label>
+                  <label htmlFor="yes">Yes</label>
                   <input
                     type="radio"
                     name="no"
