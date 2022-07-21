@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet';
 import { Outlet } from 'react-router-dom';
+import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import MyPageMenu from '../../Containers/MyPageMenu/MyPageMenu';
 import style from './MyPage.module.scss';
-
 
 const MyPage = () => {
 
@@ -12,6 +12,7 @@ const MyPage = () => {
       <Helmet>
         <title>GUEST ME - My Page</title>
       </Helmet>
+      <BreadCrumbs currentPosition="My Page" />
       <div className={style.myPage}>
         <div className={style.menuSide}>
           <MyPageMenu />

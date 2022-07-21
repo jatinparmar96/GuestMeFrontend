@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import { getSpeaker } from '../../Api/Speaker.service';
+import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformation/SpeakerPrimaryInformation';
 import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryContainer/Speaker_SecondaryContainer';
 import SpeakerTertiaryInformation from '../../Containers/Speaker_TertiaryContainer/Speaker_TertiaryContainer';
-import { Helmet } from 'react-helmet';
 import style from './ViewSpeaker.module.scss';
-
 const ViewSpeaker = (props) => {
   const [loadingState, setLoadingState] = useState(true);
   const [speakerData, setSpeakerData] = useState();
@@ -31,15 +31,14 @@ const ViewSpeaker = (props) => {
       <Helmet>
         <title>GUEST ME - Speaker profile</title>
       </Helmet>
+
       {loadingState ? (
         <p>Loading... </p>
       ) : (
         <>
           <div>
             <PageHeading text="Find a speaker" />
-            <div>
-              Home {'>'} Find a speaker {'>'} {speakerData.fullName}
-            </div>
+            <BreadCrumbs currentPosition={speakerData.fullName} />
           </div>
           <div className={style.white}></div>
 
