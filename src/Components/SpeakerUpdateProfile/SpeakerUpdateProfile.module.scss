@@ -312,6 +312,114 @@
         border-radius: 0.25rem;
         border: 0.1px solid $mint-blue;
       }
+
+      .radio{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-bottom: 0.5rem;
+        legend{
+          margin-bottom: 0.94rem;
+        }
+
+        label{
+          font-weight: 500;
+          margin-left: 0.63rem;
+          margin-right: 4.38rem;
+          line-height: 1rem;
+        }
+
+        input[type='radio' i] {
+            visibility: hidden;
+            width: unset;
+            display: inline-block;
+
+          }
+
+          input[type='radio' i]:checked:after {
+            background-color: rgba($mint-blue, 0);
+            border: 0.1px solid $black;
+            border-radius: 50%;
+
+
+
+          }
+
+          input[type='radio' i]:after {
+            visibility: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: '\2713';
+            font-size: 0.55rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 50%;
+            border: 0.1px solid $mint-blue;
+            color: $white;
+            background-color: rgba($mint-blue, 1);
+          }
+      }
+    }
+
+    .checkboxes{
+
+      display: flex;
+      flex-direction: column;
+
+      fieldset{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0;
+        padding: 0;
+        margin-bottom: 1.88rem;
+
+        legend{
+          grid-column: 1 / 3;
+          margin-bottom: 1rem;
+        }
+          .area, .language{
+            label{
+            font-size: 1rem;
+            font-weight: 500;
+            margin-left: 0.63rem;
+            }
+                    input[type='checkbox' i] {
+                      visibility: hidden;
+                      width: unset;
+                      display: inline-block;
+
+                    }
+
+                    input[type='checkbox' i]:checked:after {
+                      background-color: rgba($mint-blue, 0);
+                      border: 0.1px solid $black;
+                      border-radius: 0.25rem;
+
+
+
+                    }
+
+                    input[type='checkbox' i]:after {
+                      visibility: visible;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      content: '\2713';
+                      font-size: 0.55rem;
+                      width: 0.8rem;
+                      height: 0.8rem;
+                      border-radius: 0.25rem;
+                      border: 0.1px solid $mint-blue;
+                      color: $white;
+                      background-color: rgba($mint-blue, 1);
+                    }
+          }
+      }
+    }
+
+    .multiselect{
+      background-color: red;
     }
   }
 }
