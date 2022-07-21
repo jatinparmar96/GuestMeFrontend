@@ -10,10 +10,9 @@ import style from './Login.module.scss';
 
 export const Login = () => {
   /**@type {[boolean, React.Dispatch<boolean>]} */
+  const [isSpeaker, setIsSpeaker] = useState(true);
 
   const location = useLocation();
-
-  const [isSpeaker, setIsSpeaker] = useState(true);
 
   useEffect(() => {
     if (location.state?.userType) {
@@ -36,7 +35,11 @@ export const Login = () => {
         <PageHeading
           text={`Log in as ${isSpeaker ? 'a speaker' : ' an organization'}`}
         />
-        <BreadCrumbs currentPosition="How it works" />
+        <BreadCrumbs
+          currentPosition={`Log in as ${
+            isSpeaker ? 'a speaker' : ' an organization'
+          }`}
+        />
         <div className={style.PageContainer}>
           <div className={style.contentContainer}>
             <div className={style.boxContainer}>

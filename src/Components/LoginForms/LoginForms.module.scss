@@ -1,17 +1,31 @@
 @use "../../common/variables" as *;
 
 .formContainer {
-  padding: 2rem;
+  padding: 1.25rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.9rem;
+  @media screen and (min-width: $bp-tablet) {
+    padding: 2rem;
+  }
 }
 
-.formHeading {
+.formHeader {
   display: flex;
   flex-flow: column nowrap;
   justify-items: flex-start;
   align-items: flex-start;
+}
+.formHeading {
+  @media screen and (min-width: $bp-tablet) {
+    margin: 0;
+  }
+}
+
+.formDescription {
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: 0.35rem;
+  }
 }
 
 .aside {
@@ -25,19 +39,26 @@
 
 .registerRow {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
+  padding-top: 3.13rem;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
 
-  @media screen and (max-width: $bp-tablet) {
-    padding-top: 3.13rem;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
+  @media screen and (min-width: $bp-tablet) {
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: calc(3.5rem - 0.9rem);
   }
 }
 
 .registerLink {
   color: $mint-blue;
+  font-weight: 700;
+  margin-top: (0.63rem - 0.9rem);
+  padding-bottom: calc(3.19rem - 0.9rem);
+  @media screen and (min-width: $bp-tablet) {
+    padding: 0;
+  }
 }

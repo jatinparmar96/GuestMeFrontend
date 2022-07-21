@@ -45,9 +45,11 @@ export const OrganizationLoginForm = (props) => {
   return (
     <>
       <div className={style.formContainer}>
-        <div className={style.formHeading}>
-          <h2>Log in form for an organization</h2>
-          <p>Please enter your email and password.</p>
+        <div className={style.formHeader}>
+          <h2 className={style.formHeading}>Log in form for an organization</h2>
+          <p className={style.formDescription}>
+            Please enter your email and password.
+          </p>
         </div>
         <LoginForm
           handleSubmit={handleSubmit}

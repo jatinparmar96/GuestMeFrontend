@@ -16,12 +16,16 @@ export const LoginForm = (props) => {
     <>
       <div className={style.loginFormContainer}>
         <div className={style.inputRow}>
-          <label>Email*</label>
-          <input type="text" {...register('email', { required: true })} />
+          <label className={style.loginLabel}>Email*</label>
+          <input
+            type="text"
+            {...register('email', { required: true })}
+            className={style.inputEmail}
+          />
           {errors.email?.type === 'required' && 'Email is required'}
         </div>
         <div className={style.inputRow}>
-          <label>Password*</label>
+          <label className={style.loginLabel}>Password*</label>
           <div className={style.passwordRow}>
             <input
               className={style.inputPassword}
