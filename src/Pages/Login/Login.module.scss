@@ -8,7 +8,6 @@
 
 .PageContainer {
   width: 100%;
-
   margin-top: 4.3rem;
 
   @media screen and (max-width: $bp-tablet) {
@@ -49,7 +48,7 @@
     flex-grow: 0;
 
     @media screen and (max-width: $bp-tablet) {
-      flex-grow: 1;
+      flex: 1 1 50%;
       padding-bottom: 0rem;
     }
   }
@@ -61,6 +60,8 @@ input[type="radio"] {
 
 .radioLabel {
   padding: 0.5rem;
+  font-weight: 500;
+  font-family: $barlow-condensed-font;
 
   @media screen and (max-width: $bp-tablet) {
     display: inline-block;
@@ -74,6 +75,12 @@ input:checked {
   & + label {
     background-color: $light-beige;
     font-weight: 700;
+    border-radius: 4px;
+
+    @media screen and (min-width: $bp-tablet) {
+      padding-lefts: 1rem;
+      padding-right: 1rem;
+    }
   }
 }
 

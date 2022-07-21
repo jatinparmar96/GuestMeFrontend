@@ -16,16 +16,21 @@ export const LoginForm = (props) => {
     <>
       <div className={style.loginFormContainer}>
         <div className={style.inputRow}>
-          <label>Email*</label>
-          <input type="text" {...register('email', { required: true })} />
+          <label className={style.loginLabel}>Email*</label>
+          <input
+            type="text"
+            {...register('email', { required: true })}
+            className={style.inputEmail}
+          />
           {errors.email?.type === 'required' && 'Email is required'}
         </div>
         <div className={style.inputRow}>
-          <label>Password*</label>
+          <label className={style.loginLabel}>Password*</label>
           <div className={style.passwordRow}>
             <input
               className={style.inputPassword}
               type={passwordVisible ? 'text' : 'password'}
+              placeholder="Must have at least 8 characters"
               {...register('password', { required: true })}
             />
             <div className={style.eyeContainer}>
@@ -48,7 +53,7 @@ export const LoginForm = (props) => {
           onClick={handleSubmit(onSubmit)}
         ></SubmitButton>
       </div>
-      <Link to="forgot" className={style.forgotPassword}>
+      <Link to="/login" className={style.forgotPassword}>
         Forgot password
       </Link>
     </>
