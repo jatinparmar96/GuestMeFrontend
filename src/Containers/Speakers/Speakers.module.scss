@@ -8,21 +8,24 @@
 }
 
 .speakersHeading {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   padding-top: 2.55rem;
   margin-bottom: 1rem;
 }
 
 .paging {
-  align-self: flex-end;
   display: flex;
+  flex-shrink: 1;
   justify-content: flex-end;
   align-items: flex-start;
+  flex-flow: row nowrap;
   gap: 1.45rem;
-  // margin-bottom: 1.55rem;
 }
 .resultDisplay {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-flow: row nowrap;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -32,7 +35,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding-bottom: 3.125rem;
 
   @media screen and (min-width: $bp-tablet) {
