@@ -17,10 +17,12 @@ const BASE_URL = `${BASE_HTTP_PROTOCOL}://${
     : process.env.REACT_APP_ENDPOINT
 }`;
 
-const DEFAULT_HEADERS = {
-  Authorization: `Bearer ${localStorage.getItem('token')}`,
-  'Content-Type': 'application/json',
-  Accept: 'application/json',
+const DEFAULT_HEADERS = () => {
+  return {
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  };
 };
 
 /**
@@ -28,7 +30,8 @@ const DEFAULT_HEADERS = {
  * @param  {string} url
  * @param  {Headers} headers=DEFAULT_HEADERS
  */
-export const get = (url, headers = DEFAULT_HEADERS) => {
+export const get = (url, headers = DEFAULT_HEADERS()) => {
+  console.log(headers);
   return axios.get(BASE_URL + url, {
     headers,
   });
@@ -39,7 +42,7 @@ export const get = (url, headers = DEFAULT_HEADERS) => {
  * @param  {any} data
  * @param  {Headers} headers=DEFAULT_HEADERS
  */
-export const post = (url, data, headers = DEFAULT_HEADERS) => {
+export const post = (url, data, headers = DEFAULT_HEADERS()) => {
   return axios.post(BASE_URL + url, data, { headers });
 };
 
@@ -48,7 +51,7 @@ export const post = (url, data, headers = DEFAULT_HEADERS) => {
  * @param  {} data
  * @param  {} headers=DEFAULT_HEADERS
  */
-export const put = (url, data, headers = DEFAULT_HEADERS) => {
+export const put = (url, data, headers = DEFAULT_HEADERS()) => {
   return axios.put(BASE_URL + url, data, {
     headers,
   });
@@ -59,7 +62,7 @@ export const put = (url, data, headers = DEFAULT_HEADERS) => {
  * @param  {} data
  * @param  {} headers=DEFAULT_HEADERS
  */
-function deleteRequest(url, data, headers = DEFAULT_HEADERS) {
+function deleteRequest(url, data, headers = DEFAULT_HEADERS()) {
   return axios.delete(BASE_URL + url, data, {
     headers,
   });
