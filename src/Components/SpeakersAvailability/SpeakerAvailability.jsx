@@ -5,8 +5,11 @@ const SpeakerAvailability = (props) => {
   return (
     <>
       <div className={style.organizationCalendar}>
-
-        <OrganizationCalendar className={style.calendar} value={props.value} availability={true} />
+        <OrganizationCalendar
+          className={style.calendar}
+          value={props.value}
+          availability={true}
+        />
       </div>
     </>
   );

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { post } from '../../Api/api';
-import { getSpeaker } from '../../Api/Speaker.service';
+import { getSpeaker, updateSpeakerProfile } from '../../Api/Speaker.service';
 import MultiSelect from '../form/multi-select/MultiSelect';
 import style from './SpeakerUpdateProfile.module.scss';
 
@@ -39,7 +38,7 @@ const SpeakerUpdateProfile = () => {
         <p>Information here will be published</p>
         <form
           onSubmit={handleSubmit((data) => {
-            post('/speakers/update/profile', data).then((res) => {});
+            updateSpeakerProfile(data);
           })}
         >
           <div className={style.topGrid}>
