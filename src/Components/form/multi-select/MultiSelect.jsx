@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-
+import style from './MultiSelect.module.scss';
 const MultiSelect = (props) => {
   const [options, setOptions] = useState([]);
   const inputRef = useRef();
@@ -15,8 +15,9 @@ const MultiSelect = (props) => {
   }, [props.value]);
 
   return (
-    <div>
+    <div className={style.multiselect}>
       <label>{props.label}</label>
+      <div className={style.input}>
       <input type="text" name="skills" ref={inputRef} />
       <button
         onClick={(e) => {
@@ -26,7 +27,8 @@ const MultiSelect = (props) => {
         }}
       >
         Add
-      </button>
+        </button>
+      </div>
 
       <ul>
         {options.map((option, index) => (
