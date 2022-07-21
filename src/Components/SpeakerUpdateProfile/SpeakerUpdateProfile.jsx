@@ -145,26 +145,6 @@ const SpeakerUpdateProfile = () => {
                     &nbsp; / hour
                     </span>
                 </div>
-                <fieldset className={style.radio}>
-                  <legend className={style.boldFont}>Can Volunteer?</legend>
-                  <input
-                    type="radio"
-                    name="yes"
-                    value="yes"
-                    id='yes'
-
-                    {...register('canVolunteer')}
-                  />
-                  <label htmlFor="yes">Yes</label>
-                  <input
-                    type="radio"
-                    name="no"
-                    value="no"
-                    id='no'
-
-                    {...register('canVolunteer')} />
-                  <label htmlFor="no">No</label>
-                </fieldset>
               </div>
             </div>
           </div>

@@ -14,7 +14,7 @@ export const SpeakerLoginForm = (props) => {
   let navigate = useNavigate();
   let location = useLocation();
 
-  let from = location.state?.from?.pathname || '/speakers/mypage';
+  let from = location.state?.from?.pathname || '/speakers/mypage/update';
 
   const {
     register,
