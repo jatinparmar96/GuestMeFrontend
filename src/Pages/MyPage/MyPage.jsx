@@ -1,34 +1,26 @@
-import { Outlet, useNavigate } from 'react-router-dom';
-import { RequestButtonWide } from '../../Components/Buttons/Buttons';
-import ScreenWidth from '../../Components/ScreenSize/ScreenSize';
-import MyPageMenu from '../../Containers/MyPageMenu/MyPageMenu';
 import { Helmet } from 'react-helmet';
+import { Outlet } from 'react-router-dom';
+import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
+import MyPageMenu from '../../Containers/MyPageMenu/MyPageMenu';
 import style from './MyPage.module.scss';
 
 const MyPage = () => {
-  const id = JSON.parse(localStorage.getItem('user')).id;
-  const navigate = useNavigate();
-  const screen = ScreenWidth();
+
 
   return (
     <>
       <Helmet>
         <title>GUEST ME - My Page</title>
       </Helmet>
-      <section className={style.myPage}>
-        <div>
+      <BreadCrumbs currentPosition="My Page" />
+      <div className={style.myPage}>
+        <div className={style.menuSide}>
           <MyPageMenu />
-          {screen > 992 ? (
-            <RequestButtonWide
-              text="Preview your profile"
-              onClick={() => navigate('/speakers/' + id)}
-            />
-          ) : null}
         </div>
-        <div>
+        <div className={style.outlet}>
           <Outlet />
         </div>
-      </section>
+      </div>
     </>
   );
 };

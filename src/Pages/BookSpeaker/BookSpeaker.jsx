@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSpeaker } from '../../Api/Speaker.service';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import BookingSpeakerCard from '../../Containers/BookingSpeakerCard/BookingSpeakerCard';
 import BookRequest from '../../Containers/BookRequest/BookRequest';
 import style from './BookSpeaker.module.scss';

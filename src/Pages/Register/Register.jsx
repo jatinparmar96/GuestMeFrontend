@@ -4,7 +4,7 @@ import RegistrationImage from '../../assets/registration_speaker.png';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import { OrganizationRegisterContainer } from '../../Containers/Registers/OrganizationRegisterContainer/OrganizationRegisterContainer';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { SpeakerRegisterContainer } from '../../Containers/Registers/SpeakerRegisterContainer/SpeakerRegisterContainer';
 
 import style from './Register.module.scss';

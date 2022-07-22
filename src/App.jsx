@@ -7,6 +7,7 @@ import { FindASpeaker } from './Pages/FindASpeaker/FindASpeaker';
 import { Login } from './Pages/Login/Login';
 import { Register } from './Pages/Register/Register';
 
+import { HelmetProvider } from 'react-helmet-async';
 import styles from './App.module.scss';
 import RequireAuth from './auth/RequireAuth';
 import SpeakerAccount from './Components/SpeakerAccount/SpeakerAccount';
@@ -61,41 +62,46 @@ const App = () => {
     setUser({ name: JSON.parse(user), value: token });
   }, [setUser]);
   return (
-    <div className={`${styles.wrapper} App`}>
-      <Header></Header>
-      <main className={styles.main}>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/find-a-speaker" element={<FindASpeaker />} />
-          <Route path="/speakers/:id" element={<ViewSpeaker />} />
-          <Route path="/" element={<LandingPage />} />
-          <Route
-            path="/speakers/mypage"
-            element={
-              <RequireAuth type="speaker">
-                <MyPage />
-              </RequireAuth>
-            }
-          >
-            <Route path="/speakers/mypage/update" element={<SpeakerUpdateProfile />} />
-            <Route
-              path="/speakers/mypage/bookings"
-              element={<SpeakerBooking />}
-            />
-            <Route
-              path="/speakers/mypage/availability"
-              element={<SetSpeakerAvailability />}
-            />
-            <Route
-              path="/speakers/mypage/account"
-              element={<SpeakerAccount />}
-            />
-          </Route>
-          <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* <Route
+    <>
+      <HelmetProvider>
+        <div className={`${styles.wrapper} App`}>
+          <Header></Header>
+          <main className={styles.main}>
+            <Routes>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/find-a-speaker" element={<FindASpeaker />} />
+              <Route path="/speakers/:id" element={<ViewSpeaker />} />
+              <Route path="/" element={<LandingPage />} />
+              <Route
+                path="/speakers/mypage"
+                element={
+                  <RequireAuth type="speaker">
+                    <MyPage />
+                  </RequireAuth>
+                }
+              >
+                <Route
+                  path="/speakers/mypage/update"
+                  element={<SpeakerUpdateProfile />}
+                />
+                <Route
+                  path="/speakers/mypage/bookings"
+                  element={<SpeakerBooking />}
+                />
+                <Route
+                  path="/speakers/mypage/availability"
+                  element={<SetSpeakerAvailability />}
+                />
+                <Route
+                  path="/speakers/mypage/account"
+                  element={<SpeakerAccount />}
+                />
+              </Route>
+              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              {/* <Route
             path="/speakers/bookings"
             element={
               <RequireAuth type="speaker">
@@ -104,18 +110,20 @@ const App = () => {
             }
           /> */}
 
-          <Route
-            path="/speakers/:id/request"
-            element={
-              <RequireAuth type="organization">
-                <BookSpeaker />
-              </RequireAuth>
-            }
-          />
-        </Routes>
-      </main>
-      <Footer></Footer>
-    </div>
+              <Route
+                path="/speakers/:id/request"
+                element={
+                  <RequireAuth type="organization">
+                    <BookSpeaker />
+                  </RequireAuth>
+                }
+              />
+            </Routes>
+          </main>
+          <Footer></Footer>
+        </div>
+      </HelmetProvider>
+    </>
   );
 };
 

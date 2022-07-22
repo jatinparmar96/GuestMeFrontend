@@ -36,7 +36,7 @@ const authLinks = [
   },
 ];
 
-const loggedInLinks = [{ path: '/speakers/mypage', name: 'My Page' }];
+const loggedInLinks = [{ path: '/speakers/mypage/update', name: 'My Page' }];
 
 const NavLinks = (props) => {
   const [user, setUser] = useRecoilState(tokenAtom);

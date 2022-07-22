@@ -5,7 +5,7 @@ import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { OrganizationLoginForm } from '../../Components/LoginForms/OrganizationLoginForm/OrganizationLoginForm';
 import { SpeakerLoginForm } from '../../Components/LoginForms/SpeakerLoginForm/SpeakerLoginForm';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import style from './Login.module.scss';
 
 export const Login = () => {
