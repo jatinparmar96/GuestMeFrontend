@@ -7,6 +7,7 @@ import { FindASpeaker } from './Pages/FindASpeaker/FindASpeaker';
 import { Login } from './Pages/Login/Login';
 import { Register } from './Pages/Register/Register';
 
+import { HelmetProvider } from 'react-helmet-async';
 import styles from './App.module.scss';
 import RequireAuth from './auth/RequireAuth';
 import SpeakerAccount from './Components/SpeakerAccount/SpeakerAccount';
@@ -17,7 +18,6 @@ import BookSpeaker from './Pages/BookSpeaker/BookSpeaker';
 import MyPage from './Pages/MyPage/MyPage';
 import SpeakerBooking from './Pages/SpeakerBooking/SpeakerBooking';
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
-import { HelmetProvider, Helmet } from 'react-helmet-async';
 // Required for calendar
 import { useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
@@ -40,7 +40,7 @@ import {
   LineElement,
   PointElement,
   Title,
-  Tooltip,
+  Tooltip
 } from 'chart.js';
 
 ChartJS.register(
