@@ -42,6 +42,8 @@
     flex-wrap: wrap;
     gap: 0.63rem;
     margin-bottom: 1.88rem;
+    margin-left: 0;
+    padding:0;
     li{
       list-style: none;
       display: inline-block;
@@ -51,6 +53,7 @@
       font-weight: 400;
       font-size: 0.88rem;
       padding: 0.25rem 0.88rem;
+      margin-left: 0;
     }
   }
 }
