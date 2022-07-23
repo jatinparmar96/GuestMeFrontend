@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { getSpeakerBookings } from '../../Api/Speaker.service';
-import SpeakerBookingList from '../../Components/SpeakerBookingList/SpeakerBookingList';
+import SpeakerWaitingList from '../../Components/SpeakerBookingList/Waiting/SpeakerWaitingList';
+
 import tokenAtom from '../../Recoil/Authentication/atom';
 import { Helmet } from 'react-helmet-async';
+import SpeakerUpcomingList from '../../Components/SpeakerBookingList/Upcoming/SpeakerUpcomingList';
+import SpeakerHistoryList from '../../Components/SpeakerBookingList/History/SpeakerHistoryList';
 
 const SpeakerBooking = (props) => {
   const [loadingState, setLoadingState] = useState(true);
@@ -35,7 +38,17 @@ const SpeakerBooking = (props) => {
         <p>Loading... </p>
       ) : (
         <>
-          <SpeakerBookingList
+          <SpeakerWaitingList
+            speaker={speakerData}
+            newBookingData={newBookingData}
+            setNewBookingData={setNewBookingData}
+          />
+          <SpeakerUpcomingList
+            speaker={speakerData}
+            newBookingData={newBookingData}
+            setNewBookingData={setNewBookingData}
+          />
+          <SpeakerHistoryList
             speaker={speakerData}
             newBookingData={newBookingData}
             setNewBookingData={setNewBookingData}
