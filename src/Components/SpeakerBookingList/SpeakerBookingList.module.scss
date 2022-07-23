@@ -1,5 +1,7 @@
 @use '../../common/variables' as *;
-.bookingInfo {
+.waitingInfo,
+.upcoming,
+.history {
   margin: 20px;
   h2 {
     color: #3a3f3f;
