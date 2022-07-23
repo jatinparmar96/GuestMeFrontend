@@ -15,7 +15,7 @@
   h3 {
     font-size: 1rem;
     font-style: normal;
-    margin-bottom: 0.563rem;
+    margin-bottom: 1rem;
     margin-top: 0;
 
     height: 1.188rem;
@@ -33,28 +33,24 @@
 
         .mintBlueText {
           color: #35afac;
-          font-size: 0.75rem;
+          font-size: 1rem;
           font-weight: 600;
         }
         .date {
           font-style: normal;
           font-weight: 600;
-          font-size: 0.75rem;
+          font-size: 1rem;
           letter-spacing: 0.05em;
           color: #3a3f3f;
-          // margin-top: 0.563rem;
         }
-        .centreColumnTopRow {
-          margin-top: 1.188rem;
-          margin-bottom: 0.625rem;
-        }
+
         .sentAt {
           font-style: normal;
           font-weight: 500;
-          font-size: 0.688rem;
+          font-size: 0.75rem;
           line-height: 0.688rem;
           color: #b7bfbf;
-          align-self: end;
+          align-self: center;
         }
         .organizationName {
           font-style: normal;
@@ -69,14 +65,12 @@
           }
         }
         .approve {
-          // width: 3.75rem;
           height: 2.438rem;
         }
         .cancel {
           height: 2.438rem;
         }
         .decline {
-          // width: 3.75rem;
           height: 2.438rem;
         }
         .waitingForReview {
@@ -92,28 +86,45 @@
     }
   }
   .verticalGrid {
+    display: flex;
+    flex-flow: column nowrap;
+
+    height: 15rem;
     .forBorderDiv {
       border-bottom: solid 1px #b7bfbf;
-      padding-bottom: 1.188rem;
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      gap: 0.25rem;
     }
     .forBorderDivSecondSection {
       border-bottom: solid 1px #b7bfbf;
-      padding-bottom: 0.625rem;
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      gap: 0.25rem;
     }
   }
 
   .callToActionColumn {
+    padding-top: 1rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
-    padding: 0 1rem;
+    flex-grow: 1;
   }
 
   .cancelAction {
     padding: 0 1.75rem;
     align-self: flex-end;
+    flex-grow: 1;
+    .cancel {
+      padding-top: 1rem;
+    }
   }
 
   .centreColumnTopRow {
@@ -141,6 +152,7 @@
     .verticalGrid {
       display: grid;
       grid-template-columns: 1fr 3fr 1fr;
+      height: unset !important;
       .forBorderDiv {
         border-bottom: none;
         padding-bottom: 0;
@@ -179,17 +191,19 @@
       .eachCard {
         padding: 0.625rem 1.25rem;
         margin-bottom: 1.25rem !important;
+
+        .callToActionColumn {
+          padding: 0 1rem;
+        }
         .mintBlueText {
-          // padding-top: 0.938rem;
           font-style: normal;
           font-weight: 600;
-          font-size: 1rem;
+          font-size: 0.75rem !important;
           line-height: 1.188rem;
-          // padding-bottom: 0.563rem;
         }
         .date {
           font-weight: 600;
-          font-size: 1rem;
+          font-size: 0.75rem !important;
           line-height: 1.188rem;
         }
         .centreColumnTopRow {

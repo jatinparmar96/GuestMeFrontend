@@ -1,6 +1,11 @@
 @use '../../common/variables' as *;
-@media screen and (min-width: $bp-tablet) {
-  .lists {
+.lists {
+  width: 100%;
+  padding: 1.25rem;
+  h2 {
+    font-size: 1.125rem;
+  }
+  @media screen and (min-width: $bp-tablet) {
     padding: 0 9rem 0 6rem;
     h2 {
       margin-top: 0;
