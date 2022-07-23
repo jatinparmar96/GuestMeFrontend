@@ -1,0 +1,46 @@
+.preloaderLogo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+.loaderLogo {
+  width: 50px;
+  .path3 {
+    animation: animate 1s ease-in-out infinite;
+    animation-fill-mode: both;
+  }
+
+  .path2 {
+    animation: animate 1s ease-in-out -0.16s infinite;
+    animation-fill-mode: both;
+  }
+
+  .path1 {
+    animation: animate 1s ease-in-out -0.32s infinite;
+    animation-fill-mode: both;
+  }
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    fill: #35afac;
+  }
+  25% {
+    opacity: 0.2;
+    fill: #35afac;
+  }
+  50% {
+    opacity: 0.5;
+    fill: #35afac;
+  }
+  75% {
+    opacity: 0.7;
+    fill: #35afac;
+  }
+  100% {
+    opacity: 1;
+    fill: #35afac;
+  }
+}

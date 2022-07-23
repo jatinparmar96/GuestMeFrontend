@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { useRecoilValue } from 'recoil';
 import { getSpeakers } from '../../Api/Speaker.service';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
+import Loader from '../../Components/loader/Loader';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import { Filter } from '../../Containers/Filter/Filter';
 import { MobileFilter } from '../../Containers/mobileFilter/MobileFilter';
@@ -64,6 +65,7 @@ export const FindASpeaker = (props) => {
               <MobileFilter />
             </aside>
             <div className={style.mainContainer}>
+              <Loader />
               <Speakers
                 speakers={speakers}
                 count={count}
