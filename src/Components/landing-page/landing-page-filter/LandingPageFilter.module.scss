@@ -48,6 +48,13 @@
       .filterValues {
         display: none;
       }
+      .caretIcon {
+        transition: all 0.2s ease-in-out;
+        transform: rotate(0deg);
+      }
+      &:hover .caretIcon {
+        transform: rotate(180deg);
+      }
       &:hover .filterValues {
         font-family: $barlow-font;
         font-weight: 500;

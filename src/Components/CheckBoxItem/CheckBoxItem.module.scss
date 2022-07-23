@@ -12,15 +12,13 @@
   accent-color: $mint-blue;
   color: $white;
   margin: 0;
-
   visibility: hidden;
-
-  &:checked:after {
+  &:checked::before {
     background-color: rgba($mint-blue, 1);
     border: 1px solid $mint-blue;
   }
 
-  &:after {
+  &::before {
     visibility: visible;
     display: flex;
     justify-content: center;
@@ -32,6 +30,7 @@
     background-color: rgba($mint-blue, 0);
     border: 1px solid $black;
     border-radius: 4px;
+    cursor: pointer;
   }
 }
 

@@ -19,7 +19,7 @@ const LandingPageFilter = (props) => {
       <form className={style.filterForm}>
         <div className={style.filterContainer}>
           <label className={style.filterLabel}>
-            Area of expertise <CaretDown />
+            Area of expertise <CaretDown class={style.caretIcon} />
           </label>
           <div className={style.filterValues}>
             <AreaFilterComponent />
@@ -41,7 +41,7 @@ const LandingPageFilter = (props) => {
 
         <div className={style.filterContainer}>
           <label className={style.filterLabel}>
-            Language <CaretDown />
+            Language <CaretDown class={style.caretIcon} />
           </label>
           <div className={style.filterValues}>
             <LanguageFilterComponent />
@@ -50,7 +50,7 @@ const LandingPageFilter = (props) => {
 
         <div className={style.filterContainer}>
           <label className={style.filterLabel}>
-            Location <CaretDown />
+            Location <CaretDown class={style.caretIcon} />
           </label>
           <div className={style.filterValues}>
             <LocationFilterComponent />
