@@ -111,6 +111,11 @@
     padding: 0 1rem;
   }
 
+  .cancelAction {
+    padding: 0 1.75rem;
+    align-self: flex-end;
+  }
+
   .centreColumnTopRow {
     display: flex;
     flex-flow: row wrap;
@@ -125,8 +130,6 @@
       text-align: center;
       letter-spacing: 0.05em;
       color: #b7bfbf !important;
-
-      margin: 1rem;
     }
   }
   @media screen and (max-width: $bp-tablet) {
@@ -224,10 +227,7 @@
         padding-right: 0 !important;
       }
     }
-    // .cancel {
-    //   margin-left: 3.563rem;
-    //   margin-right: 2.375rem;
-    // }
+
     .waitingForReview {
       display: flex;
       align-items: center;
@@ -235,14 +235,14 @@
       p {
         font-style: normal;
         font-weight: 700;
-        font-size: 1.125rem;
+        font-size: 0.8rem;
         line-height: 1.375rem;
         text-align: center;
         letter-spacing: 0.05em;
         color: #b7bfbf !important;
         width: 8.438rem;
         height: 1.375rem;
-        margin: 0 2.625rem;
+        margin: 0 0.15rem;
       }
     }
     .organizationData {

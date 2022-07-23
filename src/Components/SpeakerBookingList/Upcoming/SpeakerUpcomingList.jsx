@@ -82,7 +82,7 @@ const SpeakerUpcomingList = (props) => {
                       </div>
                     </div>
 
-                    <div className={`${style.callToActionColumn}`}>
+                    <div className={`${style.cancelAction}`}>
                       <p className={style.cancel}>
                         <Cancel />
                       </p>

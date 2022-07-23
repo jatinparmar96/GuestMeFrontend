@@ -1,13 +1,16 @@
-.lists {
-  padding: 0 9rem 0 6rem;
-  h2 {
-    margin-top: 0;
-    margin-bottom: 3.063rem;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-    width: 4.875rem;
-    height: 1.875rem;
+@use '../../common/variables' as *;
+@media screen and (min-width: $bp-tablet) {
+  .lists {
+    padding: 0 9rem 0 6rem;
+    h2 {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1.875rem;
+      width: 4.875rem;
+      height: 1.875rem;
+    }
   }
 }
