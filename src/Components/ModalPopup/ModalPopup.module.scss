@@ -1,7 +1,5 @@
 @use '../../common/variables' as *;
-.css-hlj6pa-MuiDialogActions-root {
-  padding: 0;
-}
+
 .popup {
   background: #f9f8f5;
   border-radius: 6px;
@@ -19,6 +17,7 @@
       margin: 0 auto 2.813 !important;
     }
   }
+
   .dialogContent {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -62,22 +61,19 @@
     overflow-y: unset !important;
   }
   .popup {
-    width: 40rem !important;
-    height: 25.25rem !important;
+    width: 22rem !important;
+    height: 17rem !important;
     .crossMark {
-      margin-top: 1.5rem;
-      margin-right: 1.5rem;
-      margin-bottom: 0.5rem;
       height: 1.25rem !important;
       display: flex !important;
       justify-content: flex-end !important;
     }
-    .logoMic p svg {
-      width: 6rem !important;
-      height: 8.875rem !important;
+    .logoMic p {
       display: block !important;
       justify-content: unset !important;
-      margin: 0 auto 2.813rem !important;
+      svg {
+        height: 6rem;
+      }
     }
     .dialogContent {
       padding-top: 0 !important;
@@ -86,24 +82,18 @@
         height: 1.875rem !important;
         font-style: normal !important;
         font-weight: 600 !important;
-        font-size: 1.5rem !important;
+        font-size: 1rem !important;
         line-height: 1.875rem !important;
         text-align: center !important;
-        margin-bottom: 2.313rem !important;
+        margin-top: 1rem !important;
+        margin-bottom: 0.5rem !important;
       }
     }
 
     .okButton,
     .cancelButton {
-      width: 10.875rem !important;
-      height: 3.125rem !important;
-    }
-    .okButton {
-      margin-right: 1.5rem;
-    }
-    .dialogActions {
-      padding: 0 !important;
-      margin-bottom: 3.125rem !important;
+      width: 5rem !important;
+      height: 2rem !important;
     }
   }
 }
