@@ -10,6 +10,7 @@ const SPEAKER_ENDPOINT = {
   get: `${BASE_ENDPOINT}`,
   login: `${BASE_ENDPOINT}/login`,
   register: `${BASE_ENDPOINT}/register`,
+  update: `${BASE_ENDPOINT}/update/profile`,
   getMaxPrice: `${BASE_ENDPOINT}/max-price`,
   getAvailability: `${BASE_ENDPOINT}/get-availability`,
   getSpeakerBookings: `${BASE_ENDPOINT}/bookings`,
@@ -81,7 +82,7 @@ export const getMaxPrice = () => {
  * @return {Promise<Array<String>>}
  */
 export const getSpeakerAvailability = (id) => {
-  return get(`${SPEAKER_ENDPOINT.getMaxPrice}/${id}`);
+  return get(`${SPEAKER_ENDPOINT.getAvailability}/${id}`);
 };
 
 export const getSpeakerBookings = (id) => {
@@ -90,4 +91,8 @@ export const getSpeakerBookings = (id) => {
 
 export const getRandomSpeakers = () => {
   return get(SPEAKER_ENDPOINT.randomSpeakers);
+};
+
+export const updateSpeakerProfile = (data) => {
+  return post(SPEAKER_ENDPOINT.update, data);
 };

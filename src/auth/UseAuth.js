@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useRecoilState } from 'recoil';
+import tokenAtom from '../Recoil/Authentication/atom';
 
 const useAuth = () => {
-  const [user] = useState(localStorage.getItem('token'));
-  return user;
+  const [user] = useRecoilState(tokenAtom);
+  return [user];
 };
 
 export default useAuth;
