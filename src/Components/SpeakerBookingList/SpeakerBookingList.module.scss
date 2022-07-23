@@ -25,11 +25,11 @@
     margin-top: 0;
     li {
       list-style-type: none;
-
       margin-bottom: 1.25rem;
       .eachCard {
         background: white;
-        padding: 1.25rem;
+        padding: 0.5rem 1.25rem;
+        // height: 17rem;
 
         .mintBlueText {
           color: #35afac;
@@ -52,10 +52,11 @@
           color: #b7bfbf;
           align-self: center;
         }
+
         .organizationName {
           font-style: normal;
           font-weight: 600;
-          font-size: 0.85rem;
+          font-size: 1.125rem;
           line-height: 1.375;
           letter-spacing: 0.05em;
           text-decoration-line: underline;
@@ -81,6 +82,8 @@
           text-align: center;
           letter-spacing: 0.05em;
           color: #b7bfbf !important;
+          flex-grow: 1;
+          padding-top: 1rem;
         }
       }
     }
@@ -89,7 +92,7 @@
     display: flex;
     flex-flow: column nowrap;
 
-    height: 15rem;
+    // height: 15rem;
     .forBorderDiv {
       border-bottom: solid 1px #b7bfbf;
       flex-grow: 1;
@@ -97,6 +100,7 @@
       flex-flow: column nowrap;
       justify-content: center;
       gap: 0.25rem;
+      padding: 1rem 0;
     }
     .forBorderDivSecondSection {
       border-bottom: solid 1px #b7bfbf;
@@ -105,23 +109,25 @@
       flex-flow: column nowrap;
       justify-content: center;
       gap: 0.25rem;
+      padding: 1rem 0;
     }
   }
 
   .callToActionColumn {
-    padding-top: 1rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
     gap: 1rem;
     flex-grow: 1;
+    padding: 1rem 0;
   }
 
   .cancelAction {
     padding: 0 1.75rem;
-    align-self: flex-end;
+    align-self: center;
     flex-grow: 1;
+
     .cancel {
       padding-top: 1rem;
     }
@@ -175,6 +181,12 @@
       }
     }
 
+    .cancelAction {
+      .cancel {
+        padding-top: 0;
+      }
+    }
+
     h3 {
       width: 4.125rem;
       height: 1.375rem;
@@ -186,12 +198,15 @@
     li {
       // width: 47.063rem;
       width: 100%;
-      height: 6.25rem;
+      // height: 6.25rem;
 
       .eachCard {
-        padding: 0.625rem 1.25rem;
+        padding: 1.25rem !important;
         margin-bottom: 1.25rem !important;
 
+        .organizationName {
+          font-size: 0.85rem !important;
+        }
         .callToActionColumn {
           padding: 0 1rem;
         }
