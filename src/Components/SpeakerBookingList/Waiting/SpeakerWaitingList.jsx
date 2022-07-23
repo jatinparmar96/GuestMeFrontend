@@ -69,7 +69,6 @@ const SpeakerWaitingList = (props) => {
 
       <div className={style.waitingInfo}>
         <div>
-          <h2>Booking</h2>
           <h3>Waiting</h3>
           {props.speaker.pending && (
             <ul>
