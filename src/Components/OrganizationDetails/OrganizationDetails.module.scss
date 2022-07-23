@@ -1,23 +1,17 @@
 @use '../../common/variables' as *;
 .organizationDetails {
-  margin-top: 37px;
-  .emailAndCross {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-  }
+  margin-top: 1.25rem;
   .crossMark {
-    align-self: start;
-    svg {
-      height: 15px;
-      width: 15px;
-    }
+    text-align: end;
+    position: relative;
+    top: 1.25rem;
   }
+
   .organizationEmail {
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     letter-spacing: 0.05em;
     text-decoration-line: underline;
     color: #35afac;
@@ -26,19 +20,19 @@
     font-family: 'Barlow';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     letter-spacing: 0.05em;
     color: #3a3f3f;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     padding: 0;
     span {
       display: block;
       font-family: 'Barlow';
       font-style: normal;
       font-weight: 700;
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 1rem;
+      line-height: 1.5rem;
       letter-spacing: 0.05em;
       color: #3a3f3f;
     }
