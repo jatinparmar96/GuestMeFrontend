@@ -246,8 +246,12 @@ $button-margin: 2rem;
       padding: 0 2rem;
       display: flex;
       flex-direction: column;
-      button {
+      a {
         width: 80%;
+        align-self: center;
+      }
+      button {
+        width: 100%;
         background-color: $fiery-rose;
         &:hover {
           outline: 2px solid $fiery-rose;
