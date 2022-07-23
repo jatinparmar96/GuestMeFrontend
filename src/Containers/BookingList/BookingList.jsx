@@ -6,7 +6,6 @@ import tokenAtom from '../../Recoil/Authentication/atom';
 import SpeakerUpcomingList from '../../Components/SpeakerBookingList/Upcoming/SpeakerUpcomingList';
 import SpeakerHistoryList from '../../Components/SpeakerBookingList/History/SpeakerHistoryList';
 import SpeakerWaitingList from '../../Components/SpeakerBookingList/Waiting/SpeakerWaitingList';
-import style from './BookingList.module.scss';
 
 const BookingList = (props) => {
   const [loadingState, setLoadingState] = useState(true);
@@ -34,7 +33,7 @@ const BookingList = (props) => {
         <p>Loading... </p>
       ) : (
         <>
-          <div className={style.lists}>
+          <div>
             <SpeakerWaitingList
               speaker={speakerData}
               newBookingData={newBookingData}
