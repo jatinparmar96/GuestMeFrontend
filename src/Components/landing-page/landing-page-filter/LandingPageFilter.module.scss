@@ -9,7 +9,7 @@
   align-items: center;
   @media screen and (min-width: $bp-tablet) {
     background-color: $white;
-    padding: 0.1rem 0.5rem;
+    padding: 0.4rem 1rem;
     border-radius: 4px;
   }
   .filterForm {
@@ -56,6 +56,8 @@
         background-color: $white;
         top: 100%;
         left: 0;
+        max-height: 10rem;
+        overflow-y: auto;
         display: block;
         min-width: 150px;
         border-radius: 4px;
