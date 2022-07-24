@@ -149,6 +149,9 @@
           font-size: 1rem;
           font-weight: 400;
           color: $black;
+          &:focus {
+              outline-color: $mint-blue;
+            }
         }
       }
 
@@ -253,19 +256,7 @@
           }
       }
     }
-    .certifications{
 
-            width: 100%;
-            height: 2.50rem;
-            padding: 0.5rem;
-            border: 1px solid transparent;
-            border-radius: 0.25rem;
-            font-size: 1rem;
-            font-weight: 400;
-            color: $black;
-
-
-    }
 
     textarea.blockDisplay{
       height: 9.25rem;
@@ -291,72 +282,7 @@
 
 
     }
-    .alignBtn{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin-bottom: 3.13rem;
 
-      button{
-        background-color: $mint-blue;
-        color: $white;
-        font-size: 1rem;
-        font-weight: 600;
-        font-family: $barlow-condensed-font;
-        width: 8.13rem;
-        height: 2.50rem;
-        border-radius: 0.25rem;
-        border: 0.1px solid $mint-blue;
-      }
-
-      .radio{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        margin-bottom: 0.5rem;
-        legend{
-          margin-bottom: 0.94rem;
-        }
-
-        label{
-          font-weight: 500;
-          margin-left: 0.63rem;
-          margin-right: 4.38rem;
-          line-height: 1rem;
-        }
-
-        input[type='radio' i] {
-            visibility: hidden;
-            width: unset;
-            display: inline-block;
-
-          }
-
-          input[type='radio' i]:checked:after {
-            background-color: rgba($mint-blue, 0);
-            border: 0.1px solid $black;
-            border-radius: 50%;
-
-
-
-          }
-
-          input[type='radio' i]:after {
-            visibility: visible;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            content: '\2713';
-            font-size: 0.55rem;
-            width: 0.8rem;
-            height: 0.8rem;
-            border-radius: 50%;
-            border: 0.1px solid $mint-blue;
-            color: $white;
-            background-color: rgba($mint-blue, 1);
-          }
-      }
-    }
 
     .checkboxes{
 
@@ -410,19 +336,6 @@
           }
       }
     }
-    .certifications{
-
-            width: 100%;
-            height: 2.50rem;
-            padding: 0.5rem;
-            border: 1px solid transparent;
-            border-radius: 0.25rem;
-            font-size: 1rem;
-            font-weight: 400;
-            color: $black;
-
-
-    }
 
     textarea.blockDisplay{
       height: 9.25rem;
@@ -472,11 +385,10 @@
 @media screen and (min-width: $bp-large) {
 
   .speakerUpdateProfile{
-    max-width: unset;
+    max-width: 37.60rem;
     display: grid;
     grid-template-columns: 50% 50%;
     width: 100%;
-    margin-left: 4.85rem;
     h3{
       margin-top: 0;
       line-height: 1.5rem;
@@ -492,6 +404,7 @@
       margin: 0;
       font-size: 0.7rem;
       align-self: start;
+      justify-self: end;
 
     }
 
@@ -507,7 +420,6 @@
             }
           .blockDisplay {
             display: block;
-            max-width: 11rem;
             height: 2rem;
             padding: 0.6rem;
             border-radius: 0.20rem;
@@ -581,15 +493,68 @@
                       width: 100%;
 
                     }
-
-
-
                   }
+              }
+            }
+        .checkboxes {
 
+          fieldset {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 0.8rem 0;
+
+            .area,
+            .language {
+              margin-bottom: 0.94rem;
+              display: flex;
+              align-content: center;
+
+              label {
+                font-size: 0.8rem;
+                margin-left: 0.6rem;
+                margin-right: 1.5rem;
+              }
+
+              input[type='checkbox' i] {
+                visibility: hidden;
+                width: unset;
+                display: inline-block;
 
               }
 
+              input[type='checkbox' i]:checked:after {
+                background-color: rgba($mint-blue, 0);
+                border: 0.1px solid $black;
+                border-radius: 0.25rem;
+              }
+
+              input[type='checkbox' i]:after {
+                visibility: visible;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                content: '\2713';
+                font-size: 0.55rem;
+                width: 0.8rem;
+                height: 0.8rem;
+                border-radius: 0.25rem;
+                border: 0.1px solid $mint-blue;
+                color: $white;
+                background-color: rgba($mint-blue, 1);
+              }
             }
+          }
+        }
+        .alignBtn {
+          margin-bottom: 8rem;
+
+          button {
+            font-size: 0.9rem;
+            width: 8.70rem;
+            border-radius: 0.2rem;
+          }
+        }
 
     }
 

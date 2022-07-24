@@ -390,7 +390,7 @@ const SpeakerUpdateProfile = () => {
             Certifications
           </label>
           <input
-            className={style.blockDisplay}
+            className={`${style.blockDisplay} ${style.certifications}`}
             type="text"
             name="certifications"
           />
