@@ -1,8 +1,8 @@
 @use '../../common/variables.scss' as *;
-$speaker-highlight: #5fa1d0;
+$speaker-highlight: $light-orange;
 $speaker-highlight-text: white;
 
-$organization-highlight: #f0a274;
+$organization-highlight: $light-orange;
 $organization-highlight-text: white;
 
 $weekend-color: #f28080;
@@ -28,6 +28,11 @@ $calendar-map: (
       color: $weekend-color;
     }
 
+  .react-calendar__tile--now {
+    background-color: $grey !important;
+    color: $white !important;
+  }
+
     .highlight {
       background-color: map-get($value, "highlight");
       color: map-get($value, "highlight-text");
@@ -44,10 +49,9 @@ $calendar-map: (
   }
 }
 
-.organization-calendar {
+.organization-calendar, .speaker-calendar {
   display: inline-block;
   width: 100%;
-  // padding-top: 100%;
   margin: 0;
   font-family: $barlow-condensed-font;
   text-decoration: none;
@@ -62,6 +66,7 @@ $calendar-map: (
 
     .react-calendar__tile:disabled{
       background-color: $light-green;
+      color:$grey;
 
     }
 
