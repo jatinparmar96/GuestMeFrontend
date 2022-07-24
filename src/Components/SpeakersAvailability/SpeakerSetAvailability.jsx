@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import {
   getSpeakerAvailability,
-  updateSpeakerProfile,
+  updateSpeakerProfile
 } from '../../Api/Speaker.service';
 import useAuth from '../../auth/UseAuth';
 import tokenAtom from '../../Recoil/Authentication/atom';
@@ -31,20 +31,26 @@ const SetSpeakerAvailability = () => {
   };
   return (
     <>
-      <h3>Availability</h3>
-      <div className={style.reference}>
-        <div className={style.available}></div> <span>Available</span>
-        <div className={style.today}></div>
-        <span>Today</span>
+      <div className={style.setAvailability}>
+        <h3>Availability</h3>
+        <p className={style.warning}>Information here will be published</p>
+        <p className={style.instructions}>Set your availability by clicking the date in the calendar below.</p>
+        <div className={style.reference}>
+          <div className={style.available}></div> <span>Available</span>
+          <div className={style.today}></div>
+          <span>Today</span>
+        </div>
+        <div className={style.calendar}>
+        <Controller
+          name="availability"
+          control={control}
+          render={({ field: { name, onChange, value } }) => (
+            <SpeakerCalendar {...{ name, onChange, value }}></SpeakerCalendar>
+          )}
+          />
+        </div>
+        <button className={style.button} onClick={handleSubmit}>Update</button>
       </div>
-      <Controller
-        name="availability"
-        control={control}
-        render={({ field: { name, onChange, value } }) => (
-          <SpeakerCalendar {...{ name, onChange, value }}></SpeakerCalendar>
-        )}
-      />
-      <button onClick={handleSubmit}>Update Availability</button>
     </>
   );
 };
