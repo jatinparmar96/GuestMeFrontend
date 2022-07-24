@@ -5,7 +5,7 @@ import MultiSelect from '../form/multi-select/MultiSelect';
 import style from './SpeakerUpdateProfile.module.scss';
 
 const SpeakerUpdateProfile = () => {
-  const { register, control, handleSubmit, getValues, reset } = useForm({
+  const { register, control, handleSubmit, getValues, reset, formState:{isDirty, isValid}} = useForm({
     defaultValues: {},
   });
 
@@ -39,6 +39,7 @@ const SpeakerUpdateProfile = () => {
         <form
           onSubmit={handleSubmit((data) => {
             updateSpeakerProfile(data);
+            // reset({keepDirty: true});
           })}
         >
           <div className={style.topGrid}>
@@ -94,8 +95,8 @@ const SpeakerUpdateProfile = () => {
                 className={`${style.blockDisplay} ${style.oneColumn}`}
                 type="text"
                 placeholder="Tagline Here"
-                name="about"
-                {...register('about')}
+                name="tagline"
+                {...register('tagline')}
                 />
               </div>
 
@@ -117,13 +118,15 @@ const SpeakerUpdateProfile = () => {
                   <div className={style.deliveryMethod}>
                   <input
                     type="checkbox"
-                    name="isInPerson"
+                      name="isInPerson"
+                      value={true}
                     {...register('conditions.isInPerson')}
                   />
                   <label> In Person</label>
                   <input
                     type="checkbox"
-                    name="isOnline"
+                      name="isOnline"
+                    value={true}
                     {...register('conditions.isOnline')}
                   />
                     <label> Online</label>
@@ -393,6 +396,7 @@ const SpeakerUpdateProfile = () => {
             className={`${style.blockDisplay} ${style.certifications}`}
             type="text"
             name="certifications"
+            {...register('certifications')}
           />
           <label className={style.boldFont} >
             Youtube video
@@ -421,7 +425,7 @@ const SpeakerUpdateProfile = () => {
         /> */}
 
           <div className={style.alignBtn}>
-            <button type="submit">Save</button>
+            <button disabled={!isDirty || !isValid} type="submit">Save</button>
           </div>
         </form>
       </div>
