@@ -63,19 +63,19 @@ const SpeakerUpdateProfile = () => {
             </div>
             <div className={style.topRight}>
               <div className={style.twoColumn}>
-                <div>
+                <div className={style.first}>
                   <label className={style.boldFont}>First name</label>
                   <input
                     className={style.blockDisplay}
                     type="text"
-                    placeholder="Firstname"
+                    placeholder="First name"
                     name="firstName"
                     {...register('firstName', {
                       required: 'This is a required field',
                     })}
                   />
                 </div>
-                <div>
+                <div className={style.last}>
                   <label className={style.boldFont}>Last name</label>
                   <input
                     className={style.blockDisplay}
@@ -88,7 +88,7 @@ const SpeakerUpdateProfile = () => {
                   />
                 </div>
               </div>
-
+              <div className={style.double}>
               <label className={style.boldFont}>Job Title / Company Name</label>
               <input
                 className={`${style.blockDisplay} ${style.oneColumn}`}
@@ -96,7 +96,8 @@ const SpeakerUpdateProfile = () => {
                 placeholder="Tagline Here"
                 name="about"
                 {...register('about')}
-              />
+                />
+              </div>
 
               <div className={style.twoColumn}>
                 <div>
@@ -111,7 +112,7 @@ const SpeakerUpdateProfile = () => {
                   />
                 </div>
 
-                <fieldset>
+                <fieldset className={style.dMethod}>
                   <legend className={style.boldFont}>Delivery Method</legend>
                   <div className={style.deliveryMethod}>
                   <input
