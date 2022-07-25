@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { getSpeaker, updateSpeakerProfile } from '../../Api/Speaker.service';
 import MultiSelect from '../form/multi-select/MultiSelect';
 import style from './SpeakerUpdateProfile.module.scss';
@@ -46,6 +47,10 @@ const SpeakerUpdateProfile = () => {
         <form
           onSubmit={handleSubmit(async (data) => {
             const updatedData = await updateSpeakerProfile(data);
+            toast('Profile updated successfully', {
+              type: 'success',
+              autoClose: 2000,
+            });
             reset(updatedData.data);
           })}
         >

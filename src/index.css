@@ -12,7 +12,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 #root {
@@ -27,8 +28,22 @@ html {
   box-sizing: border-box;
 }
 
+:root {
+  --mint-blue: #35afac;
+  --black: #3a3f3f;
+  --grey: #b7bfbf;
+  --light-beige: #f9f8f5;
+  --light-green: #ecf2f2;
+  --fiery-rose: #f28080;
+  --light-orange: #f0a274;
+  --white: #fff;
+  --toastify-color-success: var(--white);
+  --toastify-color-light: var(--fiery-rose);
+  --toastify-color-dark: var(--fiery-rose);
 
-
+  --toastify-text-color-light: var(--white);
+  --toastify-text-color-dark: var(--white);
+}
 
 html {
   font-size: 16px;

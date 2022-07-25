@@ -28,6 +28,7 @@ import HowItWorks from './Pages/howItWorks/HowItWorks';
 
 import './App.module.scss';
 
+import 'react-toastify/dist/ReactToastify.min.css';
 import LandingPage from './Pages/landing/LandingPage';
 import tokenAtom from './Recoil/Authentication/atom';
 
@@ -40,8 +41,9 @@ import {
   LineElement,
   PointElement,
   Title,
-  Tooltip
+  Tooltip,
 } from 'chart.js';
+import { ToastContainer } from 'react-toastify';
 
 ChartJS.register(
   CategoryScale,
@@ -122,6 +124,7 @@ const App = () => {
           </main>
           <Footer></Footer>
         </div>
+        <ToastContainer />
       </HelmetProvider>
     </>
   );
