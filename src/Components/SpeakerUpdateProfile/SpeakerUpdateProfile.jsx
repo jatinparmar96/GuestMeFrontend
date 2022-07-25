@@ -11,6 +11,7 @@ const SpeakerUpdateProfile = () => {
     handleSubmit,
     getValues,
     reset,
+    watch,
     formState: { isDirty, isValid },
   } = useForm({
     defaultValues: {},
@@ -46,14 +47,15 @@ const SpeakerUpdateProfile = () => {
         <form
           onSubmit={handleSubmit(async (data) => {
             const updatedData = await updateSpeakerProfile(data);
-            reset(updatedData);
+            console.log(updatedData);
+            reset(updatedData.data);
           })}
         >
           <div className={style.topGrid}>
             <div className={style.topLeft}>
               <img
                 className={style.profilePhoto}
-                src={getValues('profilePicture')}
+                src={watch('profilePicture')}
                 alt="Profile"
               />
               <label className={style.imageLabel} htmlFor="profilePicture">
