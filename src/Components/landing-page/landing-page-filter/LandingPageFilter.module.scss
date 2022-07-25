@@ -9,7 +9,7 @@
   align-items: center;
   @media screen and (min-width: $bp-tablet) {
     background-color: $white;
-    padding: 0.1rem 0.5rem;
+    padding: 0.4rem 1rem;
     border-radius: 4px;
   }
   .filterForm {
@@ -48,6 +48,13 @@
       .filterValues {
         display: none;
       }
+      .caretIcon {
+        transition: all 0.2s ease-in-out;
+        transform: rotate(0deg);
+      }
+      &:hover .caretIcon {
+        transform: rotate(180deg);
+      }
       &:hover .filterValues {
         font-family: $barlow-font;
         font-weight: 500;
@@ -56,6 +63,8 @@
         background-color: $white;
         top: 100%;
         left: 0;
+        max-height: 10rem;
+        overflow-y: auto;
         display: block;
         min-width: 150px;
         border-radius: 4px;

@@ -1,4 +1,4 @@
-@use "../../common/variables" as *;
+@use '../../common/variables' as *;
 
 .styleContainer {
   width: 100%;
@@ -60,4 +60,5 @@
 .mainContainer {
   flex-grow: 1;
   flex-basis: 600px;
+  position: relative;
 }

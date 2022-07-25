@@ -24,5 +24,9 @@
 
 .unselectedRoleTab {
   color: $mint-blue;
+
   @include linkUnderline;
+
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
 }
