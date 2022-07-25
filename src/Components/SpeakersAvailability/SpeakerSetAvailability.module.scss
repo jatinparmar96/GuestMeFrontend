@@ -1,19 +1,150 @@
 @use '../../common/variables.scss' as *;
-.reference {
-  display: flex;
-  flex-direction: row;
 
-  div {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 0.1rem;
+.setAvailability{
+  max-width: 450px;
+  h3{
+    font-size: 1.13rem;
+    color: $black;
+    font-weight: 700;
+    margin-top: 1.38rem;
+    margin-left: 1.25rem;
   }
+  .warning {
+    color: $fiery-rose;
+    font-size: 0.88rem;
+    line-height: 1.88rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-left: 1.31rem;
+  }
+  .instructions{
+    font-size: 1rem;
+    color: $black;
+    line-height: 1.5rem;
+    font-weight: 400;
+    margin-left: 1.31rem;
+    margin-top: 1.69rem;
+    margin-right:  1.31rem;
+  }
+  .reference {
+      display: flex;
+      flex-direction: row;
+      margin-left: 1.31rem;
+      margin-top: 1.69rem;
+      margin-bottom: 0.44rem;
+
+      div {
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 0.13rem;
+        margin-right: 0.69rem;
+      }
+
+      span{
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      .available {
+        background-color: $light-orange;
+      }
+
+      .today {
+        background-color: $grey;
+        margin-left: 1.50rem;
+      }
+    }
+
+    .calendar {
+      margin: 0.44rem 1.14rem 1.25rem 1.14rem;
+      background-color: $white;
+    }
+    .button {
+      background-color: $white;
+      height: 2.5rem;
+      margin: 1rem 1.14rem 3.13rem 1.14rem;
+      width: calc(100% - 2.28rem);
+      background-color: $mint-blue;
+      color: $white;
+      text-align: center;
+      letter-spacing: 0.05em;
+      border-radius: 0.2rem;
+      border: 2px solid $mint-blue;
+      box-sizing: border-box;
+      font-family: $barlow-condensed-font;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+
+
 }
 
-.available {
-  background-color: $light-orange;
-}
+@media screen and (min-width: $bp-large) {
+  .setAvailability {
+      max-width: 37.6rem;
+      display: grid;
+      grid-template-columns: 50% 50%;
 
-.today {
-  background-color: $grey;
+      h3 {
+        margin: 0;
+        font-size: 1.20rem;
+        grid-column: 1;
+        line-height: 1.5rem;
+      }
+
+      .warning {
+        font-size: 0.7rem;
+        line-height: 1.5rem;
+        grid-column: 2;
+        justify-self: end;
+        margin: 0;
+      }
+
+      .instructions {
+        grid-column: 1/3;
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+        margin:0.9rem 0 0 0;
+      }
+
+      .reference {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 0;
+
+        div {
+          width: 1rem;
+          height: 1rem;
+          border-radius: 0.1rem;
+          margin-right: 0.69rem;
+        }
+
+        span {
+          font-size: 0.8rem;
+        }
+
+      }
+
+      .calendar {
+        grid-column: 1/3;
+        margin: 0.44rem 0 1.25rem 0;
+      }
+
+      .button {
+        height: 2.5rem;
+        margin: 0;
+        width: 8.70rem;
+        border-radius: 0.2rem;
+        font-size: 0.9rem;
+        justify-self: center;
+        grid-column: 1/3;
+        margin: 2.5rem 0 5rem 0;
+
+      }
+
+
+
+    }
+
 }
