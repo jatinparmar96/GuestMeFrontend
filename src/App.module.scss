@@ -39,7 +39,11 @@ h6 {
   font-family: $barlow-condensed-font;
 }
 
-button{
+button {
   font-family: $barlow-condensed-font;
   font-weight: 600;
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
 }

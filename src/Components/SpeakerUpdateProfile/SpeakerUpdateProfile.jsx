@@ -5,7 +5,14 @@ import MultiSelect from '../form/multi-select/MultiSelect';
 import style from './SpeakerUpdateProfile.module.scss';
 
 const SpeakerUpdateProfile = () => {
-  const { register, control, handleSubmit, getValues, reset, formState:{isDirty, isValid}} = useForm({
+  const {
+    register,
+    control,
+    handleSubmit,
+    getValues,
+    reset,
+    formState: { isDirty, isValid },
+  } = useForm({
     defaultValues: {},
   });
 
@@ -37,9 +44,9 @@ const SpeakerUpdateProfile = () => {
         <h3>My Info</h3>
         <p>Information here will be published</p>
         <form
-          onSubmit={handleSubmit((data) => {
-            updateSpeakerProfile(data);
-            // reset({keepDirty: true});
+          onSubmit={handleSubmit(async (data) => {
+            const updatedData = await updateSpeakerProfile(data);
+            reset(updatedData);
           })}
         >
           <div className={style.topGrid}>
@@ -90,13 +97,15 @@ const SpeakerUpdateProfile = () => {
                 </div>
               </div>
               <div className={style.double}>
-              <label className={style.boldFont}>Job Title / Company Name</label>
-              <input
-                className={`${style.blockDisplay} ${style.oneColumn}`}
-                type="text"
-                placeholder="Tagline Here"
-                name="tagline"
-                {...register('tagline')}
+                <label className={style.boldFont}>
+                  Job Title / Company Name
+                </label>
+                <input
+                  className={`${style.blockDisplay} ${style.oneColumn}`}
+                  type="text"
+                  placeholder="Tagline Here"
+                  name="tagline"
+                  {...register('tagline')}
                 />
               </div>
 
@@ -116,19 +125,19 @@ const SpeakerUpdateProfile = () => {
                 <fieldset className={style.dMethod}>
                   <legend className={style.boldFont}>Delivery Method</legend>
                   <div className={style.deliveryMethod}>
-                  <input
-                    type="checkbox"
+                    <input
+                      type="checkbox"
                       name="isInPerson"
                       value={true}
-                    {...register('conditions.isInPerson')}
-                  />
-                  <label> In Person</label>
-                  <input
-                    type="checkbox"
+                      {...register('conditions.isInPerson')}
+                    />
+                    <label> In Person</label>
+                    <input
+                      type="checkbox"
                       name="isOnline"
-                    value={true}
-                    {...register('conditions.isOnline')}
-                  />
+                      value={true}
+                      {...register('conditions.isOnline')}
+                    />
                     <label> Online</label>
                   </div>
                 </fieldset>
@@ -137,16 +146,17 @@ const SpeakerUpdateProfile = () => {
               <div className={style.twoColumn}>
                 <div>
                   <label className={style.boldFont}>Price per hour</label>
-                  <span>$ &nbsp;
-                  <input
-                    type="number"
-                    name="price"
-                    {...register('conditions.price', {
-                      required: 'This is a required field',
-                    })}
+                  <span>
+                    $ &nbsp;
+                    <input
+                      type="number"
+                      name="price"
+                      {...register('conditions.price', {
+                        required: 'This is a required field',
+                      })}
                     />
                     &nbsp; / hour
-                    </span>
+                  </span>
                 </div>
                 {/* <fieldset className={style.radio}>
                   <legend className={style.boldFont}>Can Volunteer?</legend>
@@ -172,208 +182,207 @@ const SpeakerUpdateProfile = () => {
             </div>
           </div>
           <div className={style.checkboxes}>
-          <fieldset>
-            <legend className={style.boldFont}>Area of expertise</legend>
-            <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Law"
-              {...register('conditions.areas')}
-            />
-            <label> Law</label>
-            </div>
-            <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Finance"
-              {...register('conditions.areas')}
-            />
+            <fieldset>
+              <legend className={style.boldFont}>Area of expertise</legend>
+              <div className={style.area}>
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Law"
+                  {...register('conditions.areas')}
+                />
+                <label> Law</label>
+              </div>
+              <div className={style.area}>
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Finance"
+                  {...register('conditions.areas')}
+                />
                 <label> Finance</label>
               </div>
               <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Arts / Design"
-              {...register('conditions.areas')}
-            />
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Arts / Design"
+                  {...register('conditions.areas')}
+                />
                 <label> Arts / Design</label>
               </div>
               <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Science"
-              {...register('conditions.areas')}
-            />
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Science"
+                  {...register('conditions.areas')}
+                />
                 <label> Science</label>
               </div>
               <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Health & Well-being"
-              {...register('conditions.areas')}
-            />
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Health & Well-being"
+                  {...register('conditions.areas')}
+                />
                 <label> Health & Well-being</label>
               </div>
               <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Leadership"
-              {...register('conditions.areas')}
-            />
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Leadership"
+                  {...register('conditions.areas')}
+                />
                 <label> Leadership</label>
               </div>
               <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Education"
-              {...register('conditions.areas')}
-            />
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Education"
+                  {...register('conditions.areas')}
+                />
                 <label> Education</label>
               </div>
               <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Technology"
-              {...register('conditions.areas')}
-            />
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Technology"
+                  {...register('conditions.areas')}
+                />
                 <label> Technology</label>
               </div>
               <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Environment"
-              {...register('conditions.areas')}
-            />
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Environment"
+                  {...register('conditions.areas')}
+                />
                 <label> Environment</label>
               </div>
               <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Sports"
-              {...register('conditions.areas')}
-            />
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Sports"
+                  {...register('conditions.areas')}
+                />
                 <label> Sports</label>
               </div>
               <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Business"
-              {...register('conditions.areas')}
-            />
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Business"
+                  {...register('conditions.areas')}
+                />
                 <label> Business</label>
               </div>
               <div className={style.area}>
-            <input
-              type="checkbox"
-              name="areas"
-              value="Others"
-              {...register('conditions.areas')}
-            />
+                <input
+                  type="checkbox"
+                  name="areas"
+                  value="Others"
+                  {...register('conditions.areas')}
+                />
                 <label> Others</label>
               </div>
-          </fieldset>
+            </fieldset>
             <fieldset>
-
-            <legend className={style.boldFont}>Language</legend>
-            <div className={style.language}>
-              <input
-              type="checkbox"
-              name="language"
-              value="English"
-              {...register('conditions.language')}
-            />
+              <legend className={style.boldFont}>Language</legend>
+              <div className={style.language}>
+                <input
+                  type="checkbox"
+                  name="language"
+                  value="English"
+                  {...register('conditions.language')}
+                />
                 <label> English</label>
               </div>
               <div className={style.language}>
-            <input
-              type="checkbox"
-              name="language"
-              value="French"
-              {...register('conditions.language')}
-            />
+                <input
+                  type="checkbox"
+                  name="language"
+                  value="French"
+                  {...register('conditions.language')}
+                />
                 <label> French</label>
               </div>
               <div className={style.language}>
-            <input
-              type="checkbox"
-              name="language"
-              value="Spanish"
-              {...register('conditions.language')}
-            />
+                <input
+                  type="checkbox"
+                  name="language"
+                  value="Spanish"
+                  {...register('conditions.language')}
+                />
                 <label> Spanish</label>
               </div>
               <div className={style.language}>
-            <input
-              type="checkbox"
-              name="language"
-              value="Mandarin"
-              {...register('conditions.language')}
-            />
+                <input
+                  type="checkbox"
+                  name="language"
+                  value="Mandarin"
+                  {...register('conditions.language')}
+                />
                 <label> Mandarin</label>
               </div>
               <div className={style.language}>
-            <input
-              type="checkbox"
-              name="language"
-              value="Hindi"
-              {...register('conditions.language')}
-            />
+                <input
+                  type="checkbox"
+                  name="language"
+                  value="Hindi"
+                  {...register('conditions.language')}
+                />
                 <label> Hindi</label>
               </div>
               <div className={style.language}>
-            <input
-              type="checkbox"
-              name="language"
-              value="Arabic"
-              {...register('conditions.language')}
-            />
+                <input
+                  type="checkbox"
+                  name="language"
+                  value="Arabic"
+                  {...register('conditions.language')}
+                />
                 <label> Arabic</label>
               </div>
               <div className={style.language}>
-            <input
-              type="checkbox"
-              name="language"
-              value="Portuguese"
-              {...register('conditions.language')}
-            />
+                <input
+                  type="checkbox"
+                  name="language"
+                  value="Portuguese"
+                  {...register('conditions.language')}
+                />
                 <label> Portuguese</label>
               </div>
               <div className={style.language}>
-            <input
-              type="checkbox"
-              name="language"
-              value="Russian"
-              {...register('conditions.language')}
-            />
+                <input
+                  type="checkbox"
+                  name="language"
+                  value="Russian"
+                  {...register('conditions.language')}
+                />
                 <label> Russian</label>
               </div>
               <div className={style.language}>
-            <input
-              type="checkbox"
-              name="language"
-              value="Japanese"
-              {...register('conditions.language')}
-            />
+                <input
+                  type="checkbox"
+                  name="language"
+                  value="Japanese"
+                  {...register('conditions.language')}
+                />
                 <label> Japanese</label>
               </div>
               <div className={style.language}>
-            <input
-              type="checkbox"
-              name="language"
-              value="Others"
-              {...register('conditions.language')}
-            />
+                <input
+                  type="checkbox"
+                  name="language"
+                  value="Others"
+                  {...register('conditions.language')}
+                />
                 <label> Others</label>
               </div>
             </fieldset>
@@ -384,33 +393,32 @@ const SpeakerUpdateProfile = () => {
             control={control}
             render={({ field: { onChange, value } }) => {
               return (
-                <MultiSelect className={style.skills} label="Skills" onChange={onChange} value={value} />
+                <MultiSelect
+                  className={style.skills}
+                  label="Skills"
+                  onChange={onChange}
+                  value={value}
+                />
               );
             }}
           />
 
-          <label className={style.boldFont}>
-            Certifications
-          </label>
+          <label className={style.boldFont}>Certifications</label>
           <input
             className={`${style.blockDisplay} ${style.certifications}`}
             type="text"
             name="certifications"
             {...register('certifications')}
           />
-          <label className={style.boldFont} >
-            Youtube video
-          </label>
+          <label className={style.boldFont}>Youtube video</label>
           <input
             type="text"
             name="videos"
             className={style.blockDisplay}
-            {...register('videos')} />
+            {...register('videos')}
+          />
 
-
-          <label className={style.boldFont}>
-            About me
-          </label>
+          <label className={style.boldFont}>About me</label>
           <textarea
             className={style.blockDisplay}
             name="about"
@@ -425,7 +433,9 @@ const SpeakerUpdateProfile = () => {
         /> */}
 
           <div className={style.alignBtn}>
-            <button disabled={!isDirty || !isValid} type="submit">Save</button>
+            <button disabled={!(isDirty && isValid)} type="submit">
+              Save
+            </button>
           </div>
         </form>
       </div>
