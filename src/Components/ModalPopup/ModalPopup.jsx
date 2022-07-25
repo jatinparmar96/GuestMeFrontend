@@ -15,6 +15,7 @@ const AlertDialog = (props) => {
   const handleClose = (action) => {
     if (action) props.bookingStatus(props.buttonAction, props.booking._id);
     setOpen(false);
+    props.setPopupOpen(false);
   };
 
   useEffect(() => {
