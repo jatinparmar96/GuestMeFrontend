@@ -1,103 +1,114 @@
 @use '../../common/variables' as *;
-.bookingInfo {
-  margin: 20px;
+.waitingInfo,
+.upcoming,
+.history {
   h2 {
     color: #3a3f3f;
     letter-spacing: 0.05em;
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 30px;
-    height: 30px;
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    height: 1.875rem;
   }
 
   h3 {
-    font-size: 16px;
+    font-size: 1rem;
     font-style: normal;
-    margin-bottom: 9px;
+    margin-bottom: 1rem;
     margin-top: 0;
 
-    height: 19px;
+    height: 1.188rem;
   }
   ul {
     padding-left: 0;
     margin-top: 0;
     li {
       list-style-type: none;
-
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
       .eachCard {
         background: white;
-        padding: 20px;
+        padding: 0.5rem 1.25rem;
+        // height: 17rem;
 
         .mintBlueText {
           color: #35afac;
-          font-size: 16px;
+          font-size: 1rem;
           font-weight: 600;
         }
         .date {
           font-style: normal;
           font-weight: 600;
-          font-size: 16px;
+          font-size: 1rem;
           letter-spacing: 0.05em;
           color: #3a3f3f;
-          margin-top: 9px;
         }
-        .centreColumnTopRow {
-          margin-top: 19px;
-          margin-bottom: 10px;
-        }
+
         .sentAt {
           font-style: normal;
           font-weight: 500;
-          font-size: 11px;
-          line-height: 11px;
+          font-size: 0.75rem;
+          line-height: 0.688rem;
           color: #b7bfbf;
-          align-self: end;
+          align-self: center;
         }
+
         .organizationName {
           font-style: normal;
           font-weight: 600;
-          font-size: 18px;
-          line-height: 22px;
+          font-size: 1.125rem;
+          line-height: 1.375;
           letter-spacing: 0.05em;
           text-decoration-line: underline;
           color: #3a3f3f;
           span {
-            margin-right: 5px;
+            margin-right: 0.313rem;
           }
         }
         .approve {
-          width: 60px;
-          height: 39px;
+          height: 2.438rem;
         }
         .cancel {
-          height: 39px;
+          height: 2.438rem;
         }
         .decline {
-          width: 54px;
-          height: 39px;
+          height: 2.438rem;
         }
         .waitingForReview {
           font-style: normal;
           font-weight: 700;
-          font-size: 18px;
-          line-height: 22px;
+          font-size: 1.125rem;
+          line-height: 1.375rem;
           text-align: center;
           letter-spacing: 0.05em;
           color: #b7bfbf !important;
+          flex-grow: 1;
         }
       }
     }
   }
   .verticalGrid {
+    display: flex;
+    flex-flow: column nowrap;
+
+    // height: 15rem;
     .forBorderDiv {
       border-bottom: solid 1px #b7bfbf;
-      padding-bottom: 19px;
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      gap: 0.25rem;
+      padding: 1rem 0;
     }
     .forBorderDivSecondSection {
       border-bottom: solid 1px #b7bfbf;
-      padding-bottom: 10px;
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      gap: 0.25rem;
+      padding: 1rem 0;
     }
   }
 
@@ -106,8 +117,15 @@
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    margin-top: 26px;
-    margin-bottom: 16px;
+    gap: 1rem;
+    flex-grow: 1;
+    padding: 1rem 0;
+  }
+
+  .cancelAction {
+    align-self: center;
+    flex-grow: 1;
+    padding: 1rem 0;
   }
 
   .centreColumnTopRow {
@@ -119,13 +137,12 @@
     p {
       font-style: normal;
       font-weight: 700;
-      font-size: 18px;
-      line-height: 22px;
+      font-size: 1.125rem;
+      line-height: 1.375rem;
       text-align: center;
       letter-spacing: 0.05em;
       color: #b7bfbf !important;
-
-      margin: 16px;
+      padding: 1rem 0;
     }
   }
   @media screen and (max-width: $bp-tablet) {
@@ -134,60 +151,75 @@
     }
   }
   @media screen and (min-width: $bp-tablet) {
+    .cancelAction {
+      padding: 0 1.75rem !important;
+    }
     .verticalGrid {
       display: grid;
       grid-template-columns: 1fr 3fr 1fr;
+      height: unset !important;
       .forBorderDiv {
         border-bottom: none;
-        padding-bottom: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.5rem;
+        justify-content: center;
       }
       .forBorderDivSecondSection {
         border-bottom: none;
         border-left: solid 1px #b7bfbf;
         border-right: solid 1px #b7bfbf;
-        padding-right: 20px;
-        padding-left: 20px;
+        padding-right: 0.75rem !important;
+        padding-left: 0.75rem !important;
         padding-bottom: 0;
+        padding-top: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.5rem;
+        justify-content: center;
       }
     }
-    margin-left: 97px;
-    margin-right: 150px;
-    h2 {
-      margin-top: 51px;
-      margin-bottom: 49px;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 30px;
-      width: 78px;
-      height: 30px;
+
+    .cancelAction {
+      .cancel {
+        padding-top: 0;
+      }
     }
+
     h3 {
-      width: 66px;
-      height: 22px;
+      width: 4.125rem;
+      height: 1.375rem;
       font-weight: 700;
-      font-size: 18px;
-      line-height: 22px;
-      margin-bottom: 14px;
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+      margin-bottom: 0.875rem;
     }
     li {
-      width: 753px;
+      // width: 47.063rem;
+      width: 100%;
+      // height: 6.25rem;
 
       .eachCard {
-        padding: 10px 20px;
-        margin-bottom: 20px !important;
+        padding: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
+
+        .organizationName {
+          font-size: 0.85rem !important;
+        }
+        .callToActionColumn {
+          padding: 0 1rem;
+        }
         .mintBlueText {
-          padding-top: 15px;
           font-style: normal;
           font-weight: 600;
-          font-size: 16px;
-          line-height: 19px;
-          margin-bottom: 9px;
+          font-size: 0.75rem !important;
+          line-height: 1.188rem;
         }
         .date {
           font-weight: 600;
-          font-size: 16px;
-          line-height: 19px;
+          font-size: 0.75rem !important;
+          line-height: 1.188rem;
         }
         .centreColumnTopRow {
           margin-top: unset !important;
@@ -195,45 +227,36 @@
         }
         .sentAt {
           font-weight: 600;
-          font-size: 14px;
-          line-height: 17px;
-          align-self: start !important;
-          padding-top: 15px;
+          font-size: 0.875rem;
+          line-height: 1.063rem;
+          align-self: center !important;
+          // padding-top: 0.938rem;
         }
         .organizationName {
           font-weight: 600;
-          font-size: 18px;
-          line-height: 22px;
+          font-size: 1.125rem;
+          line-height: 1.375rem;
           span {
-            margin-right: 4px !important;
+            margin-right: 0.25rem !important;
           }
         }
-        .approve {
-          margin-left: 33px !important;
-          margin-right: 38px !important;
-        }
-        .callToActionColumn {
-          margin-top: 15px;
-        }
+        .approve,
         .decline {
-          margin-right: 14px !important;
+          align-self: flex-end;
         }
       }
     }
     .upcoming {
-      margin-top: 62px !important;
+      margin-top: 3.875rem !important;
     }
 
     .history {
-      margin-top: 62px !important;
+      margin-top: 3.875rem !important;
       li {
         padding-right: 0 !important;
       }
     }
-    .cancel {
-      margin-left: 57px;
-      margin-right: 38px;
-    }
+
     .waitingForReview {
       display: flex;
       align-items: center;
@@ -241,14 +264,15 @@
       p {
         font-style: normal;
         font-weight: 700;
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 0.8rem;
+        line-height: 1.375rem;
         text-align: center;
         letter-spacing: 0.05em;
         color: #b7bfbf !important;
-        width: 135px;
-        height: 22px;
-        margin: 0 42px;
+        width: 8.438rem;
+        height: 1.375rem;
+        margin: 0 0.15rem;
+        align-self: start;
       }
     }
     .organizationData {
@@ -256,7 +280,7 @@
     }
     .organizationDataDesktop {
       background: white;
-      padding: 0 20px;
+      padding: 0 1.25rem;
     }
   }
 }
