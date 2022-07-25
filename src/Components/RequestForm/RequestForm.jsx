@@ -1,6 +1,7 @@
 import { Controller, useForm } from 'react-hook-form';
 import { postBooking } from '../../Api/Booking.service';
 import OrganizationCalendar from '../calendar/organization/organization-calendar';
+import { useNavigate } from 'react-router-dom';
 import style from './RequestForm.module.scss';
 const { times } = require('./Times');
 
@@ -11,9 +12,14 @@ const RequestForm = (props) => {
   const organization = JSON.parse(localStorage.getItem('user'));
 
   const { control, register, watch, getValues } = useForm();
+  const navigate = useNavigate();
 
   const handleSendRequest = (event) => {
     event.preventDefault();
+    if (organization === null) {
+      navigate('/login');
+      return;
+    }
 
     const formData = {
       ...getValues(),

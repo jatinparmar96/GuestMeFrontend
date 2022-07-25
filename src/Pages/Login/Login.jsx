@@ -49,7 +49,8 @@ export const Login = () => {
                     type="radio"
                     name="role"
                     id="role-speaker"
-                    checked={isSpeaker}
+                    defaultChecked={isSpeaker}
+                    // checked={isSpeaker}
                     className={style.toggle}
                     onClick={() => setIsSpeaker(true)}
                   />
@@ -63,7 +64,8 @@ export const Login = () => {
                     name="role"
                     id="role-organization"
                     className={style.toggle}
-                    checked={!isSpeaker}
+                    // checked={!isSpeaker}
+                    defaultChecked={!isSpeaker}
                     onClick={() => setIsSpeaker(false)}
                   />
                   <label
