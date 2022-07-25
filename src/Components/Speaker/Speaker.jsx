@@ -1,6 +1,7 @@
 import style from './Speaker.module.scss';
 
 import { Link } from 'react-router-dom';
+import star from '../../assets/icons/star.svg';
 
 export const Speaker = (props) => {
   /**@type {import('./SpeakerType').SpeakerResponse} */
@@ -25,7 +26,7 @@ export const Speaker = (props) => {
             <p className={style.review}>
               {reviews`${speaker.reviewsQuantity}`}
             </p>
-            <span>☆</span>
+            <span><img src={star} alt="save speaker"/> </span>
           </div>
           <div className={style.speakerName}>{speaker.fullName}</div>
           <div className={style.tagline}>{speaker.tagline}</div>

@@ -1,7 +1,9 @@
 import { useNavigate } from 'react-router-dom';
+import star from '../../assets/icons/star.svg';
 import { RequestButton, SaveButton } from '../Buttons/Buttons';
 import ScreenWidth from '../ScreenSize/ScreenSize';
 import style from './SpeakerProfileInfo.module.scss';
+
 
 const SpeakerInfo = (props) => {
   const width = ScreenWidth();
@@ -22,7 +24,7 @@ const SpeakerInfo = (props) => {
               <p className={style.reviewsQuantity}>
                 {props.speaker.reviewsQuantity} reviews
               </p>
-              <div className={style.star}></div>
+              <div className={style.star}><img src={star} alt="save speaker" /></div>
             </div>
             {/* TODO: Add star */}
             <h2>{props.speaker.fullName}</h2>
