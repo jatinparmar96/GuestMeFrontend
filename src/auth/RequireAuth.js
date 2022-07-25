@@ -2,9 +2,9 @@ import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from './UseAuth';
 
 const RequireAuth = ({ children, type }) => {
-  const user = useAuth();
+  const [user] = useAuth();
   let location = useLocation();
-  if (!user) {
+  if (!user.value) {
     if (type === 'speaker') {
       return (
         <Navigate

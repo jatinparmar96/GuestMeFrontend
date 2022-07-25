@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import RegistrationImage from '../../assets/registration_speaker.png';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { OrganizationLoginForm } from '../../Components/LoginForms/OrganizationLoginForm/OrganizationLoginForm';
 import { SpeakerLoginForm } from '../../Components/LoginForms/SpeakerLoginForm/SpeakerLoginForm';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
-import { Helmet } from 'react-helmet-async';
 import style from './Login.module.scss';
 
 export const Login = () => {
