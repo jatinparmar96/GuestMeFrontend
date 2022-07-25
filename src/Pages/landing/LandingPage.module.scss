@@ -21,7 +21,7 @@ $button-margin: 2rem;
   background-size: 100px auto;
   background-position: 2.4rem 2rem;
   overflow: hidden;
-  padding-top: 2rem;
+  padding-top: 4rem;
   line-height: 1.5;
   .textContainer {
     padding: 0 2rem;
@@ -53,7 +53,6 @@ $button-margin: 2rem;
     width: 100%;
     height: 250px;
     object-fit: cover;
-    margin-top: calc(-1 * (4rem + $button-margin));
     border-bottom-right-radius: 7rem;
 
     @media screen and (min-width: $bp-tablet) {
@@ -69,7 +68,7 @@ $button-margin: 2rem;
     background-color: $white;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $bp-tablet) {
     display: flex;
     align-items: stretch;
     background-size: 318px auto;
@@ -247,8 +246,12 @@ $button-margin: 2rem;
       padding: 0 2rem;
       display: flex;
       flex-direction: column;
-      button {
+      a {
         width: 80%;
+        align-self: center;
+      }
+      button {
+        width: 100%;
         background-color: $fiery-rose;
         &:hover {
           outline: 2px solid $fiery-rose;
