@@ -54,27 +54,31 @@ const Contact = (props) => {
                 className={style.input}
               />
             </div>
-            <label className={style.label} htmlFor="email">
-              Email*
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="email@gmail.com"
-              className={style.input}
-              autoComplete="email"
-            />
-            <label className={style.label} htmlFor="message">
-              Message*
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              cols={30}
-              rows={10}
-              className={style.textarea}
-            />
+            <div className={style.inputSpan}>
+              <label className={style.label} htmlFor="email">
+                Email*
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email@gmail.com"
+                className={style.input}
+                autoComplete="email"
+              />
+            </div>
+            <div className={style.inputSpan}>
+              <label className={style.label} htmlFor="message">
+                Message*
+              </label>
+              <textarea
+                name="message"
+                id="message"
+                cols={30}
+                rows={10}
+                className={style.textarea}
+              />
+            </div>
           </div>
           <div className={style.buttonContainer}>
             <PrimaryButton text="Send" />
