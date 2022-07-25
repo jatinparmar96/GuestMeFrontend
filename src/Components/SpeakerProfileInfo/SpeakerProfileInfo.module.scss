@@ -58,6 +58,7 @@
                 font-size: 1rem;
                 font-weight: 600;
                 text-decoration: underline;
+                text-underline-offset: 0.2rem;
                 grid-row: 1;
                 grid-column: 1;
               }
@@ -101,6 +102,7 @@
           font-size: 0.8rem;
           line-height: 1.5rem;
           text-decoration: underline;
+          text-underline-offset: 0.2rem;
           color: $mint-blue;
           font-family: $barlow-condensed-font;
           font-weight: 600;

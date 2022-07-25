@@ -16,6 +16,7 @@
 .clearFilter {
 	color: $mint-blue;
 	text-decoration: underline;
+	text-underline-offset: 0.2rem;
 	font-weight: 600;
 	font-family: $barlow-condensed-font;
 	line-height: 1.5rem;
@@ -25,6 +26,7 @@
 .apply {
 	color: $mint-blue;
 	text-decoration: underline;
+	text-underline-offset: 0.2rem;
 	font-weight: 600;
 	font-family: $barlow-condensed-font;
 

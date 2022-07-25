@@ -95,6 +95,8 @@
                 height: 0.8rem;
                 color: $white;
                 background-color: rgba($mint-blue, 0);
+                border: 0.1px solid $black;
+                border-radius: 0.25rem;
               }
 
 
@@ -130,6 +132,13 @@
         font-weight: 700;
         font-family: $barlow-condensed-font;
         text-decoration: underline;
+        text-underline-offset: 0.2rem;
+
+
+        &:hover{
+          opacity: 0.8;
+          cursor: pointer;
+        }
       }
       span {
         font-size: 1rem;

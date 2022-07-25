@@ -24,6 +24,7 @@
     font-weight: 400;
     margin-left: 1.31rem;
     margin-top: 1.69rem;
+    margin-right:  1.31rem;
   }
   .reference {
       display: flex;
@@ -61,7 +62,7 @@
     .button {
       background-color: $white;
       height: 2.5rem;
-      margin: 0 1.14rem 1.25rem 1.14rem;
+      margin: 1rem 1.14rem 3.13rem 1.14rem;
       width: calc(100% - 2.28rem);
       background-color: $mint-blue;
       color: $white;
@@ -134,7 +135,7 @@
         height: 2.5rem;
         margin: 0;
         width: 8.70rem;
-        border-radius: 0.1rem;
+        border-radius: 0.2rem;
         font-size: 0.9rem;
         justify-self: center;
         grid-column: 1/3;

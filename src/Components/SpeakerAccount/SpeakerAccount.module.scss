@@ -48,6 +48,7 @@
         span{
           color: $mint-blue;
           text-decoration: underline;
+          text-underline-offset: 0.2rem;
           text-align: center;
           display: block;
           font-size: 1.13rem;
@@ -61,8 +62,9 @@
         .buttonsContainer {
         display: flex;
         flex-direction: row;
+        gap: 0.5rem;
         justify-content: space-between;
-        align-items: center;
+        // align-items: center;
         padding-bottom: 3.13rem;
 
       }
@@ -127,6 +129,11 @@
             margin: 0;
             align-self: center;
             margin-bottom: 1rem;
+
+          &:hover {
+              opacity: 0.8;
+              cursor: pointer;
+            }
           }
         }
 
@@ -142,13 +149,23 @@
 
       .buttonsContainer {
         grid-column: 1/3;
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 0;
         padding-bottom: 12.55rem;
         margin-top: 2rem;
 
+        :first-child{
+          justify-self: end;
+          font-size: 0.9rem;
+          font-weight: 600;
+        }
+
+        :last-child {
+          margin-left:1rem;
+          font-size: 0.9rem;
+          font-weight: 600;
+        }
       }
       }
 
