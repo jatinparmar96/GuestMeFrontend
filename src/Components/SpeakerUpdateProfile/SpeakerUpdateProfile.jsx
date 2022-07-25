@@ -9,7 +9,6 @@ const SpeakerUpdateProfile = () => {
     register,
     control,
     handleSubmit,
-    getValues,
     reset,
     watch,
     formState: { isDirty, isValid },
@@ -47,7 +46,6 @@ const SpeakerUpdateProfile = () => {
         <form
           onSubmit={handleSubmit(async (data) => {
             const updatedData = await updateSpeakerProfile(data);
-            console.log(updatedData);
             reset(updatedData.data);
           })}
         >
