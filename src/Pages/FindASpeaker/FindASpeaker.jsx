@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { useRecoilValue } from 'recoil';
 import { getSpeakers } from '../../Api/Speaker.service';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
+import Loader from '../../Components/loader/Loader';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import { Filter } from '../../Containers/Filter/Filter';
 import { MobileFilter } from '../../Containers/mobileFilter/MobileFilter';
@@ -16,6 +17,7 @@ export const FindASpeaker = (props) => {
   /**@type {[number | undefined, React.Dispatch<number>]} */
   const [count, setCount] = useState();
   /**@type {[SpeakerResponse[], React.Dispatch<SpeakerResponse[]>]} */
+
   // @ts-ignore
   const [speakers, setSpeakers] = useState([]);
   /**@type {[number, React.Dispatch<number>]} */
@@ -24,6 +26,8 @@ export const FindASpeaker = (props) => {
   const [hasNextPage, setHasNextPage] = useState(true);
   /**@type {[boolean, React.Dispatch<boolean>]} */
   const [hasPrevPage, setHasPrevPage] = useState(false);
+
+  const [loading, setLoading] = useState(false);
 
   /**
    * @description Handles the change of all states
@@ -37,14 +41,15 @@ export const FindASpeaker = (props) => {
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       const { data } = await getSpeakers(filter, page);
       const { speakers, count } = data;
 
       setSpeakers(speakers);
       setCount(count);
-
       setHasNextPage(page * 10 < count);
       setHasPrevPage(page > 1);
+      setLoading(false);
     })();
   }, [filter, page]);
 
@@ -64,16 +69,20 @@ export const FindASpeaker = (props) => {
               <MobileFilter />
             </aside>
             <div className={style.mainContainer}>
-              <Speakers
-                speakers={speakers}
-                count={count}
-                page={page}
-                setPage={setPage}
-                hasNextPage={hasNextPage}
-                hasPrevPage={hasPrevPage}
-                handleNextPage={handleNextPage}
-                handlePrevPage={handlePrevPage}
-              />
+              {loading ? (
+                <Loader />
+              ) : (
+                <Speakers
+                  speakers={speakers}
+                  count={count}
+                  page={page}
+                  setPage={setPage}
+                  hasNextPage={hasNextPage}
+                  hasPrevPage={hasPrevPage}
+                  handleNextPage={handleNextPage}
+                  handlePrevPage={handlePrevPage}
+                />
+              )}
             </div>
           </div>
         </div>
