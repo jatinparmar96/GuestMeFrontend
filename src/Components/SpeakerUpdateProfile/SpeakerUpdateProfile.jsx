@@ -13,16 +13,17 @@ const SpeakerUpdateProfile = () => {
     handleSubmit,
     reset,
     watch,
+    setValue,
     formState: { isDirty, isValid },
   } = useForm({
     defaultValues: {},
   });
 
-  const processImage = (imageFile) => {
+  const processImage = (imageFile, onChange) => {
     const reader = new FileReader();
     reader.readAsDataURL(imageFile);
     reader.onloadend = (event) => {
-      reset({ profilePicture: reader.result });
+      onChange(event.target.result);
     };
   };
 
@@ -57,22 +58,33 @@ const SpeakerUpdateProfile = () => {
         >
           <div className={style.topGrid}>
             <div className={style.topLeft}>
-              <img
-                className={style.profilePhoto}
-                src={watch('profilePicture') || placeholder}
-                alt="Profile"
-              />
-              <label className={style.imageLabel} htmlFor="profilePicture">
-                Update my profile photo
-              </label>
-              <input
-                id="profilePicture"
-                type="file"
+              <Controller
                 name="profilePicture"
-                className={style.profilePicture}
-                onChange={(e) => {
-                  processImage(e.target.files[0]);
-                }}
+                control={control}
+                render={({ field: { name, onChange, value } }) => (
+                  <>
+                    <img
+                      className={style.profilePhoto}
+                      src={value || placeholder}
+                      alt="Profile"
+                    />
+                    <label
+                      className={style.imageLabel}
+                      htmlFor="profilePicture"
+                    >
+                      Update my profile photo
+                    </label>
+                    <input
+                      id="profilePicture"
+                      type="file"
+                      name="profilePicture"
+                      className={style.profilePicture}
+                      onChange={(e) => {
+                        processImage(e.target.files[0], onChange);
+                      }}
+                    />
+                  </>
+                )}
               />
             </div>
             <div className={style.topRight}>
