@@ -4,6 +4,7 @@ import { ReactComponent as DownArrow } from '../../../assets/icons/down-arrow.sv
 import { ReactComponent as UpArrow } from '../../../assets/icons/up-arrow.svg';
 import { convertDateFormat } from '../../../Utils/Utils';
 import OrganizationDetails from '../../OrganizationDetails/OrganizationDetails';
+import EmptyList from '../empty-list/EmptyList';
 import style from '../SpeakerBookingList.module.scss';
 
 const SpeakerUpcomingList = (props) => {
@@ -42,7 +43,7 @@ const SpeakerUpcomingList = (props) => {
       <div className={style.upcoming}>
         <h3>Upcoming</h3>
 
-        {props.speaker?.accepted && (
+        {props.speaker?.accepted ? (
           <ul>
             {props.speaker.accepted.map((booking, id) => (
               <li key={id}>
@@ -103,6 +104,8 @@ const SpeakerUpcomingList = (props) => {
               </li>
             ))}
           </ul>
+        ) : (
+          <EmptyList />
         )}
       </div>
     </>

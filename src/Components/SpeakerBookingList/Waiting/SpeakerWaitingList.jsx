@@ -7,6 +7,7 @@ import { ReactComponent as UpArrow } from '../../../assets/icons/up-arrow.svg';
 import { convertDateFormat } from '../../../Utils/Utils';
 import AlertDialog from '../../ModalPopup/ModalPopup';
 import OrganizationDetails from '../../OrganizationDetails/OrganizationDetails';
+import EmptyList from '../empty-list/EmptyList';
 import style from '../SpeakerBookingList.module.scss';
 
 const SpeakerWaitingList = (props) => {
@@ -70,7 +71,7 @@ const SpeakerWaitingList = (props) => {
       <div className={style.waitingInfo}>
         <div>
           <h3>Waiting</h3>
-          {props.speaker.pending && (
+          {props.speaker.pending ? (
             <ul>
               {props.speaker.pending.map((booking, id) => (
                 <li key={id}>
@@ -141,6 +142,8 @@ const SpeakerWaitingList = (props) => {
                 </li>
               ))}
             </ul>
+          ) : (
+            <EmptyList />
           )}
         </div>
       </div>
