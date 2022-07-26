@@ -7,7 +7,7 @@ import { ReactComponent as UpArrow } from '../../../assets/icons/up-arrow.svg';
 import { convertDateFormat } from '../../../Utils/Utils';
 import AlertDialog from '../../ModalPopup/ModalPopup';
 import OrganizationDetails from '../../OrganizationDetails/OrganizationDetails';
-import style from '.././SpeakerBookingList.module.scss';
+import style from '../SpeakerBookingList.module.scss';
 
 const SpeakerWaitingList = (props) => {
   const [popupOpen, setPopupOpen] = useState(false);

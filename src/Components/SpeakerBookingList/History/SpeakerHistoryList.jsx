@@ -1,9 +1,9 @@
-import style from '.././SpeakerBookingList.module.scss';
-import { convertDateFormat } from '../../../Utils/Utils';
 import { useEffect, useState } from 'react';
 import { ReactComponent as DownArrow } from '../../../assets/icons/down-arrow.svg';
 import { ReactComponent as UpArrow } from '../../../assets/icons/up-arrow.svg';
+import { convertDateFormat } from '../../../Utils/Utils';
 import OrganizationDetails from '../../OrganizationDetails/OrganizationDetails';
+import style from '../SpeakerBookingList.module.scss';
 
 const SpeakerHistoryList = (props) => {
   const [bookingDataOrganization, setBookingDataOrganization] = useState([]);
