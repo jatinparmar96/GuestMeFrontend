@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { getSpeaker, updateSpeakerProfile } from '../../Api/Speaker.service';
+import placeholder from '../../assets/placeholder.png';
 import MultiSelect from '../form/multi-select/MultiSelect';
 import style from './SpeakerUpdateProfile.module.scss';
 
@@ -58,7 +59,7 @@ const SpeakerUpdateProfile = () => {
             <div className={style.topLeft}>
               <img
                 className={style.profilePhoto}
-                src={watch('profilePicture')}
+                src={watch('profilePicture') || placeholder}
                 alt="Profile"
               />
               <label className={style.imageLabel} htmlFor="profilePicture">
