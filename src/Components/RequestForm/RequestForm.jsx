@@ -1,4 +1,5 @@
 import { Controller, useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { postBooking } from '../../Api/Booking.service';
 import OrganizationCalendar from '../calendar/organization/organization-calendar';
 import style from './RequestForm.module.scss';
@@ -10,7 +11,11 @@ const RequestForm = (props) => {
   // eslint-disable-next-line no-unused-vars
   const organization = JSON.parse(localStorage.getItem('user'));
 
-  const { control, register, watch, getValues } = useForm();
+  const { control, register, watch, getValues, formState: { isDirty } } = useForm(
+    {
+      defaultValues: {},
+    }
+  );
 
   const handleSendRequest = (event) => {
     event.preventDefault();
@@ -28,7 +33,7 @@ const RequestForm = (props) => {
     };
     console.log(formData);
     postBooking(formData)
-      .then((response) => alert('Booking request sent'))
+      .then(toast('Request sent successfully', { type: 'success', autoClose:2000, }))
       .catch((error) => console.error(error));
   };
   // const today = new Date();
@@ -178,7 +183,7 @@ const RequestForm = (props) => {
               </span>
             </label>
           </div>
-          <button className={style.sendRequest}>Send</button>
+          <button type="submit" disabled={!(isDirty ) } className={style.sendRequest}>Send</button>
         </div>
       </form>
       {/* Create a form */}
