@@ -1,10 +1,9 @@
 import { Navigate, useLocation } from 'react-router-dom';
-import useAuth from './UseAuth';
 
 const RequireAuth = ({ children, type }) => {
-  const [user] = useAuth();
+  const tokenValue = localStorage.getItem('token');
   let location = useLocation();
-  if (!user.value) {
+  if (!tokenValue) {
     if (type === 'speaker') {
       return (
         <Navigate
