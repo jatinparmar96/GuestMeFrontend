@@ -12,8 +12,6 @@ const SpeakerUpdateProfile = () => {
     control,
     handleSubmit,
     reset,
-    watch,
-    setValue,
     formState: { isDirty, isValid },
   } = useForm({
     defaultValues: {},
