@@ -47,7 +47,7 @@ export const SpeakerRegisterContainer = (props) => {
       }
 
       setToken({ name: response.data.user, value: response.data.token });
-      navigate(/** @param{string} to */ '/speakers/mypage');
+      navigate(/** @param{string} to */ '/speakers/mypage/update');
     } catch (error) {
       console.error(error);
     }

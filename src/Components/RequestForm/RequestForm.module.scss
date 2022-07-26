@@ -250,6 +250,12 @@
       align-items: center;
       margin: 1.95rem auto 3.13rem;
     }
+    button:disabled,
+    button[disabled] {
+      border: 0.1px solid $grey ;
+      background-color: $grey;
+      color: $white;
+    }
   }
 }
 
