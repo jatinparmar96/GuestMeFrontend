@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { RequestButton, RequestButtonWideMobile, SaveButton, SaveButtonWideMobile } from '../../Components/Buttons/Buttons';
 import ScreenWidth from '../../Components/ScreenSize/ScreenSize';
 import SpeakerAboutMe from '../../Components/SpeakerAboutMe/SpeakerAboutMe';
 import SpeakerCertifications from '../../Components/SpeakersCertifications/SpeakerCertifications';
@@ -27,7 +26,7 @@ const SpeakerSecondaryInformation = (props) => {
           <SpeakerReviews speaker={props.speaker} />
         </div>
         <div className={style.buttonsContainer}>
-          <div className={style.buttons}>
+          {/* <div className={style.buttons}>
             {width > 992 ?
               ( <>
                   <SaveButton
@@ -49,7 +48,7 @@ const SpeakerSecondaryInformation = (props) => {
                   onClick={() => navigate('/speakers/' + props.speaker.id +'/request')}
                   />
                 </>)}
-          </div>
+          </div> */}
           </div>
 
       </div>

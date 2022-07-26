@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { useParams } from 'react-router-dom';
 import { getSpeaker } from '../../Api/Speaker.service';
+import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
-import { Helmet } from 'react-helmet-async';
 import BookingSpeakerCard from '../../Containers/BookingSpeakerCard/BookingSpeakerCard';
 import BookRequest from '../../Containers/BookRequest/BookRequest';
 import style from './BookSpeaker.module.scss';
-
 const BookSpeaker = (props) => {
   const [loadingState, setLoadingState] = useState(true);
   const [speakerData, setSpeakerData] = useState();

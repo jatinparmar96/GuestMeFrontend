@@ -27,14 +27,14 @@
 
   }
   .availabilityContainer{
-    margin: 0 1.14rem 1.25rem 1.14rem;
+    margin: 1.25rem 1.14rem 0 1.14rem;
     background-color: $white;
 
   .availability{
         background-color: $white;
         display: flex;
         flex-direction: column;
-        margin: 3.13rem 1.14rem 0 1.14rem;
+        // margin: 3.13rem 1.14rem 0 1.14rem;
         padding-bottom: 0.5rem;
 
         h4 {
@@ -55,7 +55,7 @@
     flex-direction: column;
     align-items: center;
     height: 3.75rem;
-    margin: 0 2.28rem 1.25rem 2.28rem;
+    margin: 0 2.28rem 0 2.28rem;
 
     :first-child{
       width: 100%;
