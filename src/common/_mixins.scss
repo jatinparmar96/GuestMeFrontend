@@ -1,0 +1,17 @@
+@mixin linkUnderline {
+	position: relative;
+	text-decoration: none;
+
+	&::after {
+		content: "";
+		position: absolute;
+
+		left: 0;
+		right: 0;
+		width: 100%;
+		bottom: -0.2rem;
+		height: 100%;
+
+		border-bottom: 0.1rem solid currentColor;
+	}
+}

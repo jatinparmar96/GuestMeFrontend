@@ -1,12 +1,8 @@
 //@ts-check
 import React from 'react';
-
-import {
-  faFacebookF,
-  faInstagram,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ReactComponent as Facebook } from '../../../../assets/icons/facebook.svg';
+import { ReactComponent as Instagram } from '../../../../assets/icons/instagram.svg';
+import { ReactComponent as Twitter } from '../../../../assets/icons/twitter.svg';
 
 import style from './Member.module.scss';
 
@@ -27,20 +23,20 @@ const Member = (props) => {
           href={member.facebookLink ?? 'https://facebook.com'}
           className={style.snsLink}
         >
-          <FontAwesomeIcon icon={faFacebookF} />
+          <Facebook />
         </a>
         <a
           href={member.twitterLink ?? 'https://twitter.com'}
           className={style.snsLink}
         >
-          <FontAwesomeIcon icon={faTwitter} />
+          <Twitter />
         </a>
 
         <a
           href={member.instagramLink ?? 'https://www.instagram.com'}
           className={style.snsLink}
         >
-          <FontAwesomeIcon icon={faInstagram} />
+          <Instagram />
         </a>
       </div>
       {member.introduction}

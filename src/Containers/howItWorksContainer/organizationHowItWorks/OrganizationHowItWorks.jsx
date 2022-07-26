@@ -79,10 +79,12 @@ const OrganizationHowItWorks = () => {
               to="/register"
             />
           </span>
-          <p>Already have an account?</p>
-          <Link to="/login" className={containerStyle.loginLink}>
-            Log in
-          </Link>
+          <div className={containerStyle.loginRow}>
+            <p>Already have an account?</p>
+            <Link to="/login" className={containerStyle.loginLink}>
+              Log in
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 @use "../../common/variables" as *;
+@use "../../common/mixins" as *;
 
 .pageContainer {
   width: 100%;
@@ -23,6 +24,9 @@
 
 .unselectedRoleTab {
   color: $mint-blue;
+
+  @include linkUnderline;
+
   text-decoration: underline;
   text-underline-offset: 0.2rem;
 }

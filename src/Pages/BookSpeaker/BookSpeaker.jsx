@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { useParams } from 'react-router-dom';
 import { getSpeaker } from '../../Api/Speaker.service';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
@@ -36,10 +37,9 @@ const BookSpeaker = (props) => {
         <>
           <div>
             <PageHeading text="Find a speaker" />
-            <div>
-              Home {'>'} Find a speaker {'>'} {speakerData.fullName} {'>'}{' '}
-              Request
-            </div>
+            <BreadCrumbs
+              currentPosition={`Find a speaker > ${speakerData.fullName} > Request`}
+            />
           </div>
 
           <div className={style.bookSpeakerContainer}>

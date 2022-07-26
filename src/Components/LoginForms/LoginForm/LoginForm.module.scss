@@ -1,4 +1,5 @@
 @use "../../../common/variables" as *;
+@use "../../../common/mixins" as *;
 
 .loginFormContainer {
   width: 100%;
@@ -96,12 +97,18 @@
 
 .forgotPassword {
   display: inline-block;
-  width: 100%;
+  width: max-content;
   text-align: center;
+
+  margin: 0 auto;
+
   text-decoration: underline;
   text-underline-offset: 0.2rem;
+
   color: $mint-blue;
   font-weight: 600;
   font-family: $barlow-condensed-font;
   margin-top: calc(1.25rem - 0.9rem);
+
+  @include linkUnderline;
 }
