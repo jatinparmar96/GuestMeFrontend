@@ -6,4 +6,5 @@ export type Member = {
   facebookLink?: string;
   twitterLink?: string;
   instagramLink?: string;
+  linkedInLink: string;
 };

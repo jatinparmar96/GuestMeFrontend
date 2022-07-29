@@ -20,8 +20,10 @@ const Member = (props) => {
       <div>{member.role}</div>
       <div className={style.iconRow}>
         <a
-          href={member.facebookLink ?? 'https://facebook.com'}
+          href={member.linkedInLink ?? 'https://facebook.com'}
           className={style.snsLink}
+          target="_blank"
+          rel="noreferrer"
         >
           <Facebook />
         </a>
