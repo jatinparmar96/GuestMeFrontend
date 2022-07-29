@@ -23,35 +23,38 @@ const About = () => {
       </Helmet>
       <PageHeading text="About" />
       <BreadCrumbs currentPosition="About" />
-      <div className={style.pageContainer}>
-        <div className={style.contentContainer}>
-          <h3 className={style.heading}>
-            About <span className={style.fontMint}>Our Team</span>
-          </h3>
-          <div className={style.description}>
-            <p className={style.description__text}>
-              Our team of like-minded designers and developers is ready to take
-              on complex projects with passion and enthusiasm!
-            </p>
-            <div className={style.contactButtonContainer}>
-              <ContactLinkButton to="/contact" text="Contact us" />
-            </div>
-          </div>
-          <div>
-            <div className="designers">
-              <h4 className={style.heading4}>Designer</h4>
-              <div className={style.membersContainer}>
-                {designers.map((designer) => (
-                  <Member member={designer} key={designer.name} />
-                ))}
+
+      <div className={style.background}>
+        <div className={style.pageContainer}>
+          <div className={style.contentContainer}>
+            <h3 className={style.heading}>
+              About <span className={style.fontMint}>Our Team</span>
+            </h3>
+            <div className={style.description}>
+              <p className={style.description__text}>
+                Our team of like-minded designers and developers is ready to
+                take on complex projects with passion and enthusiasm!
+              </p>
+              <div className={style.contactButtonContainer}>
+                <ContactLinkButton to="/contact" text="Contact us" />
               </div>
             </div>
-            <div className="develoers">
-              <h4 className={style.heading4}>Developer</h4>
-              <div className={style.membersContainer}>
-                {developers.map((developer) => (
-                  <Member member={developer} key={developer.name} />
-                ))}
+            <div>
+              <div className="designers">
+                <h4 className={style.heading4}>Designer</h4>
+                <div className={style.membersContainer}>
+                  {designers.map((designer) => (
+                    <Member member={designer} key={designer.name} />
+                  ))}
+                </div>
+              </div>
+              <div className="develoers">
+                <h4 className={style.heading4}>Developer</h4>
+                <div className={style.membersContainer}>
+                  {developers.map((developer) => (
+                    <Member member={developer} key={developer.name} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
