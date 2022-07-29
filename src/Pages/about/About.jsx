@@ -86,7 +86,6 @@ const designers = [
     role: 'UX/UI Designer',
     imageUrl: Satveer,
     linkedInLink: 'https://www.linkedin.com/in/satveer-brar/',
-
     introduction:
       'Bachelor of Computer Application, Master’s degree in computer science (Information Technology). Have experience in web development.',
   },
@@ -107,7 +106,6 @@ const developers = [
     role: 'Full Stack Developer',
     imageUrl: Gabriela,
     linkedInLink: 'http://www.linkedin.com/in/gabrielafchaves/',
-
     introduction:
       'Bachelor of Accounting degree holder.  Extensive experience in Management Control and Logistic teams in Hospitality and Casino industry.',
   },
@@ -116,7 +114,6 @@ const developers = [
     role: 'Full Stack Developer',
     imageUrl: Arvind,
     linkedInLink: 'https://www.linkedin.com/in/arvindkumarsuroju/',
-
     introduction:
       'Graduate of a Bachelor in Electronics and Communication Engineering. Experienced Application Engineer and Full Stack developer in the fin-tech industry.',
   },

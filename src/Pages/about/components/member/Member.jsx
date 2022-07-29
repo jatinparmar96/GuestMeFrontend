@@ -1,8 +1,8 @@
 //@ts-check
 import React from 'react';
 import { ReactComponent as Facebook } from '../../../../assets/icons/facebook.svg';
-import { ReactComponent as Instagram } from '../../../../assets/icons/instagram.svg';
-import { ReactComponent as Twitter } from '../../../../assets/icons/twitter.svg';
+// import { ReactComponent as Instagram } from '../../../../assets/icons/instagram.svg';
+// import { ReactComponent as Twitter } from '../../../../assets/icons/twitter.svg';
 
 import style from './Member.module.scss';
 
@@ -27,19 +27,20 @@ const Member = (props) => {
         >
           <Facebook />
         </a>
-        <a
+
+        {/* <a
           href={member.twitterLink ?? 'https://twitter.com'}
           className={style.snsLink}
         >
           <Twitter />
-        </a>
+        </a> */}
 
-        <a
+        {/* <a
           href={member.instagramLink ?? 'https://www.instagram.com'}
           className={style.snsLink}
         >
           <Instagram />
-        </a>
+        </a> */}
       </div>
       {member.introduction}
     </div>
