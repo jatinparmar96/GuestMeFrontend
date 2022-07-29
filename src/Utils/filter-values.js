@@ -17,7 +17,7 @@ export const areaFilterValues = [
     label: 'Science',
   },
   {
-    value: 'HealthAndWellbeing',
+    value: `${encodeURIComponent('Health & Well-being')}`,
     label: 'Health & Well-being',
   },
   {
