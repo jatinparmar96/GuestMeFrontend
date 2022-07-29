@@ -19,7 +19,7 @@ const Member = (props) => {
         className={style.memberImage}
       />
       <h5 className={style.memberHeading}> {member.name}</h5>
-      <div>{member.role}</div>
+      <div className={style.memberRole}>{member.role}</div>
       <div className={style.iconRow}>
         <a
           href={member.linkedInLink ?? 'https://facebook.com'}
@@ -45,7 +45,7 @@ const Member = (props) => {
           <Instagram />
         </a> */}
       </div>
-      {member.introduction}
+      <div className={style.memberIntroduction}>{member.introduction}</div>
     </div>
   );
 };

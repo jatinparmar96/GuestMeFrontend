@@ -5,7 +5,6 @@
   flex-flow: column nowrap;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 10px;
   padding: 0 20px;
   padding-bottom: 35px;
 
@@ -21,9 +20,22 @@
 
 .memberHeading {
   margin: 0;
+  margin-top: 1.85rem;
+  font-size: 1.25rem;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+.memberRole {
+  margin-top: 0.625rem;
+  color: $grey;
 }
 
 .iconRow {
+  margin-top: 1.125rem;
   display: flex;
   flex-flow: row nowrap;
   gap: 23.5px;
@@ -46,4 +58,11 @@
   font-weight: 600;
   font-style: normal;
   font-size: 1rem;
+}
+
+.memberIntroduction {
+  margin-top: 1.0625rem;
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: 1rem;
+  }
 }

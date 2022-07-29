@@ -39,7 +39,7 @@ const About = () => {
           </div>
           <div>
             <div className="designers">
-              <h4 className={style.fontMint}>Designer</h4>
+              <h4 className={style.heading4}>Designer</h4>
               <div className={style.membersContainer}>
                 {designers.map((designer) => (
                   <Member member={designer} key={designer.name} />
@@ -47,7 +47,7 @@ const About = () => {
               </div>
             </div>
             <div className="develoers">
-              <h4 className={style.fontMint}>Developer</h4>
+              <h4 className={style.heading4}>Developer</h4>
               <div className={style.membersContainer}>
                 {developers.map((developer) => (
                   <Member member={developer} key={developer.name} />
