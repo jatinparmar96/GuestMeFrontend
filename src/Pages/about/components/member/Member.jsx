@@ -1,6 +1,8 @@
 //@ts-check
+// import { Facebook } from '@mui/icons-material';
 import React from 'react';
-import { ReactComponent as Facebook } from '../../../../assets/icons/facebook.svg';
+import { ReactComponent as LinkedIn } from '../../../../assets/icons/linkedin.svg';
+// import { ReactComponent as Facebook } from '../../../../assets/icons/facebook.svg';
 // import { ReactComponent as Instagram } from '../../../../assets/icons/instagram.svg';
 // import { ReactComponent as Twitter } from '../../../../assets/icons/twitter.svg';
 
@@ -25,7 +27,8 @@ const Member = (props) => {
           target="_blank"
           rel="noreferrer"
         >
-          <Facebook />
+          <LinkedIn />
+          <span className={style.linkedinName}>{member.linkedInName}</span>
         </a>
 
         {/* <a

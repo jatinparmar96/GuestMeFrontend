@@ -27,10 +27,23 @@
   display: flex;
   flex-flow: row nowrap;
   gap: 23.5px;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .snsLink {
   color: $black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+}
+
+.linkedinName {
+  color: $black;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
 }
