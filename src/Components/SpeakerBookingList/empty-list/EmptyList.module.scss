@@ -1,0 +1,12 @@
+@use '../../../common//variables' as *;
+
+.emptyList {
+  padding: 2rem;
+  background-color: $white;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+  p {
+    color: $fiery-rose;
+  }
+}

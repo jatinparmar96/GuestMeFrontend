@@ -1,9 +1,10 @@
-import style from '.././SpeakerBookingList.module.scss';
-import { convertDateFormat } from '../../../Utils/Utils';
 import { useEffect, useState } from 'react';
 import { ReactComponent as DownArrow } from '../../../assets/icons/down-arrow.svg';
 import { ReactComponent as UpArrow } from '../../../assets/icons/up-arrow.svg';
+import { convertDateFormat } from '../../../Utils/Utils';
 import OrganizationDetails from '../../OrganizationDetails/OrganizationDetails';
+import EmptyList from '../empty-list/EmptyList';
+import style from '../SpeakerBookingList.module.scss';
 
 const SpeakerHistoryList = (props) => {
   const [bookingDataOrganization, setBookingDataOrganization] = useState([]);
@@ -40,9 +41,9 @@ const SpeakerHistoryList = (props) => {
       <div className={style.history}>
         <h3>History</h3>
 
-        {props.speaker?.accepted && (
+        {props.speaker?.history ? (
           <ul>
-            {props.speaker.accepted.map((booking, id) => (
+            {props.speaker.history.map((booking, id) => (
               <li key={id}>
                 {/* <p>{ booking.location}</p> */}
                 <div className={style.eachCard}>
@@ -98,6 +99,8 @@ const SpeakerHistoryList = (props) => {
               </li>
             ))}
           </ul>
+        ) : (
+          <EmptyList />
         )}
       </div>
     </>

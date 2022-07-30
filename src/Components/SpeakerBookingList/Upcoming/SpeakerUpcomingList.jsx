@@ -1,10 +1,11 @@
-import style from '.././SpeakerBookingList.module.scss';
-import { convertDateFormat } from '../../../Utils/Utils';
 import { useEffect, useState } from 'react';
+import { ReactComponent as Cancel } from '../../../assets/icons/cancel-delete.svg';
 import { ReactComponent as DownArrow } from '../../../assets/icons/down-arrow.svg';
 import { ReactComponent as UpArrow } from '../../../assets/icons/up-arrow.svg';
-import { ReactComponent as Cancel } from '../../../assets/icons/cancel-delete.svg';
+import { convertDateFormat } from '../../../Utils/Utils';
 import OrganizationDetails from '../../OrganizationDetails/OrganizationDetails';
+import EmptyList from '../empty-list/EmptyList';
+import style from '../SpeakerBookingList.module.scss';
 
 const SpeakerUpcomingList = (props) => {
   const [bookingDataOrganization, setBookingDataOrganization] = useState([]);
@@ -42,7 +43,7 @@ const SpeakerUpcomingList = (props) => {
       <div className={style.upcoming}>
         <h3>Upcoming</h3>
 
-        {props.speaker?.accepted && (
+        {props.speaker?.accepted ? (
           <ul>
             {props.speaker.accepted.map((booking, id) => (
               <li key={id}>
@@ -103,6 +104,8 @@ const SpeakerUpcomingList = (props) => {
               </li>
             ))}
           </ul>
+        ) : (
+          <EmptyList />
         )}
       </div>
     </>
