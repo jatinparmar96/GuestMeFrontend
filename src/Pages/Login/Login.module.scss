@@ -91,6 +91,7 @@ input[type="radio"] {
 }
 
 .formContentContainer {
+  flex: 1 1 50%;
   @media screen and (max-width: $bp-tablet) {
     width: 100%;
     display: flex;

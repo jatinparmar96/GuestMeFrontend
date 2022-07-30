@@ -4,9 +4,28 @@
   color: $mint-blue;
 }
 
+.heading4 {
+  color: $mint-blue;
+  margin-top: 0;
+
+  @media (min-width: $bp-tablet) {
+    font-family: $barlow-condensed-font;
+    margin-top: 1.25rem;
+    font-size: 2rem;
+  }
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+}
+
 .pageContainer {
+  background-color: $white;
   max-width: $max-content-width;
   margin: 0 auto;
+  margin-bottom: 8.5rem;
 }
 
 .contentContainer {
@@ -20,6 +39,16 @@
 .heading {
   font-size: 1.25rem;
   text-align: center;
+  margin-top: 3.125rem;
+  margin-bottom: 1rem;
+
+  font-weight: 600;
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: 2rem;
+    justify-self: flex-start;
+    margin-bottom: 1.65rem;
+  }
 }
 
 .description {
@@ -27,13 +56,17 @@
   grid-template-columns: 1fr;
 
   gap: 1.85rem;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $bp-tablet) {
     grid-template-columns: 3fr 1fr;
     gap: 6.35rem;
+    margin-bottom: 5.7rem;
   }
 
   &__text {
-    text-align: left;
+    text-align: center;
+    @media screen and (min-width: $bp-tablet) {
+      text-align: left;
+    }
   }
 }
 
@@ -44,6 +77,11 @@
   justify-content: center;
   align-content: center;
   margin: 0 auto;
+  margin-bottom: 6.25rem;
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: 0;
+    height: unset;
+  }
 }
 
 .membersContainer {
@@ -54,7 +92,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $bp-tablet) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

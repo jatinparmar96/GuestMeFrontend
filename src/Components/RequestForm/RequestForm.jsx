@@ -11,16 +11,20 @@ const RequestForm = (props) => {
   // eslint-disable-next-line no-unused-vars
   const organization = JSON.parse(localStorage.getItem('user'));
 
-  const { control, register, watch, getValues, formState: { isDirty } } = useForm(
-    {
-      defaultValues: {},
-    }
-  );
+  const {
+    control,
+    register,
+    watch,
+    getValues,
+    formState: { isDirty },
+  } = useForm({
+    defaultValues: {},
+  });
 
   const handleSendRequest = (event) => {
     event.preventDefault();
 
-    const formData = {
+    let formData = {
       ...getValues(),
       speaker: {
         id: props.speaker._id,
@@ -31,9 +35,17 @@ const RequestForm = (props) => {
         name: organization.organizationName,
       },
     };
+
+    if (formData.bookingDateTime.date === undefined) {
+      formData.bookingDateTime.date = new Date(props.speaker.availability[0])
+        .toISOString()
+        .substring(0, 10);
+    }
     console.log(formData);
     postBooking(formData)
-      .then(toast('Request sent successfully', { type: 'success', autoClose:2000, }))
+      .then(
+        toast('Request sent successfully', { type: 'success', autoClose: 2000 })
+      )
       .catch((error) => console.error(error));
   };
   // const today = new Date();
@@ -183,7 +195,13 @@ const RequestForm = (props) => {
               </span>
             </label>
           </div>
-          <button type="submit" disabled={!(isDirty ) } className={style.sendRequest}>Send</button>
+          <button
+            type="submit"
+            disabled={!isDirty}
+            className={style.sendRequest}
+          >
+            Send
+          </button>
         </div>
       </form>
       {/* Create a form */}

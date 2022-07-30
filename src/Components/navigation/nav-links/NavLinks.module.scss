@@ -1,11 +1,16 @@
 @use "../../../common/variables" as *;
 .link {
-  color: inherit;
+  color: $black;
   text-decoration: none;
+
   @media screen and (min-width: $bp-tablet) {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-weight: 600;
+    font-family: $barlow-condensed-font;
+    font-size: 0.9rem;
   }
 }
 .button {
