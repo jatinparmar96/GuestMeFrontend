@@ -40,7 +40,7 @@ const loggedInLinks = [{ path: '/speakers/mypage/update', name: 'My Page' }];
 
 const NavLinks = (props) => {
   const [user, setUser] = useRecoilState(tokenAtom);
-  console.log(user);
+
   //Logout the user
   const handleLogout = () => {
     setUser({ name: '', value: '' });
