@@ -41,7 +41,7 @@ const BookingList = (props) => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
           >
-            <h2>Booking</h2>
+            <h3>Booking</h3>
             <SpeakerWaitingList
               speaker={speakerData}
               newBookingData={newBookingData}

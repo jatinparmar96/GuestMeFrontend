@@ -1,0 +1,15 @@
+@use '../../common/variables' as *;
+
+.bookingList{
+  max-width: 450px;
+  width: 100%;
+}
+ @media screen and (min-width: $bp-large) {
+.bookingList{
+
+      max-width: 37.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+}
+ }

@@ -76,6 +76,8 @@
     max-width: 37.6rem;
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-template-rows: 1.5rem 3fr 3fr;
+
 
     h3 {
       margin-top: 0;
@@ -152,8 +154,8 @@
         display: grid;
         grid-template-columns: 50% 50%;
         gap: 0;
-        padding-bottom: 12.55rem;
         margin-top: 2rem;
+        margin-bottom: 3rem;
 
         :first-child{
           justify-self: end;

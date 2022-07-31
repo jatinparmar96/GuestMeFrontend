@@ -3,7 +3,6 @@ import { RequestButtonWide } from '../../Components/Buttons/Buttons';
 import ScreenWidth from '../../Components/ScreenSize/ScreenSize';
 import style from './MyPageMenu.module.scss';
 import { SpeakerMenu } from './SpeakerMenu';
-
 const MyPageMenu = (props) => {
   const screen = ScreenWidth();
   const navigate = useNavigate();
