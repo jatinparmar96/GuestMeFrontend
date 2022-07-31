@@ -35,11 +35,13 @@
 
 .unselectedRoleTab {
   color: $mint-blue;
-
-  @include linkUnderline;
-
   text-decoration: underline;
   text-underline-offset: 0.2rem;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
 }
 
 }

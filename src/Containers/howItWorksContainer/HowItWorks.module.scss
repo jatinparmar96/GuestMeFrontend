@@ -111,5 +111,12 @@
           margin-bottom: 8.15rem;
         }
 
+        .loginLink{
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+              }
+        }
+
   }
 }
