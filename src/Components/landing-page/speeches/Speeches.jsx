@@ -20,13 +20,14 @@ const Speeches = () => {
           How Many <span>Speeches?</span>
         </h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-          pharetra sem, ut convallis ex. Pellentesque ultrices turpis quis nibh
-          placerat accumsan.
+          Upon the launch of our platform a significant number of successful
+          work arrangements between speakers and organizations were made, and
+          with the expansion of our roster this upward trend continues.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget
-          pharetra sem, ut convallis ex.
+          The graph shows the number of bookings made per month over the current
+          year. We expect the trend to continue to grow in the future as the
+          platform becomes more popular.
         </p>
       </div>
 
