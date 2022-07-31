@@ -1,12 +1,12 @@
 //@ts-check
+import { motion } from 'framer-motion';
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import WideDisplayImage from '../../assets/contact_page.png';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
-import { PageHeading } from '../../Components/PageHeading/PageHeading';
-import { Helmet } from 'react-helmet-async';
-import style from './Contact.module.scss';
-
 import { PrimaryButton } from '../../Components/Buttons/Buttons';
+import { PageHeading } from '../../Components/PageHeading/PageHeading';
+import style from './Contact.module.scss';
 
 /**@type {React.FC<any>} */
 const Contact = (props) => {
@@ -21,7 +21,13 @@ const Contact = (props) => {
       </Helmet>
       <PageHeading text="Contact" />
       <BreadCrumbs currentPosition="Contact" />
-      <div className={style.contactContainer}>
+      <motion.div
+        className={style.contactContainer}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <form className={style.formContainer} onSubmit={handleSubmit}>
           <h3 className={style.heading}>Contact our team!</h3>
           <p className={style.description}>
@@ -91,7 +97,7 @@ const Contact = (props) => {
             className={style.featureImage}
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

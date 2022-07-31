@@ -4,9 +4,16 @@
   padding: 2rem;
   background-color: $white;
   border-radius: 4px;
-  margin-bottom: 1rem;
+  margin: 0 1.25rem 1rem 1.25rem;
   text-align: center;
   p {
     color: $fiery-rose;
   }
+}
+
+@media screen and (min-width: $bp-large) {
+  .emptyList {
+    margin: 0 0 1rem 0;
+  }
+
 }

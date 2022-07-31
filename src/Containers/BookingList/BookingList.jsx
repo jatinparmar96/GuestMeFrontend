@@ -1,13 +1,12 @@
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { getSpeakerBookings } from '../../Api/Speaker.service';
-
-import tokenAtom from '../../Recoil/Authentication/atom';
-import SpeakerUpcomingList from '../../Components/SpeakerBookingList/Upcoming/SpeakerUpcomingList';
 import SpeakerHistoryList from '../../Components/SpeakerBookingList/History/SpeakerHistoryList';
+import SpeakerUpcomingList from '../../Components/SpeakerBookingList/Upcoming/SpeakerUpcomingList';
 import SpeakerWaitingList from '../../Components/SpeakerBookingList/Waiting/SpeakerWaitingList';
+import tokenAtom from '../../Recoil/Authentication/atom';
 import style from './BookingList.module.scss';
-
 const BookingList = (props) => {
   const [loadingState, setLoadingState] = useState(true);
   const [speakerData, setSpeakerData] = useState();
@@ -30,12 +29,16 @@ const BookingList = (props) => {
   }, [user, newBookingData]);
   return (
     <>
-      {loadingState ? (
-        <p>Loading... </p>
-      ) : (
+      {loadingState ? null : (
         <>
-          <div className={style.lists}>
-            <h2>Booking</h2>
+          <motion.div
+              className={style.lists}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+          >
+            <h3>Booking</h3>
             <SpeakerWaitingList
               speaker={speakerData}
               newBookingData={newBookingData}
@@ -51,7 +54,7 @@ const BookingList = (props) => {
               newBookingData={newBookingData}
               setNewBookingData={setNewBookingData}
             />
-          </div>
+          </motion.div>
         </>
       )}
     </>

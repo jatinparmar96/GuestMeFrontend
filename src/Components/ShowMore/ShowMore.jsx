@@ -13,12 +13,12 @@ const ShowMore = (props) => {
 
       {showMore ?
         props.more : null}
-      <div onClick={toggleShowMore} className={style.showMore}>
+      <span onClick={toggleShowMore} className={style.showMore}>
         {!showMore ?
           <span className={style.more}>Show more  <img src={arrow} alt="show more"></img></span>
           : <span className={style.less}>Show less  <img src={arrow} alt="show less"></img></span>
         }
-          </div>
+      </span>
       </>
     );
 }

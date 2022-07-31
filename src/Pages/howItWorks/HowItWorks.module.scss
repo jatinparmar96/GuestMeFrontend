@@ -1,11 +1,22 @@
 @use "../../common/variables" as *;
 @use "../../common/mixins" as *;
 
+.howItWorks{
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+
+
+
+
 .pageContainer {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  max-width: $max-content-width;
+  // max-width: $max-content-width;
+
 }
 
 .roleTabContainer {
@@ -24,9 +35,15 @@
 
 .unselectedRoleTab {
   color: $mint-blue;
-
-  @include linkUnderline;
-
   text-decoration: underline;
   text-underline-offset: 0.2rem;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
 }
+
+}
+
+

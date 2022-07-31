@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
@@ -31,7 +32,10 @@ export const Login = () => {
       <Helmet>
         <title>GUEST ME - Log in</title>
       </Helmet>
-      <div className={style.backgroundContainer}>
+      <div
+        className={style.backgroundContainer}
+
+      >
         <PageHeading
           text={`Log in as ${isSpeaker ? 'a speaker' : ' an organization'}`}
         />
@@ -40,7 +44,13 @@ export const Login = () => {
             isSpeaker ? 'a speaker' : ' an organization'
           }`}
         />
-        <div className={style.PageContainer}>
+        <motion.div className={style.PageContainer}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+
+        >
           <div className={style.contentContainer}>
             <div className={style.boxContainer}>
               <div className={style.radioContainer}>
@@ -86,7 +96,7 @@ export const Login = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );

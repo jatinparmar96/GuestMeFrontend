@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import {
@@ -8,7 +9,6 @@ import useAuth from '../../auth/UseAuth';
 import tokenAtom from '../../Recoil/Authentication/atom';
 import SpeakerCalendar from '../calendar/speaker/speaker-calendar';
 import style from './SpeakerSetAvailability.module.scss';
-
 const SetSpeakerAvailability = () => {
   const { control, setValue, getValues } = useForm({
     defaultValues: {
@@ -31,7 +31,13 @@ const SetSpeakerAvailability = () => {
   };
   return (
     <>
-      <div className={style.setAvailability}>
+      <motion.div
+        className={style.setAvailability}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <h3>Availability</h3>
         <p className={style.warning}>Information here will be published</p>
         <p className={style.instructions}>Set your availability by clicking the date in the calendar below.</p>
@@ -50,7 +56,7 @@ const SetSpeakerAvailability = () => {
           />
         </div>
         <button className={style.button} onClick={handleSubmit}>Update</button>
-      </div>
+      </motion.div>
     </>
   );
 };

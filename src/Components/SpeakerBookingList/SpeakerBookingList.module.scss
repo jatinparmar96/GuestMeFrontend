@@ -253,6 +253,7 @@
 
     .history {
       margin-top: 3.875rem !important;
+
       li {
         padding-right: 0 !important;
       }
@@ -284,4 +285,13 @@
       padding: 0 1.25rem;
     }
   }
+
+
 }
+
+    @media screen and (min-width: $bp-tablet) {
+      .history{
+        margin-bottom: 16.82rem;
+      }
+
+    }

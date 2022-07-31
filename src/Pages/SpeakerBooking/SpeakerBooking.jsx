@@ -6,14 +6,16 @@
 import { Helmet } from 'react-helmet-async';
 
 import BookingList from '../../Containers/BookingList/BookingList';
-
+import style from './SpeakerBooking.module.scss';
 const SpeakerBooking = (props) => {
   return (
     <>
       <Helmet>
         <title>GUEST ME - Speaker Booking</title>
       </Helmet>
-      <BookingList />
+      <div className={style.bookingList}>
+        <BookingList />
+      </div>
     </>
   );
 };

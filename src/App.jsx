@@ -1,21 +1,26 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { Footer } from './Containers/Footer/Footer';
-import { Header } from './Containers/Header/Header';
-
-import { FindASpeaker } from './Pages/FindASpeaker/FindASpeaker';
-import { Login } from './Pages/Login/Login';
-import { Register } from './Pages/Register/Register';
-
 import { HelmetProvider } from 'react-helmet-async';
 import styles from './App.module.scss';
 import RequireAuth from './auth/RequireAuth';
+import tokenAtom from './Recoil/Authentication/atom';
+
+import { Footer } from './Containers/Footer/Footer';
+import { Header } from './Containers/Header/Header';
+
+/*Pages*/
 import SpeakerAccount from './Components/SpeakerAccount/SpeakerAccount';
 import SetSpeakerAvailability from './Components/SpeakersAvailability/SpeakerSetAvailability';
 import SpeakerUpdateProfile from './Components/SpeakerUpdateProfile/SpeakerUpdateProfile';
 import About from './Pages/about/About';
 import BookSpeaker from './Pages/BookSpeaker/BookSpeaker';
+import Contact from './Pages/contact/Contact';
+import { FindASpeaker } from './Pages/FindASpeaker/FindASpeaker';
+import HowItWorks from './Pages/howItWorks/HowItWorks';
+import LandingPage from './Pages/landing/LandingPage';
+import { Login } from './Pages/Login/Login';
 import MyPage from './Pages/MyPage/MyPage';
+import { Register } from './Pages/Register/Register';
 import SpeakerBooking from './Pages/SpeakerBooking/SpeakerBooking';
 import ViewSpeaker from './Pages/ViewSpeaker/ViewSpeaker';
 // Required for calendar
@@ -23,14 +28,12 @@ import { useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { useRecoilState } from 'recoil';
 
-import Contact from './Pages/contact/Contact';
-import HowItWorks from './Pages/howItWorks/HowItWorks';
+
 
 import './App.module.scss';
 
 import 'react-toastify/dist/ReactToastify.min.css';
-import LandingPage from './Pages/landing/LandingPage';
-import tokenAtom from './Recoil/Authentication/atom';
+
 
 import {
   BarElement,
@@ -41,7 +44,7 @@ import {
   LineElement,
   PointElement,
   Title,
-  Tooltip,
+  Tooltip
 } from 'chart.js';
 import { ToastContainer } from 'react-toastify';
 

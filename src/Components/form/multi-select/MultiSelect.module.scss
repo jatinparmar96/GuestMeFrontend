@@ -93,6 +93,11 @@
         border-radius: 0.2rem;
         margin-left: 0.6rem;
         font-size: 0.9rem;
+        &:hover {
+            background-color: $white;
+            color: $mint-blue;
+            outline: 2px solid $mint-blue;
+          }
       }
     }
 

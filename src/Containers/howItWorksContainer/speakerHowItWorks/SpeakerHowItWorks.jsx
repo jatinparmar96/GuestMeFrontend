@@ -23,10 +23,10 @@ const SpeakerHowItWorks = () => {
           Why <span className={containerStyle.fontMint}>GUEST ME?</span>
         </h3>
         <div>
-          GUEST ME is for professional, independent, or amateur public speakers
-          who'd like to be found by educational institutions. We welcome anyone
-          with expertise in any field who is open to speaking at schools to give
-          youth a precious opportunity and learning.
+          <p className={componentStyle.details}>GUEST ME is for professional, independent, or amateur public speakers
+          who'd like to be found by educational institutions. </p>
+          <p className={componentStyle.details}>We welcome anyone with expertise in any field who is open to speaking at schools to give
+          youth a precious opportunity and learning. </p>
         </div>
       </div>
       <div className={containerStyle.appealPointContainer}>
@@ -61,15 +61,17 @@ const SpeakerHowItWorks = () => {
         </div>
 
         <div className={containerStyle.areYouJoin}>
-          <h4 className={componentStyle.compositeHeading}>
+          <h4 className={componentStyle.question}>
             Are you ready to join{' '}
             <span className={containerStyle.fontMint}>as a speaker?</span>
           </h4>
-          <p>
+          <p className={componentStyle.questionSpeaker}>
             Register to join our group of talented and empowering speakers!
             Build networking connections with event organizers!
           </p>
-          <RegisterLinkButton text="Register as a speaker" to="/register" />
+          <div className={componentStyle.howItWorksButton}>
+            <RegisterLinkButton text="Register as a speaker" to="/register" />
+          </div>
           <div className={containerStyle.loginRow}>
             <p>Already have an account?</p>
             <Link to="/login" className={containerStyle.loginLink}>

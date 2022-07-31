@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     background-color: $light-beige;
+    min-height: 37.5rem;
 
   }
 }
@@ -28,6 +29,7 @@
 
       .outlet{
         padding-top: 2.95rem;
+        min-height: 50rem;
 
       }
 

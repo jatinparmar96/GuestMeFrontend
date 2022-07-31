@@ -569,6 +569,13 @@
             font-size: 0.9rem;
             width: 8.70rem;
             border-radius: 0.2rem;
+            &:hover:enabled {
+                background-color: $white;
+                color: $mint-blue;
+                outline: 2px solid $mint-blue;
+
+
+              }
           }
         }
 

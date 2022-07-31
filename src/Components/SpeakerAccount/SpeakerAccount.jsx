@@ -1,12 +1,20 @@
+import { motion } from 'framer-motion';
 import { RequestButton, RequestButtonMobile, SaveButton, SaveButtonMobile } from '../../Components/Buttons/Buttons';
 import ScreenWidth from '../ScreenSize/ScreenSize';
 import style from './SpeakerAccount.module.scss';
+
 const SpeakerAccount = () => {
   const width = ScreenWidth();
 
   return (
     <>
-      <div className={style.speakerAccount}>
+      <motion.div
+        className={style.speakerAccount}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <h3>Account</h3>
         <p className={style.warning}>Information here will not be published</p>
         <form>
@@ -57,7 +65,7 @@ const SpeakerAccount = () => {
           </div>)}
 
         </form>
-      </div>
+      </motion.div>
     </>
   );
 }
