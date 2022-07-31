@@ -1,4 +1,5 @@
 //@ts-check
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
@@ -18,7 +19,14 @@ const HowItWorks = (props) => {
       </Helmet>
       <PageHeading text="How it works" />
       <BreadCrumbs currentPosition="How it works" />
-      <div className={style.howItWorks}>
+      <motion.div
+        className={style.howItWorks}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+
+      >
       <div className={style.pageContainer}>
         <div className={style.roleTabContainer}>
           <p
@@ -36,7 +44,7 @@ const HowItWorks = (props) => {
         </div>
         {isForSpeaker ? <SpeakerHowItWorks /> : <OrganizationHowItWorks />}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

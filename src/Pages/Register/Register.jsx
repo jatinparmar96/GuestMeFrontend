@@ -1,12 +1,12 @@
 // @ts-check
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import RegistrationImage from '../../assets/registration_speaker.png';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import { OrganizationRegisterContainer } from '../../Containers/Registers/OrganizationRegisterContainer/OrganizationRegisterContainer';
-import { Helmet } from 'react-helmet-async';
 import { SpeakerRegisterContainer } from '../../Containers/Registers/SpeakerRegisterContainer/SpeakerRegisterContainer';
-
 import style from './Register.module.scss';
 
 /**@type {React.FC<any>} */
@@ -26,7 +26,13 @@ export const Register = (props) => {
       </Helmet>
       <PageHeading text="Register" />
       <BreadCrumbs currentPosition="Register" />
-      <div className={style.contentContainer}>
+      <motion.div
+        className={style.contentContainer}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className={style.maxContent}>
           <div className={style.radioContainer}>
             <div
@@ -78,7 +84,7 @@ export const Register = (props) => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
