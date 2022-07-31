@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { getSpeakerBookings } from '../../Api/Speaker.service';
 
-import tokenAtom from '../../Recoil/Authentication/atom';
-import SpeakerUpcomingList from '../../Components/SpeakerBookingList/Upcoming/SpeakerUpcomingList';
 import SpeakerHistoryList from '../../Components/SpeakerBookingList/History/SpeakerHistoryList';
+import SpeakerUpcomingList from '../../Components/SpeakerBookingList/Upcoming/SpeakerUpcomingList';
 import SpeakerWaitingList from '../../Components/SpeakerBookingList/Waiting/SpeakerWaitingList';
+import tokenAtom from '../../Recoil/Authentication/atom';
 import style from './BookingList.module.scss';
 
 const BookingList = (props) => {
@@ -19,7 +19,7 @@ const BookingList = (props) => {
     if (user.name._id) {
       getSpeakerBookings(user.name._id)
         .then((response) => {
-          // console.log(response)
+          console.log(response);
           if (response) {
             setSpeakerData(response.data);
             setLoadingState(false);

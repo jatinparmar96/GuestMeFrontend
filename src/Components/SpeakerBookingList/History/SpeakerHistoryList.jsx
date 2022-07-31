@@ -25,8 +25,8 @@ const SpeakerHistoryList = (props) => {
   // console.log(count);
 
   useEffect(() => {
-    if (props.speaker?.accepted) {
-      const acceptedLength = props.speaker.accepted.length;
+    if (props.speaker?.history) {
+      const acceptedLength = props.speaker.history.length;
       let acceptedArray = [];
       for (let i = 0; i < acceptedLength; i++) {
         acceptedArray.push(false);
