@@ -7,6 +7,7 @@
   align-items: center;
   background-color: $light-beige;
   height: 100px;
+
 }
 
 .heading {
@@ -14,6 +15,7 @@
   margin: 0;
   padding: 0;
   margin-left: 20px;
+  color: $black;
 
   @media screen and (min-width: $bp-tablet) {
     margin-left: 150px;

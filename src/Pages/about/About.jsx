@@ -1,17 +1,18 @@
 //@ts-check
 import React from 'react';
-import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
-import { ContactLinkButton } from '../../Components/Buttons/Buttons';
-import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import { Helmet } from 'react-helmet-async';
-import Noriko from '../../assets/members/Noriko.png';
-import Satveer from '../../assets/members/Satveer.png';
-import Valentina from '../../assets/members/Valentina.png';
 import Arvind from '../../assets/members/Arvind.png';
 import Gabriela from '../../assets/members/Gabriela.png';
 import Jatin from '../../assets/members/Jatin.png';
 import Koichi from '../../assets/members/Koichi.png';
+import Noriko from '../../assets/members/Noriko.png';
+import Satveer from '../../assets/members/Satveer.png';
+import Valentina from '../../assets/members/Valentina.png';
+import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
+import { ContactLinkButton } from '../../Components/Buttons/Buttons';
+import { PageHeading } from '../../Components/PageHeading/PageHeading';
 
+import { motion } from 'framer-motion';
 import Member from './components/member/Member';
 
 import style from './About.module.scss';
@@ -24,7 +25,13 @@ const About = () => {
       <PageHeading text="About" />
       <BreadCrumbs currentPosition="About" />
 
-      <div className={style.background}>
+      <motion.div
+        className={style.background}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className={style.pageContainer}>
           <div className={style.contentContainer}>
             <h3 className={style.heading}>
@@ -59,7 +66,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

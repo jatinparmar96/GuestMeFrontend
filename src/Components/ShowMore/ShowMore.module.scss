@@ -13,6 +13,16 @@
   margin: 0;
   justify-content: flex-end;
 
+  @media screen and (min-width: $bp-large) {
+    &:hover{
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+  }
+
+
+
 
 
 

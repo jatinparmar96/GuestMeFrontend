@@ -76,6 +76,8 @@
     max-width: 37.6rem;
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-template-rows: 1.5rem 3fr 3fr;
+
 
     h3 {
       margin-top: 0;
@@ -152,19 +154,29 @@
         display: grid;
         grid-template-columns: 50% 50%;
         gap: 0;
-        padding-bottom: 12.55rem;
         margin-top: 2rem;
+        margin-bottom: 3rem;
 
         :first-child{
           justify-self: end;
           font-size: 0.9rem;
           font-weight: 600;
+          &:hover {
+              background-color: $white;
+              color: $mint-blue;
+              outline: 2px solid $mint-blue;
+            }
         }
 
         :last-child {
           margin-left:1rem;
           font-size: 0.9rem;
           font-weight: 600;
+          &:hover {
+              background-color: $black;
+              color: $white;
+              outline: 2px solid $black;
+            }
         }
       }
       }

@@ -22,7 +22,7 @@ const OrganizationHowItWorks = () => {
         <h3>
           Why <span className={containerStyle.fontMint}>GUEST ME?</span>
         </h3>
-        <div>
+        <div className={componentStyle.details}>
           <p>
             We guarantee your satisfaction with your speaker and a precious
             learning opportunity for your students.
@@ -64,21 +64,21 @@ const OrganizationHowItWorks = () => {
         </div>
 
         <div className={containerStyle.areYouJoin}>
-          <h4 className={componentStyle.compositeHeading}>
+          <h4 className={componentStyle.question}>
             Are you ready to join
-            <span className={containerStyle.fontMint}>as an organization?</span>
+            <span className={containerStyle.fontMint}> as an organization?</span>
           </h4>
-          <p>
+          <p className={componentStyle.questionOrg}>
             Register to choose a perfect speaker for your event from a wide
             roster of professionals! Bring that extra energy your audience
             needs!
           </p>
-          <span>
+          <div className={componentStyle.howItWorksButton}>
             <RegisterLinkButton
               text="Register as an organization"
               to="/register"
             />
-          </span>
+          </div>
           <div className={containerStyle.loginRow}>
             <p>Already have an account?</p>
             <Link to="/login" className={containerStyle.loginLink}>

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
@@ -45,7 +46,14 @@ const SpeakerUpdateProfile = () => {
 
   return (
     <>
-      <div className={style.speakerUpdateProfile}>
+      <motion.div
+        className={style.speakerUpdateProfile}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+
+      >
         <h3>My Info</h3>
         <p>Information here will be published</p>
 
@@ -462,7 +470,7 @@ const SpeakerUpdateProfile = () => {
             </div>
           </form>
         )}
-      </div>
+      </motion.div>
     </>
   );
 };
