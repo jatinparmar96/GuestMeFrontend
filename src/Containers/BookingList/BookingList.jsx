@@ -21,7 +21,9 @@ const BookingList = (props) => {
         .then((response) => {
           console.log(response);
           if (response) {
-            setSpeakerData(response.data);
+            const speakers = response.data;
+            speakers.history = speakers.rejected;
+            setSpeakerData(speakers);
             setLoadingState(false);
           }
         })

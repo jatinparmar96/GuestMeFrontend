@@ -81,7 +81,11 @@ const SpeakerHistoryList = (props) => {
                       </div>
                     </div>
                     <div className={style.waitingForReview}>
-                      <p>Waiting for review</p>
+                      {booking.status === 'rejected' ? (
+                        <p>Rejected</p>
+                      ) : (
+                        <p>Waiting for review</p>
+                      )}
                     </div>
                   </div>
                 </div>
