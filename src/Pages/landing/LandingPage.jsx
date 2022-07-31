@@ -4,6 +4,7 @@ import Benefit from '../../Components/landing-page/benefit/Benefit';
 import FeaturedSpeakers from '../../Components/landing-page/featured-speakers/FeaturedSpeakers';
 import style from './LandingPage.module.scss';
 
+import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import footerImage1 from '../../assets/landing-page-footer-1.png';
@@ -11,14 +12,19 @@ import footerImage2 from '../../assets/landing-page-footer-2.png';
 import footerImage3 from '../../assets/landing-page-footer-3.png';
 import LandingPageFilter from '../../Components/landing-page/landing-page-filter/LandingPageFilter';
 import Speeches from '../../Components/landing-page/speeches/Speeches';
-
 const LandingPage = () => {
   return (
     <>
       <Helmet>
         <title>GUEST ME - Home</title>
       </Helmet>
-      <div className={style.landingPageContainer}>
+      <motion.div
+        className={style.landingPageContainer}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className={style.topContainer}>
           <div className={style.textContainer}>
             <h1>
@@ -127,7 +133,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
