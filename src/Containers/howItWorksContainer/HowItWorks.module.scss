@@ -44,12 +44,13 @@
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: flex-start;
-
   gap: 1rem;
-  margin-top: 50px;
+  margin: 3.15rem 7.5rem 0;
+
 
   @media screen and (min-width: $bp-tablet) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 12rem);
+    gap: 2.9rem;
   }
 }
 
@@ -62,17 +63,53 @@
 }
 
 .areYouJoin {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
-  max-width: 100%;
-  padding: 1rem;
-  gap: 1rem;
+  max-width: 37.65rem;
+  margin: 8rem auto 0 auto;
+
+
+
 }
+
 
 .loginLink {
   font-weight: bold;
   color: $mint-blue;
   // @include linkUnderline;
+}
+
+@media screen and (min-width: $bp-large) {
+  .container {
+    .whyGuestMe {
+      margin: 0 auto;
+      h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 1.65rem;
+
+      }
+
+    }
+        .imageContainer {
+          width: 33.05rem;
+          height: auto;
+
+          z-index: 10;
+        }
+
+        .loginRow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap:1.3rem;
+          margin-top: 0;
+          margin-bottom: 8.15rem;
+        }
+
+  }
 }

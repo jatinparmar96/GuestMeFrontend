@@ -1,8 +1,8 @@
 //@ts-check
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
-import { Helmet } from 'react-helmet-async';
 
 import OrganizationHowItWorks from '../../Containers/howItWorksContainer/organizationHowItWorks/OrganizationHowItWorks';
 import SpeakerHowItWorks from '../../Containers/howItWorksContainer/speakerHowItWorks/SpeakerHowItWorks';
@@ -18,6 +18,7 @@ const HowItWorks = (props) => {
       </Helmet>
       <PageHeading text="How it works" />
       <BreadCrumbs currentPosition="How it works" />
+      <div className={style.howItWorks}>
       <div className={style.pageContainer}>
         <div className={style.roleTabContainer}>
           <p
@@ -34,6 +35,7 @@ const HowItWorks = (props) => {
           </p>
         </div>
         {isForSpeaker ? <SpeakerHowItWorks /> : <OrganizationHowItWorks />}
+        </div>
       </div>
     </>
   );
