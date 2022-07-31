@@ -1,21 +1,43 @@
 @use "../../common/variables" as *;
 
+.contact{
+  background-color: $white;
+
+  @media screen and (min-width: $bp-large) {
+
+      padding-top: 5.05rem;
+        padding-bottom: 7.95rem;
+  }
+
+
+
+
 .contactContainer {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 20px;
+
   align-items: flex-start;
   justify-items: flex-start;
   max-width: $max-content-width;
   margin: 0 auto;
+  background-color: $light-beige;
 
   @media screen and (min-width: $bp-tablet) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: calc(100% - 45.68%) 45.68%;
+    border-radius: 10px;
+
   }
 }
 
 .heading {
   grid-column: 1 / -1;
+  color: $black;
+  font-weight: 700;
+    @media screen and (min-width: $bp-large) {
+        font-size: 1.2rem;
+        margin-top: 2.3rem;
+
+      }
 }
 
 .description {
@@ -35,10 +57,15 @@
   width: 100%;
   height: 100%;
   background-color: $light-beige;
-  padding: 20px;
   margin: 0;
   justify-content: flex-start;
   align-content: flex-start;
+  @media screen and (min-width: $bp-large) {
+    margin: 0rem 5rem 2.5rem 2.5rem;
+    max-width: 100%;
+    width: unset;
+
+    }
 
   .inputFieldContainer {
     margin-top: 30px;
@@ -55,6 +82,12 @@
 
   .description {
     text-align: left;
+    font-weight: 400;
+
+    @media screen and (min-width: $bp-large) {
+
+    font-size: 0.8rem;
+    }
   }
 
   .label {
@@ -62,9 +95,11 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
     display: inline-block;
+    color: $black;
 
     @media screen and (min-width: $bp-tablet) {
       margin-bottom: 0.4rem;
+      font-size: 0.9rem;
     }
   }
 
@@ -79,8 +114,8 @@
     border-radius: 0.25rem;
 
     &:focus {
-      outline: 0.1px solid $grey;
-    }
+        outline-color: $mint-blue;
+      }
   }
   .inputSpan {
     grid-column: 1 / -1;
@@ -94,23 +129,33 @@
     grid-column: 1 / -1;
     resize: none;
     border-radius: 0.25rem;
+    &:focus {
+        outline-color: $mint-blue;
+      }
   }
 }
 
 .imageContainer {
   display: none;
-  width: 100%;
-  height: 100%;
 
-  @media screen and (min-width: $bp-tablet) {
+
+  @media screen and (min-width: $bp-large) {
     display: block;
+    width: 100%;
+    height:100%;
+    grid-column: 2;
+    justify-self: end;
+    border-radius: 10px;
+    background-image: url('../../assets/contact_page.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #cccccc;
   }
 }
 
 .featureImage {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
 }
 
 .buttonContainer {
@@ -122,5 +167,17 @@
 
   @media screen and (min-width: $bp-tablet) {
     margin-top: 2.5rem;
+
+    :first-child{
+    &:hover {
+        background-color: $white;
+        color: $mint-blue;
+        outline: 2px solid $mint-blue;
+
+
+      }
+    }
   }
+}
+
 }

@@ -1,17 +1,27 @@
 //@ts-check
 import { motion } from 'framer-motion';
-import React from 'react';
+import { React, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import WideDisplayImage from '../../assets/contact_page.png';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
 import { PrimaryButton } from '../../Components/Buttons/Buttons';
+import AlertDialogContact from '../../Components/ModalPopup/ModalPopupContact';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import style from './Contact.module.scss';
 
+
 /**@type {React.FC<any>} */
 const Contact = (props) => {
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [ buttonAction, setButtonAction ] = useState(false);
+
+  const openPopup = () => {
+  setPopupOpen(true);
+  setButtonAction(true);
+};
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    openPopup();
   };
 
   return (
@@ -21,6 +31,13 @@ const Contact = (props) => {
       </Helmet>
       <PageHeading text="Contact" />
       <BreadCrumbs currentPosition="Contact" />
+      <AlertDialogContact
+        open={popupOpen}
+        buttonAction={buttonAction}
+        popupOpen={popupOpen}
+        setPopupOpen={setPopupOpen}
+      />
+      <div className={style.contact}>
       <motion.div
         className={style.contactContainer}
         initial={{ opacity: 0 }}
@@ -91,13 +108,9 @@ const Contact = (props) => {
           </div>
         </form>
         <div className={style.imageContainer}>
-          <img
-            src={WideDisplayImage}
-            alt="person"
-            className={style.featureImage}
-          />
         </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 };
