@@ -1,8 +1,7 @@
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { getSpeakerBookings } from '../../Api/Speaker.service';
-
-import { motion } from 'framer-motion';
 import SpeakerHistoryList from '../../Components/SpeakerBookingList/History/SpeakerHistoryList';
 import SpeakerUpcomingList from '../../Components/SpeakerBookingList/Upcoming/SpeakerUpcomingList';
 import SpeakerWaitingList from '../../Components/SpeakerBookingList/Waiting/SpeakerWaitingList';
@@ -30,9 +29,7 @@ const BookingList = (props) => {
   }, [user, newBookingData]);
   return (
     <>
-      {loadingState ? (
-        <p>Loading... </p>
-      ) : (
+      {loadingState ? null : (
         <>
           <motion.div
               className={style.lists}
