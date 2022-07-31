@@ -16,10 +16,13 @@ const RequestForm = (props) => {
     register,
     watch,
     getValues,
-    formState: { isDirty },
+    reset,
+    formState: { isDirty, isValid },
   } = useForm({
-    defaultValues: {},
+   mode: "onChange"
   });
+
+
 
   const handleSendRequest = (event) => {
     event.preventDefault();
@@ -45,10 +48,12 @@ const RequestForm = (props) => {
     postBooking(formData)
       .then(
         toast('Request sent successfully', { type: 'success', autoClose: 2000 })
-      )
+    )
+      .then(reset())
       .catch((error) => console.error(error));
   };
   // const today = new Date();
+
 
   //TODO: Add speaker date values to the calendar
   return (
@@ -98,7 +103,7 @@ const RequestForm = (props) => {
                   className={style.timeSelect}
                   name="startTime"
                   {...register('bookingDateTime.startDateTime', {
-                    required: true,
+
                   })}
                 >
                   {times.map((time, index) => (
@@ -115,7 +120,7 @@ const RequestForm = (props) => {
                   name="endTime"
                   id="endTime"
                   {...register('bookingDateTime.endDateTime', {
-                    required: true,
+
                   })}
                 >
                   {times.map((time, index) => (
@@ -133,7 +138,8 @@ const RequestForm = (props) => {
             <input
               type="text"
               placeholder="Enter the topic of the speech"
-              {...register('topic', { required: true })}
+              {...register('topic', { required: 'This is a required field', })}
+
             />
           </label>
           <label className={style.personInCharge}>
@@ -142,14 +148,14 @@ const RequestForm = (props) => {
             <input
               type="text"
               placeholder="First Last"
-              {...register('personInCharge', { required: true })}
+              {...register('personInCharge', { required: 'This is a required field', })}
             />
           </label>
           <label className={style.deliveryMethod}>
             Delivery method*
             <select
               className={style.deliveryMethodSelector}
-              {...register('deliveryMethod', { required: true })}
+              {...register('deliveryMethod', { required: 'This is a required field', })}
             >
               <option value="" disabled>
                 Select a delivery method
@@ -172,7 +178,7 @@ const RequestForm = (props) => {
               <input
                 type="text"
                 placeholder="Enter the location"
-                {...register('location', { required: true })}
+                {...register('location', { required: 'This is a required field',})}
               />
             </label>
           ) : null}
@@ -181,7 +187,7 @@ const RequestForm = (props) => {
             <textarea
               className={style.message}
               placeholder="Enter the details and message"
-              {...register('message', { required: true })}
+              {...register('message', { required: 'This is a required field', })}
             />
           </label>
 
@@ -197,8 +203,8 @@ const RequestForm = (props) => {
           </div>
           <button
             type="submit"
-            disabled={!isDirty}
             className={style.sendRequest}
+            disabled={!(isDirty && isValid)}
           >
             Send
           </button>
