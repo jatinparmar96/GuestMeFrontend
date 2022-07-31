@@ -101,7 +101,7 @@ const RequestForm = (props) => {
               Time* <span>* Timings are in PST(GMT-7)</span>
             </div>
             <div className={style.timeSelectors}>
-              <label classNames={style.startTime} aria-label="Start Time">
+              <label className={style.startTime} aria-label="Start Time">
                 <select
                   className={style.timeSelect}
                   name="startTime"
