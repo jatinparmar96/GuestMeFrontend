@@ -6,6 +6,7 @@ const BOOKING_ENDPOINT = {
   get: `${BASE_ENDPOINT}`,
   post: `${BASE_ENDPOINT}`,
   setBookingStatus: `${BASE_ENDPOINT}/set-booking`,
+  getBookingsByMonth: `${BASE_ENDPOINT}/all-bookings-by-month`,
 };
 
 /**
@@ -28,6 +29,10 @@ export const postBooking = async (bookingData) => {
     .catch((err) => {
       console.log(err);
     });
+};
+
+export const getBookingsByMonth = async () => {
+  return get(BOOKING_ENDPOINT.getBookingsByMonth);
 };
 
 export const bookingResponse = async (bookingStatus, bookingID) => {

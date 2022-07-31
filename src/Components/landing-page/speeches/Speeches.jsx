@@ -1,9 +1,18 @@
+import { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
+import { getBookingsByMonth } from '../../../Api/Booking.service';
 import howManySpeeches from '../../../assets/how-many-speeches.png';
 
 import style from './Speeches.module.scss';
 
 const Speeches = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const { data } = await getBookingsByMonth();
+      setData(data);
+    })();
+  }, []);
   return (
     <>
       <div className={style.speechesTextContainer}>
@@ -26,27 +35,41 @@ const Speeches = () => {
         src={howManySpeeches}
         alt="how many speeches"
       ></img>
-      <div className={style.dataVisualization}>
-        <Line
-          data={{
-            labels: [
-              'January',
-              'February',
-              'March',
-              'April',
-              'May',
-              'June',
-              'July',
-            ],
-            datasets: [
-              {
-                label: 'Number of Speeches',
-                data: [65, 59, 80, 81, 56, 55, 40],
-                borderColor: '#35afac',
+      <div className={style.dataVisualizationContainer}>
+        <div className={style.dataVisualization}>
+          <Line
+            options={{
+              responsive: true,
+              layout: {
+                padding: 50,
               },
-            ],
-          }}
-        />
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            }}
+            data={{
+              labels: [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+              ],
+              datasets: [
+                {
+                  label: 'Number of Speeches',
+                  data,
+                  borderColor: '#35afac',
+                },
+              ],
+            }}
+          />
+        </div>
       </div>
     </>
   );
