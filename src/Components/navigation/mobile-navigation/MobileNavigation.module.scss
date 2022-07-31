@@ -43,6 +43,19 @@
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
+  font-family: $barlow-condensed-font;
+  font-weight: 600;
+  font-size: 1.13rem;
+
+  a[href='/speakers/mypage/update'] {
+      color: $fiery-rose;
+    }
+  a[href='/'] {
+    margin-top: 9.5rem;
+    padding: 0 15px;
+    outline: 2px solid $black;
+    outline-offset: 5px;
+  }
 }
 @media screen and (min-width: $bp-tablet) {
   .navigation {
