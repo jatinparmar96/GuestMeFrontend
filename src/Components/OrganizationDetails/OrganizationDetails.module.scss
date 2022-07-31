@@ -16,6 +16,8 @@
     text-decoration-line: underline;
     text-underline-offset: 0.2rem;
     color: #35afac;
+
+
   }
   p {
     font-family: 'Barlow';
@@ -60,6 +62,12 @@
         color: #3a3f3f;
         margin-bottom: 0.125rem;
       }
+    }
+    .organizationEmail,.crossMark {
+          &:hover {
+              cursor: pointer;
+              opacity: 0.8;
+            }
     }
   }
 }

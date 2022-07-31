@@ -36,7 +36,10 @@ const RequestForm = (props) => {
       organization: {
         id: organization._id,
         name: organization.organizationName,
+        organizationEmail: organization.contact.email,
+        organizationPhone: organization.contact.phone,
       },
+
     };
 
     if (formData.bookingDateTime.date === undefined) {
