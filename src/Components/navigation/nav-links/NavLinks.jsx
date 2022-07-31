@@ -40,7 +40,7 @@ const loggedInLinks = [{ path: '/speakers/mypage/update', name: 'My Page' }];
 
 const NavLinks = (props) => {
   const [user, setUser] = useRecoilState(tokenAtom);
-  console.log(user);
+
   //Logout the user
   const handleLogout = () => {
     setUser({ name: '', value: '' });
@@ -69,15 +69,16 @@ const NavLinks = (props) => {
           ))
         ) : (
           <>
-            {loggedInLinks.map((link, index) => (
-              <Link
-                key={index}
-                className={`${style.link} ${link.class}`}
-                to={link.path}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {user?.name?.userType === 'speaker' &&
+              loggedInLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  className={`${style.link} ${link.class}`}
+                  to={link.path}
+                >
+                  {link.name}
+                </Link>
+              ))}
             <Link className={style.link} to="/" onClick={handleLogout}>
               Logout
             </Link>

@@ -17,12 +17,12 @@ const SpeakerWaitingList = (props) => {
   const [bookingDataOrganization, setBookingDataOrganization] = useState([]);
   const [arrowForOrg, setArrowForOrg] = useState(true);
 
-  const bookingStatus = (e, id) => {
+  const bookingStatus = async (e, id) => {
     let data = {
       status: e,
     };
-    const updatedBookingData = bookingResponse(data, id);
-    props.setNewBookingData(updatedBookingData);
+    const response = await bookingResponse(data, id);
+    props.setNewBookingData(response.data);
   };
 
   const openPopup = (response, bookingData) => {

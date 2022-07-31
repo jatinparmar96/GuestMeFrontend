@@ -18,9 +18,11 @@ const BookingList = (props) => {
     if (user.name._id) {
       getSpeakerBookings(user.name._id)
         .then((response) => {
-          // console.log(response)
+          console.log(response);
           if (response) {
-            setSpeakerData(response.data);
+            const speakers = response.data;
+            speakers.history = speakers.rejected;
+            setSpeakerData(speakers);
             setLoadingState(false);
           }
         })
@@ -32,11 +34,11 @@ const BookingList = (props) => {
       {loadingState ? null : (
         <>
           <motion.div
-              className={style.lists}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
+            className={style.lists}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
           >
             <h3>Booking</h3>
             <SpeakerWaitingList

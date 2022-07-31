@@ -23,12 +23,12 @@ const OrganizationDetails = ({ booking, organizationData, id }) => {
                   <span>Email </span>
                 </span>
                 <span className={style.organizationEmail}>
-                  {booking.organization.organizationEmail}
+                  {booking.organization.id?.contact?.email}
                 </span>
               </p>
             </div>
             <p>
-              <span>Phone</span> {booking.organization.organizationPhone}
+              <span>Phone</span> {booking.organization.id?.contact?.phone}
             </p>
             <p>
               <span> Time</span> {booking.bookingDateTime.startDateTime} -{' '}
