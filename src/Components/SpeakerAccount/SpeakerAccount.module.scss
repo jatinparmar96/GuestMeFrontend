@@ -159,12 +159,22 @@
           justify-self: end;
           font-size: 0.9rem;
           font-weight: 600;
+          &:hover {
+              background-color: $white;
+              color: $mint-blue;
+              outline: 2px solid $mint-blue;
+            }
         }
 
         :last-child {
           margin-left:1rem;
           font-size: 0.9rem;
           font-weight: 600;
+          &:hover {
+              background-color: $black;
+              color: $white;
+              outline: 2px solid $black;
+            }
         }
       }
       }
