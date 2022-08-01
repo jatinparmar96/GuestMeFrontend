@@ -32,10 +32,7 @@ export const Login = () => {
       <Helmet>
         <title>GUEST ME - Log in</title>
       </Helmet>
-      <div
-        className={style.backgroundContainer}
-
-      >
+      <div className={style.backgroundContainer}>
         <PageHeading
           text={`Log in as ${isSpeaker ? 'a speaker' : ' an organization'}`}
         />
@@ -44,12 +41,12 @@ export const Login = () => {
             isSpeaker ? 'a speaker' : ' an organization'
           }`}
         />
-        <motion.div className={style.PageContainer}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-
+        <motion.div
+          className={style.PageContainer}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
         >
           <div className={style.contentContainer}>
             <div className={style.boxContainer}>
@@ -59,7 +56,7 @@ export const Login = () => {
                     type="radio"
                     name="role"
                     id="role-speaker"
-                    defaultChecked={isSpeaker}
+                    checked={isSpeaker}
                     className={style.toggle}
                     onClick={() => setIsSpeaker(true)}
                   />
@@ -73,7 +70,7 @@ export const Login = () => {
                     name="role"
                     id="role-organization"
                     className={style.toggle}
-                    defaultChecked={!isSpeaker}
+                    checked={!isSpeaker}
                     onClick={() => setIsSpeaker(false)}
                   />
                   <label
