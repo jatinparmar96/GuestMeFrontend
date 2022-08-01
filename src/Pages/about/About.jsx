@@ -108,7 +108,7 @@ const designers = [
 const developers = [
   {
     name: 'Jatin Parmar',
-    role: 'Lead Developer, Full Stack Developer',
+    role: 'Lead Developer, Full Stack Dev',
     imageUrl: Jatin,
     linkedInLink: 'https://www.linkedin.com/in/jatinparmar96/',
     linkedInName: 'jatinparmar96',
@@ -116,7 +116,7 @@ const developers = [
       'Holder of a Bachelor of Science degree in Computer Engineering. Extensive experience in developing ERP and Ecommerce web applications.',
   },
   {
-    name: 'Gabriela Fernandez Chaves Arriola',
+    name: 'Gabriela Fernandez Chaves',
     role: 'Full Stack Developer',
     imageUrl: Gabriela,
     linkedInLink: 'http://www.linkedin.com/in/gabrielafchaves/',

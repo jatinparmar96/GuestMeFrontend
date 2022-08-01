@@ -7,6 +7,7 @@
 .heading4 {
   color: $mint-blue;
   margin-top: 0;
+  font-weight: 600;
 
   @media (min-width: $bp-tablet) {
     font-family: $barlow-condensed-font;
@@ -33,7 +34,7 @@
   grid-template-columns: 1fr;
   align-items: center;
   justify-items: center;
-  padding: 0 1.25rem;
+  // padding: 0 1.25rem;
 }
 
 .heading {
@@ -78,9 +79,22 @@
   align-content: center;
   margin: 0 auto;
   margin-bottom: 6.25rem;
+  font-family: $barlow-condensed-font;
+  font-weight:600;
   @media screen and (min-width: $bp-tablet) {
     margin-bottom: 0;
     height: unset;
+    font-size: 0.9rem;
+    :first-child{
+      &:hover {
+          background-color: $white;
+          color: $mint-blue;
+          outline: 2px solid $mint-blue;
+        }
+
+    }
+
+
   }
 }
 
@@ -88,11 +102,13 @@
   display: grid;
   grid-template-columns: 1fr;
 
+
   @media screen and (min-width: 500px) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media screen and (min-width: $bp-tablet) {
+  @media screen and (min-width: $bp-large) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:3rem;
   }
 }
