@@ -24,9 +24,16 @@
 
 .pageContainer {
   background-color: $white;
-  max-width: $max-content-width;
+  width: 17.44rem;
+  max-width: 450px;
   margin: 0 auto;
   margin-bottom: 8.5rem;
+    @media screen and (min-width: $bp-large) {
+      max-width: $max-content-width;
+      width: unset;
+    }
+
+
 }
 
 .contentContainer {
@@ -97,18 +104,27 @@
 
   }
 }
-
-.membersContainer {
-  display: grid;
-  grid-template-columns: 1fr;
-
-
-  @media screen and (min-width: 500px) {
-    grid-template-columns: 1fr 1fr;
-  }
-
+.members{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 450px;
   @media screen and (min-width: $bp-large) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap:3rem;
+    display: block;
+    max-width: unset;
   }
+  .membersContainer {
+
+
+
+
+
+      @media screen and (min-width: $bp-large) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3rem;
+        max-width: unset;
+      }
+    }
+
 }

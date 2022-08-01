@@ -46,7 +46,7 @@ const About = () => {
                 <ContactLinkButton to="/contact" text="Contact us" />
               </div>
             </div>
-            <div>
+            <div className={style.members}>
               <div className="designers">
                 <h4 className={style.heading4}>Designer</h4>
                 <div className={style.membersContainer}>
