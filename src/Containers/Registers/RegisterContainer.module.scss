@@ -68,6 +68,9 @@
   flex-grow: 1;
   border: none;
   padding: 12px;
+  &:focus {
+      outline-color: $mint-blue;
+    }
 }
 
 .nameFiled {
@@ -113,6 +116,16 @@
   display: flex;
   justify-content: center;
   align-content: center;
+
+  @media screen and (min-width: $bp-large) {
+    :first-child{
+      &:hover {
+          background-color: $white;
+          color: $mint-blue;
+          outline: 2px solid $mint-blue;
+        }
+    }
+  }
 }
 
 .confirmAccount {
@@ -133,5 +146,13 @@
 .registerLink {
   color: $mint-blue;
   font-weight: 600;
-  @include linkUnderline;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+
+  @media screen and (min-width: $bp-large) {
+   &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
 }

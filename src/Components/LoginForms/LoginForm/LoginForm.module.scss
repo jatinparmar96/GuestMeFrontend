@@ -15,6 +15,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  :first-child {
+
+    @media screen and (min-width: $bp-large) {
+        &:hover {
+            background-color: $white;
+            color: $mint-blue;
+            outline: 2px solid $mint-blue;
+          }
+
+    }
+
+    }
+
 }
 
 .inputRow {
@@ -110,5 +123,13 @@
   font-family: $barlow-condensed-font;
   margin-top: calc(1.25rem - 0.9rem);
 
-  @include linkUnderline;
+
+  @media screen and (min-width: $bp-large) {
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+
+
 }

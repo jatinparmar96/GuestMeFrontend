@@ -21,6 +21,15 @@
 	font-family: $barlow-condensed-font;
 	line-height: 1.5rem;
 	letter-spacing: 0.05em;
+
+	@media screen and (min-width: $bp-large) {
+		&:hover{
+			opacity: 0.8;
+			cursor: pointer;
+		}
+	}
+
+
 }
 
 .apply {

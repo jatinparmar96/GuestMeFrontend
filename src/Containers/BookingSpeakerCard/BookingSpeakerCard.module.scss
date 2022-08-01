@@ -83,6 +83,16 @@
 
       .button{
         margin-top: 1rem;
+        :first-child{
+
+        &:hover {
+            background-color: $white;
+            color: $mint-blue;
+            outline: 2px solid $mint-blue;
+          }
+
+        }
+
       }
 
 
