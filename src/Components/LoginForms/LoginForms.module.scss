@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.9rem;
+  color: $black;
   @media screen and (min-width: $bp-tablet) {
     padding: 2rem;
   }
@@ -60,11 +61,17 @@
   font-family: $barlow-condensed-font;
   margin-top: (0.63rem - 0.9rem);
   margin-bottom: 2.29rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
   @media screen and (min-width: $bp-tablet) {
     padding: 0;
     margin-bottom: 0;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
   }
-  @include linkUnderline;
+
 }
 
 .scaleDownText {

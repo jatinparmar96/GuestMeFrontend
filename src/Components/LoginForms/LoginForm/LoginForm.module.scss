@@ -9,12 +9,26 @@
   align-items: flex-start;
   gap: 0.9rem;
   margin-top: 2.23rem;
+
 }
 
 .buttonContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  :first-child {
+
+    @media screen and (min-width: $bp-large) {
+        &:hover {
+            background-color: $white;
+            color: $mint-blue;
+            outline: 2px solid $mint-blue;
+          }
+
+    }
+
+    }
+
 }
 
 .inputRow {
@@ -43,6 +57,11 @@
   width: 100%;
   height: 2.5rem;
   padding: 0.81rem;
+  border: 1px solid transparent;
+  &:focus {
+      outline-color: $mint-blue;
+    }
+
 }
 
 .inputPassword {
@@ -51,6 +70,11 @@
   grid-row: 1 / 2;
   height: 2.5rem;
   padding: 0.81rem;
+  border: 1px solid transparent;
+
+    &:focus {
+      outline-color: $mint-blue;
+    }
 }
 
 .eyeContainer {
@@ -110,5 +134,13 @@
   font-family: $barlow-condensed-font;
   margin-top: calc(1.25rem - 0.9rem);
 
-  @include linkUnderline;
+
+  @media screen and (min-width: $bp-large) {
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+
+
 }

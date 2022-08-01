@@ -56,13 +56,16 @@
             margin: 0 2.28rem 0 2.28rem;
             padding-bottom: 3.13rem;
 
+
             :first-child {
                   margin-bottom: 1.25rem;
                   width: 100%;
+                  font-size: 0.9rem;
             }
 
             :last-child {
                   width: 100%;
+                  font-size: 0.9rem;
             }
       }
 
@@ -104,9 +107,19 @@
                         :first-child {
 
                               width: 8.7rem;
+                        &:hover {
+                        background-color: $black;
+                        color: $white;
+                        outline: 2px solid $black;
+                        }
                         }
                         :last-child {
                               width: 8.7rem;
+                        &:hover {
+                        background-color: $white;
+                        color: $mint-blue;
+                        outline: 2px solid $mint-blue;
+                              }
                         }
                   }
             }

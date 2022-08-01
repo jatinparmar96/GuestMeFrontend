@@ -162,10 +162,12 @@
 
   .profileAdditionalInfo{
     grid-column: 3;
-    // margin-top:0.45rem;
-    margin-left: 1.95rem;
-          display: grid;
-            grid-template-rows: repeat(5, auto);
+
+    margin-left: 0.95rem;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    border-left: 0.05rem solid $grey;
+    padding-left: 1rem;
 
 
     div{
@@ -189,10 +191,22 @@
       :first-child{
         margin-right: 0rem;
         width: 100%;
+        font-size: 0.9rem;
+        &:hover {
+            background-color: $black;
+            color: $white;
+            outline: 2px solid $black;
+          }
       }
       :last-child{
         margin-left: 0rem;
         width: 100%;
+        font-size: 0.9rem;
+        &:hover {
+            background-color: $white;
+            color: $mint-blue;
+            outline: 2px solid $mint-blue;
+          }
       }
   }
 
