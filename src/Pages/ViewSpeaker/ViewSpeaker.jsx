@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { getSpeaker } from '../../Api/Speaker.service';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
+import Loader from '../../Components/loader/Loader';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import SpeakerPrimaryInformation from '../../Containers/Speaker_PrimaryInformation/SpeakerPrimaryInformation';
 import SpeakerSecondaryInformation from '../../Containers/Speaker_SecondaryContainer/Speaker_SecondaryContainer';
@@ -33,7 +34,7 @@ const ViewSpeaker = (props) => {
       </Helmet>
 
       {loadingState ? (
-        <p>Loading... </p>
+        <Loader />
       ) : (
         <>
           <div>

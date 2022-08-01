@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { getSpeaker } from '../../Api/Speaker.service';
 import BreadCrumbs from '../../Components/breadCrumbs/BreadCrumbs';
+import Loader from '../../Components/loader/Loader';
 import { PageHeading } from '../../Components/PageHeading/PageHeading';
 import BookingSpeakerCard from '../../Containers/BookingSpeakerCard/BookingSpeakerCard';
 import BookRequest from '../../Containers/BookRequest/BookRequest';
@@ -31,7 +32,7 @@ const BookSpeaker = (props) => {
         <title>GUEST ME - Book speaker</title>
       </Helmet>
       {loadingState ? (
-        <p>Loading... </p>
+        <Loader/>
       ) : (
         <>
           <div>
