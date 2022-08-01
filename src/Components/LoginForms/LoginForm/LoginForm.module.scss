@@ -9,6 +9,7 @@
   align-items: flex-start;
   gap: 0.9rem;
   margin-top: 2.23rem;
+
 }
 
 .buttonContainer {
@@ -56,6 +57,11 @@
   width: 100%;
   height: 2.5rem;
   padding: 0.81rem;
+  border: 1px solid transparent;
+  &:focus {
+      outline-color: $mint-blue;
+    }
+
 }
 
 .inputPassword {
@@ -64,6 +70,11 @@
   grid-row: 1 / 2;
   height: 2.5rem;
   padding: 0.81rem;
+  border: 1px solid transparent;
+
+    &:focus {
+      outline-color: $mint-blue;
+    }
 }
 
 .eyeContainer {
