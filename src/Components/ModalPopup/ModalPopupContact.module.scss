@@ -87,6 +87,7 @@
         text-align: center !important;
         margin-top: 1rem !important;
         margin-bottom: 0.5rem !important;
+        font-family: $barlow-font;
       }
     }
 
@@ -94,6 +95,8 @@
     .cancelButton {
       width: 5rem !important;
       height: 2rem !important;
+      font-family: $barlow-condensed-font;
+      font-weight: 600;
     }
   }
 
